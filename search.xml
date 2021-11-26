@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>本地及 Docker 部署 MdNice 开源项目</title>
+    <url>/2021/11/26/Docker%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2MdNice%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>本地及 Docker 部署 MdNice 开源项目</p>
+<a id="more"></a>
+
+<h1 id="本地及-Docker-部署-MdNice-开源项目"><a href="#本地及-Docker-部署-MdNice-开源项目" class="headerlink" title="本地及 Docker 部署 MdNice 开源项目"></a>本地及 Docker 部署 MdNice 开源项目</h1><h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>首先从 github 上 clone 下<a href="https://github.com/mdnice/markdown-nice" title="项目">项目</a></p>
+<p>选择一个目录，git clone 项目地址</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">➜  ~ cd GitHub</span><br><span class="line">➜  GitHub git clone https://github.com.cnpmjs.org/mdnice/markdown-nice.git</span><br></pre></td></tr></table></figure>
+<p>然后用 IDE 打开项目，在项目终端执行命令</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrke0ys31j30o0086q37.jpg" alt="安装yarn为全局变量"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkh8od52j30r206a3yp.jpg" alt="安装依赖"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkjp13hdj30n807e0sw.jpg" alt="运行项目"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkzb93bej31ki0u0q7i.jpg" alt="项目展示"></p>
+<p>可以看到本地已经可以使用了。</p>
+<h2 id="Docker-部署"><a href="#Docker-部署" class="headerlink" title="Docker 部署"></a>Docker 部署</h2><p>首先在项目终端执行命令，如图 1</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrl0wel5gj30mu070mxa.jpg" alt="图1"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrl3qvfljj30l40owta6.jpg" alt="图2"></p>
+<p>执行命令后，我们可以看到项目中多了目录 build，如图 2，这也是我们准备放到 nginx 上的内容。</p>
+<p>打开 Docker，然后打开命令行，依次执行以下命令</p>
+<p>安装 nginx 镜像，下图命令为获取最新版</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull nginx:latest</span><br></pre></td></tr></table></figure>
+<p>查看本地镜像</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p>运行容器及项目</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -p 8080:80 -v &#x2F;GitHub&#x2F;markdown-nice&#x2F;build:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html -d nginx:latest</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li><code>--name nginx</code>：容器名称。</li>
+<li><code>-p</code>： 端口进行映射，将本地 8080 端口映射到容器内部的 80 端口。</li>
+<li><code>-v</code>： 主机目录 /GitHub/markdown-nice/build 映射到容器目录 /usr/share/nginx/html。</li>
+<li><code>-d</code>： 设置容器在在后台一直运行。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+        <tag>Docker</tag>
+        <tag>MdNice</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>集合类的梳理</title>
     <url>/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Java集合类的梳理</p>
@@ -105,48 +148,6 @@
       </tags>
   </entry>
   <entry>
-    <title>记一次给Mac配置外接显示器</title>
-    <url>/2021/04/18/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BB%99Mac%E9%85%8D%E7%BD%AE%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>记一次给Mac配置外接显示器</p>
-<a id="more"></a>
-
-
-<h2 id="前情概述"><a href="#前情概述" class="headerlink" title="前情概述"></a>前情概述</h2><p>通过什么值得买app，在翻看值榜单时，翻阅到显示器榜单，然后萌生了给自己配置一个显示器的念头，也因为自己看电脑时间久，眼睛会很不舒服的问题；通过多款显示器比较，评价及评测，最终选择了明基PD2500Q这款。</p>
-<h2 id="使用中遇到的问题"><a href="#使用中遇到的问题" class="headerlink" title="使用中遇到的问题"></a>使用中遇到的问题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如何外接显示器</span><br><span class="line">字体发虚</span><br></pre></td></tr></table></figure>
-<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><h3 id="外接显示器"><a href="#外接显示器" class="headerlink" title="外接显示器"></a>外接显示器</h3><p>1，首先将显示器与笔记本进行连接，我用的是type-c转HDMI转换器，将转换器直接和显示器带的HDMI线连接，连接好后，选取苹果菜单  &gt; “系统偏好设置”，点按“显示器”，然后点按“排列”标签页。确保“镜像显示器”复选框处于选中状态。如下图所示：</p>
-<p><img src="https://api2.mubu.com/v3/document_image/847d2520-2cfd-41d6-9cda-9ea7b8277d72-977367.jpg"></p>
-<p>2，也可使用扩展桌面模式<br>选取苹果菜单  &gt; “系统偏好设置”，然后点按“显示器”。点按“排列”标签页。确保“镜像显示器”复选框处于未选中状态。排列您的显示器，以便与您办公桌上的布置保持一致。要更改显示器的位置，请将它拖移到所需位置。移动时，显示器周围会出现一个红色边框。要将另一台显示器设置为主显示器，请将菜单栏拖移到另一台显示器。主显示器是桌面图标和 App 窗口率先出现的位置。确保您的外置显示器已开启并已连接到您的 Mac。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/5ad74437-c53d-456e-b794-bb449a64b135-977367.jpg"></p>
-<h3 id="字体发虚"><a href="#字体发虚" class="headerlink" title="字体发虚"></a>字体发虚</h3><h4 id="开启HiDPI，效果如下："><a href="#开启HiDPI，效果如下：" class="headerlink" title="开启HiDPI，效果如下："></a>开启HiDPI，效果如下：</h4><p><img src="https://api2.mubu.com/v3/document_image/862c40c9-5838-403b-9801-85a572b4cc80-977367.jpg"></p>
-<h4 id="关闭-macOS-的-SIP"><a href="#关闭-macOS-的-SIP" class="headerlink" title="关闭 macOS 的 SIP"></a>关闭 macOS 的 SIP</h4><p><font color='red'> SIP 「System Integrity Protection」即「系统完整性保护」</font>，先按照下面步骤把它关闭，以便后续操作：<br>1，关机<br>2，按一下电源键开机，然后按住 command（⌘）+ R，待进入恢复模式，松手<br>    <img src="https://api2.mubu.com/v3/document_image/d0a44466-40b1-443f-b632-2a362f12245f-977367.jpg"><br>3，选择上边菜单栏的 实用工具 中的 终端。<br> <img src="https://api2.mubu.com/v3/document_image/a3053736-aa09-4217-8bff-0d575423a70c-977367.jpg"><br>4，输入命令 csrutil disable。<br><img src="https://api2.mubu.com/v3/document_image/5f286a6c-b6db-479b-a47e-1669561081b0-977367.jpg"><br>5，显示 「Successfully……」 说明关闭成功。可以输入 reboot 回车重启，或者点左上角<br><img src="https://api2.mubu.com/v3/document_image/4d69bae5-7cac-471d-b80d-5da9fdcee56c-977367.jpg"></p>
-<h4 id="下载one-key-hidpi自动脚本"><a href="#下载one-key-hidpi自动脚本" class="headerlink" title="下载one-key-hidpi自动脚本"></a>下载one-key-hidpi自动脚本</h4><p>链接: <a href="https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag">https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag</a> 提取码: 92c5 </p>
-<p>1，首次运行时可能会提示”打不开“hidpi.command“，因为它来自身份不明的开发者”。需去“系统设置”——“安全与隐私”里面允许打开此软件。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/28c04e07-9092-405d-a666-b64bd1e1e94e-977367.jpg"></p>
-<p>2，输入本机macOS密码（密码不显示），回车。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/58b61d4c-6643-4025-84e1-4f5c9e85d90b-977367.jpg"></p>
-<p>3，按照提示，结合自身情况进行选择</p>
-<p><img src="https://api2.mubu.com/v3/document_image/063bc595-5d3d-45f7-b1fc-8dfded2cbf94-977367.jpg"></p>
-<p>4，选择1开启HIDPI，回车。<br>如果选1有“花屏”或“电脑睡眠后必须通过开盖才能点亮外接显示器”的问题，则选2；<br>如果后续要关闭HiDPI，则选3。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/efd83dbc-0f10-4664-b9fd-8f9e3f68db9e-977367.jpg"></p>
-<p>5，最后出现这张图片，表明开启成功</p>
-<p><img src="https://api2.mubu.com/v3/document_image/6759ab66-185a-43f4-8898-b33778753bdd-977367.jpg"></p>
-<p>最后可用RDM软件来切换hidpi分辨率(带闪电标志的)，RDM可比macOS分辨率缩放中show出更多hidpi分辨率。<br>(RDM需另外安装，注意Main Display，Display2和实物的对应关系)</p>
-<p><img src="https://api2.mubu.com/v3/document_image/8c038bd4-5e6b-4c47-ae4a-dc268d5b67f4-977367.jpg"></p>
-<h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>1，如果使用此脚本后，开机无法进入系统，请进macOS 恢复模式中或使用 clover -x 安全模式进入系统，打开“终端”，快捷恢复：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls &#x2F;Volumes&#x2F;</span><br><span class="line">cd &#x2F;Volumes&#x2F;你的系统盘&#x2F;System&#x2F;Library&#x2F;Displays&#x2F;Contents&#x2F;Resources&#x2F;Overrides&#x2F;HIDPI</span><br><span class="line">.&#x2F;disable</span><br></pre></td></tr></table></figure>
-<p>2，HiDPI成功开启后，为了系统的安全，一定记得重新开启macOS的SIP：<br>重复之前关闭SIP的步骤，打开“终端”，输入 csrutil enable并回车， 重启生效。<br>查看 SIP 当前状态，输入「csrutil status」后回车即可。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/177bb805-6739-4bdf-a381-dc8cb3f9b4b6-977367.jpg"></p>
-<h2 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">明基有多种图像模式，其中选择M-book模式，观感确实和原Mac体验差不多</span><br><span class="line">因为购买的这款是2K屏，故即使在开启hdpi下，字体观感整体感受，还是逊于原显示器观感，不够细腻</span><br><span class="line">明基的智慧调光和省电传感器，体验还是很棒的，前者就是可以根据当前环境自动调整屏幕亮度，后者是人离开屏幕会自动熄屏</span><br></pre></td></tr></table></figure>
-<h2 id="购买建议"><a href="#购买建议" class="headerlink" title="购买建议"></a>购买建议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mac用户，最好上4K</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>数码产品</category>
-      </categories>
-      <tags>
-        <tag>Macbook Pro</tag>
-        <tag>显示器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的第一篇博客</title>
     <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
@@ -218,6 +219,48 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记一次给Mac配置外接显示器</title>
+    <url>/2021/04/18/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BB%99Mac%E9%85%8D%E7%BD%AE%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>记一次给Mac配置外接显示器</p>
+<a id="more"></a>
+
+
+<h2 id="前情概述"><a href="#前情概述" class="headerlink" title="前情概述"></a>前情概述</h2><p>通过什么值得买app，在翻看值榜单时，翻阅到显示器榜单，然后萌生了给自己配置一个显示器的念头，也因为自己看电脑时间久，眼睛会很不舒服的问题；通过多款显示器比较，评价及评测，最终选择了明基PD2500Q这款。</p>
+<h2 id="使用中遇到的问题"><a href="#使用中遇到的问题" class="headerlink" title="使用中遇到的问题"></a>使用中遇到的问题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如何外接显示器</span><br><span class="line">字体发虚</span><br></pre></td></tr></table></figure>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><h3 id="外接显示器"><a href="#外接显示器" class="headerlink" title="外接显示器"></a>外接显示器</h3><p>1，首先将显示器与笔记本进行连接，我用的是type-c转HDMI转换器，将转换器直接和显示器带的HDMI线连接，连接好后，选取苹果菜单  &gt; “系统偏好设置”，点按“显示器”，然后点按“排列”标签页。确保“镜像显示器”复选框处于选中状态。如下图所示：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/847d2520-2cfd-41d6-9cda-9ea7b8277d72-977367.jpg"></p>
+<p>2，也可使用扩展桌面模式<br>选取苹果菜单  &gt; “系统偏好设置”，然后点按“显示器”。点按“排列”标签页。确保“镜像显示器”复选框处于未选中状态。排列您的显示器，以便与您办公桌上的布置保持一致。要更改显示器的位置，请将它拖移到所需位置。移动时，显示器周围会出现一个红色边框。要将另一台显示器设置为主显示器，请将菜单栏拖移到另一台显示器。主显示器是桌面图标和 App 窗口率先出现的位置。确保您的外置显示器已开启并已连接到您的 Mac。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/5ad74437-c53d-456e-b794-bb449a64b135-977367.jpg"></p>
+<h3 id="字体发虚"><a href="#字体发虚" class="headerlink" title="字体发虚"></a>字体发虚</h3><h4 id="开启HiDPI，效果如下："><a href="#开启HiDPI，效果如下：" class="headerlink" title="开启HiDPI，效果如下："></a>开启HiDPI，效果如下：</h4><p><img src="https://api2.mubu.com/v3/document_image/862c40c9-5838-403b-9801-85a572b4cc80-977367.jpg"></p>
+<h4 id="关闭-macOS-的-SIP"><a href="#关闭-macOS-的-SIP" class="headerlink" title="关闭 macOS 的 SIP"></a>关闭 macOS 的 SIP</h4><p><font color='red'> SIP 「System Integrity Protection」即「系统完整性保护」</font>，先按照下面步骤把它关闭，以便后续操作：<br>1，关机<br>2，按一下电源键开机，然后按住 command（⌘）+ R，待进入恢复模式，松手<br>    <img src="https://api2.mubu.com/v3/document_image/d0a44466-40b1-443f-b632-2a362f12245f-977367.jpg"><br>3，选择上边菜单栏的 实用工具 中的 终端。<br> <img src="https://api2.mubu.com/v3/document_image/a3053736-aa09-4217-8bff-0d575423a70c-977367.jpg"><br>4，输入命令 csrutil disable。<br><img src="https://api2.mubu.com/v3/document_image/5f286a6c-b6db-479b-a47e-1669561081b0-977367.jpg"><br>5，显示 「Successfully……」 说明关闭成功。可以输入 reboot 回车重启，或者点左上角<br><img src="https://api2.mubu.com/v3/document_image/4d69bae5-7cac-471d-b80d-5da9fdcee56c-977367.jpg"></p>
+<h4 id="下载one-key-hidpi自动脚本"><a href="#下载one-key-hidpi自动脚本" class="headerlink" title="下载one-key-hidpi自动脚本"></a>下载one-key-hidpi自动脚本</h4><p>链接: <a href="https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag">https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag</a> 提取码: 92c5 </p>
+<p>1，首次运行时可能会提示”打不开“hidpi.command“，因为它来自身份不明的开发者”。需去“系统设置”——“安全与隐私”里面允许打开此软件。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/28c04e07-9092-405d-a666-b64bd1e1e94e-977367.jpg"></p>
+<p>2，输入本机macOS密码（密码不显示），回车。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/58b61d4c-6643-4025-84e1-4f5c9e85d90b-977367.jpg"></p>
+<p>3，按照提示，结合自身情况进行选择</p>
+<p><img src="https://api2.mubu.com/v3/document_image/063bc595-5d3d-45f7-b1fc-8dfded2cbf94-977367.jpg"></p>
+<p>4，选择1开启HIDPI，回车。<br>如果选1有“花屏”或“电脑睡眠后必须通过开盖才能点亮外接显示器”的问题，则选2；<br>如果后续要关闭HiDPI，则选3。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/efd83dbc-0f10-4664-b9fd-8f9e3f68db9e-977367.jpg"></p>
+<p>5，最后出现这张图片，表明开启成功</p>
+<p><img src="https://api2.mubu.com/v3/document_image/6759ab66-185a-43f4-8898-b33778753bdd-977367.jpg"></p>
+<p>最后可用RDM软件来切换hidpi分辨率(带闪电标志的)，RDM可比macOS分辨率缩放中show出更多hidpi分辨率。<br>(RDM需另外安装，注意Main Display，Display2和实物的对应关系)</p>
+<p><img src="https://api2.mubu.com/v3/document_image/8c038bd4-5e6b-4c47-ae4a-dc268d5b67f4-977367.jpg"></p>
+<h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>1，如果使用此脚本后，开机无法进入系统，请进macOS 恢复模式中或使用 clover -x 安全模式进入系统，打开“终端”，快捷恢复：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls &#x2F;Volumes&#x2F;</span><br><span class="line">cd &#x2F;Volumes&#x2F;你的系统盘&#x2F;System&#x2F;Library&#x2F;Displays&#x2F;Contents&#x2F;Resources&#x2F;Overrides&#x2F;HIDPI</span><br><span class="line">.&#x2F;disable</span><br></pre></td></tr></table></figure>
+<p>2，HiDPI成功开启后，为了系统的安全，一定记得重新开启macOS的SIP：<br>重复之前关闭SIP的步骤，打开“终端”，输入 csrutil enable并回车， 重启生效。<br>查看 SIP 当前状态，输入「csrutil status」后回车即可。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/177bb805-6739-4bdf-a381-dc8cb3f9b4b6-977367.jpg"></p>
+<h2 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">明基有多种图像模式，其中选择M-book模式，观感确实和原Mac体验差不多</span><br><span class="line">因为购买的这款是2K屏，故即使在开启hdpi下，字体观感整体感受，还是逊于原显示器观感，不够细腻</span><br><span class="line">明基的智慧调光和省电传感器，体验还是很棒的，前者就是可以根据当前环境自动调整屏幕亮度，后者是人离开屏幕会自动熄屏</span><br></pre></td></tr></table></figure>
+<h2 id="购买建议"><a href="#购买建议" class="headerlink" title="购买建议"></a>购买建议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mac用户，最好上4K</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>数码产品</category>
+      </categories>
+      <tags>
+        <tag>Macbook Pro</tag>
+        <tag>显示器</tag>
       </tags>
   </entry>
   <entry>
