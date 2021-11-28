@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>本地及 Docker 部署 MdNice 开源项目</title>
-    <url>/2021/11/26/Docker%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2MdNice%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>首先从 github 上 clone 下<a href="https://github.com/mdnice/markdown-nice" title="项目">项目</a></p>
-<p>选择一个目录，git clone 项目地址</p>
-<a id="more"></a>
-
-
-
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">➜  ~ cd GitHub</span><br><span class="line">➜  GitHub git clone https://github.com.cnpmjs.org/mdnice/markdown-nice.git</span><br></pre></td></tr></table></figure>
-<p>然后用 IDE 打开项目，在项目终端执行命令</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrke0ys31j30o0086q37.jpg" alt="安装yarn为全局变量"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkh8od52j30r206a3yp.jpg" alt="安装依赖"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkjp13hdj30n807e0sw.jpg" alt="运行项目"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkzb93bej31ki0u0q7i.jpg" alt="项目展示"></p>
-<p>可以看到本地已经可以使用了。</p>
-<h2 id="Docker-部署"><a href="#Docker-部署" class="headerlink" title="Docker 部署"></a>Docker 部署</h2><p>首先在项目终端执行命令，如图 1</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrl0wel5gj30mu070mxa.jpg" alt="图1"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrl3qvfljj30l40owta6.jpg" alt="图2"></p>
-<p>执行命令后，我们可以看到项目中多了目录 build，如图 2，这也是我们准备放到 nginx 上的内容。</p>
-<p>打开 Docker，然后打开命令行，依次执行以下命令</p>
-<p>安装 nginx 镜像，下图命令为获取最新版</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull nginx:latest</span><br></pre></td></tr></table></figure>
-<p>查看本地镜像</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<p>运行容器及项目</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -p 8080:80 -v &#x2F;GitHub&#x2F;markdown-nice&#x2F;build:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html -d nginx:latest</span><br></pre></td></tr></table></figure>
-<p>参数说明：</p>
-<ul>
-<li><code>--name nginx</code>：容器名称。</li>
-<li><code>-p</code>： 端口进行映射，将本地 8080 端口映射到容器内部的 80 端口。</li>
-<li><code>-v</code>： 主机目录 /GitHub/markdown-nice/build 映射到容器目录 /usr/share/nginx/html。</li>
-<li><code>-d</code>： 设置容器在在后台一直运行。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>MdNice</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>集合类的梳理</title>
     <url>/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>在编程中，常常需要集中存放多个数据。从传统意义上讲，数组是我们的一个很好的选择，前提是我们事先已经明确知道我们将要保存的对象的数量。一旦在数组初始化时指定了这个数组长度，这个数组长度就是不可变的，如果我们需要保存一个可以动态增长的数据(在编译时无法确定具体的数量)，java的集合类就是一个很好的设计方案了。</p>
@@ -143,6 +100,49 @@
       </categories>
       <tags>
         <tag>集合类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>本地及 Docker 部署 MdNice 开源项目</title>
+    <url>/2021/11/26/Docker%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2MdNice%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>首先从 github 上 clone 下<a href="https://github.com/mdnice/markdown-nice" title="项目">项目</a></p>
+<p>选择一个目录，git clone 项目地址</p>
+<a id="more"></a>
+
+
+
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">➜  ~ cd GitHub</span><br><span class="line">➜  GitHub git clone https://github.com.cnpmjs.org/mdnice/markdown-nice.git</span><br></pre></td></tr></table></figure>
+<p>然后用 IDE 打开项目，在项目终端执行命令</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrke0ys31j30o0086q37.jpg" alt="安装yarn为全局变量"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkh8od52j30r206a3yp.jpg" alt="安装依赖"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkjp13hdj30n807e0sw.jpg" alt="运行项目"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrkzb93bej31ki0u0q7i.jpg" alt="项目展示"></p>
+<p>可以看到本地已经可以使用了。</p>
+<h2 id="Docker-部署"><a href="#Docker-部署" class="headerlink" title="Docker 部署"></a>Docker 部署</h2><p>首先在项目终端执行命令，如图 1</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrl0wel5gj30mu070mxa.jpg" alt="图1"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwrl3qvfljj30l40owta6.jpg" alt="图2"></p>
+<p>执行命令后，我们可以看到项目中多了目录 build，如图 2，这也是我们准备放到 nginx 上的内容。</p>
+<p>打开 Docker，然后打开命令行，依次执行以下命令</p>
+<p>安装 nginx 镜像，下图命令为获取最新版</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull nginx:latest</span><br></pre></td></tr></table></figure>
+<p>查看本地镜像</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p>运行容器及项目</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -p 8080:80 -v &#x2F;GitHub&#x2F;markdown-nice&#x2F;build:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html -d nginx:latest</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li><code>--name nginx</code>：容器名称。</li>
+<li><code>-p</code>： 端口进行映射，将本地 8080 端口映射到容器内部的 80 端口。</li>
+<li><code>-v</code>： 主机目录 /GitHub/markdown-nice/build 映射到容器目录 /usr/share/nginx/html。</li>
+<li><code>-d</code>： 设置容器在在后台一直运行。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>MdNice</tag>
       </tags>
   </entry>
   <entry>
