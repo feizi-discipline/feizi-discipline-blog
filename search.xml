@@ -146,86 +146,9 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
-<a id="more"></a>
-
-
-
-
-<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
-<li>电脑一台</li>
-<li>安装Git</li>
-<li>安装Node.js</li>
-<li>GitHub账号或者Gitee账号一个</li>
-</ol>
-<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
-<ul>
-<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
-<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
-</ul>
-<p>安装 Node.js 后安装 npm </p>
-<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
-<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>我们继续来安装Hexo:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>测试一下是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
-<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
-<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
-<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
-<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
-<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
-<p>码云上的个人空间地址，每个用户可以修改一次。</p>
-<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
-<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
-<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
-<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
-<p>启动博客</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
-<p>安装hexo-deployer-git自动部署发布工具</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
-<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-<p>不喜欢默认主题的可以自行去官网下载替换 </p>
-<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
-<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
-<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
-<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
-<p>点击启动，复制一下生成的网站地址</p>
-<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-<p>配置完成后，重新去本地文件夹执行一下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
-<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
-<li><p>正确安装所需环境</p>
-</li>
-<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
-</li>
-<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>杂货铺周刊（第1期）</title>
     <url>/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=1&height=66"></iframe>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
@@ -308,9 +231,86 @@
       </categories>
   </entry>
   <entry>
-    <title>杂货铺周刊（第1期）</title>
+    <title>我的第一篇博客</title>
+    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
+<a id="more"></a>
+
+
+
+
+<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
+<li>电脑一台</li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>GitHub账号或者Gitee账号一个</li>
+</ol>
+<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
+<ul>
+<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
+<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
+</ul>
+<p>安装 Node.js 后安装 npm </p>
+<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
+<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>我们继续来安装Hexo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>测试一下是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
+<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
+<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
+<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
+<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
+<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
+<p>码云上的个人空间地址，每个用户可以修改一次。</p>
+<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
+<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
+<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
+<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
+<p>启动博客</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
+<p>安装hexo-deployer-git自动部署发布工具</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
+<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>不喜欢默认主题的可以自行去官网下载替换 </p>
+<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
+<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
+<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
+<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
+<p>点击启动，复制一下生成的网站地址</p>
+<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+<p>配置完成后，重新去本地文件夹执行一下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
+<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
+<li><p>正确安装所需环境</p>
+</li>
+<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
+</li>
+<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第2期）</title>
     <url>/2021/12/04/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC2%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=1&height=66"></iframe>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=346576&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
