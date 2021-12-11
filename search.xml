@@ -3,7 +3,7 @@
   <entry>
     <title>本地及 Docker 部署 MdNice 开源项目</title>
     <url>/2021/11/26/Docker%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2MdNice%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>首先从 github 上 clone 下<a href="https://github.com/mdnice/markdown-nice" title="项目">项目</a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><p>首先从 github 上 clone 下<a href="https://github.com/mdnice/markdown-nice" title="项目">项目</a></p>
 <p>选择一个目录，git clone 项目地址</p>
 <a id="more"></a>
 
@@ -44,9 +44,83 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
+<a id="more"></a>
+
+<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
+<li>电脑一台</li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>GitHub账号或者Gitee账号一个</li>
+</ol>
+<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
+<ul>
+<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
+<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
+</ul>
+<p>安装 Node.js 后安装 npm </p>
+<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
+<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>我们继续来安装Hexo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>测试一下是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
+<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
+<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
+<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
+<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
+<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
+<p>码云上的个人空间地址，每个用户可以修改一次。</p>
+<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
+<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
+<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
+<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
+<p>启动博客</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
+<p>安装hexo-deployer-git自动部署发布工具</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
+<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>不喜欢默认主题的可以自行去官网下载替换 </p>
+<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
+<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
+<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
+<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
+<p>点击启动，复制一下生成的网站地址</p>
+<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+<p>配置完成后，重新去本地文件夹执行一下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
+<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
+<li><p>正确安装所需环境</p>
+</li>
+<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
+</li>
+<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>集合类的梳理</title>
     <url>/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>在编程中，常常需要集中存放多个数据。从传统意义上讲，数组是我们的一个很好的选择，前提是我们事先已经明确知道我们将要保存的对象的数量。一旦在数组初始化时指定了这个数组长度，这个数组长度就是不可变的，如果我们需要保存一个可以动态增长的数据(在编译时无法确定具体的数量)，java的集合类就是一个很好的设计方案了。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在编程中，常常需要集中存放多个数据。从传统意义上讲，数组是我们的一个很好的选择，前提是我们事先已经明确知道我们将要保存的对象的数量。一旦在数组初始化时指定了这个数组长度，这个数组长度就是不可变的，如果我们需要保存一个可以动态增长的数据(在编译时无法确定具体的数量)，java的集合类就是一个很好的设计方案了。</p>
 <a id="more"></a>
 
 <p>集合类主要负责保存、盛装其他数据，因此集合类也被称为容器类。所以的集合类都位于java.util包下，后来为了处理多线程环境下的并发安全问题，java5还在java.util.concurrent包下提供了一些多线程支持的集合类。</p>
@@ -146,9 +220,182 @@
       </tags>
   </entry>
   <entry>
+    <title>杂货铺周刊（第3期）</title>
+    <url>/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1305960097&auto=1&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="http://value500.com/srzl.asp" title="社融">社融</a></p>
+<p>社会融资，指个人或企业从金融体系获得的资金。<br>金融体系包括银行，债券市场，股票市场（包括IPO）。</p>
+<p>社融反应的是资金的需求程度，如果社融下降，说明经济需求不足，大家预期都不太好。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/4c98aa4a-a225-4b7c-858d-4ac15648dff3-977367.jpg"></p>
+<p><strong>宏观上</strong>，根据社融也可以判断市场，从2017年，财政部改变了统计社融的计算方法，我们从17年后开始看，大体上是：<strong>社融存量同比与沪深300大盘呈正相关</strong>。</p>
+<p>如图中10月数据，已接近18年的最低点，市场已经相对悲观，再下跌的空间也很小了，接着我们可以看11月的数据，可从<a href="http://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4410524/index.html" title="中国人民银行新闻发布">中国人民银行新闻发布</a>看到，11月的社融存量是311.9万亿元，同比增长10.1%，维持平稳状态。</p>
+<p>社融下跌，行情好不到哪；社融上升，行情差不到哪.</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、JDBC"><a href="#1、JDBC" class="headerlink" title="1、JDBC"></a>1、JDBC</h3><h4 id="boolean-execute"><a href="#boolean-execute" class="headerlink" title="boolean execute()"></a>boolean execute()</h4><p>可执行任何 SQL</p>
+<p>如果为 true，则结果为查询，可根据 getResultSet()获取 ResultSet。<br>如果为 false，则结果为修改或删除，可根据 getUpdateCount()获取影响行数。<br><strong>一般不用，效率较低</strong>。</p>
+<h4 id="ResultSet-executeQuery"><a href="#ResultSet-executeQuery" class="headerlink" title="ResultSet executeQuery()"></a>ResultSet executeQuery()</h4><p>执行查询<br>返回ResultSet结果集，通过getObject（getString、getLong…）获取数据。<br>有两种方式获取: </p>
+<blockquote>
+<ol>
+<li>下标形式（注意：下标从1开始）。</li>
+<li>字段名获取。</li>
+</ol>
+</blockquote>
+<h4 id="int-executeUpdate"><a href="#int-executeUpdate" class="headerlink" title="int executeUpdate()"></a>int executeUpdate()</h4><p>执行语句必须是一个 DML 语句，如 insert、update 或 delete 语句；或者返回内容的 SQL 语句，如 DDL 语句。</p>
+<p>返回受影响的行数。</p>
+<h4 id="int-executeBatch"><a href="#int-executeBatch" class="headerlink" title="int[] executeBatch()"></a>int[] executeBatch()</h4><p>执行批处理，同上。  </p>
+<p>返回多条受影响的行数。</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><table>
+<thead>
+<tr>
+<th>Java 数据类型</th>
+<th>SQL 数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>BIT, BOOL</td>
+</tr>
+<tr>
+<td>int</td>
+<td>INTEGER</td>
+</tr>
+<tr>
+<td>long</td>
+<td>BIGINT</td>
+</tr>
+<tr>
+<td>float</td>
+<td>REAL</td>
+</tr>
+<tr>
+<td>double</td>
+<td>FLOAT, DOUBLE</td>
+</tr>
+<tr>
+<td>String</td>
+<td>CHAR, VARCHAR</td>
+</tr>
+<tr>
+<td>BigDecimal</td>
+<td>DECIMAL</td>
+</tr>
+<tr>
+<td>java.sql.Date, LocalDate</td>
+<td>DATE</td>
+</tr>
+<tr>
+<td>java.sql.Time, LocalTime</td>
+<td>TIME</td>
+</tr>
+</tbody></table>
+<h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><p>delete from 表名</p>
+<blockquote>
+<p>逐行删除，效率较慢，且如果有自增主键，id 不会从 1 开始。</p>
+</blockquote>
+<p>truncate table 表名</p>
+<blockquote>
+<p>有点儿像 drop 表，再重新 create 这个表，保留 MySQL 表的结构，且所有的状态都相当于新表，<strong>效率比delete高</strong>。</p>
+</blockquote>
+<h3 id="2、服务器分析"><a href="#2、服务器分析" class="headerlink" title="2、服务器分析"></a>2、服务器分析</h3><p><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html" title="jstat">jstat</a></p>
+<blockquote>
+<p>查看堆内存使用及 gc 信息</p>
+</blockquote>
+<p><img src="https://api2.mubu.com/v3/document_image/939103e6-156e-4b1e-a569-43269caf94bf-977367.jpg"></p>
+<p><code>jstat -class pid</code> </p>
+<p>显示加载 class 的数量，及所占空间等信息。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/071cb6f8-ddd6-4351-86d8-9a1c29a046e3-977367.jpg"></p>
+<p><code>jstat -compiler pid</code> </p>
+<p>显示 VM 实时编译的数量等信息。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/16f36e34-2d4b-4184-b490-ca26ca0fa5b4-977367.jpg"></p>
+<p><code>jstat -gc pid</code> </p>
+<p>垃圾回收统计。</p>
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jmap.html" title="jmap">jmap</a></p>
+<blockquote>
+<p>查看堆相关</p>
+</blockquote>
+<p><img src="https://api2.mubu.com/v3/document_image/05a8a151-e3a9-41fc-99a1-3e0ed5a3743d-977367.jpg"></p>
+<p><code>jmap -heap pid 来打印</code></p>
+<p>java 堆的概要</p>
+<p><img src="https://api2.mubu.com/v3/document_image/c5168a7e-24e4-4c70-af4f-17ebf62dad85-977367.jpg"></p>
+<p><code>jmap -histo pid|head -n 10</code></p>
+<p>查看堆占用前10位</p>
+<h3 id="3、-SQL-分析"><a href="#3、-SQL-分析" class="headerlink" title="3、 SQL 分析"></a>3、 SQL 分析</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="built_in">SUM</span>( cp.ALLBILLINGUSERCOUNT ) ALLBILLINGUSERCOUNT,</span><br><span class="line"><span class="built_in">SUM</span>( cp.BILLINGFOLLOWUSERCOUNT ) BILLINGFOLLOWUSERCOUNT,</span><br><span class="line"><span class="built_in">SUM</span>( cp.RETAINEDCOUNT ) RETAINEDCOUNT</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		tf.PROVINCECODE,</span><br><span class="line">		tf.OFFERCHANNELCODE,</span><br><span class="line">		tf.TARIFFTYPE,</span><br><span class="line">		tf.PAYMENTCHANNELS,</span><br><span class="line">		tf.RETAINEDCOUNT,</span><br><span class="line">		tf.ALLBILLINGUSERCOUNT,</span><br><span class="line">		tf.BILLINGFOLLOWUSERCOUNT</span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		(</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			tt.PROVINCECODE,</span><br><span class="line">			tt.OFFERCHANNELCODE,</span><br><span class="line">			tt.TARIFFTYPE,</span><br><span class="line">			tt.PAYMENTCHANNELS,</span><br><span class="line">			tt.ALLBILLINGUSERCOUNT,</span><br><span class="line">			tt.BILLINGFOLLOWUSERCOUNT,</span><br><span class="line">			tt.RETAINEDCOUNT</span><br><span class="line">		<span class="keyword">FROM</span></span><br><span class="line">			CUSTOMERTABLE tt</span><br><span class="line">		<span class="keyword">WHERE</span></span><br><span class="line">			tt.STATISTICSTIME <span class="operator">&gt;=</span> <span class="string">&#x27;2021-07-01 00:00:00&#x27;</span></span><br><span class="line">			<span class="keyword">AND</span> tt.STATISTICSTIME <span class="operator">&lt;=</span> <span class="string">&#x27;2021-09-26 23:59:59&#x27;</span></span><br><span class="line">		<span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">			tt.STATISTICSTIME <span class="keyword">DESC</span></span><br><span class="line">		) tf</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">		tf.PROVINCECODE,</span><br><span class="line">		tf.OFFERCHANNELCODE,</span><br><span class="line">		tf.TARIFFTYPE,</span><br><span class="line">	tf.PAYMENTCHANNELS</span><br><span class="line">	) cp</span><br></pre></td></tr></table></figure>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><blockquote>
+<p>根据PROVINCECODE，OFFERCHANNELCODE，TARIFFTYPE和PAYMENTCHANNELS的不同，然后查询出最新日期的ALLBILLINGUSERCOUNT，BILLINGFOLLOWUSERCOUNT，RETAINEDCOUNT的总和。</p>
+</blockquote>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>首先，通过时间的降序排列作为一张表，然后按照条件进行分组，这样就可以筛选出所有条件的最新日期的数据；然后把它们作为一张表，多余的数据也被排除了；再从这张表中，取出我们统计的总和即可。</p>
+<p><strong>说明</strong>：分组后的表，是根据条件，生成了最新日期的表数据。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="http://www.sinh.cas.cn/xwgg/kyjz/202112/t20211206_6289325.html" title="PCC1">PCC1</a></p>
+<p>2021年12月7日，中国科学家，在全球顶级科学杂志《Nature Metabolism》发布关于《植物成分原花青素家族成员C1（PCC1）具有衰老治疗活性并能延长小鼠的寿命》的研究论文，<br>通过实验证明，对自然衰老的小鼠，PCC1能清除老年小鼠多种组织器官类型中的衰老细胞，增强小鼠生理机能并延长老年小鼠寿命。</p>
+<p>2、<a href="http://www.kepu.net.cn/listening/202011/t20201124_490897.html" title="我们为什么研究恐龙">我们为什么研究恐龙</a></p>
+<p>内容分视频和音频，幽默诠释了以下内容：</p>
+<blockquote>
+<ol>
+<li>为什么研究恐龙；</li>
+<li>恐龙对孩子教育的引导；</li>
+<li>恐龙的体色、骨头、体温、足迹等研究的说明。</li>
+</ol>
+</blockquote>
+<p>3、<a href="https://www.cnki.com.cn/Article/CJFDTotal-FDDX1980S1015.htm" title="我国省区名称的来源">我国省区名称的来源</a></p>
+<p>全国的行政区域，基本分为省（自治区、直辖市）、县（自治县、市）、乡（政）三级。由于文献是1980年的，现在我国共有34个省级行政单位（23个省，5个自治区，4个直辖市，2个特别行政区）。</p>
+<p>下面说一说内蒙古，蒙古原为部族名。清朝时，被编成盟、旗，统属中央的理藩院，并由各盟旗附近的驻防将军、都统或大臣分别监督或管辖。其时习惯上有内、外蒙古之称。所谓内蒙古，一般指哲里木、卓索图、昭乌达、锡林郭勒、乌兰察布、伊克昭内扎萨克六盟、二十四部、四十九旗和归化城土默特二旗，也有专指内札萨克六盟不包括归化城土默特的。<br>晚清以后，开始用内蒙古一词泛指大漠以南、长城以北，东起哲里木盟，西至套西厄鲁特的所有盟旗牧场。<br>从清初至民国初，内蒙古始终是一个地区名。</p>
+<p>1947年，呼伦贝尔、哲里木等盟建立内蒙古自治区，“内蒙古”才正式成为政区名。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.photopea.com/" title="Photopea">Photopea</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/21d29ad4-1c95-4db4-9bfe-2f9c3c4d6e62-977367.jpg"></p>
+<p>一个在线版的Photoshop图像编辑工具，可以应急用，支持PSD、XCF、Sketch、XD、CDR等格式文件处理，可导出为JPG、PNG、SVG、GIF、PDF等格式。</p>
+<p>2、<a href="https://mubu.com/inv/977367" title="幕布">幕布</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/039cb484-ddb6-47b9-96ce-6ebc957b2803-977367.jpg"></p>
+<p>一个自己在用的笔记工具，支持笔记一键生成思维导图，简单说几个实用的优点：</p>
+<blockquote>
+<ol>
+<li>平台覆盖全面，支持Window、MacOS、IOS、Android。</li>
+<li>可网页在线使用，支持导入，导出。导入支持格式有OPML、FreeMind、XMind，可导出格式有Word、PDF、图片、HTML、OPML。</li>
+<li>支持内容搜索，可方便对想不起的内容进行快速检索。</li>
+</ol>
+</blockquote>
+<p>3、 <a href="https://www.aconvert.com/" title="在线转换工具">在线转换工具</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/349de9d1-fb6f-44f1-b551-c3cc88153058-977367.jpg"></p>
+<p>一个全能的转换网站，目前使用最多的，无需登录，主要分7个模块：</p>
+<blockquote>
+<ol>
+<li>PDF，格式转换、分割、合并、压缩、加密、解密、提取、旋转。  </li>
+<li>文档，格式转换、OCR识别、二维码生成。</li>
+<li>电子书，在线电子书格式转换。</li>
+<li>图像，格式转换、图标、压缩、尺寸、合并、裁剪、旋转、编辑。</li>
+<li>视频，格式转换、分割、合并、旋转、裁剪、填充。</li>
+<li>音频，格式转换、分割、合并。</li>
+<li>压缩，在线压缩文件。</li>
+</ol>
+</blockquote>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>有开心可寻，有朋友可交，有家人可依，</p>
+<p>有的吃，有人爱，</p>
+<p>音乐之热不改，天真之心不灭，</p>
+<p>不悔恨昨天，不惆怅明天。</p>
+<p>——<a href="https://weibo.com/1746664450/GhcK74GKg?type=comment#_rnd1638942299668" title="大张伟">大张伟</a></p>
+<p>2、</p>
+<p>一个人最好的生活状态，是该看书时看书，该玩时尽情玩，看见优秀的人欣赏，看到落魄的人也不轻视；</p>
+<p>有自己的小生活和小情趣，不用去想改变世界，努力去活出自己。</p>
+<p>没人爱时专注自己，有人爱时，有能力拥抱彼此。</p>
+<p>——阿泪[微博]</p>
+<p>3、</p>
+<p>我们从来不曾真正得到什么，得到的只不过是靠失去另一些东西而换回来的。</p>
+<p>每个投资策略都不是一本万利的，也必须付出点什么。</p>
+<p>当你决定采取某个策略之前，请先想想最大的风险是什么？</p>
+<p>——复利人生</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
     <title>杂货铺周刊（第1期）</title>
     <url>/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=0&height=66"></iframe>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
@@ -231,86 +478,84 @@
       </categories>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
+    <title>记一次给Mac配置外接显示器</title>
+    <url>/2021/04/18/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BB%99Mac%E9%85%8D%E7%BD%AE%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通过什么值得买app，在翻看值榜单时，翻阅到显示器榜单，然后萌生了给自己配置一个显示器的念头，也因为自己看电脑时间久，眼睛会很不舒服的问题；通过多款显示器比较，评价及评测，最终选择了明基PD2500Q这款。</p>
 <a id="more"></a>
 
-
-
-
-<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
-<li>电脑一台</li>
-<li>安装Git</li>
-<li>安装Node.js</li>
-<li>GitHub账号或者Gitee账号一个</li>
-</ol>
-<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
-<ul>
-<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
-<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
-</ul>
-<p>安装 Node.js 后安装 npm </p>
-<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
-<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>我们继续来安装Hexo:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>测试一下是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
-<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
-<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
-<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
-<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
-<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
-<p>码云上的个人空间地址，每个用户可以修改一次。</p>
-<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
-<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
-<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
-<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
-<p>启动博客</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
-<p>安装hexo-deployer-git自动部署发布工具</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
-<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-<p>不喜欢默认主题的可以自行去官网下载替换 </p>
-<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
-<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
-<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
-<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
-<p>点击启动，复制一下生成的网站地址</p>
-<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-<p>配置完成后，重新去本地文件夹执行一下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
-<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
-<li><p>正确安装所需环境</p>
-</li>
-<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
-</li>
-<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
-</li>
-</ol>
-]]></content>
+<h2 id="使用中遇到的问题"><a href="#使用中遇到的问题" class="headerlink" title="使用中遇到的问题"></a>使用中遇到的问题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如何外接显示器</span><br><span class="line">字体发虚</span><br></pre></td></tr></table></figure>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><h3 id="外接显示器"><a href="#外接显示器" class="headerlink" title="外接显示器"></a>外接显示器</h3><p>1，首先将显示器与笔记本进行连接，我用的是type-c转HDMI转换器，将转换器直接和显示器带的HDMI线连接，连接好后，选取苹果菜单  &gt; “系统偏好设置”，点按“显示器”，然后点按“排列”标签页。确保“镜像显示器”复选框处于选中状态。如下图所示：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/847d2520-2cfd-41d6-9cda-9ea7b8277d72-977367.jpg"></p>
+<p>2，也可使用扩展桌面模式<br>选取苹果菜单  &gt; “系统偏好设置”，然后点按“显示器”。点按“排列”标签页。确保“镜像显示器”复选框处于未选中状态。排列您的显示器，以便与您办公桌上的布置保持一致。要更改显示器的位置，请将它拖移到所需位置。移动时，显示器周围会出现一个红色边框。要将另一台显示器设置为主显示器，请将菜单栏拖移到另一台显示器。主显示器是桌面图标和 App 窗口率先出现的位置。确保您的外置显示器已开启并已连接到您的 Mac。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/5ad74437-c53d-456e-b794-bb449a64b135-977367.jpg"></p>
+<h3 id="字体发虚"><a href="#字体发虚" class="headerlink" title="字体发虚"></a>字体发虚</h3><h4 id="开启HiDPI，效果如下："><a href="#开启HiDPI，效果如下：" class="headerlink" title="开启HiDPI，效果如下："></a>开启HiDPI，效果如下：</h4><p><img src="https://api2.mubu.com/v3/document_image/862c40c9-5838-403b-9801-85a572b4cc80-977367.jpg"></p>
+<h4 id="关闭-macOS-的-SIP"><a href="#关闭-macOS-的-SIP" class="headerlink" title="关闭 macOS 的 SIP"></a>关闭 macOS 的 SIP</h4><p><font color='red'> SIP 「System Integrity Protection」即「系统完整性保护」</font>，先按照下面步骤把它关闭，以便后续操作：<br>1，关机<br>2，按一下电源键开机，然后按住 command（⌘）+ R，待进入恢复模式，松手<br>    <img src="https://api2.mubu.com/v3/document_image/d0a44466-40b1-443f-b632-2a362f12245f-977367.jpg"><br>3，选择上边菜单栏的 实用工具 中的 终端。<br> <img src="https://api2.mubu.com/v3/document_image/a3053736-aa09-4217-8bff-0d575423a70c-977367.jpg"><br>4，输入命令 csrutil disable。<br><img src="https://api2.mubu.com/v3/document_image/5f286a6c-b6db-479b-a47e-1669561081b0-977367.jpg"><br>5，显示 「Successfully……」 说明关闭成功。可以输入 reboot 回车重启，或者点左上角<br><img src="https://api2.mubu.com/v3/document_image/4d69bae5-7cac-471d-b80d-5da9fdcee56c-977367.jpg"></p>
+<h4 id="下载one-key-hidpi自动脚本"><a href="#下载one-key-hidpi自动脚本" class="headerlink" title="下载one-key-hidpi自动脚本"></a>下载one-key-hidpi自动脚本</h4><p>链接: <a href="https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag">https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag</a> 提取码: 92c5 </p>
+<p>1，首次运行时可能会提示”打不开“hidpi.command“，因为它来自身份不明的开发者”。需去“系统设置”——“安全与隐私”里面允许打开此软件。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/28c04e07-9092-405d-a666-b64bd1e1e94e-977367.jpg"></p>
+<p>2，输入本机macOS密码（密码不显示），回车。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/58b61d4c-6643-4025-84e1-4f5c9e85d90b-977367.jpg"></p>
+<p>3，按照提示，结合自身情况进行选择</p>
+<p><img src="https://api2.mubu.com/v3/document_image/063bc595-5d3d-45f7-b1fc-8dfded2cbf94-977367.jpg"></p>
+<p>4，选择1开启HIDPI，回车。<br>如果选1有“花屏”或“电脑睡眠后必须通过开盖才能点亮外接显示器”的问题，则选2；<br>如果后续要关闭HiDPI，则选3。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/efd83dbc-0f10-4664-b9fd-8f9e3f68db9e-977367.jpg"></p>
+<p>5，最后出现这张图片，表明开启成功</p>
+<p><img src="https://api2.mubu.com/v3/document_image/6759ab66-185a-43f4-8898-b33778753bdd-977367.jpg"></p>
+<p>最后可用RDM软件来切换hidpi分辨率(带闪电标志的)，RDM可比macOS分辨率缩放中show出更多hidpi分辨率。<br>(RDM需另外安装，注意Main Display，Display2和实物的对应关系)</p>
+<p><img src="https://api2.mubu.com/v3/document_image/8c038bd4-5e6b-4c47-ae4a-dc268d5b67f4-977367.jpg"></p>
+<h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>1，如果使用此脚本后，开机无法进入系统，请进macOS 恢复模式中或使用 clover -x 安全模式进入系统，打开“终端”，快捷恢复：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls &#x2F;Volumes&#x2F;</span><br><span class="line">cd &#x2F;Volumes&#x2F;你的系统盘&#x2F;System&#x2F;Library&#x2F;Displays&#x2F;Contents&#x2F;Resources&#x2F;Overrides&#x2F;HIDPI</span><br><span class="line">.&#x2F;disable</span><br></pre></td></tr></table></figure>
+<p>2，HiDPI成功开启后，为了系统的安全，一定记得重新开启macOS的SIP：<br>重复之前关闭SIP的步骤，打开“终端”，输入 csrutil enable并回车， 重启生效。<br>查看 SIP 当前状态，输入「csrutil status」后回车即可。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/177bb805-6739-4bdf-a381-dc8cb3f9b4b6-977367.jpg"></p>
+<h2 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">明基有多种图像模式，其中选择M-book模式，观感确实和原Mac体验差不多</span><br><span class="line">因为购买的这款是2K屏，故即使在开启hdpi下，字体观感整体感受，还是逊于原显示器观感，不够细腻</span><br><span class="line">明基的智慧调光和省电传感器，体验还是很棒的，前者就是可以根据当前环境自动调整屏幕亮度，后者是人离开屏幕会自动熄屏</span><br></pre></td></tr></table></figure>
+<h2 id="购买建议"><a href="#购买建议" class="headerlink" title="购买建议"></a>购买建议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mac用户，最好上4K</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>博客</category>
+        <category>数码产品</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Macbook Pro</tag>
+        <tag>显示器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运行SQL文件，出现1067错误</title>
+    <url>/2021/04/08/%E8%BF%90%E8%A1%8CSQL%E6%96%87%E4%BB%B6%EF%BC%8C%E5%87%BA%E7%8E%B01067%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> 运行SQL文件，出现1067错误</p>
+<a id="more"></a>
+
+<h2 id="报错原因分析"><a href="#报错原因分析" class="headerlink" title="报错原因分析"></a>报错原因分析</h2><h3 id="MySQL的sql-mode配置问题"><a href="#MySQL的sql-mode配置问题" class="headerlink" title="MySQL的sql_mode配置问题"></a>MySQL的sql_mode配置问题</h3><p>在Mysql5.7之后，Mysql使用的是严格模式</p>
+<p><img src="https://api2.mubu.com/v3/document_image/dd9d876d-50db-49cd-8251-0644f61d5155-977367.jpg"></p>
+<p>sql_mode默认配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
+<h2 id="配置解释如下："><a href="#配置解释如下：" class="headerlink" title="配置解释如下："></a>配置解释如下：</h2><h3 id="ONLY-FULL-GROUP-BY"><a href="#ONLY-FULL-GROUP-BY" class="headerlink" title="ONLY_FULL_GROUP_BY"></a>ONLY_FULL_GROUP_BY</h3><pre><code>对于GROUP BY聚合操作,如果在SELECT中的列,没有在GROUP BY中出现,那么这个SQL是不合法的,因为列不在GROUP BY从句中
+</code></pre>
+<h3 id="STRICT-TRANS-TABLES"><a href="#STRICT-TRANS-TABLES" class="headerlink" title="STRICT_TRANS_TABLES"></a>STRICT_TRANS_TABLES</h3><pre><code>在该模式下,如果一个值不能插入到一个事务表中,则中断当前的操作,对非事务表不做限制
+</code></pre>
+<h3 id="NO-ZERO-IN-DATE"><a href="#NO-ZERO-IN-DATE" class="headerlink" title="NO_ZERO_IN_DATE"></a>NO_ZERO_IN_DATE</h3><pre><code>在严格模式下,不允许日期和月份为零
+</code></pre>
+<h3 id="NO-ZERO-DATE"><a href="#NO-ZERO-DATE" class="headerlink" title="NO_ZERO_DATE"></a>NO_ZERO_DATE</h3><pre><code>设置该值,mysql数据库不允许插入零日期,插入零日期会抛出错误而不是警告。
+</code></pre>
+<h3 id="ERROR-FOR-DIVISION-BY-ZERO"><a href="#ERROR-FOR-DIVISION-BY-ZERO" class="headerlink" title="ERROR_FOR_DIVISION_BY_ZERO"></a>ERROR_FOR_DIVISION_BY_ZERO</h3><pre><code>在INSERT或UPDATE过程中,如果数据被零除,则产生错误而非警告。如 果未给出该模式,那么数据被零除时MySQL返回NULL
+</code></pre>
+<h3 id="NO-AUTO-CREATE-USER"><a href="#NO-AUTO-CREATE-USER" class="headerlink" title="NO_AUTO_CREATE_USER"></a>NO_AUTO_CREATE_USER</h3><pre><code>禁止GRANT创建密码为空的用户
+</code></pre>
+<h3 id="NO-ENGINE-SUBSTITUTION"><a href="#NO-ENGINE-SUBSTITUTION" class="headerlink" title="NO_ENGINE_SUBSTITUTION"></a>NO_ENGINE_SUBSTITUTION</h3><pre><code>如果需要的存储引擎被禁用或未编译,那么抛出错误。不设置此值时,用默认的存储引擎替代,并抛出一个异常
+</code></pre>
+<h2 id="解决方法（MAC，windosw同理）"><a href="#解决方法（MAC，windosw同理）" class="headerlink" title="解决方法（MAC，windosw同理）"></a>解决方法（MAC，windosw同理）</h2><p>利用访达，前往/etc/文件下，新建my.cnf文件，内容为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http:&#x2F;&#x2F;dev.mysql.com&#x2F;doc&#x2F;refman&#x2F;5.7&#x2F;en&#x2F;server-configuration-defaults.html</span><br><span class="line"># *** DO NOT EDIT THIS FILE. It&#39;s a template which will be copied to the</span><br><span class="line"># *** default location during install, and will be replaced if you</span><br><span class="line"># *** upgrade to a newer version of MySQL</span><br><span class="line">[client]</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[mysqld]</span><br><span class="line">log-error&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;support-files&#x2F;mysqld.log</span><br><span class="line"># skip-grant-tables</span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size &#x3D; 128M</span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"># basedir &#x3D; .....</span><br><span class="line"># datadir &#x3D; .....</span><br><span class="line"># port &#x3D; .....</span><br><span class="line"># server_id &#x3D; .....</span><br><span class="line"># socket &#x3D; .....</span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size &#x3D; 128M</span><br><span class="line"># sort_buffer_size &#x3D; 2M</span><br><span class="line"># read_rnd_buffer_size &#x3D; 2M </span><br><span class="line">sql_mode&#x3D;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
+<p>重启mysql服务，即可</p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>Navicat</tag>
       </tags>
   </entry>
   <entry>
     <title>杂货铺周刊（第2期）</title>
     <url>/2021/12/04/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC2%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=346576&auto=0&height=66"></iframe>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=346576&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
@@ -439,80 +684,5 @@
       <categories>
         <category>周刊</category>
       </categories>
-  </entry>
-  <entry>
-    <title>记一次给Mac配置外接显示器</title>
-    <url>/2021/04/18/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BB%99Mac%E9%85%8D%E7%BD%AE%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>通过什么值得买app，在翻看值榜单时，翻阅到显示器榜单，然后萌生了给自己配置一个显示器的念头，也因为自己看电脑时间久，眼睛会很不舒服的问题；通过多款显示器比较，评价及评测，最终选择了明基PD2500Q这款。</p>
-<a id="more"></a>
-
-<h2 id="使用中遇到的问题"><a href="#使用中遇到的问题" class="headerlink" title="使用中遇到的问题"></a>使用中遇到的问题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如何外接显示器</span><br><span class="line">字体发虚</span><br></pre></td></tr></table></figure>
-<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><h3 id="外接显示器"><a href="#外接显示器" class="headerlink" title="外接显示器"></a>外接显示器</h3><p>1，首先将显示器与笔记本进行连接，我用的是type-c转HDMI转换器，将转换器直接和显示器带的HDMI线连接，连接好后，选取苹果菜单  &gt; “系统偏好设置”，点按“显示器”，然后点按“排列”标签页。确保“镜像显示器”复选框处于选中状态。如下图所示：</p>
-<p><img src="https://api2.mubu.com/v3/document_image/847d2520-2cfd-41d6-9cda-9ea7b8277d72-977367.jpg"></p>
-<p>2，也可使用扩展桌面模式<br>选取苹果菜单  &gt; “系统偏好设置”，然后点按“显示器”。点按“排列”标签页。确保“镜像显示器”复选框处于未选中状态。排列您的显示器，以便与您办公桌上的布置保持一致。要更改显示器的位置，请将它拖移到所需位置。移动时，显示器周围会出现一个红色边框。要将另一台显示器设置为主显示器，请将菜单栏拖移到另一台显示器。主显示器是桌面图标和 App 窗口率先出现的位置。确保您的外置显示器已开启并已连接到您的 Mac。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/5ad74437-c53d-456e-b794-bb449a64b135-977367.jpg"></p>
-<h3 id="字体发虚"><a href="#字体发虚" class="headerlink" title="字体发虚"></a>字体发虚</h3><h4 id="开启HiDPI，效果如下："><a href="#开启HiDPI，效果如下：" class="headerlink" title="开启HiDPI，效果如下："></a>开启HiDPI，效果如下：</h4><p><img src="https://api2.mubu.com/v3/document_image/862c40c9-5838-403b-9801-85a572b4cc80-977367.jpg"></p>
-<h4 id="关闭-macOS-的-SIP"><a href="#关闭-macOS-的-SIP" class="headerlink" title="关闭 macOS 的 SIP"></a>关闭 macOS 的 SIP</h4><p><font color='red'> SIP 「System Integrity Protection」即「系统完整性保护」</font>，先按照下面步骤把它关闭，以便后续操作：<br>1，关机<br>2，按一下电源键开机，然后按住 command（⌘）+ R，待进入恢复模式，松手<br>    <img src="https://api2.mubu.com/v3/document_image/d0a44466-40b1-443f-b632-2a362f12245f-977367.jpg"><br>3，选择上边菜单栏的 实用工具 中的 终端。<br> <img src="https://api2.mubu.com/v3/document_image/a3053736-aa09-4217-8bff-0d575423a70c-977367.jpg"><br>4，输入命令 csrutil disable。<br><img src="https://api2.mubu.com/v3/document_image/5f286a6c-b6db-479b-a47e-1669561081b0-977367.jpg"><br>5，显示 「Successfully……」 说明关闭成功。可以输入 reboot 回车重启，或者点左上角<br><img src="https://api2.mubu.com/v3/document_image/4d69bae5-7cac-471d-b80d-5da9fdcee56c-977367.jpg"></p>
-<h4 id="下载one-key-hidpi自动脚本"><a href="#下载one-key-hidpi自动脚本" class="headerlink" title="下载one-key-hidpi自动脚本"></a>下载one-key-hidpi自动脚本</h4><p>链接: <a href="https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag">https://pan.baidu.com/s/1XlgYmuF-dBTNPMCmGOc9ag</a> 提取码: 92c5 </p>
-<p>1，首次运行时可能会提示”打不开“hidpi.command“，因为它来自身份不明的开发者”。需去“系统设置”——“安全与隐私”里面允许打开此软件。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/28c04e07-9092-405d-a666-b64bd1e1e94e-977367.jpg"></p>
-<p>2，输入本机macOS密码（密码不显示），回车。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/58b61d4c-6643-4025-84e1-4f5c9e85d90b-977367.jpg"></p>
-<p>3，按照提示，结合自身情况进行选择</p>
-<p><img src="https://api2.mubu.com/v3/document_image/063bc595-5d3d-45f7-b1fc-8dfded2cbf94-977367.jpg"></p>
-<p>4，选择1开启HIDPI，回车。<br>如果选1有“花屏”或“电脑睡眠后必须通过开盖才能点亮外接显示器”的问题，则选2；<br>如果后续要关闭HiDPI，则选3。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/efd83dbc-0f10-4664-b9fd-8f9e3f68db9e-977367.jpg"></p>
-<p>5，最后出现这张图片，表明开启成功</p>
-<p><img src="https://api2.mubu.com/v3/document_image/6759ab66-185a-43f4-8898-b33778753bdd-977367.jpg"></p>
-<p>最后可用RDM软件来切换hidpi分辨率(带闪电标志的)，RDM可比macOS分辨率缩放中show出更多hidpi分辨率。<br>(RDM需另外安装，注意Main Display，Display2和实物的对应关系)</p>
-<p><img src="https://api2.mubu.com/v3/document_image/8c038bd4-5e6b-4c47-ae4a-dc268d5b67f4-977367.jpg"></p>
-<h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>1，如果使用此脚本后，开机无法进入系统，请进macOS 恢复模式中或使用 clover -x 安全模式进入系统，打开“终端”，快捷恢复：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls &#x2F;Volumes&#x2F;</span><br><span class="line">cd &#x2F;Volumes&#x2F;你的系统盘&#x2F;System&#x2F;Library&#x2F;Displays&#x2F;Contents&#x2F;Resources&#x2F;Overrides&#x2F;HIDPI</span><br><span class="line">.&#x2F;disable</span><br></pre></td></tr></table></figure>
-<p>2，HiDPI成功开启后，为了系统的安全，一定记得重新开启macOS的SIP：<br>重复之前关闭SIP的步骤，打开“终端”，输入 csrutil enable并回车， 重启生效。<br>查看 SIP 当前状态，输入「csrutil status」后回车即可。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/177bb805-6739-4bdf-a381-dc8cb3f9b4b6-977367.jpg"></p>
-<h2 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">明基有多种图像模式，其中选择M-book模式，观感确实和原Mac体验差不多</span><br><span class="line">因为购买的这款是2K屏，故即使在开启hdpi下，字体观感整体感受，还是逊于原显示器观感，不够细腻</span><br><span class="line">明基的智慧调光和省电传感器，体验还是很棒的，前者就是可以根据当前环境自动调整屏幕亮度，后者是人离开屏幕会自动熄屏</span><br></pre></td></tr></table></figure>
-<h2 id="购买建议"><a href="#购买建议" class="headerlink" title="购买建议"></a>购买建议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mac用户，最好上4K</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>数码产品</category>
-      </categories>
-      <tags>
-        <tag>Macbook Pro</tag>
-        <tag>显示器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运行SQL文件，出现1067错误</title>
-    <url>/2021/04/08/%E8%BF%90%E8%A1%8CSQL%E6%96%87%E4%BB%B6%EF%BC%8C%E5%87%BA%E7%8E%B01067%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p> 运行SQL文件，出现1067错误</p>
-<a id="more"></a>
-
-<h2 id="报错原因分析"><a href="#报错原因分析" class="headerlink" title="报错原因分析"></a>报错原因分析</h2><h3 id="MySQL的sql-mode配置问题"><a href="#MySQL的sql-mode配置问题" class="headerlink" title="MySQL的sql_mode配置问题"></a>MySQL的sql_mode配置问题</h3><p>在Mysql5.7之后，Mysql使用的是严格模式</p>
-<p><img src="https://api2.mubu.com/v3/document_image/dd9d876d-50db-49cd-8251-0644f61d5155-977367.jpg"></p>
-<p>sql_mode默认配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
-<h2 id="配置解释如下："><a href="#配置解释如下：" class="headerlink" title="配置解释如下："></a>配置解释如下：</h2><h3 id="ONLY-FULL-GROUP-BY"><a href="#ONLY-FULL-GROUP-BY" class="headerlink" title="ONLY_FULL_GROUP_BY"></a>ONLY_FULL_GROUP_BY</h3><pre><code>对于GROUP BY聚合操作,如果在SELECT中的列,没有在GROUP BY中出现,那么这个SQL是不合法的,因为列不在GROUP BY从句中
-</code></pre>
-<h3 id="STRICT-TRANS-TABLES"><a href="#STRICT-TRANS-TABLES" class="headerlink" title="STRICT_TRANS_TABLES"></a>STRICT_TRANS_TABLES</h3><pre><code>在该模式下,如果一个值不能插入到一个事务表中,则中断当前的操作,对非事务表不做限制
-</code></pre>
-<h3 id="NO-ZERO-IN-DATE"><a href="#NO-ZERO-IN-DATE" class="headerlink" title="NO_ZERO_IN_DATE"></a>NO_ZERO_IN_DATE</h3><pre><code>在严格模式下,不允许日期和月份为零
-</code></pre>
-<h3 id="NO-ZERO-DATE"><a href="#NO-ZERO-DATE" class="headerlink" title="NO_ZERO_DATE"></a>NO_ZERO_DATE</h3><pre><code>设置该值,mysql数据库不允许插入零日期,插入零日期会抛出错误而不是警告。
-</code></pre>
-<h3 id="ERROR-FOR-DIVISION-BY-ZERO"><a href="#ERROR-FOR-DIVISION-BY-ZERO" class="headerlink" title="ERROR_FOR_DIVISION_BY_ZERO"></a>ERROR_FOR_DIVISION_BY_ZERO</h3><pre><code>在INSERT或UPDATE过程中,如果数据被零除,则产生错误而非警告。如 果未给出该模式,那么数据被零除时MySQL返回NULL
-</code></pre>
-<h3 id="NO-AUTO-CREATE-USER"><a href="#NO-AUTO-CREATE-USER" class="headerlink" title="NO_AUTO_CREATE_USER"></a>NO_AUTO_CREATE_USER</h3><pre><code>禁止GRANT创建密码为空的用户
-</code></pre>
-<h3 id="NO-ENGINE-SUBSTITUTION"><a href="#NO-ENGINE-SUBSTITUTION" class="headerlink" title="NO_ENGINE_SUBSTITUTION"></a>NO_ENGINE_SUBSTITUTION</h3><pre><code>如果需要的存储引擎被禁用或未编译,那么抛出错误。不设置此值时,用默认的存储引擎替代,并抛出一个异常
-</code></pre>
-<h2 id="解决方法（MAC，windosw同理）"><a href="#解决方法（MAC，windosw同理）" class="headerlink" title="解决方法（MAC，windosw同理）"></a>解决方法（MAC，windosw同理）</h2><p>利用访达，前往/etc/文件下，新建my.cnf文件，内容为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http:&#x2F;&#x2F;dev.mysql.com&#x2F;doc&#x2F;refman&#x2F;5.7&#x2F;en&#x2F;server-configuration-defaults.html</span><br><span class="line"># *** DO NOT EDIT THIS FILE. It&#39;s a template which will be copied to the</span><br><span class="line"># *** default location during install, and will be replaced if you</span><br><span class="line"># *** upgrade to a newer version of MySQL</span><br><span class="line">[client]</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[mysqld]</span><br><span class="line">log-error&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;support-files&#x2F;mysqld.log</span><br><span class="line"># skip-grant-tables</span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size &#x3D; 128M</span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"># basedir &#x3D; .....</span><br><span class="line"># datadir &#x3D; .....</span><br><span class="line"># port &#x3D; .....</span><br><span class="line"># server_id &#x3D; .....</span><br><span class="line"># socket &#x3D; .....</span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size &#x3D; 128M</span><br><span class="line"># sort_buffer_size &#x3D; 2M</span><br><span class="line"># read_rnd_buffer_size &#x3D; 2M </span><br><span class="line">sql_mode&#x3D;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
-<p>重启mysql服务，即可</p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>Navicat</tag>
-      </tags>
   </entry>
 </search>

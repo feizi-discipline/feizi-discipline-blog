@@ -6,7 +6,7 @@
   <link href="https://feizi-discipline.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://feizi-discipline.gitee.io/"/>
-  <updated>2021-12-03T13:22:22.390Z</updated>
+  <updated>2021-12-11T08:21:18.345Z</updated>
   <id>https://feizi-discipline.gitee.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>杂货铺周刊（第3期）</title>
+    <link href="https://feizi-discipline.gitee.io/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/"/>
+    <id>https://feizi-discipline.gitee.io/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/</id>
+    <published>2021-12-11T08:15:00.000Z</published>
+    <updated>2021-12-11T08:21:18.345Z</updated>
+    
+    
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1305960097&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>杂货铺周刊（第2期）</title>
@@ -83,7 +103,7 @@
     <link href="https://feizi-discipline.gitee.io/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/"/>
     <id>https://feizi-discipline.gitee.io/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/</id>
     <published>2021-05-29T07:55:00.000Z</published>
-    <updated>2021-11-28T03:13:19.039Z</updated>
+    <updated>2021-12-07T02:57:45.771Z</updated>
     
     
     <summary type="html">&lt;p&gt;在编程中，常常需要集中存放多个数据。从传统意义上讲，数组是我们的一个很好的选择，前提是我们事先已经明确知道我们将要保存的对象的数量。一旦在数组初始化时指定了这个数组长度，这个数组长度就是不可变的，如果我们需要保存一个可以动态增长的数据(在编译时无法确定具体的数量)，java的集合类就是一个很好的设计方案了。&lt;/p&gt;</summary>
@@ -142,7 +162,7 @@
     <link href="https://feizi-discipline.gitee.io/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>https://feizi-discipline.gitee.io/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2019-09-17T13:15:12.000Z</published>
-    <updated>2021-11-28T03:12:48.222Z</updated>
+    <updated>2021-12-11T02:36:51.894Z</updated>
     
     
     <summary type="html">&lt;p&gt;浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客&lt;/p&gt;</summary>
