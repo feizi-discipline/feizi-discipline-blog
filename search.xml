@@ -44,80 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
-<a id="more"></a>
-
-<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
-<li>电脑一台</li>
-<li>安装Git</li>
-<li>安装Node.js</li>
-<li>GitHub账号或者Gitee账号一个</li>
-</ol>
-<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
-<ul>
-<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
-<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
-</ul>
-<p>安装 Node.js 后安装 npm </p>
-<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
-<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>我们继续来安装Hexo:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>测试一下是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
-<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
-<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
-<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
-<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
-<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
-<p>码云上的个人空间地址，每个用户可以修改一次。</p>
-<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
-<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
-<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
-<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
-<p>启动博客</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
-<p>安装hexo-deployer-git自动部署发布工具</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
-<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-<p>不喜欢默认主题的可以自行去官网下载替换 </p>
-<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
-<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
-<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
-<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
-<p>点击启动，复制一下生成的网站地址</p>
-<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-<p>配置完成后，重新去本地文件夹执行一下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
-<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
-<li><p>正确安装所需环境</p>
-</li>
-<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
-</li>
-<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>集合类的梳理</title>
     <url>/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在编程中，常常需要集中存放多个数据。从传统意义上讲，数组是我们的一个很好的选择，前提是我们事先已经明确知道我们将要保存的对象的数量。一旦在数组初始化时指定了这个数组长度，这个数组长度就是不可变的，如果我们需要保存一个可以动态增长的数据(在编译时无法确定具体的数量)，java的集合类就是一个很好的设计方案了。</p>
@@ -220,6 +146,298 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
+<a id="more"></a>
+
+<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
+<li>电脑一台</li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>GitHub账号或者Gitee账号一个</li>
+</ol>
+<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
+<ul>
+<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
+<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
+</ul>
+<p>安装 Node.js 后安装 npm </p>
+<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
+<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>我们继续来安装Hexo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>测试一下是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
+<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
+<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
+<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
+<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
+<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
+<p>码云上的个人空间地址，每个用户可以修改一次。</p>
+<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
+<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
+<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
+<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
+<p>启动博客</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
+<p>安装hexo-deployer-git自动部署发布工具</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
+<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>不喜欢默认主题的可以自行去官网下载替换 </p>
+<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
+<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
+<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
+<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
+<p>点击启动，复制一下生成的网站地址</p>
+<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+<p>配置完成后，重新去本地文件夹执行一下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
+<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
+<li><p>正确安装所需环境</p>
+</li>
+<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
+</li>
+<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第1期）</title>
+    <url>/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="http://value500.com/10Bond.html" title="中国国债到期收益率走势">中国国债到期收益率走势</a></p>
+<p>市场利率一般指的是10年期国债收益率。因为10年期国债是以国家信用为担保的长期债券，其收益率被视为市场无风险收益率。</p>
+<p>债券又分短债、中短债和长债。</p>
+<blockquote>
+<p>短债：持有期限1年以内。<br>中短债：持有期限1-10年。<br>长债：持有期限10年以上。</p>
+</blockquote>
+<p>市场利率和债券走势相反，利率上行时，适合配置短债及中短债；相反，利率下行时，适合配置长债。</p>
+<p>影响市场利率上行的因素有<a href="%E5%A4%AE%E8%A1%8C%E4%B8%8A%E8%B0%83%E5%AD%98%E8%B4%B7%E6%AC%BE%E5%88%A9%E7%8E%87%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E5%8A%A0%E6%81%AF%E4%BA%86%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%AD%98%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E5%A2%9E%E5%A4%9A%E4%BA%86%EF%BC%8C%E8%B4%B7%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E4%B9%9F%E5%A2%9E%E5%A4%9A%E4%BA%86%E3%80%82" title="加息">加息</a>、<a href="%E6%AF%94%E5%A6%82%E6%88%91%E6%89%8B%E9%87%8C%E6%9C%89%E5%BC%A0%E6%9C%AA%E5%88%B0%E6%9C%9F%E7%9A%84%E5%80%BA%E5%88%B8%EF%BC%8C%E6%88%91%E7%8E%B0%E5%9C%A8%E9%9C%80%E8%A6%81%E9%92%B1%EF%BC%8C%E5%B0%B1%E5%92%8C%E4%BD%A0%E5%95%86%E9%87%8F%EF%BC%8C%E5%85%88%E6%8A%8A%E5%80%BA%E5%88%B8%E8%B4%A8%E6%8A%BC%E5%9C%A8%E4%BD%A0%E9%82%A3%EF%BC%8C%E4%BD%A0%E5%80%9F%E9%92%B1%E7%BB%99%E6%88%91%EF%BC%8C%E7%AD%89%E5%88%B0%E4%BA%86%E6%88%91%E4%BB%AC%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%97%B6%E9%97%B4%E4%BD%A0%E6%8A%8A%E5%80%BA%E5%88%B8%E5%86%8D%E8%BF%98%E7%BB%99%E6%88%91%EF%BC%8C%E6%88%91%E6%8A%8A%E6%9C%AC%E9%87%91+%E5%88%A9%E6%81%AF%E4%B8%80%E8%B5%B7%E8%BF%98%E7%BB%99%E4%BD%A0%E3%80%82%E8%BF%99%E9%87%8C%E7%9A%84%E6%88%91%E5%B0%B1%E6%98%AF%E6%AD%A3%E5%9B%9E%E8%B4%AD%EF%BC%88%E5%87%BA%E5%80%BA%E5%88%B8%E7%9A%84%EF%BC%89%EF%BC%8C%E4%BD%A0%E5%B0%B1%E6%98%AF%E9%80%86%E5%9B%9E%E8%B4%AD%EF%BC%88%E5%87%BA%E9%92%B1%E7%9A%84%EF%BC%89%E3%80%82" title="正回购">正回购</a>等，下行的因素有<a href="%E9%99%8D%E4%BD%8E%E5%AD%98%E6%AC%BE%E5%87%86%E5%A4%87%E9%87%91%E7%8E%87%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E4%BA%A4%E7%BB%99%E5%A4%AE%E8%A1%8C%E7%9A%84%E9%92%B1%E5%87%8F%E5%B0%91%E4%BA%86%EF%BC%8C%E9%87%8A%E6%94%BE%E4%BA%86%E5%B8%82%E5%9C%BA%E7%9A%84%E6%B5%81%E5%8A%A8%E6%80%A7%E3%80%82" title="降准">降准</a>、<br><a href="%E5%AD%98%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E5%8F%8A%E8%B4%B7%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E9%83%BD%E5%87%8F%E5%B0%91%E4%BA%86%E3%80%82" title="降息">降息</a>、 <a href="%E8%A7%81%E4%B8%8A%E8%BF%B0%5B3%5D%E3%80%82" title="逆回购">逆回购</a> 等。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、IDEA-Analyze"><a href="#1、IDEA-Analyze" class="headerlink" title="1、IDEA Analyze"></a>1、IDEA Analyze</h3><p><img src="https://api2.mubu.com/v3/document_image/14316971-d9e5-4a06-bcdc-7bd4ec9f0d97-977367.jpg"></p>
+<p>参数说明：</p>
+<blockquote>
+<p>Inspect Code：检查代码<br>Code Cleanup：代码清除<br>Silent Code Cleanup：无声代码清理<br>Run Inspection by Name：按名称运行检查<br>Configure Current File Analysis：配置当前文件分析<br>View Offline Inspection Results：查看离线检查结果<br>Infer Nullity：推断出无效<br>Locate Duplicates：查找重复<br>Show Coverage Data：显示覆盖数据<br>Analyze Dependencies ：分析依赖性<br>Analyze Backward Dependencies ：分析落后的依赖关系<br>Analyze Module Dependencies：分析模块依赖关系<br>Analyze Dependency Matrix：分析从属矩阵关系<br>Analyze Cyclic Dependencies：分析循环依赖关系<br>Analyze Data Flow to Here ：分析到这里的数据流<br>Analyze Data Flow from Here ：从这里分析数据流<br>Analyze Stack Trace ：分析堆栈追踪  </p>
+</blockquote>
+<p>重点说一下，Inspect Code 和 Run Inspection by Name。</p>
+<p>Inspect Code</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwtjvwlnn5j31xk0pqgqb.jpg"></p>
+<p>选择作用域，对某个类或整个项目进行分析，给出可能发生的Bug及优化建议，减少Bug，提高软件开发的代码质量。</p>
+<p>Run Inspection by Name</p>
+<p>三种常用的情况：</p>
+<ul>
+<li>Empty Class 无效类</li>
+</ul>
+<p><img src="https://api2.mubu.com/v3/document_image/c9c29280-1dd8-45cd-af8a-2e0afa86cfae-977367.jpg"></p>
+<ul>
+<li>Unused declaration 未使用申明的变量，方法和类</li>
+</ul>
+<p><img src="https://api2.mubu.com/v3/document_image/2ad72670-bf1d-4cb5-83b2-acfd63f944e0-977367.jpg"></p>
+<p>对于检测的内容，IDEA 提供了 4 种解决方案</p>
+<p><img src="https://api2.mubu.com/v3/document_image/2ad72670-bf1d-4cb5-83b2-acfd63f944e0-977367.jpg"></p>
+<blockquote>
+<ol>
+<li>Safe delete 安全删除</li>
+<li>Comment out 注释掉</li>
+<li>Add as Entry Point 添加为入口点</li>
+<li>Suppress 不再警告</li>
+</ol>
+</blockquote>
+<ul>
+<li>Unused import 未使用导入包</li>
+</ul>
+<p><img src="https://api2.mubu.com/v3/document_image/de03e2fd-1ef4-4c92-9d3b-956f667b4e3d-977367.jpg"></p>
+<h3 id="2、-IDEA-代码折叠"><a href="#2、-IDEA-代码折叠" class="headerlink" title="2、 IDEA 代码折叠"></a>2、 IDEA 代码折叠</h3><p>开发中，对于复杂的业务，代码编写可能会很多，这时候看起来很费劲，IDEA提供了两种代码折叠方式。</p>
+<p>方式1</p>
+<p><img src="https://api2.mubu.com/v3/document_image/9d4c6e09-8530-4496-9ee9-eeaaf4900ecc-977367.jpg"></p>
+<p>方式2</p>
+<p><img src="https://api2.mubu.com/v3/document_image/94c6100c-d682-4a36-bbd5-e6bd23a28cea-977367.jpg"></p>
+<p>快捷键（mac）</p>
+<blockquote>
+<p>option + command + T</p>
+</blockquote>
+<p>快捷键（Window）</p>
+<blockquote>
+<p>Ctrl + Alt + T</p>
+</blockquote>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.zhihu.com/zvideo/1352930685334802433" title="如何调整显示器，椅子的关系让长时间工作更轻松">如何调整显示器，椅子的关系让长时间工作更轻松</a></p>
+<p>通过一个视频演示，教你如何正确调整显示器距离，椅子的高度及一些锻炼，减少久坐带来的危害。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="http://www.bigpixel.cn/" title="大像素">大像素</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwsv3ud8yej30u00vbn2u.jpg"></p>
+<p>一个在线旅游探索的网站，可以更好的浏览中国城市及世界城市，像素放大万倍仍清晰可见，还是挺震撼的。</p>
+<p>2、<a href="https://www.sigoo.com/" title="极像素">极像素</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwsv831ouzj311c0kqaew.jpg"></p>
+<p>同上，除了可以看城市外，还有名画、全景、火星等，不过内容较少，像素质量也很高。</p>
+<p>3、<a href="https://koutu.gaoding.com/" title="稿定抠图">稿定抠图</a></p>
+<p>上传图片，一键实现抠图，也可自己进行修补，擦除，像简单的证件照换色，加滤镜，裁剪都是没问题的。</p>
+<p>4、<a href="https://www.ilovepdf.com/zh-cn" title="ilovepdf">ilovepdf</a></p>
+<p>一个免费在线的 PDF 处理工具，包括：合并、拆分、压缩、转换、旋转和解锁 PDF 文件，以及给 PDF 文件添加水印的工具等。</p>
+<p>5、<a href="https://www.officeplus.cn/" title="OfficePlus">OfficePlus</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwtj06hs3vj31h60q2aew.jpg"></p>
+<p>免费提供 PPT 模版，Word 文档，Excel 图表下载，分类很多，是微软官方网站，下载需要登陆。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>每天差不多都是相同的重复，昨天和前天颠倒顺序，也没有任何不便。我不时想，这叫什么人生啊，但也没有因此感觉光阴虚度。我仅仅是感觉到惊讶，惊讶于昨天与前天毫无区别，惊讶于自己被编排入这样的人生，惊讶于自己留下的足迹甚至还未及认清，就在转瞬间被风吹走，变得无影无踪。</p>
+<p>——<a href="https://book.douban.com/subject/21692813/" title="村上春树《眠》">村上春树《眠》</a></p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第2期）</title>
+    <url>/2021/12/04/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC2%E6%9C%9F%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=346576&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><h3 id="1、股权融资"><a href="#1、股权融资" class="headerlink" title="1、股权融资"></a>1、股权融资</h3><blockquote>
+<p>企业出让一定比例的股份来吸引新的股东加入，从而获取资金。</p>
+</blockquote>
+<p><strong>方式</strong>：比如股权质押，股权交易，私募发售等。</p>
+<p><strong>影响</strong>：稀释股东的股权，可能会影响公司的控制权。</p>
+<p><strong>风险</strong>：投资者自负盈亏。</p>
+<h3 id="2、债权融资"><a href="#2、债权融资" class="headerlink" title="2、债权融资"></a>2、债权融资</h3><blockquote>
+<p>企业对外借钱，获取资金。</p>
+</blockquote>
+<p><strong>方式</strong>：比如银行贷款，发行债券，民间借贷等。</p>
+<p><strong>影响</strong>：债务到期时，企业要还本付息。</p>
+<p><strong>风险</strong>：如果企业暴雷，还不上钱，投资者可能血本无归。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、IDEA-Postfix-Completion"><a href="#1、IDEA-Postfix-Completion" class="headerlink" title="1、IDEA Postfix Completion"></a>1、IDEA Postfix Completion</h3><p>设置路径</p>
+<p><strong>Windows</strong></p>
+<blockquote>
+<p>File -&gt; Settings -&gt; Editor -&gt; General -&gt; Postfix Completion</p>
+</blockquote>
+<p><strong>Mac</strong></p>
+<blockquote>
+<p>IntelliJ IDEA -&gt; Preferences -&gt; Editor -&gt; General -&gt; Postfix Completion</p>
+</blockquote>
+<p><img src="https://api2.mubu.com/v3/document_image/a46b3bb5-5d7e-4a37-bf24-385a70f21b9d-977367.jpg"></p>
+<p>比如工作中经常用到 List，我们就可以设置一个快捷方式，如下图</p>
+<p><img src="https://api2.mubu.com/v3/document_image/2e91bd97-de1d-4a46-81de-c2c3b581d6f2-977367.jpg"></p>
+<p>效果如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/72c339d5-2972-4890-8c7f-cda0edcec1e4-977367.jpg"></p>
+<p>美中不足的是，丢失了一个空格，目前没找到解决办法。</p>
+<p><strong>参数说明</strong></p>
+<ul>
+<li>key：自定义后缀的名称。</li>
+<li>Minimum language level：最低语言水平。</li>
+<li>Applicable expression types：适用的表达式类型。</li>
+<li>Apply to the topmost expression：应用于最上面的表达式。</li>
+<li>Use <code>$EXPR$</code> variable to refer target expression：使用<code>$EXPR$</code>变量来引用目标表达式。</li>
+</ul>
+<h3 id="2、5个内置注解（JDK自带）"><a href="#2、5个内置注解（JDK自带）" class="headerlink" title="2、5个内置注解（JDK自带）"></a>2、5个内置注解（JDK自带）</h3><p>@Override </p>
+<blockquote>
+<p>继承父类方法</p>
+</blockquote>
+<p>@Deprecated </p>
+<blockquote>
+<p>不鼓励使用的方法，通常指它很危险或者存在更好的选择。</p>
+</blockquote>
+<p>@SuppressWarnings </p>
+<blockquote>
+<p>抑制警告</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">抑制所有类型的警告</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;all&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与可序列化类的 serialVersionUID 字段丢失有关的警告</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;serial&quot;)</span></span><br><span class="line"></span><br><span class="line">在类的参数上使用泛型时，抑制与非特定类型有关的警告。</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;rawtypes&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与未检查的操作有关的警告,比如集合没有用泛型来指定类型</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与未使用的代码相关的警告</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;unused&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与废弃有关的警告，比如使用了已过时的方法</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;deprecation</span></span><br><span class="line"><span class="meta"></span></span><br></pre></td></tr></table></figure>
+<p>@FunctionalInterface </p>
+<blockquote>
+<p>函数式接口</p>
+</blockquote>
+<p>@SafeVarargs </p>
+<blockquote>
+<p>抑制堆污染警告</p>
+</blockquote>
+<h3 id="3、-4个元注解（能注解到注解上的注解）"><a href="#3、-4个元注解（能注解到注解上的注解）" class="headerlink" title="3、 4个元注解（能注解到注解上的注解）"></a>3、 4个元注解（能注解到注解上的注解）</h3><p>@Target</p>
+<blockquote>
+<p>描述注解可以用到什么地方，比如方法，类等。</p>
+</blockquote>
+<p>@Retention（SOURCE &lt; CLASS &lt; RUNTIME）</p>
+<blockquote>
+<p>用于描述注解的生命周期。</p>
+</blockquote>
+<p>@Documented</p>
+<blockquote>
+<p>标明该注解可以包含在JavaDoc中</p>
+</blockquote>
+<p>@Inherited</p>
+<blockquote>
+<p>标明子类可以继承父类中的该注解</p>
+</blockquote>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC2022%E5%B9%B4%E5%86%AC%E5%A5%A5%E4%BC%9A%E4%BC%9A%E5%BE%BD/59199395?fromtitle=%E5%86%AC%E6%A2%A6&fromid=22259439" title="冬梦">冬梦</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/5cda0939-943a-4676-8cba-c32c3553709b-977367.jpg"></p>
+<p>北京2022年冬奥会会徽，冬梦。主要由会徽图形、文字标志、奥林匹克五环标志三个部分组成。</p>
+<p>会徽图形在设计格局上分为上中下三部分的方式，主体形如一个不同渐变色相间的汉字“冬”的写意草书，将抽象的滑道、冰雪运动形态与书法结合，“冬”字下方两点顺势融为2022。</p>
+<p>2、 <a href="https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC2022%E5%B9%B4%E5%86%AC%E6%AE%8B%E5%A5%A5%E4%BC%9A%E4%BC%9A%E5%BE%BD/59199454?bkfr=detailtbl&fromtitle=%E9%A3%9E%E8%B7%83&fromid=22259448" title="飞跃">飞跃</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/2ed34977-d0bb-42a3-bb09-d919d7762134-977367.jpg"></p>
+<p>北京2022年冬残奥会会徽，飞跃。整体形如汉字“飞”的书法形态，又由上下两部分构成对角线，既可以把上半部分看作一位冲刺的滑雪运动员、下半部分看作滑板，又可以将两者结合整体视作一位坐在轮椅上的运动员，以矢量图形巧妙地描绘出一个向前滑行、冲向胜利的运动员的形象，以形象化的表达将雪杖、轮椅等冬残奥会特殊运动器械形态融入其中，展现了“飞跃”的动感和力度。</p>
+<p>3、<a href="https://baike.baidu.com/item/%E5%86%B0%E5%A2%A9%E5%A2%A9?bkfr=detailtbl" title="冰墩墩">冰墩墩</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/f0a0e4c1-fa97-4c65-a30a-256b64ae4053-977367.jpg"></p>
+<p>2022年北京冬季奥运会的吉祥物，是熊猫形象与冰晶外壳相结合，体现了冬季冰雪运动的特点。<br>熊猫是世界公认的中国国宝，形象友好可爱、憨态可掬。</p>
+<p>熊猫头部装饰彩色光环，其灵感源自于北京冬奥会的国家速滑馆——“冰丝带”。流动色彩线条，象征着冰雪运动的赛道和5G高科技；头部外壳造型取自冰雪运动头盔。熊猫整体造型像航天员，是一位来自未来的冰雪运动专家，寓意现代科技和冰雪运动的结合。</p>
+<p>4、<a href="https://baike.baidu.com/item/%E9%9B%AA%E5%AE%B9%E8%9E%8D?bkfr=detailtbl" title="雪容融">雪容融</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/4d23b5cf-9d52-42b9-95e4-cf1a7ce8865a-977367.jpg"></p>
+<p>2022年北京冬季残奥会的吉祥物，整体设计与其灵感来源——灯笼的主要特征高度契合，并融入了大量中国传统文化符号和冬季的季节性要素。</p>
+<p>从正面看，雪容融最突出的特点为面部的雪块，其样式是拍打积雪而形成的自然脸部形态，可在不同场景下作出丰富的表情变化。</p>
+<p>细节方面，雪容融头顶有一个如意环，被雪覆盖住的一段纹样是长城的城墙图案；下一层为剪纸图案，采用正负形的设计手法，正形是北京“京鸽”图案，表示欢迎世界各地五洲四海的运动员来到中国参加体育盛会，负形则为北京地标性建筑——天坛的剪影。吉祥物的双足上还围绕有一圈如意纹。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://sspai.com/post/33602" title="Time Out">Time Out</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/933bddbf-7bbd-47e2-9275-68e531a1d7e3-977367.jpg"></p>
+<p>一个Mac端提醒休息的软件，使用了几天，感觉很有帮助，推荐。</p>
+<p>2、 <a href="https://www.autopiano.cn/" title="自由钢琴">自由钢琴</a></p>
+<p>一个在线弹奏钢琴的网站，有曲谱及键位教学，还可以进行创作发布。</p>
+<p>3、 <a href="https://screen.bmcx.com/#welcome" title="在线屏幕检测">在线屏幕检测</a></p>
+<p>一个在线检测屏幕的网站，对于初步的检测还是蛮有帮助的，像我平时常用纯黑全屏，来擦屏幕。</p>
+<p>4、 <a href="https://house-map.cn/#/" title="地图搜租房">地图搜租房</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/66ea1793-a34a-445a-9578-94fc34cd37a6-977367.jpg"></p>
+<p>可根据上班地址、出行一键查询附近可选择的出租信息，也可通过关键字快速定位，目前支持15个城市。</p>
+<p>5、 <a href="http://uz.yurixu.com/manage/beijing.php" title="租房搜索助手">租房搜索助手</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d73fcc9e-f737-4aec-9fc5-cae3385b88c7-977367.jpg"></p>
+<p>主要分行政区域和地铁线路搜索租房，可搭配地图搜租房使用，目前支持12个城市。</p>
+<p>6、<a href="https://nazo.one-story.cn/" title="Nazo Game">Nazo Game</a></p>
+<p>一个在线益智解密游戏，比较适合开发人员探索，难度有些高，目前只过了四关。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>低级的欲望，放纵即可获得，</p>
+<p>高级的欲望，克制才能得到，</p>
+<p>顶级的欲望，通过煎熬才能获得。</p>
+<p>2、</p>
+<p>岁月极美，</p>
+<p>在于它必然的流逝。</p>
+<p>春花、秋月、夏日、冬雪。</p>
+<p>——<a href="https://book.douban.com/subject/1061572/" title="三毛《随想》">三毛《随想》</a></p>
+<p>3、 </p>
+<p>现在是初冬，公园的树木都在主动凋零，无边落木萧萧下，它们放弃了一个春夏所积累的浮华。</p>
+<p>但越是如此，越能减少水分的蒸发，从而熬过干冷的冬天。而且叶子少了，阻力也小了，在凛冽的北风下，树枝不容易折断，更容易保存下来。</p>
+<p>止损也一样，它是放弃了亏损的持仓，也丢掉了风险，切断了亏损继续扩大的可能性，从而获得了生机。</p>
+<p>不想放弃的根本，是不愿失去。</p>
+<p>而要想不失去，不是靠自己紧紧抓住，最高明的方法是靠吸引力，让对方主动黏过来，甩也甩不掉。</p>
+<p>——复利人生</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
     <title>杂货铺周刊（第3期）</title>
     <url>/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1305960097&auto=1&height=66"></iframe>
@@ -234,7 +452,7 @@
 <p><img src="https://api2.mubu.com/v3/document_image/4c98aa4a-a225-4b7c-858d-4ac15648dff3-977367.jpg"></p>
 <p><strong>宏观上</strong>，根据社融也可以判断市场，从2017年，财政部改变了统计社融的计算方法，我们从17年后开始看，大体上是：<strong>社融存量同比与沪深300大盘呈正相关</strong>。</p>
 <p>如图中10月数据，已接近18年的最低点，市场已经相对悲观，再下跌的空间也很小了，接着我们可以看11月的数据，可从<a href="http://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4410524/index.html" title="中国人民银行新闻发布">中国人民银行新闻发布</a>看到，11月的社融存量是311.9万亿元，同比增长10.1%，维持平稳状态。</p>
-<p>社融下跌，行情好不到哪；社融上升，行情差不到哪.</p>
+<p>社融下跌，行情好不到哪；社融上升，行情差不到哪。</p>
 <h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、JDBC"><a href="#1、JDBC" class="headerlink" title="1、JDBC"></a>1、JDBC</h3><h4 id="boolean-execute"><a href="#boolean-execute" class="headerlink" title="boolean execute()"></a>boolean execute()</h4><p>可执行任何 SQL</p>
 <p>如果为 true，则结果为查询，可根据 getResultSet()获取 ResultSet。<br>如果为 false，则结果为修改或删除，可根据 getUpdateCount()获取影响行数。<br><strong>一般不用，效率较低</strong>。</p>
 <h4 id="ResultSet-executeQuery"><a href="#ResultSet-executeQuery" class="headerlink" title="ResultSet executeQuery()"></a>ResultSet executeQuery()</h4><p>执行查询<br>返回ResultSet结果集，通过getObject（getString、getLong…）获取数据。<br>有两种方式获取: </p>
@@ -393,85 +611,145 @@
       </categories>
   </entry>
   <entry>
-    <title>杂货铺周刊（第1期）</title>
-    <url>/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=0&height=66"></iframe>
+    <title>杂货铺周刊（第4期）</title>
+    <url>/2021/12/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC4%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1308788681&auto=1&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
 <a id="more"></a>
 
-<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="http://value500.com/10Bond.html" title="中国国债到期收益率走势">中国国债到期收益率走势</a></p>
-<p>市场利率一般指的是10年期国债收益率。因为10年期国债是以国家信用为担保的长期债券，其收益率被视为市场无风险收益率。</p>
-<p>债券又分短债、中短债和长债。</p>
-<blockquote>
-<p>短债：持有期限1年以内。<br>中短债：持有期限1-10年。<br>长债：持有期限10年以上。</p>
-</blockquote>
-<p>市场利率和债券走势相反，利率上行时，适合配置短债及中短债；相反，利率下行时，适合配置长债。</p>
-<p>影响市场利率上行的因素有<a href="%E5%A4%AE%E8%A1%8C%E4%B8%8A%E8%B0%83%E5%AD%98%E8%B4%B7%E6%AC%BE%E5%88%A9%E7%8E%87%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E5%8A%A0%E6%81%AF%E4%BA%86%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%AD%98%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E5%A2%9E%E5%A4%9A%E4%BA%86%EF%BC%8C%E8%B4%B7%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E4%B9%9F%E5%A2%9E%E5%A4%9A%E4%BA%86%E3%80%82" title="加息">加息</a>、<a href="%E6%AF%94%E5%A6%82%E6%88%91%E6%89%8B%E9%87%8C%E6%9C%89%E5%BC%A0%E6%9C%AA%E5%88%B0%E6%9C%9F%E7%9A%84%E5%80%BA%E5%88%B8%EF%BC%8C%E6%88%91%E7%8E%B0%E5%9C%A8%E9%9C%80%E8%A6%81%E9%92%B1%EF%BC%8C%E5%B0%B1%E5%92%8C%E4%BD%A0%E5%95%86%E9%87%8F%EF%BC%8C%E5%85%88%E6%8A%8A%E5%80%BA%E5%88%B8%E8%B4%A8%E6%8A%BC%E5%9C%A8%E4%BD%A0%E9%82%A3%EF%BC%8C%E4%BD%A0%E5%80%9F%E9%92%B1%E7%BB%99%E6%88%91%EF%BC%8C%E7%AD%89%E5%88%B0%E4%BA%86%E6%88%91%E4%BB%AC%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%97%B6%E9%97%B4%E4%BD%A0%E6%8A%8A%E5%80%BA%E5%88%B8%E5%86%8D%E8%BF%98%E7%BB%99%E6%88%91%EF%BC%8C%E6%88%91%E6%8A%8A%E6%9C%AC%E9%87%91+%E5%88%A9%E6%81%AF%E4%B8%80%E8%B5%B7%E8%BF%98%E7%BB%99%E4%BD%A0%E3%80%82%E8%BF%99%E9%87%8C%E7%9A%84%E6%88%91%E5%B0%B1%E6%98%AF%E6%AD%A3%E5%9B%9E%E8%B4%AD%EF%BC%88%E5%87%BA%E5%80%BA%E5%88%B8%E7%9A%84%EF%BC%89%EF%BC%8C%E4%BD%A0%E5%B0%B1%E6%98%AF%E9%80%86%E5%9B%9E%E8%B4%AD%EF%BC%88%E5%87%BA%E9%92%B1%E7%9A%84%EF%BC%89%E3%80%82" title="正回购">正回购</a>等，下行的因素有<a href="%E9%99%8D%E4%BD%8E%E5%AD%98%E6%AC%BE%E5%87%86%E5%A4%87%E9%87%91%E7%8E%87%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E4%BA%A4%E7%BB%99%E5%A4%AE%E8%A1%8C%E7%9A%84%E9%92%B1%E5%87%8F%E5%B0%91%E4%BA%86%EF%BC%8C%E9%87%8A%E6%94%BE%E4%BA%86%E5%B8%82%E5%9C%BA%E7%9A%84%E6%B5%81%E5%8A%A8%E6%80%A7%E3%80%82" title="降准">降准</a>、<br><a href="%E5%AD%98%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E5%8F%8A%E8%B4%B7%E6%AC%BE%E7%9A%84%E5%88%A9%E6%81%AF%E9%83%BD%E5%87%8F%E5%B0%91%E4%BA%86%E3%80%82" title="降息">降息</a>、 <a href="%E8%A7%81%E4%B8%8A%E8%BF%B0%5B3%5D%E3%80%82" title="逆回购">逆回购</a> 等。</p>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、IDEA-Analyze"><a href="#1、IDEA-Analyze" class="headerlink" title="1、IDEA Analyze"></a>1、IDEA Analyze</h3><p><img src="https://api2.mubu.com/v3/document_image/14316971-d9e5-4a06-bcdc-7bd4ec9f0d97-977367.jpg"></p>
-<p>参数说明：</p>
-<blockquote>
-<p>Inspect Code：检查代码<br>Code Cleanup：代码清除<br>Silent Code Cleanup：无声代码清理<br>Run Inspection by Name：按名称运行检查<br>Configure Current File Analysis：配置当前文件分析<br>View Offline Inspection Results：查看离线检查结果<br>Infer Nullity：推断出无效<br>Locate Duplicates：查找重复<br>Show Coverage Data：显示覆盖数据<br>Analyze Dependencies ：分析依赖性<br>Analyze Backward Dependencies ：分析落后的依赖关系<br>Analyze Module Dependencies：分析模块依赖关系<br>Analyze Dependency Matrix：分析从属矩阵关系<br>Analyze Cyclic Dependencies：分析循环依赖关系<br>Analyze Data Flow to Here ：分析到这里的数据流<br>Analyze Data Flow from Here ：从这里分析数据流<br>Analyze Stack Trace ：分析堆栈追踪  </p>
-</blockquote>
-<p>重点说一下，Inspect Code 和 Run Inspection by Name。</p>
-<p>Inspect Code</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwtjvwlnn5j31xk0pqgqb.jpg"></p>
-<p>选择作用域，对某个类或整个项目进行分析，给出可能发生的Bug及优化建议，减少Bug，提高软件开发的代码质量。</p>
-<p>Run Inspection by Name</p>
-<p>三种常用的情况：</p>
-<ul>
-<li>Empty Class 无效类</li>
-</ul>
-<p><img src="https://api2.mubu.com/v3/document_image/c9c29280-1dd8-45cd-af8a-2e0afa86cfae-977367.jpg"></p>
-<ul>
-<li>Unused declaration 未使用申明的变量，方法和类</li>
-</ul>
-<p><img src="https://api2.mubu.com/v3/document_image/2ad72670-bf1d-4cb5-83b2-acfd63f944e0-977367.jpg"></p>
-<p>对于检测的内容，IDEA 提供了 4 种解决方案</p>
-<p><img src="https://api2.mubu.com/v3/document_image/2ad72670-bf1d-4cb5-83b2-acfd63f944e0-977367.jpg"></p>
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://www.meipian.cn/33ld9vm6" title="投资市场的五种轮动">投资市场的五种轮动</a>（由易到难）</p>
+<p>1、 <strong>资产轮动</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/76792c76-b27a-43ed-a152-f6e9cacb7450-977367.jpg"></p>
+<p>根据美林投资时钟，按照周期去配置资产，债券走牛之后，去配置股票，股票起来后配置商品，商品火爆后，撤出来持有现金，如此往复。</p>
+<p><a href="https://baike.sogou.com/v56864174.htm?fromTitle=%E7%BE%8E%E6%9E%97%E6%97%B6%E9%92%9F" title="美林投资时钟">美林投资时钟</a>，分4个阶段：</p>
+<p><strong>衰退期:</strong></p>
+<p>股票类金融和消费板块狂跌能力最强；<br>债券100%走牛，收益率曲线各有不同；<br>商品类贵金属表现最佳。</p>
+<p><strong>复苏期：</strong></p>
+<p>股票类周期和金融板块为最佳选择；<br>债券类以震荡为主；<br>商品类工业品类表现不错，金属板块为最佳选择。</p>
+<p><strong>过热期：</strong></p>
+<p>股票类周期和消费板块表现最好；<br>债券类100%走熊，收益率曲线整体偏平坦；<br>商品类金属板块表现最佳。</p>
+<p><strong>滞涨期：</strong></p>
+<p>股票类消费和成长板块最为抗跌；<br>债券类缺乏明显趋势，需要相机抉择；<br>商品类贵金属最为抗跌。</p>
+<p>2、 <strong>风格轮动</strong></p>
+<p>大小盘的切换，也就是价值和成长的轮动。</p>
+<p>以沪深300和创业板指为代表，一般3年～3年半一个周期。</p>
+<p>经济好，业绩好的时候，大家信心更足，更倾向于成长风格；<br>当经济不好，业绩差的时候，大家啥也不信了，更愿意抱着业绩确定性更高的价值风格。</p>
+<p>3、 <strong>主题轮动</strong></p>
+<p>把握宏观大趋势，进行轮动。</p>
+<p>像过去10年，主要促进大消费，像白酒、医药、家电都是一段时间内的重点主题。<br>未来10年，重点主题或许在：5G、人工智能、高端制造。</p>
+<p>不过这种方法，需要你有足够的耐心和心理承受能力。<br>因为在市场中，消息来自四面八方，有好的，有不好，你可能一开始看好，后面伴随着各种不好的消息或主题趋势不断地下降，你就开始没以前坚定了，最终就成了真正的韭菜。</p>
+<p>做这种轮动，一定要比别人更早的看到及坚定的持有，才有可能赚到钱。</p>
+<p>4、<strong>行业轮动</strong></p>
+<p>比如在金融、周期、成长、消费四大类行业中进行轮动。</p>
+<p>首先你得需要对每个行业的生意模式足够了解，其次对轮动时间上的判断，都是比较难的。</p>
+<p>5、 <strong>个股轮动</strong></p>
+<p>就是指在个股上进行轮动，买一个就是一个大牛股，那根本不可能。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、Apache-POI"><a href="#1、Apache-POI" class="headerlink" title="1、Apache POI"></a>1、<a href="https://poi.apache.org/components/spreadsheet/index.html" title="Apache POI">Apache POI</a></h3><h4 id="HSSFWorkbook"><a href="#HSSFWorkbook" class="headerlink" title="HSSFWorkbook"></a>HSSFWorkbook</h4><p>生成 Excel 97-2003版本文件格式，扩展名 .xls。</p>
+<p>最大行数65535行，最大列数256列。</p>
+<p><strong>注意：</strong> 超过会报错，一般不会发生内存溢出。</p>
+<h4 id="XSSFWorkbook"><a href="#XSSFWorkbook" class="headerlink" title="XSSFWorkbook"></a>XSSFWorkbook</h4><p>生成 Excel 2007版本及以后，扩展名 .xlsx。</p>
+<p>最大行数1048576行，最大列数16384列。</p>
+<p>可能会出现内存溢出问题，原因在于创建的数据存在于内存，并没有持久化。</p>
+<p><strong>注意：</strong> 由于XSSF支持（.xlsx）的文件是基于 XML 的，因此处理它们的内存占用量高于HSSF 支持 （.xls） 二进制文件。</p>
+<h4 id="SXSSFWorkbook"><a href="#SXSSFWorkbook" class="headerlink" title="SXSSFWorkbook"></a>SXSSFWorkbook</h4><p>生成 2007版本及以后，扩展名 .xlsx。</p>
+<p>基于XSSF构建的低内存占用SXSSF。</p>
+<p>用于生成大数据量的导出。</p>
+<p>SXSSF 通过限制对滑动窗口中的行的访问来实现其低内存占用量，而 XSSF 则允许访问文档中的所有行。</p>
+<p>你可以通过 SXSSFWorkbook(int windowSize)在工作簿构建时指定窗口大小，也可以通过 SXSSFShee的setRandomAccessWindowSize(int windowSize)按工作表设置窗口大小。</p>
+<p>默认窗口大小为100，当达到设置值时，创建新行将导致从访问窗口中删除索引最低的行并将其写入磁盘，此时无法再通过getRow()获取内容；<br>窗口大小为-1时，表示无限制访问，关闭自动刷新。</p>
+<h3 id="2、CSV"><a href="#2、CSV" class="headerlink" title="2、CSV"></a>2、<a href="https://baike.baidu.com/item/CSV/10739?fr=aladdin" title="CSV">CSV</a></h3><p><img src="https://api2.mubu.com/v3/document_image/f6e2c349-c8a6-4b42-bf7c-e7bf85d1c67f-977367.jpg" alt="图一"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/dddf32cd-9786-4cca-936e-668a180e2f38-977367.jpg" alt="图二"></p>
+<p>csv 逗号分隔值格式文件，就是用“**,**”分割的纯文本文件；可以使用Excel打开。</p>
+<p>如图一，是在文本中的内容，然后存储为csv文件，再用Excel打开，就是图二的样子。</p>
+<p>如果开发中，要实现百万级数据导出，那导出csv可能是一种不错的选择。</p>
+<h3 id="3、HTTP"><a href="#3、HTTP" class="headerlink" title="3、HTTP"></a>3、HTTP</h3><p>对于远程接口调用的编写，我们关注的最多的就是请求方法、状态码和响应头信息。</p>
+<h3 id="常用的请求方法："><a href="#常用的请求方法：" class="headerlink" title="常用的请求方法："></a>常用的请求方法：</h3><p><strong>GET</strong></p>
+<p>GET请求用户向服务器获取数据。</p>
+<p>GET请求是可缓存的，当我们使用GET请求方法时，请求可能会被浏览器缓存，且数据通过解码是可见的。</p>
+<p>GET方法提交的url请求，在http协议中并没有对url长度进行限制，这个限制是特定的浏览器及服务器对它的限制。</p>
+<p><strong>POST</strong></p>
+<p>POST请求用于向服务器传递数据（例如提交表单或者上传文件）。</p>
+<p>数据被包含在请求体中，不会显示在URL中，数据需要抓包才能获取到。</p>
+<h3 id="常见的状态码："><a href="#常见的状态码：" class="headerlink" title="常见的状态码："></a>常见的状态码：</h3><p>200 - 请求成功。</p>
+<p>301 - 资源（网页等）被永久转移到其它URL。</p>
+<p>404 - 请求的资源（网页等）未找到。</p>
+<p>500 - 服务器内部错误，无法完成请求。</p>
+<p>状态码响应分为五类：</p>
 <blockquote>
 <ol>
-<li>Safe delete 安全删除</li>
-<li>Comment out 注释掉</li>
-<li>Add as Entry Point 添加为入口点</li>
-<li>Suppress 不再警告</li>
+<li>信息响应(100–199)</li>
+<li>成功响应(200–299)</li>
+<li>重定向(300–399)</li>
+<li>客户端错误(400–499)</li>
+<li>服务器错误 (500–599)</li>
 </ol>
 </blockquote>
-<ul>
-<li>Unused import 未使用导入包</li>
-</ul>
-<p><img src="https://api2.mubu.com/v3/document_image/de03e2fd-1ef4-4c92-9d3b-956f667b4e3d-977367.jpg"></p>
-<h3 id="2、-IDEA-代码折叠"><a href="#2、-IDEA-代码折叠" class="headerlink" title="2、 IDEA 代码折叠"></a>2、 IDEA 代码折叠</h3><p>开发中，对于复杂的业务，代码编写可能会很多，这时候看起来很费劲，IDEA提供了两种代码折叠方式。</p>
-<p>方式1</p>
-<p><img src="https://api2.mubu.com/v3/document_image/9d4c6e09-8530-4496-9ee9-eeaaf4900ecc-977367.jpg"></p>
-<p>方式2</p>
-<p><img src="https://api2.mubu.com/v3/document_image/94c6100c-d682-4a36-bbd5-e6bd23a28cea-977367.jpg"></p>
-<p>快捷键（mac）</p>
+<h3 id="常用的响应头信息："><a href="#常用的响应头信息：" class="headerlink" title="常用的响应头信息："></a>常用的响应头信息：</h3><p><strong>Content-Type</strong>：告诉客户端，服务器实际返回的内容类型，默认为text/plain。</p>
+<p>常见的媒体格式类型如下：</p>
 <blockquote>
-<p>option + command + T</p>
+<p>text/html： HTML格式<br>text/plain：纯文本格式<br>text/xml： XML格式<br>image/gif：gif图片格式<br>image/jpeg：jpg图片格式<br>image/png：png图片格式</p>
 </blockquote>
-<p>快捷键（Window）</p>
+<p>常见的application类型如下：</p>
 <blockquote>
-<p>Ctrl + Alt + T</p>
+<p>application/xml：XML数据格式<br>application/json：JSON数据格式<br>application/octet-stream：二进制流数据（如常见的文件下载）<br>application/x-www-form-urlencoded：form表单数据<br>像key1=val1&amp;key2=val2的方式进行编码，发送到服务器（表单默认的提交数据的格式）。</p>
 </blockquote>
-<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.zhihu.com/zvideo/1352930685334802433" title="如何调整显示器，椅子的关系让长时间工作更轻松">如何调整显示器，椅子的关系让长时间工作更轻松</a></p>
-<p>通过一个视频演示，教你如何正确调整显示器距离，椅子的高度及一些锻炼，减少久坐带来的危害。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="http://www.bigpixel.cn/" title="大像素">大像素</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwsv3ud8yej30u00vbn2u.jpg"></p>
-<p>一个在线旅游探索的网站，可以更好的浏览中国城市及世界城市，像素放大万倍仍清晰可见，还是挺震撼的。</p>
-<p>2、<a href="https://www.sigoo.com/" title="极像素">极像素</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwsv831ouzj311c0kqaew.jpg"></p>
-<p>同上，除了可以看城市外，还有名画、全景、火星等，不过内容较少，像素质量也很高。</p>
-<p>3、<a href="https://koutu.gaoding.com/" title="稿定抠图">稿定抠图</a></p>
-<p>上传图片，一键实现抠图，也可自己进行修补，擦除，像简单的证件照换色，加滤镜，裁剪都是没问题的。</p>
-<p>4、<a href="https://www.ilovepdf.com/zh-cn" title="ilovepdf">ilovepdf</a></p>
-<p>一个免费在线的 PDF 处理工具，包括：合并、拆分、压缩、转换、旋转和解锁 PDF 文件，以及给 PDF 文件添加水印的工具等。</p>
-<p>5、<a href="https://www.officeplus.cn/" title="OfficePlus">OfficePlus</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwtj06hs3vj31h60q2aew.jpg"></p>
-<p>免费提供 PPT 模版，Word 文档，Excel 图表下载，分类很多，是微软官方网站，下载需要登陆。</p>
-<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>每天差不多都是相同的重复，昨天和前天颠倒顺序，也没有任何不便。我不时想，这叫什么人生啊，但也没有因此感觉光阴虚度。我仅仅是感觉到惊讶，惊讶于昨天与前天毫无区别，惊讶于自己被编排入这样的人生，惊讶于自己留下的足迹甚至还未及认清，就在转瞬间被风吹走，变得无影无踪。</p>
-<p>——<a href="https://book.douban.com/subject/21692813/" title="村上春树《眠》">村上春树《眠》</a></p>
+<p>另外一种常见的上传文件的格式是：</p>
+<blockquote>
+<p>multipart/form-data。</p>
+</blockquote>
+<h3 id="4、-Highlighting-Level"><a href="#4、-Highlighting-Level" class="headerlink" title="4、 Highlighting Level"></a>4、 <a href="https://blog.csdn.net/qq_37840993/article/details/88233580" title="Highlighting Level">Highlighting Level</a></h3><p><img src="https://api2.mubu.com/v3/document_image/c7b42e99-1855-4b14-999b-ddf25fe30016-977367.jpg" alt="图一"></p>
+<p>如图一，就是开发中，IDEA提供的高亮显示警告，但有些警告可能并不是代码上的语法问题，这让我们并不是很关注，还导致界面很乱。</p>
+<p>我们可以通过点击图一中那个小人图标，就能去设置高亮显示的级别。</p>
+<p>见图二，可以看到有三个级别：</p>
+<blockquote>
+<ol>
+<li>None 无</li>
+<li>Syntax 语法</li>
+<li>Inspections 检查</li>
+</ol>
+</blockquote>
+<p>默认级别是3，这个就和用Analyze检查Code一样（不了解这个的话，可以参考下第1期周刊），我们完全可以根据需要，对相关类单独检查，所以一般选择级别2即可。当然，也可以通过Configure inspections进行详细配置。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/52990cd2-e9df-43cd-80ca-45b1dc60dcc2-977367.jpg" alt="图二"></p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.douyin.com/video/7041617319969180931" title="江村大墓的主人汉文帝">江村大墓的主人汉文帝</a></p>
+<p>汉文帝刘恒为刘邦第四子，母亲薄姬。</p>
+<p>汉高帝（刘邦）十一年（前196年），刘恒受封代王。 </p>
+<p>汉高帝去世后，汉高帝之子汉惠帝（刘盈）继位，在位时深受母亲吕后专权。没多久，汉惠帝（刘盈）英年早逝，吕后立汉惠帝庶长子刘恭为皇帝，史称“前少帝”，因刘恭年幼，由吕后临朝称制。</p>
+<p>不久，吕后废黜刘恭，并暗中将他杀害。汉高后四年（前184年）五月十一日，吕后立汉惠帝之子刘义为帝，改名为刘弘，史称“后少帝”，继续由吕后临朝称制。</p>
+<p>高后八年八月（前180年9月），吕后逝世。</p>
+<p>吕后去世后，太尉周勃联合丞相陈平等人粉碎诸吕势力，朝臣说少帝刘弘并非汉惠帝亲生子，在迎立代王刘恒作为新皇帝（即汉文帝）后，废杀了刘弘及其四个兄弟。</p>
+<p>刘恒即位之后，励精图治，兴修水利，厉行节俭朴素，废除肉刑，实现国家强盛，百姓小康，开启“文景之治” 的发端。</p>
+<p>后元七年（前157年）驾崩于未央宫，庙号太宗，谥号孝文皇帝，葬于霸陵。</p>
+<p>汉文帝曾经亲自为母亲薄太后尝药，深具孝心，是《二十四孝》中“亲尝汤药“的主角。 </p>
+<p>汉文帝与其子汉景帝统治时期被合称为文景之治。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、 <a href="http://z-sms.com/" title="临时短信">临时短信</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d6ab106a-8f3c-41e0-8193-20e0685a44e3-977367.jpg"></p>
+<p>工作生活中，对于一些网站或者应用的使用，可能必须要先登陆，对于不是常用的工具，我们可以通过临时短信去注册登陆，这样可以很好的保护我们的手机号外泄，避免收到各种电话，短信骚扰。</p>
+<p>2、<a href="http://24mail.chacuo.net/" title="临时邮箱">临时邮箱</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/adbbf5b4-d61c-44e3-b551-388d433ee93b-977367.jpg"></p>
+<p>一个临时邮箱工具，可以设置邮箱名，邮箱持续时间24小时。</p>
+<p>3、<a href="http://f.yhjf.cc/" title="临时网盘">临时网盘</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e406a50b-1333-4978-bc03-17ccc0d43f9a-977367.jpg"></p>
+<p>一个临时存放文件，传输工具，文件大小不能超过10M，支持格式较多。</p>
+<p>4、<a href="http://www.vua.sh/" title="临时消息">临时消息</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/81b739b7-fc4c-486f-aa24-470299711af0-977367.jpg"></p>
+<p>一个开源项目，可以理解为阅后即焚，单条信息支持10000字，信息会经过加密后生成一个链接，对方通过点击链接获取信息，读取信息后，再次点击链接，会提示没有信息。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>小王子在一个小小的星球上生活。</p>
+<p>有一天星球上忽然绽放了一朵娇艳的玫瑰花，小王子从来没有见过这么美丽的花，于是他每天细心地呵护，精心地照料。他当时觉得这是宇宙里唯一的一朵玫瑰，比所有的花都美。</p>
+<p>后来有一天他来到地球，发现仅仅一个花园里，就有5000朵几乎完全一样的玫瑰花。那一刻，他终于知道，他所拥有的只不过是一朵普通的花。</p>
+<p>这个发现使小王子非常伤心，但是尽管如此，不知道为什么，他心里还是放不下自己的那一朵玫瑰。</p>
+<p>直到有一天，一只小狐狸跟他说，正因为你为你的玫瑰花费了时间和心血，才使你的玫瑰变得美丽</p>
+<p>小王子恍然大悟，终于明白 </p>
+<p>尽管世界上有无数朵玫瑰花，但他星球上的那朵玫瑰花仍然是独一无二的</p>
+<p>因为他浇灌过她，保护过她，陪着她一起说话，陪着她一起沉默</p>
+<p>所以她是他独一无二的玫瑰。</p>
+<p>——<a href="https://v.douyin.com/RTPf7XM/" title="资本论">资本论</a> 建议：看一看</p>
+<p>2、</p>
+<p>人之所以活得累，不是拥有的东西太少，而是想要的东西太多。</p>
+<p>知足天地宽，贪得宇宙隘。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/MRDt1__3T-gJDyAXfuKMvg" title="意林">意林</a></p>
 ]]></content>
       <categories>
         <category>周刊</category>
@@ -551,138 +829,5 @@
       <tags>
         <tag>Navicat</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>杂货铺周刊（第2期）</title>
-    <url>/2021/12/04/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC2%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=346576&auto=0&height=66"></iframe>
-
-<p>这里记录每周值得分享的内容，周六发布。</p>
-<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
-<a id="more"></a>
-
-<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><h3 id="1、股权融资"><a href="#1、股权融资" class="headerlink" title="1、股权融资"></a>1、股权融资</h3><blockquote>
-<p>企业出让一定比例的股份来吸引新的股东加入，从而获取资金。</p>
-</blockquote>
-<p><strong>方式</strong>：比如股权质押，股权交易，私募发售等。</p>
-<p><strong>影响</strong>：稀释股东的股权，可能会影响公司的控制权。</p>
-<p><strong>风险</strong>：投资者自负盈亏。</p>
-<h3 id="2、债权融资"><a href="#2、债权融资" class="headerlink" title="2、债权融资"></a>2、债权融资</h3><blockquote>
-<p>企业对外借钱，获取资金。</p>
-</blockquote>
-<p><strong>方式</strong>：比如银行贷款，发行债券，民间借贷等。</p>
-<p><strong>影响</strong>：债务到期时，企业要还本付息。</p>
-<p><strong>风险</strong>：如果企业暴雷，还不上钱，投资者可能血本无归。</p>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、IDEA-Postfix-Completion"><a href="#1、IDEA-Postfix-Completion" class="headerlink" title="1、IDEA Postfix Completion"></a>1、IDEA Postfix Completion</h3><p>设置路径</p>
-<p><strong>Windows</strong></p>
-<blockquote>
-<p>File -&gt; Settings -&gt; Editor -&gt; General -&gt; Postfix Completion</p>
-</blockquote>
-<p><strong>Mac</strong></p>
-<blockquote>
-<p>IntelliJ IDEA -&gt; Preferences -&gt; Editor -&gt; General -&gt; Postfix Completion</p>
-</blockquote>
-<p><img src="https://api2.mubu.com/v3/document_image/a46b3bb5-5d7e-4a37-bf24-385a70f21b9d-977367.jpg"></p>
-<p>比如工作中经常用到 List，我们就可以设置一个快捷方式，如下图</p>
-<p><img src="https://api2.mubu.com/v3/document_image/2e91bd97-de1d-4a46-81de-c2c3b581d6f2-977367.jpg"></p>
-<p>效果如下：</p>
-<p><img src="https://api2.mubu.com/v3/document_image/72c339d5-2972-4890-8c7f-cda0edcec1e4-977367.jpg"></p>
-<p>美中不足的是，丢失了一个空格，目前没找到解决办法。</p>
-<p><strong>参数说明</strong></p>
-<ul>
-<li>key：自定义后缀的名称。</li>
-<li>Minimum language level：最低语言水平。</li>
-<li>Applicable expression types：适用的表达式类型。</li>
-<li>Apply to the topmost expression：应用于最上面的表达式。</li>
-<li>Use <code>$EXPR$</code> variable to refer target expression：使用<code>$EXPR$</code>变量来引用目标表达式。</li>
-</ul>
-<h3 id="2、5个内置注解（JDK自带）"><a href="#2、5个内置注解（JDK自带）" class="headerlink" title="2、5个内置注解（JDK自带）"></a>2、5个内置注解（JDK自带）</h3><p>@Override </p>
-<blockquote>
-<p>继承父类方法</p>
-</blockquote>
-<p>@Deprecated </p>
-<blockquote>
-<p>不鼓励使用的方法，通常指它很危险或者存在更好的选择。</p>
-</blockquote>
-<p>@SuppressWarnings </p>
-<blockquote>
-<p>抑制警告</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">抑制所有类型的警告</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;all&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与可序列化类的 serialVersionUID 字段丢失有关的警告</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;serial&quot;)</span></span><br><span class="line"></span><br><span class="line">在类的参数上使用泛型时，抑制与非特定类型有关的警告。</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;rawtypes&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与未检查的操作有关的警告,比如集合没有用泛型来指定类型</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与未使用的代码相关的警告</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;unused&quot;)</span></span><br><span class="line"></span><br><span class="line">抑制与废弃有关的警告，比如使用了已过时的方法</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;deprecation</span></span><br><span class="line"><span class="meta"></span></span><br></pre></td></tr></table></figure>
-<p>@FunctionalInterface </p>
-<blockquote>
-<p>函数式接口</p>
-</blockquote>
-<p>@SafeVarargs </p>
-<blockquote>
-<p>抑制堆污染警告</p>
-</blockquote>
-<h3 id="3、-4个元注解（能注解到注解上的注解）"><a href="#3、-4个元注解（能注解到注解上的注解）" class="headerlink" title="3、 4个元注解（能注解到注解上的注解）"></a>3、 4个元注解（能注解到注解上的注解）</h3><p>@Target</p>
-<blockquote>
-<p>描述注解可以用到什么地方，比如方法，类等。</p>
-</blockquote>
-<p>@Retention（SOURCE &lt; CLASS &lt; RUNTIME）</p>
-<blockquote>
-<p>用于描述注解的生命周期。</p>
-</blockquote>
-<p>@Documented</p>
-<blockquote>
-<p>标明该注解可以包含在JavaDoc中</p>
-</blockquote>
-<p>@Inherited</p>
-<blockquote>
-<p>标明子类可以继承父类中的该注解</p>
-</blockquote>
-<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC2022%E5%B9%B4%E5%86%AC%E5%A5%A5%E4%BC%9A%E4%BC%9A%E5%BE%BD/59199395?fromtitle=%E5%86%AC%E6%A2%A6&fromid=22259439" title="冬梦">冬梦</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/5cda0939-943a-4676-8cba-c32c3553709b-977367.jpg"></p>
-<p>北京2022年冬奥会会徽，冬梦。主要由会徽图形、文字标志、奥林匹克五环标志三个部分组成。</p>
-<p>会徽图形在设计格局上分为上中下三部分的方式，主体形如一个不同渐变色相间的汉字“冬”的写意草书，将抽象的滑道、冰雪运动形态与书法结合，“冬”字下方两点顺势融为2022。</p>
-<p>2、 <a href="https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC2022%E5%B9%B4%E5%86%AC%E6%AE%8B%E5%A5%A5%E4%BC%9A%E4%BC%9A%E5%BE%BD/59199454?bkfr=detailtbl&fromtitle=%E9%A3%9E%E8%B7%83&fromid=22259448" title="飞跃">飞跃</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/2ed34977-d0bb-42a3-bb09-d919d7762134-977367.jpg"></p>
-<p>北京2022年冬残奥会会徽，飞跃。整体形如汉字“飞”的书法形态，又由上下两部分构成对角线，既可以把上半部分看作一位冲刺的滑雪运动员、下半部分看作滑板，又可以将两者结合整体视作一位坐在轮椅上的运动员，以矢量图形巧妙地描绘出一个向前滑行、冲向胜利的运动员的形象，以形象化的表达将雪杖、轮椅等冬残奥会特殊运动器械形态融入其中，展现了“飞跃”的动感和力度。</p>
-<p>3、<a href="https://baike.baidu.com/item/%E5%86%B0%E5%A2%A9%E5%A2%A9?bkfr=detailtbl" title="冰墩墩">冰墩墩</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/f0a0e4c1-fa97-4c65-a30a-256b64ae4053-977367.jpg"></p>
-<p>2022年北京冬季奥运会的吉祥物，是熊猫形象与冰晶外壳相结合，体现了冬季冰雪运动的特点。<br>熊猫是世界公认的中国国宝，形象友好可爱、憨态可掬。</p>
-<p>熊猫头部装饰彩色光环，其灵感源自于北京冬奥会的国家速滑馆——“冰丝带”。流动色彩线条，象征着冰雪运动的赛道和5G高科技；头部外壳造型取自冰雪运动头盔。熊猫整体造型像航天员，是一位来自未来的冰雪运动专家，寓意现代科技和冰雪运动的结合。</p>
-<p>4、<a href="https://baike.baidu.com/item/%E9%9B%AA%E5%AE%B9%E8%9E%8D?bkfr=detailtbl" title="雪容融">雪容融</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/4d23b5cf-9d52-42b9-95e4-cf1a7ce8865a-977367.jpg"></p>
-<p>2022年北京冬季残奥会的吉祥物，整体设计与其灵感来源——灯笼的主要特征高度契合，并融入了大量中国传统文化符号和冬季的季节性要素。</p>
-<p>从正面看，雪容融最突出的特点为面部的雪块，其样式是拍打积雪而形成的自然脸部形态，可在不同场景下作出丰富的表情变化。</p>
-<p>细节方面，雪容融头顶有一个如意环，被雪覆盖住的一段纹样是长城的城墙图案；下一层为剪纸图案，采用正负形的设计手法，正形是北京“京鸽”图案，表示欢迎世界各地五洲四海的运动员来到中国参加体育盛会，负形则为北京地标性建筑——天坛的剪影。吉祥物的双足上还围绕有一圈如意纹。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://sspai.com/post/33602" title="Time Out">Time Out</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/933bddbf-7bbd-47e2-9275-68e531a1d7e3-977367.jpg"></p>
-<p>一个Mac端提醒休息的软件，使用了几天，感觉很有帮助，推荐。</p>
-<p>2、 <a href="https://www.autopiano.cn/" title="自由钢琴">自由钢琴</a></p>
-<p>一个在线弹奏钢琴的网站，有曲谱及键位教学，还可以进行创作发布。</p>
-<p>3、 <a href="https://screen.bmcx.com/#welcome" title="在线屏幕检测">在线屏幕检测</a></p>
-<p>一个在线检测屏幕的网站，对于初步的检测还是蛮有帮助的，像我平时常用纯黑全屏，来擦屏幕。</p>
-<p>4、 <a href="https://house-map.cn/#/" title="地图搜租房">地图搜租房</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/66ea1793-a34a-445a-9578-94fc34cd37a6-977367.jpg"></p>
-<p>可根据上班地址、出行一键查询附近可选择的出租信息，也可通过关键字快速定位，目前支持15个城市。</p>
-<p>5、 <a href="http://uz.yurixu.com/manage/beijing.php" title="租房搜索助手">租房搜索助手</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/d73fcc9e-f737-4aec-9fc5-cae3385b88c7-977367.jpg"></p>
-<p>主要分行政区域和地铁线路搜索租房，可搭配地图搜租房使用，目前支持12个城市。</p>
-<p>6、<a href="https://nazo.one-story.cn/" title="Nazo Game">Nazo Game</a></p>
-<p>一个在线益智解密游戏，比较适合开发人员探索，难度有些高，目前只过了四关。</p>
-<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
-<p>低级的欲望，放纵即可获得，</p>
-<p>高级的欲望，克制才能得到，</p>
-<p>顶级的欲望，通过煎熬才能获得。</p>
-<p>2、</p>
-<p>岁月极美，</p>
-<p>在于它必然的流逝。</p>
-<p>春花、秋月、夏日、冬雪。</p>
-<p>——<a href="https://book.douban.com/subject/1061572/" title="三毛《随想》">三毛《随想》</a></p>
-<p>3、 </p>
-<p>现在是初冬，公园的树木都在主动凋零，无边落木萧萧下，它们放弃了一个春夏所积累的浮华。</p>
-<p>但越是如此，越能减少水分的蒸发，从而熬过干冷的冬天。而且叶子少了，阻力也小了，在凛冽的北风下，树枝不容易折断，更容易保存下来。</p>
-<p>止损也一样，它是放弃了亏损的持仓，也丢掉了风险，切断了亏损继续扩大的可能性，从而获得了生机。</p>
-<p>不想放弃的根本，是不愿失去。</p>
-<p>而要想不失去，不是靠自己紧紧抓住，最高明的方法是靠吸引力，让对方主动黏过来，甩也甩不掉。</p>
-<p>——复利人生</p>
-]]></content>
-      <categories>
-        <category>周刊</category>
-      </categories>
   </entry>
 </search>
