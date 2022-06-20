@@ -6,7 +6,7 @@
   <link href="https://feizi-discipline.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://feizi-discipline.gitee.io/"/>
-  <updated>2021-12-20T14:07:14.414Z</updated>
+  <updated>2022-06-20T00:28:02.309Z</updated>
   <id>https://feizi-discipline.gitee.io/</id>
   
   <author>
@@ -17,14 +17,103 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>杂货铺周刊（第5期）</title>
-    <link href="https://feizi-discipline.gitee.io/2021/12/20/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC5%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D%20copy/"/>
-    <id>https://feizi-discipline.gitee.io/2021/12/20/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC5%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D%20copy/</id>
-    <published>2021-12-20T12:03:00.000Z</published>
-    <updated>2021-12-20T14:07:14.414Z</updated>
+    <title>《你的第一本保险指南》</title>
+    <link href="https://feizi-discipline.gitee.io/2022/06/20/%E3%80%8A%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%BF%9D%E9%99%A9%E6%8C%87%E5%8D%97%E3%80%8B/"/>
+    <id>https://feizi-discipline.gitee.io/2022/06/20/%E3%80%8A%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%BF%9D%E9%99%A9%E6%8C%87%E5%8D%97%E3%80%8B/</id>
+    <published>2022-06-20T00:25:00.000Z</published>
+    <updated>2022-06-20T00:28:02.309Z</updated>
     
     
-    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1308788681&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+    <summary type="html">&lt;p&gt;作者是槽叔，全书主要分为七章，是一本经济理财类的书籍。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="读书" scheme="https://feizi-discipline.gitee.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第24期）：Linux Shell单引号、双引号及无引号的区别</title>
+    <link href="https://feizi-discipline.gitee.io/2022/06/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC24%E6%9C%9F%EF%BC%89%EF%BC%9ALinux%20Shell%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8A%E6%97%A0%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://feizi-discipline.gitee.io/2022/06/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC24%E6%9C%9F%EF%BC%89%EF%BC%9ALinux%20Shell%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8A%E6%97%A0%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2022-06-19T04:06:00.000Z</published>
+    <updated>2022-06-19T04:06:55.906Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六或周日发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第23期）：解决calibre导入书籍和传输书籍不是中文名称问题（mac）</title>
+    <link href="https://feizi-discipline.gitee.io/2022/05/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC23%E6%9C%9F%EF%BC%89%EF%BC%9A%E8%A7%A3%E5%86%B3calibre%E5%AF%BC%E5%85%A5%E4%B9%A6%E7%B1%8D%E5%92%8C%E4%BC%A0%E8%BE%93%E4%B9%A6%E7%B1%8D%E4%B8%8D%E6%98%AF%E4%B8%AD%E6%96%87%E5%90%8D%E7%A7%B0%E9%97%AE%E9%A2%98%EF%BC%88mac%EF%BC%89/"/>
+    <id>https://feizi-discipline.gitee.io/2022/05/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC23%E6%9C%9F%EF%BC%89%EF%BC%9A%E8%A7%A3%E5%86%B3calibre%E5%AF%BC%E5%85%A5%E4%B9%A6%E7%B1%8D%E5%92%8C%E4%BC%A0%E8%BE%93%E4%B9%A6%E7%B1%8D%E4%B8%8D%E6%98%AF%E4%B8%AD%E6%96%87%E5%90%8D%E7%A7%B0%E9%97%AE%E9%A2%98%EF%BC%88mac%EF%BC%89/</id>
+    <published>2022-05-29T13:37:00.000Z</published>
+    <updated>2022-05-29T13:45:01.956Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六或周日发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第22期）：我的投资实证和未来投资计划</title>
+    <link href="https://feizi-discipline.gitee.io/2022/05/21/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC22%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%88%91%E7%9A%84%E6%8A%95%E8%B5%84%E5%AE%9E%E8%AF%81%E5%92%8C%E6%9C%AA%E6%9D%A5%E6%8A%95%E8%B5%84%E8%AE%A1%E5%88%92/"/>
+    <id>https://feizi-discipline.gitee.io/2022/05/21/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC22%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%88%91%E7%9A%84%E6%8A%95%E8%B5%84%E5%AE%9E%E8%AF%81%E5%92%8C%E6%9C%AA%E6%9D%A5%E6%8A%95%E8%B5%84%E8%AE%A1%E5%88%92/</id>
+    <published>2022-05-21T09:39:00.000Z</published>
+    <updated>2022-05-21T09:49:42.907Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第21期）：了解投资中的四笔钱</title>
+    <link href="https://feizi-discipline.gitee.io/2022/05/14/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC21%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%AC%94%E9%92%B1/"/>
+    <id>https://feizi-discipline.gitee.io/2022/05/14/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC21%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%AC%94%E9%92%B1/</id>
+    <published>2022-05-14T10:35:00.000Z</published>
+    <updated>2022-05-29T03:17:23.286Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第20期）：今年来我的基金收益如何？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/04/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC20%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%8A%E5%B9%B4%E6%9D%A5%E6%88%91%E7%9A%84%E5%9F%BA%E9%87%91%E6%94%B6%E7%9B%8A%E5%A6%82%E4%BD%95%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/04/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC20%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%8A%E5%B9%B4%E6%9D%A5%E6%88%91%E7%9A%84%E5%9F%BA%E9%87%91%E6%94%B6%E7%9B%8A%E5%A6%82%E4%BD%95%EF%BC%9F/</id>
+    <published>2022-04-17T08:31:00.000Z</published>
+    <updated>2022-04-17T08:37:16.465Z</updated>
+    
+    
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1807364922&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
 &lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
@@ -37,14 +126,32 @@
   </entry>
   
   <entry>
-    <title>杂货铺周刊（第4期）</title>
-    <link href="https://feizi-discipline.gitee.io/2021/12/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC4%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D/"/>
-    <id>https://feizi-discipline.gitee.io/2021/12/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC4%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D/</id>
-    <published>2021-12-17T09:03:00.000Z</published>
-    <updated>2021-12-17T09:21:51.979Z</updated>
+    <title>杂货铺周刊（第19期）：二维码到底是什么呢？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/04/09/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC19%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/04/09/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC19%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F/</id>
+    <published>2022-04-09T11:13:00.000Z</published>
+    <updated>2022-04-09T11:14:10.923Z</updated>
     
     
-    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1308788681&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第18期）：爱情有什么道理？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/04/02/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC18%E6%9C%9F%EF%BC%89%EF%BC%9A%E7%88%B1%E6%83%85%E6%9C%89%E4%BB%80%E4%B9%88%E9%81%93%E7%90%86%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/04/02/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC18%E6%9C%9F%EF%BC%89%EF%BC%9A%E7%88%B1%E6%83%85%E6%9C%89%E4%BB%80%E4%B9%88%E9%81%93%E7%90%86%EF%BC%9F/</id>
+    <published>2022-04-02T06:20:00.000Z</published>
+    <updated>2022-04-02T06:26:09.696Z</updated>
+    
+    
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=254574&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
 &lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
@@ -57,14 +164,14 @@
   </entry>
   
   <entry>
-    <title>杂货铺周刊（第3期）</title>
-    <link href="https://feizi-discipline.gitee.io/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/"/>
-    <id>https://feizi-discipline.gitee.io/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/</id>
-    <published>2021-12-11T08:15:00.000Z</published>
-    <updated>2021-12-13T12:56:29.596Z</updated>
+    <title>杂货铺周刊（第17期）：什么是黑匣子？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/03/26/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC17%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%BB%91%E5%8C%A3%E5%AD%90%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/03/26/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC17%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%BB%91%E5%8C%A3%E5%AD%90%EF%BC%9F/</id>
+    <published>2022-03-26T08:50:00.000Z</published>
+    <updated>2022-03-26T08:59:27.271Z</updated>
     
     
-    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1305960097&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=26090155&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
 &lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
@@ -77,14 +184,32 @@
   </entry>
   
   <entry>
-    <title>杂货铺周刊（第2期）</title>
-    <link href="https://feizi-discipline.gitee.io/2021/12/04/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC2%E6%9C%9F%EF%BC%89/"/>
-    <id>https://feizi-discipline.gitee.io/2021/12/04/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC2%E6%9C%9F%EF%BC%89/</id>
-    <published>2021-12-04T02:50:00.000Z</published>
-    <updated>2021-12-03T13:22:22.390Z</updated>
+    <title>杂货铺周刊（第16期）：为什么感冒后会流鼻涕、鼻塞和发热？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/03/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC16%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%84%9F%E5%86%92%E5%90%8E%E4%BC%9A%E6%B5%81%E9%BC%BB%E6%B6%95%E3%80%81%E9%BC%BB%E5%A1%9E%E5%92%8C%E5%8F%91%E7%83%AD%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/03/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC16%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%84%9F%E5%86%92%E5%90%8E%E4%BC%9A%E6%B5%81%E9%BC%BB%E6%B6%95%E3%80%81%E9%BC%BB%E5%A1%9E%E5%92%8C%E5%8F%91%E7%83%AD%EF%BC%9F/</id>
+    <published>2022-03-19T04:00:00.000Z</published>
+    <updated>2022-03-19T03:51:48.681Z</updated>
     
     
-    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=346576&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第15期）：大跌时，如何克服恐惧？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/03/12/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC15%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%A4%A7%E8%B7%8C%E6%97%B6%EF%BC%8C%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%E6%81%90%E6%83%A7%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/03/12/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC15%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%A4%A7%E8%B7%8C%E6%97%B6%EF%BC%8C%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%E6%81%90%E6%83%A7%EF%BC%9F/</id>
+    <published>2022-03-12T14:00:00.000Z</published>
+    <updated>2022-03-12T14:12:07.034Z</updated>
+    
+    
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1902874636&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
 &lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
@@ -97,14 +222,86 @@
   </entry>
   
   <entry>
-    <title>杂货铺周刊（第1期）</title>
-    <link href="https://feizi-discipline.gitee.io/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/"/>
-    <id>https://feizi-discipline.gitee.io/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/</id>
-    <published>2021-11-27T02:50:00.000Z</published>
-    <updated>2021-12-03T13:20:27.833Z</updated>
+    <title>杂货铺周刊（第14期）：六大茶类你知道吗？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/03/05/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC14%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%85%AD%E5%A4%A7%E8%8C%B6%E7%B1%BB%E4%BD%A0%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/03/05/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC14%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%85%AD%E5%A4%A7%E8%8C%B6%E7%B1%BB%E4%BD%A0%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/</id>
+    <published>2022-03-05T11:50:00.000Z</published>
+    <updated>2022-03-05T11:54:26.033Z</updated>
     
     
-    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1456162653&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第13期）：北向资金和南向资金你了解吗？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/02/26/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC13%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91%E5%92%8C%E5%8D%97%E5%90%91%E8%B5%84%E9%87%91%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/02/26/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC13%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91%E5%92%8C%E5%8D%97%E5%90%91%E8%B5%84%E9%87%91%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F/</id>
+    <published>2022-02-26T06:26:00.000Z</published>
+    <updated>2022-02-26T06:36:02.221Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第12期）：高铁座位为啥没有“E”？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/02/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC12%E6%9C%9F%EF%BC%89%EF%BC%9A%E9%AB%98%E9%93%81%E5%BA%A7%E4%BD%8D%E4%B8%BA%E5%95%A5%E6%B2%A1%E6%9C%89%E2%80%9CE%E2%80%9D%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/02/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC12%E6%9C%9F%EF%BC%89%EF%BC%9A%E9%AB%98%E9%93%81%E5%BA%A7%E4%BD%8D%E4%B8%BA%E5%95%A5%E6%B2%A1%E6%9C%89%E2%80%9CE%E2%80%9D%EF%BC%9F/</id>
+    <published>2022-02-19T10:06:00.000Z</published>
+    <updated>2022-02-26T06:36:26.143Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第11期）：Spring配置的三种依赖注入</title>
+    <link href="https://feizi-discipline.gitee.io/2022/02/12/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC11%E6%9C%9F%EF%BC%89%EF%BC%9ASpring%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%89%E7%A7%8D%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
+    <id>https://feizi-discipline.gitee.io/2022/02/12/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC11%E6%9C%9F%EF%BC%89%EF%BC%9ASpring%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%89%E7%A7%8D%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</id>
+    <published>2022-02-12T10:12:00.000Z</published>
+    <updated>2022-02-12T10:13:05.845Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>杂货铺周刊（第10期）：今年的大年三十哪去了？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/01/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC10%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%8A%E5%B9%B4%E7%9A%84%E5%A4%A7%E5%B9%B4%E4%B8%89%E5%8D%81%E5%93%AA%E5%8E%BB%E4%BA%86%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/01/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC10%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%8A%E5%B9%B4%E7%9A%84%E5%A4%A7%E5%B9%B4%E4%B8%89%E5%8D%81%E5%93%AA%E5%8E%BB%E4%BA%86%EF%BC%9F/</id>
+    <published>2022-01-29T13:55:00.000Z</published>
+    <updated>2022-01-29T14:04:55.310Z</updated>
+    
+    
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1873049720&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
 &lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
@@ -117,102 +314,80 @@
   </entry>
   
   <entry>
-    <title>本地及 Docker 部署 MdNice 开源项目</title>
-    <link href="https://feizi-discipline.gitee.io/2021/11/26/Docker%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2MdNice%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://feizi-discipline.gitee.io/2021/11/26/Docker%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2MdNice%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</id>
-    <published>2021-11-26T02:50:00.000Z</published>
-    <updated>2021-11-28T03:13:23.325Z</updated>
+    <title>杂货铺周刊（第9期）：核酸检测的基本原理是什么？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/01/22/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC9%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%A0%B8%E9%85%B8%E6%A3%80%E6%B5%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/01/22/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC9%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%A0%B8%E9%85%B8%E6%A3%80%E6%B5%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</id>
+    <published>2022-01-22T06:18:00.000Z</published>
+    <updated>2022-01-29T13:55:25.345Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;本地部署&quot;&gt;&lt;a href=&quot;#本地部署&quot; class=&quot;headerlink&quot; title=&quot;本地部署&quot;&gt;&lt;/a&gt;本地部署&lt;/h2&gt;&lt;p&gt;首先从 github 上 clone 下&lt;a href=&quot;https://github.com/mdnice/markdown-nice&quot; title=&quot;项目&quot;&gt;项目&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;选择一个目录，git clone 项目地址&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
     
     
     
-    <category term="Web" scheme="https://feizi-discipline.gitee.io/categories/Web/"/>
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
     
-    
-    <category term="Docker" scheme="https://feizi-discipline.gitee.io/tags/Docker/"/>
-    
-    <category term="MdNice" scheme="https://feizi-discipline.gitee.io/tags/MdNice/"/>
     
   </entry>
   
   <entry>
-    <title>集合类的梳理</title>
-    <link href="https://feizi-discipline.gitee.io/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/"/>
-    <id>https://feizi-discipline.gitee.io/2021/05/29/Java%E9%9B%86%E5%90%88%E7%B1%BB%E7%9A%84%E6%A2%B3%E7%90%86/</id>
-    <published>2021-05-29T07:55:00.000Z</published>
-    <updated>2021-12-07T02:57:45.771Z</updated>
+    <title>杂货铺周刊（第8期）：普通人如何理财？</title>
+    <link href="https://feizi-discipline.gitee.io/2022/01/15/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC8%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%90%86%E8%B4%A2%EF%BC%9F/"/>
+    <id>https://feizi-discipline.gitee.io/2022/01/15/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC8%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%90%86%E8%B4%A2%EF%BC%9F/</id>
+    <published>2022-01-15T09:01:00.000Z</published>
+    <updated>2022-01-15T09:02:38.300Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在编程中，常常需要集中存放多个数据。从传统意义上讲，数组是我们的一个很好的选择，前提是我们事先已经明确知道我们将要保存的对象的数量。一旦在数组初始化时指定了这个数组长度，这个数组长度就是不可变的，如果我们需要保存一个可以动态增长的数据(在编译时无法确定具体的数量)，java的集合类就是一个很好的设计方案了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1901371647&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
     
     
     
-    <category term="Java" scheme="https://feizi-discipline.gitee.io/categories/Java/"/>
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
     
-    
-    <category term="集合类" scheme="https://feizi-discipline.gitee.io/tags/%E9%9B%86%E5%90%88%E7%B1%BB/"/>
     
   </entry>
   
   <entry>
-    <title>记一次给Mac配置外接显示器</title>
-    <link href="https://feizi-discipline.gitee.io/2021/04/18/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BB%99Mac%E9%85%8D%E7%BD%AE%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/"/>
-    <id>https://feizi-discipline.gitee.io/2021/04/18/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BB%99Mac%E9%85%8D%E7%BD%AE%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</id>
-    <published>2021-04-18T13:31:12.000Z</published>
-    <updated>2021-11-28T01:47:26.840Z</updated>
+    <title>杂货铺周刊（第7期）：一起来练习冥想</title>
+    <link href="https://feizi-discipline.gitee.io/2022/01/13/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC7%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%BB%83%E4%B9%A0%E5%86%A5%E6%83%B3/"/>
+    <id>https://feizi-discipline.gitee.io/2022/01/13/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC7%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%BB%83%E4%B9%A0%E5%86%A5%E6%83%B3/</id>
+    <published>2022-01-13T09:35:00.000Z</published>
+    <updated>2022-01-13T09:42:25.294Z</updated>
     
     
-    <summary type="html">&lt;p&gt;通过什么值得买app，在翻看值榜单时，翻阅到显示器榜单，然后萌生了给自己配置一个显示器的念头，也因为自己看电脑时间久，眼睛会很不舒服的问题；通过多款显示器比较，评价及评测，最终选择了明基PD2500Q这款。&lt;/p&gt;</summary>
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=853593&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
     
     
     
-    <category term="数码产品" scheme="https://feizi-discipline.gitee.io/categories/%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81/"/>
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
     
-    
-    <category term="Macbook Pro" scheme="https://feizi-discipline.gitee.io/tags/Macbook-Pro/"/>
-    
-    <category term="显示器" scheme="https://feizi-discipline.gitee.io/tags/%E6%98%BE%E7%A4%BA%E5%99%A8/"/>
     
   </entry>
   
   <entry>
-    <title>运行SQL文件，出现1067错误</title>
-    <link href="https://feizi-discipline.gitee.io/2021/04/08/%E8%BF%90%E8%A1%8CSQL%E6%96%87%E4%BB%B6%EF%BC%8C%E5%87%BA%E7%8E%B01067%E9%94%99%E8%AF%AF/"/>
-    <id>https://feizi-discipline.gitee.io/2021/04/08/%E8%BF%90%E8%A1%8CSQL%E6%96%87%E4%BB%B6%EF%BC%8C%E5%87%BA%E7%8E%B01067%E9%94%99%E8%AF%AF/</id>
-    <published>2021-04-08T09:55:12.000Z</published>
-    <updated>2021-11-28T03:13:36.047Z</updated>
+    <title>杂货铺周刊（第6期）：2021年度理财总结</title>
+    <link href="https://feizi-discipline.gitee.io/2021/12/31/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC6%E6%9C%9F%EF%BC%89%EF%BC%9A2021%E5%B9%B4%E5%BA%A6%E7%90%86%E8%B4%A2%E6%80%BB%E7%BB%93/"/>
+    <id>https://feizi-discipline.gitee.io/2021/12/31/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC6%E6%9C%9F%EF%BC%89%EF%BC%9A2021%E5%B9%B4%E5%BA%A6%E7%90%86%E8%B4%A2%E6%80%BB%E7%BB%93/</id>
+    <published>2021-12-31T08:21:00.000Z</published>
+    <updated>2022-01-01T01:17:51.591Z</updated>
     
     
-    <summary type="html">&lt;p&gt; 运行SQL文件，出现1067错误&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="MySQL" scheme="https://feizi-discipline.gitee.io/categories/MySQL/"/>
-    
-    
-    <category term="Navicat" scheme="https://feizi-discipline.gitee.io/tags/Navicat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇博客</title>
-    <link href="https://feizi-discipline.gitee.io/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://feizi-discipline.gitee.io/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
-    <published>2019-09-17T13:15:12.000Z</published>
-    <updated>2021-12-11T02:36:51.894Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客&lt;/p&gt;</summary>
+    <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=370 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1889103238&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;这里记录每周值得分享的内容，周六发布。&lt;/p&gt;
+&lt;p&gt;如果你有好的内容及建议，欢迎投稿，留言反馈。&lt;/p&gt;</summary>
     
     
     
-    <category term="博客" scheme="https://feizi-discipline.gitee.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="周刊" scheme="https://feizi-discipline.gitee.io/categories/%E5%91%A8%E5%88%8A/"/>
     
-    
-    <category term="Hexo" scheme="https://feizi-discipline.gitee.io/tags/Hexo/"/>
     
   </entry>
   

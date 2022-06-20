@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <meta name="keywords" content="博客 blog Blog">
+  
+  
+  <meta name="description" content="blog">
+  
+  <title>
+    杂货铺周刊（第24期）：Linux Shell单引号、双引号及无引号的区别 |
+    
+    壹周杂货铺
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="壹周杂货铺" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-杂货铺周刊（第24期）：Linux Shell单引号、双引号及无引号的区别" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h1 class="article-title" itemprop="name">
+  杂货铺周刊（第24期）：Linux Shell单引号、双引号及无引号的区别
+</h1>
+
+
+
+    </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2022/06/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC24%E6%9C%9F%EF%BC%89%EF%BC%9ALinux%20Shell%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8A%E6%97%A0%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time datetime="2022-06-19T04:06:00.000Z" itemprop="datePublished">2022-06-19</time>
+</a>
+        
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E5%91%A8%E5%88%8A/">周刊</a>
+</div>
+
+        
+        <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.5k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">5分</span>
+      </span>
+    </span>
+</div>
+
+        
+      </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>这里记录每周值得分享的内容，周六或周日发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a target="_blank" rel="noopener" href="https://youzhiyouxing.cn/n/materials/1256" title="一次性买入与分批买入，我该怎么选？">一次性买入与分批买入，我该怎么选？</a></p>
+<p>前情回顾：我有一笔钱，现在的温度不高，我该选择一次性投入还是分批买入？</p>
+<p>我们可以假定只有这一次选择的机会，不可重复。两种选择的赔率差不多，输赢也只是收益率的差别而已，并不会有丢掉性命这样的极端情况，这种情况下理性的选择应该选择胜率更大的方式。</p>
+<p>根据文章，从历史数据回测来看，市场相对低估值时，一次性买入要比分批买入的收益要高；而市场相对高估值时，分批买入的收益要比一次性买入要高。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/41a2d10d-1099-4732-b9fc-bb6b48bdd257-977367.jpg"></p>
+<p>我们可以结合有知有行的温度计，进行判断，当温度低估时，更适合一次性买入，就像前不久市场最低的时候，温度计是 0° ，但可能会给我们带来不好的体验；当温度中估或震荡市时，可以选择分批买入，而在温度高估时，如果必须要买，分批买入相对来说更好一些，但更多要做的其实是耐心持有，让子弹多飞一会儿，如果达到我们心里阈值的话，可以选择分批卖出。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a target="_blank" rel="noopener" href="https://blog.51cto.com/sunyu/799589" title="linux shell单引号、双引号及无引号区别">linux shell单引号、双引号及无引号区别</a></p>
+<p><strong>单引号</strong></p>
+<p>所见即所得，单引号里是什么内容，就输出什么内容。</p>
+<p><strong>双引号</strong></p>
+<p>如果双引号中的内容有命令、变量等，会先解析，再输出内容。</p>
+<p><strong>不加引号</strong></p>
+<p>如果内容中有命令、变量等，会先解析，再输出内容，如果字符中带有空格等特殊字符，则不能完整的输出，解决办法是加双引号。</p>
+<p>2、<a target="_blank" rel="noopener" href="https://book.douban.com/subject/2243615/" title="命令模式">命令模式</a></p>
+<p><em>命令模式</em>，将“请求”封装成对象，以便使用不同的请求，队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/d6b47491-2c9f-43aa-99ed-6c216896e5bb-977367.jpg"></p>
+<p>具体案例为遥控器，如上图类图展示，通过创建遥控器对象，将命令传递给遥控器对象，通过遥控中的开关按钮，实现每个命令，代码如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/e32aed2b-596c-45fb-a905-e566ef270ccc-977367.jpg"></p>
+<p>命令模式还可以用在队列请求，比如日程安排、线程池、工作队列等；命令模式还可以用在日志请求上，比如记录应用的所有动作，在应用死机后，重新调用这些动作恢复到之前的状态。</p>
+<p>3、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/qlqwjy/p/7476533.html" title="MySQL的CASE WHEN用法">MySQL的CASE WHEN用法</a></p>
+<p>归纳为两种用法：</p>
+<blockquote>
+<ol>
+<li>单个值判断</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 简单case函数</span><br><span class="line">case sex</span><br><span class="line">when &#39;1&#39; then &#39;男&#39;</span><br><span class="line">when &#39;2&#39; then &#39;女’</span><br><span class="line">else &#39;其他&#39; </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># case搜索函数</span><br><span class="line">case </span><br><span class="line">when sex &#x3D; &#39;1&#39; then &#39;男&#39;</span><br><span class="line">when sex &#x3D; &#39;2&#39; then &#39;女&#39;</span><br><span class="line">else &#39;其他&#39; </span><br><span class="line">end  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="2">
+<li>多个值判断</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">case </span><br><span class="line">when col in (&#39;a&#39;,&#39;b&#39;) then &#39;第一类&#39;</span><br><span class="line">when col in (&#39;c&#39;) then &#39;第二类&#39;</span><br><span class="line">else &#39;其他&#39; </span><br><span class="line">end  </span><br></pre></td></tr></table></figure>
+<p>4、<a target="_blank" rel="noopener" href="http://t.csdn.cn/R1Sof" title="MySQL中varchar类型数据排序的方法">MySQL中varchar类型数据排序的方法</a></p>
+<p>归纳为两种方法：</p>
+<blockquote>
+<ol>
+<li>手动转换类型</li>
+</ol>
+</blockquote>
+<p>在排序字段+0即可，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select code from province </span><br><span class="line">order by code+0 desc limit 10;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="2">
+<li>使用转换函数CAST/CONVERT</li>
+</ol>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select code from province order by </span><br><span class="line">CAST(server_id as SIGNED) desc limit 10;</span><br><span class="line">或者</span><br><span class="line">select code from province order by </span><br><span class="line">CAST(server_id as UNSIGNED INT) desc limit 10;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select code from province order by </span><br><span class="line">CONVERT (code, SIGNED) desc limit 10 ;</span><br></pre></td></tr></table></figure>
+<p><strong>SIGNED</strong> 和 <strong>UNSIGNED INT</strong>的<strong>区别</strong>：</p>
+<p>UNSIGNED 类型（&lt;=0 || &gt;=0）能保存2倍于 SIGNED 类型的正整数数据，且 UNSIGNED 类型数据为非负数（&gt;=0）。</p>
+<p>比如MySQL中signed int，取值是 $\ce{-2^31}$<del>$\ce{2^31 - 1}$，即：-2147483648 ~ 2147483647。<br>unsigned int，取值是0</del>$\ce{2^32 -1}$，即：0 ~ 4294967295。<br>可以看出 UNSIGNED 类型正整数数据是 SIGNED 类型正整数数据的2倍。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a target="_blank" rel="noopener" href="https://www.fx361.cc/page/2021/0830/8812689.shtml" title="空调时开时关更省电？">空调时开时关更省电？</a></p>
+<p>结论：频繁开关空调，反而更费电。</p>
+<p>原因：空调启动阶段的能耗很高，如果多次重启，总能耗会超过空调一直开着的能耗。并且空调工作时间越长，对比越明显。</p>
+<p>合理的做法：缩小室内外温度差，尽量减少室内和室外的热交换，是更有效的空调省电方法。也就是说关闭门窗，处于密闭状态，合理利用睡眠模式以及使用变频空调，可以起到省电作用。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a target="_blank" rel="noopener" href="https://secreter.github.io/ireader/index.html" title="i 微信读书插件">i 微信读书插件</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/9926075f-5912-4fd4-be3d-ce57d161e688-977367.jpg"></p>
+<p>微信读书网页版辅助工具，支持划线生成图片书签、笔记同步到第三方（readwise、flomo、notion）、 一键导出笔记、更换主题、更换字体等。</p>
+<p>2、<a target="_blank" rel="noopener" href="https://saladict.crimx.com/" title="Saladict 沙拉查词">Saladict 沙拉查词</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/67f7fd08-fa63-451b-86c6-908d73981989-977367.jpg"><br><img src="https://api2.mubu.com/v3/document_image/5522663a-26df-4c5f-a4b3-bf984266ed8f-977367.jpg"></p>
+<p>一个网页端的查词辅助工具，可以双语言显示，如上图，它有多种查词模式，还支持多个词典，最重要的还是免费。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>如果人生的每一个阶段，都能清晰的知道自己该做什么，做对的事情，做核心的事情，人生就会越来越好。</p>
+<p>——<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/zU3kug3BXuV9azbkA_Itsw" title="清仓万科及投资反思">清仓万科及投资反思</a></p>
+<p>2、</p>
+<p>知识会弥补这种物质的渴望，物质的东西追求是没有止境的，更多的应该专注于自己要做的事情上，就当你把事情做成功的时候，这个物质的东西好像就没有那么重要了。</p>
+<p>——<a target="_blank" rel="noopener" href="https://www.douyin.com/video/7106449257455996173" title="清北博士学霸夫妻：知识会弥补你对物质的渴望！">清北博士学霸夫妻：知识会弥补你对物质的渴望！</a></p>
+<p>3、</p>
+<p>天上的白云，蔚蓝的天空，舒服的小风，都是免费的。幸福，也很简单，它就在我们身边。</p>
+<p>——<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/QtpJ10nQbmRC_AgksE3F0A" title="A股，太强了">A股，太强了</a></p>
+<p>4、</p>
+<p>人类行为受到工作环境的强烈影响，你会变成环境要求你成为的样子。</p>
+<p>要小心你的工作，它会改变你，让你成为另一个人。</p>
+<p>——<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ihPq0Ka9faeodL-8pRsF1Q" title="科技爱好者周刊（第209期）：程序员是怎样的人">科技爱好者周刊（第209期）：程序员是怎样的人</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://feizi-discipline.gitee.io/2022/06/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC24%E6%9C%9F%EF%BC%89%EF%BC%9ALinux%20Shell%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8A%E6%97%A0%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cl4mjxwd9001d75yu0stzfi3n" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/06/20/%E3%80%8A%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%BF%9D%E9%99%A9%E6%8C%87%E5%8D%97%E3%80%8B/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      《你的第一本保险指南》
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/05/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC23%E6%9C%9F%EF%BC%89%EF%BC%9A%E8%A7%A3%E5%86%B3calibre%E5%AF%BC%E5%85%A5%E4%B9%A6%E7%B1%8D%E5%92%8C%E4%BC%A0%E8%BE%93%E4%B9%A6%E7%B1%8D%E4%B8%8D%E6%98%AF%E4%B8%AD%E6%96%87%E5%90%8D%E7%A7%B0%E9%97%AE%E9%A2%98%EF%BC%88mac%EF%BC%89/" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">杂货铺周刊（第23期）：解决calibre导入书籍和传输书籍不是中文名称问题（mac）</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>
+        &copy; 2022 壹周杂货铺
+      </li>
+      <li>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </li>
+      <!-- <li>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </li>
+      <li>Theme  
+        <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a>
+      </li> -->
+    </ul>
+  </div>
+</footer>
+
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("09/17/2019 21:15:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/oneweek.svg" alt="壹周杂货铺"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/favorites">收藏</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

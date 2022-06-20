@@ -146,6 +146,1328 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
+<a id="more"></a>
+
+<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
+<li>电脑一台</li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>GitHub账号或者Gitee账号一个</li>
+</ol>
+<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
+<ul>
+<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
+<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
+</ul>
+<p>安装 Node.js 后安装 npm </p>
+<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
+<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>我们继续来安装Hexo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>测试一下是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
+<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
+<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
+<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
+<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
+<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
+<p>码云上的个人空间地址，每个用户可以修改一次。</p>
+<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
+<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
+<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
+<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
+<p>启动博客</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
+<p>安装hexo-deployer-git自动部署发布工具</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
+<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>不喜欢默认主题的可以自行去官网下载替换 </p>
+<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
+<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
+<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
+<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
+<p>点击启动，复制一下生成的网站地址</p>
+<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+<p>配置完成后，重新去本地文件夹执行一下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
+<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
+<li><p>正确安装所需环境</p>
+</li>
+<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
+</li>
+<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《你的第一本保险指南》</title>
+    <url>/2022/06/20/%E3%80%8A%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E4%BF%9D%E9%99%A9%E6%8C%87%E5%8D%97%E3%80%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>作者是槽叔，全书主要分为七章，是一本经济理财类的书籍。</p>
+<a id="more"></a>
+
+<p>全书从我们对保险的误会开篇，到详细介绍作为普通人如何去配置适合自己的保险配置及后续的保险升级和理赔。</p>
+<hr>
+<p>书中除了介绍保险的四大基础险种，还介绍了车险、家财险和旅游险。</p>
+<h2 id="01-破除误会：我们真的了解保险吗？"><a href="#01-破除误会：我们真的了解保险吗？" class="headerlink" title="01 破除误会：我们真的了解保险吗？"></a>01 破除误会：我们真的了解保险吗？</h2><blockquote>
+<ol>
+<li>发生的事故不在保险范围，不能赔付</li>
+<li>客户未如实告知自身情况，不能赔付</li>
+<li>条款过于严苛，不能赔付</li>
+</ol>
+</blockquote>
+<p>保险条款内容艰涩，有些标准较为苛刻。其中以重大疾病险对于疾病的定义最为突出。</p>
+<p>定义疾病的是中国保监会，说疾病定义有值得商榷之处的，也是中国保监会，仅此一点，就足以说明这件事有多拧巴了。</p>
+<p>针对诉求合理的理赔纠纷，司法体系是站在消费者这边的。在涉及这类问题的法律纠纷中，获得法院支持的往往是消费者一方。</p>
+<p>所以，只要你做到了明确了解保险责任、如实告知自身情况，对于所谓的理赔严苛问题，大可不必担心。</p>
+<h3 id="买保险一定要返本吗？"><a href="#买保险一定要返本吗？" class="headerlink" title="买保险一定要返本吗？"></a>买保险一定要返本吗？</h3><p>当你想要返还的时候，想想你到底想要什么？</p>
+<p>返还型保险所需缴纳的保费，要比非返还型保险多出不少。在大多数情况下，多交的这部分保费往往用作重要的投资资金来累积生息，最终会把当初所交的本金“赚”回来。</p>
+<p>当你内心或多或少有“万一没出险就亏了”的想法时，潜意识里就会更加看重保费，而忘记自己配置保险的最初动机：购买充足的保额，确保获得足够的补偿。</p>
+<h3 id="非要拿到保额，不妨这样选择"><a href="#非要拿到保额，不妨这样选择" class="headerlink" title="非要拿到保额，不妨这样选择"></a>非要拿到保额，不妨这样选择</h3><p>对寿险来说，保障终身的寿险，客户一定能拿到赔付，毕竟人这一辈子终有一死。</p>
+<p>而对重疾险来说，即使设置为保障终身，但如果由于车祸等意外事故不幸身亡，被保险人还没“来得及”患上重疾就离开人世，自然是拿不到赔偿的。这种情况并不少见。<br>对此，保险公司的解决方案是：在重疾险里添加死亡责任。换句话说，即使你没得病，但不幸亡故，保险公司也会赔偿。<br>这类重疾险名叫“提前给付型重疾险”。身患重疾或不幸身故，哪个提前发生，都可给付赔偿。但它和返本型保险类似，其代价依然是：支付更多的保费。</p>
+<p>对于寿险和重疾险的定价来说，保险公司会参考两份资料：一是经验生命表，二是重大疾病经验发生率。<br>整体来看，人的年龄越大，罹患重疾和身故的概率就越高。当我们把保险期限定为“终身”时，就相当于涵盖了老年人的风险，重疾和身故的发生概率显著提升，自然导致保险产品的价格提升。一分钱一分货，这在保险产品中得到了体现。</p>
+<h3 id="保险公司会不会破产？"><a href="#保险公司会不会破产？" class="headerlink" title="保险公司会不会破产？"></a>保险公司会不会破产？</h3><p>保险公司会破产，却不会完蛋。</p>
+<p>保险公司或者其债权人可以依法向人民法院申请重整、和解或者破产清算；国务院保险监督管理机构也可以依法向人民法院申请对该保险公司进行重整或者破产清算。</p>
+<p><strong>当保险公司破产，持有该公司保单的客户该怎么办？</strong></p>
+<p>人寿保险合同及责任准备金，必须转让给其他经营有人寿保险业务的保险公司。<br>换句话说，我们的保单在换了保险公司后依然有效。不过还有一个问题：如果没有公司愿意接受这家保险公司的保单呢？不用担心，我们还有保险保障基金。</p>
+<p>统管天量资金但却默默无闻的保险保障基金，堪称所有保险公司的保险公司。有了保险保障基金，保险公司就可以做到“破产却不完蛋”。</p>
+<p>保险公司的三道防火墙：</p>
+<blockquote>
+<ol>
+<li>极高的公司设立标准</li>
+<li>全面科学的偿付能力监管</li>
+<li>频率高、强度大的现场检查</li>
+</ol>
+</blockquote>
+<p>偿付能力：指当保险公司遭遇极端情况时，是否仍有能力履行赔付责任。</p>
+<p>长期来看，只要评级稳定在A和B的公司，我们都可以放心购买其产品。</p>
+<p>我们最应该做的是基于监管部门的评价，结合保险公司的经营能力和风格特点，选择真正适合自己的保险产品。总之，消费层面的具体判断还得靠自己。</p>
+<p>监管部门每年都会对各家保险公司的投诉情况进行通报、评分，并发布在官网上（比如保监会官网）。</p>
+<p>也可以预先对保险公司的综合服务能力做出大致的判断，包括销售人员口碑如何，信息技术实力如何（比如官网和手机软件的使用体验），客服电话能否快速接通，诸如此类，帮助我们去购买保险。</p>
+<h2 id="02-购前指南：买保险的正确方法"><a href="#02-购前指南：买保险的正确方法" class="headerlink" title="02 购前指南：买保险的正确方法"></a>02 购前指南：买保险的正确方法</h2><p>什么样的人在身故后，需要留下一笔钱呢？</p>
+<p>他们更可能是作为家庭支柱的父母，而不是子女。由此我们知道，大多数时候我们没有必要为孩子购买终身寿险。</p>
+<p><strong>你最需要向他们咨询的就是这款产品的责任到底是什么、承担什么风险、解决什么问题。</strong></p>
+<p>弄明白自己需要的保险责任才是最重要的。</p>
+<p>汽车三大件是什么？</p>
+<p>发动机、变速箱、底盘。</p>
+<p>汽车的这三大件，决定了整车的动力和驾驶性能，也是其核心技术。</p>
+<p>保险产品其实也有三大件：</p>
+<blockquote>
+<ol>
+<li>保险的责任</li>
+<li>保险的保额</li>
+<li>保险的期限</li>
+</ol>
+</blockquote>
+<p><strong>责任、保额、期限</strong>这三样东西，是我们选购保险产品时最重要的关注点。</p>
+<p>责任的多少、保额的高低、期限的长短，这三大因素直接决定了保险产品的价格。</p>
+<p>保险产品以期限为标准，可以分成两类：</p>
+<blockquote>
+<ol>
+<li>短期产品，即保险期限不超过一年</li>
+<li>长期产品，即保险期限超过一年</li>
+</ol>
+</blockquote>
+<p>10年、20年甚至终身，都属于长期产品。</p>
+<p>意外险和医疗险大多是一年期的短期产品，因为这类产品的价格受到医疗费用的变动和意外发生率的影响，理赔情况每年都会波动。这种随年龄增加而上涨的定价策略，叫作自然费率。客户每年交的钱，只负责承担当年的风险。</p>
+<p>而长期保险产品就不一样了。它的定价方法遵循两个原则：一是均衡费率原则，二是保证费率原则。</p>
+<p>所谓均衡费率，指的是保险公司将被保险人未来很长一段时间的风险，归并到一起进行定价，而不只是一年的风险。</p>
+<p>所谓保证费率，指的是在你投保的一瞬间，价格便已确定，后期不会增加。</p>
+<p>在这样一种模式下，长期产品的停售只意味着不接受新客户的购买，但并不影响已经投保的客户，毕竟保障期限不管是终身还是到70岁，合同里都已经约定好了。</p>
+<p>对于已经有长期险庇护的人来说，额外购买一份一年期产品，可以在一定时间内增加保额。</p>
+<p>这种情况下，一年期的产品是性价比很高的临时选择，即使购买两年该产品就停售了，对我也不会有太大的影响。</p>
+<p>短期险发挥的只是补充作用。如果我们一开始就完全倚仗一年期产品，那么未来遇到问题的概率会很高。</p>
+<p>年轻时保费低。</p>
+<p>责任的多少、保额的高低、期限的长短，这三大件直接决定了保险产品的价格。</p>
+<p>保险这种产品不是一次性的，它是陪伴你度过漫长人生的一种风险规划。</p>
+<h3 id="如何与保险业务员打交道"><a href="#如何与保险业务员打交道" class="headerlink" title="如何与保险业务员打交道"></a>如何与保险业务员打交道</h3><p>保险销售人员到底指的是谁？</p>
+<blockquote>
+<ol>
+<li>保险代理人</li>
+<li>保险经纪人</li>
+<li>银行理财经理</li>
+<li>互联网第三方平台</li>
+</ol>
+</blockquote>
+<p>在当今的中国保险市场，每类销售群体都各有特点，而它们最大的共性是：佣金和收入来自产品背后的保险公司。</p>
+<p>1992年，友邦保险在中国设立办事处，并将保险代理人这一在西方运作多年的模式引入中国。</p>
+<p><strong>和业务员打交道，要遵循两个原则：</strong></p>
+<p>第一个原则：互相尊重，学会提问。</p>
+<p>保险公司在确定产品价格的过程中，已经考虑到了销售费用。</p>
+<p>学会提问，比如条款能给我看一下吗？为什么我需要这款产品？为什么这类产品你们家的最好？能比较一下不同产品吗？为什么要保终身？为什么这个附加险值得购买？</p>
+<p>如果你发现这位保险业务员面对你提出的一个个问题，要么答不出来，要么逻辑混乱，要么不分青红皂白地敌视及贬损其他保险公司，最好立即更换业务员。</p>
+<p>第二个原则：充分信任，要有主见。</p>
+<hr>
+<p>在保险公司里，由于销售人员离职造成的保单无人管理的问题非常普遍，这类保单被形象地称为“孤儿保单”。</p>
+<h3 id="你的公司给你买保险了吗？"><a href="#你的公司给你买保险了吗？" class="headerlink" title="你的公司给你买保险了吗？"></a>你的公司给你买保险了吗？</h3><p>企业团体保险统称为团险。</p>
+<p>团险通常由4个保险产品组成：定期寿险、重大疾病险、意外险、医疗险。</p>
+<p>团险价格之所以“亲民”，主要原因如下：</p>
+<blockquote>
+<ol>
+<li>团险可以简单类比为团购，买的人数多，节省了一部分管理成本，自然就能获得一定的优惠</li>
+<li>团险的主要销售对象是企业人力资源部，只要负责人拍板，100个员工就直接购买了，不用一个一个地宣传、介绍，间接降低了产品的销售费用，最终的实惠落在了每一位参保员工身上</li>
+<li>以企业名义投保，参保人员的工作环境和性质相对一致，外部风险可控，何况不少企业还有入职体检，可以很好解决客户的逆选择和健康问题</li>
+</ol>
+</blockquote>
+<p>高端医疗险，这类保险价格不菲，可以让员工发生意外或者生病时，毫无顾忌地走进一家私立医院。</p>
+<p>即使保额充足、保障责任广泛，公司为员工购买的团体保险有时也可能是一个“陷阱”：公司给我提供的保险越好，我越不需要给自己买保险。</p>
+<p>当你离职后，从零开始的除了你的事业，还有你的保险。</p>
+<h2 id="03-重点关注：中产必备的“四大保险金刚”"><a href="#03-重点关注：中产必备的“四大保险金刚”" class="headerlink" title="03 重点关注：中产必备的“四大保险金刚”"></a>03 重点关注：中产必备的“四大保险金刚”</h2><h3 id="重大疾病险：为了不被改变的人生"><a href="#重大疾病险：为了不被改变的人生" class="headerlink" title="重大疾病险：为了不被改变的人生"></a>重大疾病险：为了不被改变的人生</h3><p>医生可以挽救病人的生命，却无法挽救一个家庭的“财务生命”。</p>
+<p>联合保险公司，为这类身患重大疾病的患者提供风险保障。这就是重大疾病险的源起。</p>
+<p>重疾险的诞生，本质上是为了解决收入中断的风险，站在患者及其家人的角度，为已在重病深渊的家庭提供雪中送炭般的经济补偿。</p>
+<p>在重疾险的理赔中，符合“罹患”要求的有三种情况：</p>
+<blockquote>
+<ol>
+<li>病情达到某个标准，相当于确诊即赔，比如恶性肿瘤</li>
+<li>投保人为治疗某种疾病而接受了某种治疗方法。比如心脏瓣膜手术</li>
+<li>某种状态持续了一段时间。比如脑中风后遗症</li>
+</ol>
+</blockquote>
+<p>除了重大疾病，重疾险还保这些：</p>
+<p><strong>第一类是“身故责任”。</strong></p>
+<p>提前给付不过是一种产品设计罢了，千万别觉得它是一项独特的优势。</p>
+<p><strong>第二类新增责任是轻症和中症责任。</strong></p>
+<p><strong>第三类新增责任是针对重大疾病的花样赔付方式。</strong></p>
+<p>比如重疾和轻症可以赔付多次等。</p>
+<p><strong>建议</strong>：选择重大疾病险时，最重要的是做到保额满足需要。</p>
+<p>只要确保这款重疾险能提供60万元的重疾保额，有没有身故责任、多次赔付、投保人豁免，都无关紧要。</p>
+<p>对于需要60万元重疾险保额的小王来说，可以选择买一份保终身的30万元保额的重疾险，再买一份保到70岁的30万元保额的重疾险。这比直接购买一份保终身的60万元保额的重疾险，花费更少。</p>
+<h3 id="定期寿险：解决人生中最大的风险"><a href="#定期寿险：解决人生中最大的风险" class="headerlink" title="定期寿险：解决人生中最大的风险"></a>定期寿险：解决人生中最大的风险</h3><p>如果说重疾险的赌注是病，寿险的赌注就是命。</p>
+<p>意外险只保障由于意外导致的身故。通俗地说，如果是意外造成的死亡，就赔；如果是疾病造成的死亡，则不赔。</p>
+<p>定期寿险的保额，主要取决于三个因素:</p>
+<blockquote>
+<ol>
+<li>个人和家庭的债务额度，比如房贷、车贷等，确保一方身故后，债务不转嫁到另一方或父母身上</li>
+<li>家庭成员的基本生活成本</li>
+<li>是父母的养老支出</li>
+</ol>
+</blockquote>
+<p>定期寿险还要考虑的问题是保障期限。到底要保到多大年龄呢？</p>
+<p><strong>作者建议</strong>，以退休年龄为标准，60岁或70岁皆可。至于缴费年限的选择，建议尽可能拉长，20年交或30年交皆可。缴费年限越长，年均保费越低，从而做到用尽可能少的钱去撬动尽可能高的保额。</p>
+<p>保额、保障期限和缴费年限都确定后，我们在选购具体产品时，还要格外关注三个方面：</p>
+<blockquote>
+<ol>
+<li>核保是否宽松</li>
+<li>除外责任多不多</li>
+<li>价格低不低</li>
+</ol>
+</blockquote>
+<p>针对房贷风险，保险行业专门设计了一款保险，名字叫作<strong>减额定期寿险</strong>。顾名思义，减额定期寿险就是保额递减的定期寿险。</p>
+<p>减额定期寿险的应用场景仅限于房贷。</p>
+<p>前文介绍的普通定期寿险才是基础，而减额定期寿险只能起到锦上添花的作用，毕竟“保额逐渐降低”这个设计只符合房贷余额的变化趋势，而不符合我们的收入变化趋势——明明赚得越来越多，保额怎么能越来越低呢？</p>
+<p>对于有一定身家的高净值人群来说，终身寿险是当下可供选择的、非常重要的财富传承手段之一。它等同于将一笔定额遗产以理赔款的形式，在未来某个时间段支付给指定的受益人。</p>
+<h3 id="商业医疗险：让高额医疗开支不再可怕"><a href="#商业医疗险：让高额医疗开支不再可怕" class="headerlink" title="商业医疗险：让高额医疗开支不再可怕"></a>商业医疗险：让高额医疗开支不再可怕</h3><p>医疗险只包括两种产品：</p>
+<p>第一种是包含门诊责任的商业医疗保险，可暂且称之为门诊医疗保险。</p>
+<p>第二种是包含住院责任的商业医疗保险，我们称之为住院医疗保险。</p>
+<p>重疾险有点儿像一锤子买卖，只要符合条款规定，保险公司就会把理赔款一次性打给你，无论是几万元还是几十万元。</p>
+<p>商业医保就不一样了，花多少才能赔多少，保额仅代表可报销额度的上限，而你不一定能花掉这么多钱。</p>
+<p>如果一个人罹患影响正常生活的重大疾病，那他主要面临的问题有两个：</p>
+<p>一是治疗费用太高，掏空家底；二是无法继续工作，失去收入。</p>
+<p>前者可以靠商业医疗保险解决，后者则只能靠重疾险解决，两类保险的功能不一样。</p>
+<p>目前市场上大多数医疗险都是一年期产品，如果第二年你想继续投保，得先看看保险条款是怎么规定的，通常有以下两种情况。</p>
+<p>第一种是，卖不卖给你，我说了算。</p>
+<p>第二种规定是，只要这个产品还在销售，保险公司就肯定会卖给你。</p>
+<h3 id="意外险：不容忽视的“小”保险"><a href="#意外险：不容忽视的“小”保险" class="headerlink" title="意外险：不容忽视的“小”保险"></a>意外险：不容忽视的“小”保险</h3><p>意外险保什么、不保什么？</p>
+<p>第一，外来的、突发的、非本意的、非疾病的使身体受到伤害的客观事件，属于意外；</p>
+<p>第二，自然死亡、疾病身故、猝死、自杀及自伤，不属于意外。</p>
+<p>只承担中华人民共和国国境内（不包括港澳台地区）医院产生的医疗费用和支出。</p>
+<p>今后对于出境、高风险运动、职业变更等特殊事件，应及时购买有针对性的<strong>特定意外险</strong>。</p>
+<h3 id="配置意外险的几条原则"><a href="#配置意外险的几条原则" class="headerlink" title="配置意外险的几条原则"></a>配置意外险的几条原则</h3><p><strong>原则一：必须涵盖意外医疗责任。</strong></p>
+<p>意外导致的结果无非两种：伤残和死亡。因此，意外险保障的责任有三个必选项：身故、伤残、医疗。</p>
+<p>住院津贴或住院保险金，本质上也属于意外医疗的责任范围。</p>
+<p>住院津贴属于锦上添花型保险，而且要花钱购买，所以有没有都无所谓。</p>
+<p><strong>原则二：一般意外身故的保额应足够高。</strong></p>
+<p>在所有死亡案例中，意外死亡占比不到20%。所以，同为100万元的身故保额，意外险的价格远低于定期寿险。</p>
+<p><strong>建议</strong>：尽可能把意外身故的保额提高。花最少的钱，撬动更高的杠杆，这是意外险的真实写照。说实话，意外险100万元身故保额在一二线城市根本不算高。</p>
+<p><strong>原则三：不同人群的意外险，侧重点不一样。</strong></p>
+<p>对于职场白领来说，意外险既要有足够的身故补偿（用于弥补家庭经济损失），也要保证受伤后有钱治疗；</p>
+<p>但对于孩子和老人来说，身故补偿就没有医疗费用补偿重要，毕竟他们不是家里的顶梁柱。因此，孩子和老人的意外险，应侧重于考虑提升意外医疗的保额，而没有必要追求意外身故的高保额。</p>
+<p><strong>原则四：保障时间一年就够了。</strong></p>
+<p>每年各家公司的意外险层出不穷，可能去年买的产品，到了明年就没什么竞争力了，这时直接换一家公司购买就好。</p>
+<p>由于意外险的几个基本责任都没有等待期这一说，所以可以做到无缝衔接。相较于重疾险、定期寿险、医疗险，这一点是意外险的独特优势。</p>
+<hr>
+<p>一份科学的保险规划，应当包含每年对已有的保险方案做检视，以便及时补充新产品、增加保额。所以，不妨借着每年的这个时间点，看看有没有更好的意外险可以选购。</p>
+<h2 id="04-优化配置：给保险升个级"><a href="#04-优化配置：给保险升个级" class="headerlink" title="04 优化配置：给保险升个级"></a>04 优化配置：给保险升个级</h2><h3 id="高端医疗，高端在哪里？"><a href="#高端医疗，高端在哪里？" class="headerlink" title="高端医疗，高端在哪里？"></a>高端医疗，高端在哪里？</h3><p>第一，保额更高。</p>
+<p>第二，医院更多、更高端。</p>
+<p>第三，保障更全面。</p>
+<p>除了传统的门诊、住院两大块之外，高端医疗险还包含分娩、牙科、眼科、体检等责任。</p>
+<p>第四，增值服务更多。</p>
+<p>第五，理赔体验更好。</p>
+<p>总之，不管你在哪个国家，都可以在高端的医院里享受最好的医疗服务，而且不用掏一分钱。这就是高端医疗险带来的优质体验。</p>
+<p>高端医疗险主要是为了满足高收入群体的医疗需求。</p>
+<hr>
+<p>保险公司放下身段的第一种方式是，调整高端医疗险的具体责任和结构，把套餐变为单点。</p>
+<p>北京的和睦家医院（及其下属门诊部）、上海的东方国际医疗中心、香港的明德医院等都被归为昂贵医院。</p>
+<p>涵盖三甲医院特需和国际部，只保障住院责任，一年的保费只要三四千元（投保人为30岁的价格）。</p>
+<p>保险公司放下身段的第二种方式是，主动开发儿童医疗险市场。</p>
+<h3 id="保险能为我的养老做什么？"><a href="#保险能为我的养老做什么？" class="headerlink" title="保险能为我的养老做什么？"></a>保险能为我的养老做什么？</h3><p>今天的储蓄和明天的支出不会有太大差异，这是养老金存在的前提。目前想靠一份养老保险彻底解决养老问题，可以说是痴心妄想。</p>
+<p>我们常说中国养老有三个支柱：第一支柱是政府养老金，第二支柱是企业年金、职业年金，第三支柱是包含税延养老险在内的商业养老保险。</p>
+<p>第一支柱大家都懂，第二支柱很多人听都没听过，因为基本上只有效益很好的大国企、央企才会给职工买。所以对于很多人来说，他们必须选择第三支柱作为养老的重要补充。</p>
+<p><strong>作者建议</strong>：每月缴纳五险一金和个人所得税的上班族，一定要投保税收递延养老保险，你可以把它理解为一种包含政府福利的养老保险政策。每月投入1000元，除了获得3%~4%的稳健复利收益，更能直接获得一部分延迟缴税。</p>
+<h3 id="理财保险产品"><a href="#理财保险产品" class="headerlink" title="理财保险产品"></a>理财保险产品</h3><p>理财保险主要有4类：</p>
+<blockquote>
+<ol>
+<li>万能型保险</li>
+<li>投资连结保险</li>
+<li>分红保险</li>
+<li>年金保险</li>
+</ol>
+</blockquote>
+<p>像分期贷款一样，逐年返还给你。年金保险往往属于此类。</p>
+<p>交一笔钱，过段时间取出来，要么多了（赚了），要么少了（亏了），连结险和万能险就属于这类。</p>
+<p>与投资连结险相比，万能险则没那么激进，虽然也可以选择股票作为投资对象，但资金运用比例受到一定的限制。更重要的是，万能投资账户设置了保底收益，客户起码不会有亏损的风险。</p>
+<p>内部收益率正是考虑了每笔投资的时间价值，所以堪称最真实的投资收益率。</p>
+<p>内部收益率堪称这类产品的核心竞争力，只要牢牢抓住这一点，你就不会被迷惑。</p>
+<p>消费者需要做的，是认清某个产品能解决什么问题，以及不能解决什么问题。比如，保底收益是多少，产品期限、保费金额是多少，高、中、低档的分红各是多少，历史实现情况如何。</p>
+<p>内部收益率不能超过4.025%。这是监管部门为了防止利差损而制定的规则。</p>
+<p>千万不要觉得4%的收益率很低，放眼未来几十年，实现这个承诺并非易事，保险公司的压力其实很大。</p>
+<h3 id="我该去香港买保险吗？"><a href="#我该去香港买保险吗？" class="headerlink" title="我该去香港买保险吗？"></a>我该去香港买保险吗？</h3><p>如果你的香港保险合同是在内地签署的，而非本人前往香港签署，那么它既不受国内法律保护，也不受香港法律保护，就是“地下保单”。</p>
+<p>在香港保险风靡内地的2016年，保监会发布了措辞严厉的《中国保监会关于内地居民赴港购买保险的风险提示》，言辞恳切地呼吁内地居民“谨慎投保”，重点提示了以下几个风险：</p>
+<blockquote>
+<ol>
+<li>汇率风险</li>
+<li>收益风险</li>
+<li>纠纷风险</li>
+</ol>
+</blockquote>
+<p>如果你愿意接受跨境投保的一系列潜在风险，并对自身需求有明确的认识，以下供参考：</p>
+<blockquote>
+<ol>
+<li>是家庭税后年收入不低于50万元</li>
+<li>对美元资金的需求客观存在</li>
+<li>有海外长期居住甚至移民的需求</li>
+<li>能找到足够专业的香港本地保险人</li>
+</ol>
+</blockquote>
+<h2 id="05-个性化定制：保险方案，你自己说了算"><a href="#05-个性化定制：保险方案，你自己说了算" class="headerlink" title="05 个性化定制：保险方案，你自己说了算"></a>05 个性化定制：保险方案，你自己说了算</h2><h3 id="如何给孩子买保险"><a href="#如何给孩子买保险" class="headerlink" title="如何给孩子买保险"></a>如何给孩子买保险</h3><p>孩子会面临哪些风险?</p>
+<p>风险一：身患危重疾病</p>
+<p><strong>因此，重疾险和高保额住院医疗险是应该首先为孩子配置的保险。</strong></p>
+<p>风险二：发生意外受伤</p>
+<p>风险三：身患一般疾病</p>
+<p>我们只是看上了意外险里的意外医疗责任。但如果你为孩子购买了专门保障身故的定期寿险、终身寿险，就令人费解了。</p>
+<p>政府严格限制未成年人身故可获得的赔偿金额。10岁以下的未成年人的身故赔偿限额是20万元。10~18岁的未成年人，身故赔偿限额是50万元（注意：航空意外、自然灾害意外不受此规定限制）。</p>
+<p>除意义不大的身故责任外，为孩子购买教育金、养老金，优先级也不高。</p>
+<p><strong>孩子真正需要的商业保险其实只有三款：重大疾病险、意外险、高额住院医疗险。</strong></p>
+<p>如果还有预算，则可以考虑门诊医疗险或者高端医疗险，后者对于生活在北上广深等一二线大城市的中产阶级来说尤其值得关注。</p>
+<p>少儿罹患重大疾病的概率非常低。这直接决定了儿童重疾险的价格十分便宜。因此，<strong>为孩子配置重疾险，一定要抓住价格优势，尽可能提高保额，拉长期限。</strong></p>
+<p>30年的保障期意味着待该产品到期时，三四十岁的中年人需要重新购买重疾险，但他们有可能会因为健康告知问题而遇上麻烦，那时如果真的断保，就得不偿失了。</p>
+<p>对已经为孩子购买了保到70岁或者终身重疾险的父母来说，可以再额外购买一份这类产品，以提升未来30年的保额。</p>
+<p>孩子最好的保险是父母，父母自身的健康以及稳定、持续的赚钱能力，是孩子最重要的保险。</p>
+<p>当上父母后，你为孩子配置了全面的保险产品，自己却处于裸奔状态，这是十分不可取的。爸妈这两台“印钞机”正常运转，是对孩子负责的重要体现。</p>
+<p>为孩子配置保险的几个关键点：</p>
+<blockquote>
+<ol>
+<li>作为父母，先把自己的保险配置好，因为你才是孩子最大的“保险”</li>
+<li>在购买任何商业保险之前，先为孩子办理好当地的少儿医保，这是政府给予的福利，一定要充分利用</li>
+<li>结合自身预算，首先配置高保额的重大疾病险和住院医疗险，其他的保险则量力购买</li>
+</ol>
+</blockquote>
+<h3 id="如何给父母买保险"><a href="#如何给父母买保险" class="headerlink" title="如何给父母买保险"></a>如何给父母买保险</h3><p><strong>给父母配置保险，主要考虑的应该是重疾险、医疗险和意外险。</strong></p>
+<p>年龄超过60岁的人想要投保重疾险和医疗险会有很多限制：</p>
+<p><strong>第一，年龄限制。</strong></p>
+<p>几乎所有重疾险和医疗险的投保年龄都在0~60岁。</p>
+<p>人的年龄越大，患病概率就越高。</p>
+<p><strong>第二，保额限制。</strong></p>
+<p>同样一份保险，30岁的人和50岁的人可享受的保额上限是不一样的。</p>
+<p>更重要的是，与重疾险不同，住院医疗险的保额通常不受年龄影响，挑选一个续保条件好、保额高、责任全的住院医疗险，远比买重疾险更“划算”。所谓的划算，指保费倒挂。</p>
+<p><strong>第三，保费倒挂。</strong></p>
+<p>比如，一位55岁的男性购买保额为10万元的重疾险，每年需要交3500元左右，交20年，总计7万元的支出和10万元的保额相比，差别不大。</p>
+<p><strong>第四，健康告知不符。</strong></p>
+<p>患有高血压、心脏病、糖尿病的老年人，可以直接和重大疾病险、住院医疗险说再见了。</p>
+<p>防癌类保险应运而生。只要不是易引发癌症的症状（肝部疾病、器官或组织的结节等），保险公司都不介意，高血压、糖尿病患者也可以投保。</p>
+<p><strong>掌握给父母买保险的技巧：</strong></p>
+<p>第一，确保父母双方都有社会医疗保险。不管是城市的居民医保，还是农村的“新农合”，没有的话，赶紧先把社会医保办好</p>
+<p>第二，遇到疑难杂症，不少人会选择带父母来北上广等大城市就诊。所以，请提前研究好医保的异地结算流程，确保不让医保“白交”，这一点非常有必要。</p>
+<p>第三，详细了解爸妈的身体健康情况，对症下药买保险。</p>
+<h3 id="如何给自己买保险"><a href="#如何给自己买保险" class="headerlink" title="如何给自己买保险"></a>如何给自己买保险</h3><p>给自己买保险，不能一蹴而就，应随着人生进入不同阶段而分步实施。</p>
+<p>比如，涉及医疗补偿的保险（如住院医疗险、重大疾病险），是为了让自己不至于被疾病掏空腰包；再比如，涉及身故补偿的保险（如定期寿险、意外险），是为了让家人能够继续维持原来的生活水准。</p>
+<h2 id="06-家人之外，这些保险也很有必要"><a href="#06-家人之外，这些保险也很有必要" class="headerlink" title="06 家人之外，这些保险也很有必要"></a>06 家人之外，这些保险也很有必要</h2><h3 id="车险很简单，买对却很难"><a href="#车险很简单，买对却很难" class="headerlink" title="车险很简单，买对却很难"></a>车险很简单，买对却很难</h3><p>买车险的原则：先看人，再看车。</p>
+<p>“主要风险保障有力，次要风险量力而行”。</p>
+<p>交通事故造成的死亡赔偿，往往以该地区上一年度人均可支配收入的20倍为标准。</p>
+<p>驾乘人员意外险，这种意外险，只要包含意外身故和意外医疗责任就足够了。</p>
+<p>把人的问题解决后，车的问题解决起来就简单多了。不管是最常见的车损险和盗抢险，还是以附加险形式存在的玻璃破碎险、发动机涉水险、车身划痕险等，都应由你基于预算和驾车环境综合决定是否购买。</p>
+<h3 id="车险怎么买才便宜？"><a href="#车险怎么买才便宜？" class="headerlink" title="车险怎么买才便宜？"></a>车险怎么买才便宜？</h3><p>即保额决定价格。价值20万元的汽车，保额200万元的第三者责任险，这些金额都是客观和确定的。</p>
+<p>但随着车险价格政策的多次调整，原先保险公司计算出来的价格，已经变为基准保费。</p>
+<p>在此基础之上，保险公司又增加了许多额外的规则。</p>
+<p>第一个规则是看去年的理赔情况。</p>
+<p>第二个规则是在保险公司眼里你够不够“安全”。</p>
+<p>第三个规则是在销售渠道眼里你够不够“安全”。</p>
+<p>第四个规则是看你去年的交通违规情况。</p>
+<p>有的渠道为了留住客户，会在正常打折的基础上，额外赠送加油卡或礼品卡。</p>
+<p>但车险就不一样了。保险公司如果拥有更多网点和理赔车辆，</p>
+<p>这些服务的背后是丰富的理赔经验、大量的资源投入，以及扎实的信息技术能力。这就是我建议大家在买车险时关注大公司的原因，对于车险这种商品来说，规模优势不容忽视。</p>
+<p>作者总结的车险购买经验，就是简单的两步：</p>
+<blockquote>
+<ol>
+<li>确定渠道和价格</li>
+<li>挑选公司</li>
+</ol>
+</blockquote>
+<p>各家公司销售的车险，都是完全一样的产品，连条款都是由政府统一制定的。而在人身保险公司，重疾险、意外险则皆由保险公司自行开发，产品功能自然各不相同。</p>
+<p>在同质化竞争态势下，车险市场的集中度越来越高，中国近2/3的车险市场份额被4家保险公司占据。更可怕的是，这4家公司的集中度还在继续上升。但车险市场的特点在于，真正有实力和资本打价格战的反而是大公司。</p>
+<p>车险本质上是一个基于自身使用习惯、周遭环境等前提的大数据模型，在这个战场上，当然不只有保险公司。不管怎样，只要你是一名遵纪守法的好司机，未来的车险产品对你而言一定会更优惠。</p>
+<h3 id="为家里最值钱的东西买份保险"><a href="#为家里最值钱的东西买份保险" class="headerlink" title="为家里最值钱的东西买份保险"></a>为家里最值钱的东西买份保险</h3><p>保障房屋财产安全的保险，统称为家庭财产保险，也可简称为家财险。</p>
+<p>主险，具体如下：</p>
+<blockquote>
+<ol>
+<li>房屋及其室内附属设备，比如水暖、气暖、管道设施等</li>
+<li>室内装修，比如地板、吊顶、墙纸、水电等</li>
+<li>室内财产，比如家具、电器等</li>
+</ol>
+</blockquote>
+<p>附加险其责任范围是：</p>
+<blockquote>
+<ol>
+<li>室内盗抢损失：因入户盗窃和抢劫造成的财产损失</li>
+<li>第三者责任损失：阳台花盆掉下致人伤亡和造成的财产损失</li>
+<li>管道破裂损失：自来水管、暖气水管爆裂，把自家和邻居家都淹了</li>
+</ol>
+</blockquote>
+<p>当你根据自己的需求去阅读条款时，应该怎么做呢？</p>
+<p><strong>第一步：了解责任范围</strong></p>
+<p>有的家财险只包含火灾、爆炸、飞行物坠落和外部建筑倒塌的风险，而像台风、冰雹、洪水这种常见自然灾害却不在其责任范围内，这样的家财险产品要远离。</p>
+<p>第一，家财险只承保钢结构、钢筋混凝土结构、砖混结构的房屋，木屋、草屋不在承保范围内。</p>
+<p>此外，房龄过大（比如30年以上）、产权不清晰（小产权、农村集体产权）的房屋也不在承保范围内。</p>
+<p>事实上，租户（有合法的租赁合同）也可以为自己租赁的住宅购买家财险。</p>
+<p>第二，室内财产也是有承保范围的，并不是说财物只要在家里就都可以赔偿。</p>
+<p><strong>第二步：看清除外责任</strong></p>
+<p>对主险而言，最常见的除外责任是战争造成的房屋、装修和财产损失。</p>
+<p>房屋盗抢险规定，因门窗未锁致使保险标的遭受盗窃、存在窗外钩物行为或无明显现场痕迹的盗窃行为，都不在保险范围内。</p>
+<p><strong>第三步：学会互相搭配</strong></p>
+<p>在做家财险规划的时候，我们一定要在解决重大风险（由主险负责）的基础上，结合自身预算和需求，搞定部分一般风险（由附加险负责）。</p>
+<h3 id="外出旅游，请一定买份旅游险"><a href="#外出旅游，请一定买份旅游险" class="headerlink" title="外出旅游，请一定买份旅游险"></a>外出旅游，请一定买份旅游险</h3><p>外出旅游可能遇到的两个最大的风险就是死亡和受伤。</p>
+<p><strong>第一类风险：旅游时死亡。</strong></p>
+<p>旅行途中发生的交通意外（比如车祸）或者游览意外（比如坠崖）都会导致意外死亡。</p>
+<p>如果你购买了意外险和定期寿险，就可以得到保险公司的赔付。</p>
+<p><strong>第二种风险：旅游时受伤。</strong></p>
+<p>针对死亡和受伤风险，旅游险通常包含的责任有以下几种：</p>
+<p>意外身故：遗体/骨灰转运，会有专门的转运公司负责将身故者的遗体和骨灰运回他的家乡。</p>
+<p>意外残疾：根据伤残等级，支付相应的理赔款。</p>
+<p>医疗费用：这要看你买的旅游险是只负责意外受伤的医疗费，还是也负责疾病的医疗费。比如，阑尾炎显然不属于意外，如果你购买的旅游险只包含意外医疗责任而你在旅行期间阑尾炎发作，那你只能自己掏腰包看病。</p>
+<p>医疗运送与往返：医疗运送也可以理解为国际救援服务。如果因为医疗条件和设备要求必须进行运送，并且时间紧迫，用直升机进行跨国运送也是可以的。</p>
+<p>慰问探访：如果在外住院时间较长，保险公司还可以承担一名亲友前往探视的交通费和住宿费。</p>
+<p>旅行计划取消：目的地突然爆发战争、瘟疫，或者直系亲属突然身故，以致无法按原计划出游。对于一些不可退还的费用（比如机票、酒店），可以通过旅游险获得合理的补偿。</p>
+<p>托运行李延误：因运送不当导致行李延误，保险公司会按照额度给予赔偿。</p>
+<p>银行卡盗刷损失：只要证明因为银行卡丢失或者被窃，导致被盗刷，可在额度范围内获得赔付。</p>
+<p>旅行证件重置费用：在旅途中，除了丢银行卡，还有可能丢失护照。对此，保险公司也会予以合理的赔偿。</p>
+<p>总之，购买旅游险的一条标准就是：责任越多越好。</p>
+<p><strong>注意事项</strong></p>
+<p>第一，一定要在出行前就投保旅游险。</p>
+<p>旅游险都是次日凌晨生效，如果出发当天才买，当天的风险就没有保障。</p>
+<p>第二，投保时要注意保单的生效日。</p>
+<p>保单生效时间要覆盖整个旅程。</p>
+<p>第三，投保之前一定要仔细阅读保险条款，尤其是除外责任。</p>
+<h2 id="07-签字之后：搞定理赔、投诉及其他"><a href="#07-签字之后：搞定理赔、投诉及其他" class="headerlink" title="07 签字之后：搞定理赔、投诉及其他"></a>07 签字之后：搞定理赔、投诉及其他</h2><p>住院医疗险和包含医疗责任的意外险等产品而言，购买多个产品并不代表能获得多次赔付。</p>
+<h3 id="保险管理三部曲"><a href="#保险管理三部曲" class="headerlink" title="保险管理三部曲"></a>保险管理三部曲</h3><p><strong>第一步，保单汇总。</strong></p>
+<p>把所有纸质保单收集起来统一存放；电子保单则应及时下载，把它们存储在电脑或者网盘里。</p>
+<p><strong>第二步，建立清单。</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d9599f4e-f1cf-4d00-b19c-2c0586fd189d-977367.jpg"></p>
+<p>保险规划是一项贯穿一生的动态工作，一个人或一个家庭必然不可能只有一张保单。即使你只购买“四大保险金刚”（定期寿险、重大疾病险、商业医疗险、意外险），至少也要面对4张保单。而且，随着家庭成员的变化和需求的增加，保险配置会越来越丰富。</p>
+<p><strong>第三步，告知亲友。</strong></p>
+<p>买完保险后，请一定要告知至少一位亲人，要么是你的配偶，要么是你的父母。</p>
+<p>如果你给自己买了一份保险却谁也没告诉，一旦发生保险事故，保险公司将无从获取客户信息，也就无法主动联系客户进行理赔。</p>
+<hr>
+<p>客户可以通过名为“保全”的服务，更改保单的受益人、缴费年限等参数，甚至可以更换投保人。</p>
+<h3 id="离婚后，前妻的保费还需要我交吗？"><a href="#离婚后，前妻的保费还需要我交吗？" class="headerlink" title="离婚后，前妻的保费还需要我交吗？"></a>离婚后，前妻的保费还需要我交吗？</h3><p>关于受益人，被保险人可以有两种选择。</p>
+<p>第一种是默认法定受益人。所谓法定受益人，是指这笔理赔款将由被保险人的配偶、子女和父母共同继承，他们被称为第一顺位继承人。</p>
+<p>如果他们早于被保险人去世，则意味着第一顺位无人继承理赔款，可由第二顺位（兄弟姐妹、爷爷奶奶、外公外婆）继承。</p>
+<p>第二种是指定受益人。假设有100万元的理赔款，我希望给妻子50万元，给母亲50万元，就需要提前指定好。</p>
+<p>退保意味着取消保险合同，这是投保人的权利，而且可以不通知被保险人。即使不退保，我也可以通过停止交费的方式，令保单失效。说白了，是否续保，全由投保人的意愿决定。</p>
+<p>投保人豁免指的是当你以投保人的身份为配偶和子女投保重疾险时，可以享受的一个权益：如果投保人（你自己）不幸罹患重疾或身故，则后续保费无须再交。换句话说，如果投保人出保险事故，其配偶和子女的保单不受影响。</p>
+<p>投保人豁免权益更适用于给未成年子女购买保险的情况。</p>
+<p>由自己做投保人，才是最稳妥、最踏实的购买方式，不因感情的变化而受影响，这样的保险才更“保险”。</p>
+<hr>
+<p>保险公司的赔偿标准，总结起来就是9个字：不惜赔，不滥赔，不错赔。该赔的保险公司一定会赔。</p>
+<p>《保险法》规定，即使情况复杂，保险公司在30天内也要做出理赔的核定。</p>
+<h3 id="“保险四大金刚”怎么赔？"><a href="#“保险四大金刚”怎么赔？" class="headerlink" title="“保险四大金刚”怎么赔？"></a>“保险四大金刚”怎么赔？</h3><p>第一种理赔方法是花多少就报销多少，主要涉及医疗费用的补偿。</p>
+<p>第二种理赔方法是一锤子买卖，主要涉及包含身故责任、重大疾病责任的保险产品。</p>
+<p>除了理赔方法，“四大保险金刚”的理赔条件可以总结为4种：身故赔偿、医疗赔偿、疾病赔偿、残疾赔偿。</p>
+<p>保险公司是按照残疾程度来确定赔偿金额的。将人身保险的伤残等级由重到轻地分为1至10级。</p>
+<p>如果意外身故，会赔付50万元，如果意外伤残，则不一定赔付50万元，要按照残疾程度来确定。</p>
+<h3 id="申请理赔，需走哪几步？"><a href="#申请理赔，需走哪几步？" class="headerlink" title="申请理赔，需走哪几步？"></a>申请理赔，需走哪几步？</h3><p>第一步是直接拨打保险公司的客服热线报案，越早越好。</p>
+<p>对于意外等事故，保险公司通常会要求客户在7天或者10天之内报案，如果间隔时间过久，就很难判断客户申请理赔的事由和事故本身有没有关系。</p>
+<p>就重大疾病险而言，癌症、良性脑肿瘤等疾病确诊后应尽快提交理赔申请，越早拿到理赔款，家庭的经济负担就会越早得到缓解</p>
+<p>第二步是准备好必要的理赔材料。</p>
+<p>如果涉及疾病理赔，医院的诊断证明、病历、检查报告等都是必备材料；如果涉及身故理赔，需要提供的材料包括死亡证明、户口注销证明等。由于不同疾病需要的理赔材料不同，稳妥起见，请保留好所有的就医单据。</p>
+<h3 id="遇到纠纷，如何与监管部门取得联系？"><a href="#遇到纠纷，如何与监管部门取得联系？" class="headerlink" title="遇到纠纷，如何与监管部门取得联系？"></a>遇到纠纷，如何与监管部门取得联系？</h3><p>要么投入大，要么预期高，要么二者兼有。实际结果和期望值之间的鸿沟，往往会引发消费者无法遏制的误解甚至愤怒。</p>
+<p>第一种投诉方式，拨打保监会的<strong>12378</strong>保险消费者投诉维权热线。</p>
+<p>还有第二种投诉方式，即通过保监会的官网进行投诉。</p>
+<p>保监会官网上的投诉入口有点儿不好找。你需要先点击菜单栏右侧的“互动交流”，选择第一项“保险消费投诉”。点击之后，会被要求实名注册，注册完毕才能提交投诉。</p>
+<p>提交投诉时，有两个重要的细节需要注意！</p>
+<blockquote>
+<ol>
+<li>要选择问题涉及保险公司所在地的保监局，因为真正处理纠纷的是保监会各地的分支机构</li>
+<li>要准确填写你的地址</li>
+</ol>
+</blockquote>
+<p>投诉被受理的若干个工作日后，保险公司一定会主动联系你，详细了解你的问题和诉求。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>读书</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第10期）：今年的大年三十哪去了？</title>
+    <url>/2022/01/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC10%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%8A%E5%B9%B4%E7%9A%84%E5%A4%A7%E5%B9%B4%E4%B8%89%E5%8D%81%E5%93%AA%E5%8E%BB%E4%BA%86%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1873049720&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://baike.baidu.com/item/%E4%B8%AD%E5%A4%AE%E9%93%B6%E8%A1%8C/1441284?fr=aladdin" title="中央银行">中央银行</a></p>
+<p>中国人民银行，简称央行，不少人也叫“央妈”。</p>
+<p>央行负责制定并执行国家货币信用政策，独具货币发行权，并且要对全国的金融业实行监管，防范金融风险。</p>
+<p>央行常用的调节工具有哪些？</p>
+<ol>
+<li>改变存款准备金率</li>
+</ol>
+<p>比如，央行规定的法定准备金率是10%，就意味着商业银行每吸收存款100万，要向央行上交10万作为准备金，剩下的90万作为贷款资金。</p>
+<p>存款准备金率提高，说明有意图收缩市场流动性，告诉银行，少往外借钱啦，多交点儿上来。<br>降低存款准备金率，也就是我们所说的<strong>降准</strong>，说明释放市场流动性。</p>
+<ol start="2">
+<li>改变再贴现率</li>
+</ol>
+<p>比如，商业银行拿未到期的票据找央行提前变现，因为票据还没到期，所以会扣除一定的利息，这个利息就是再贴现率。</p>
+<ol start="3">
+<li>公开市场业务</li>
+</ol>
+<p>比如，当央行判断社会上资金过多时，便卖出债券，就会收回一部分资金，也就是正回购；相反，央行买入债券，就增加了金融机构的可用资金，也就是逆回购。</p>
+<ol start="4">
+<li>其他的调控工具</li>
+</ol>
+<p><strong>加息、降息</strong>：央行调整银行基准利率。基准利率里又包含存款和贷款利率。</p>
+<p>加息，你去存款得到的利息多了，你要找银行借钱，付出的利息也多了；降息，则相反。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://www.cnblogs.com/dinglin1/p/10057030.html" title="Tomcat性能调优">Tomcat 性能调优</a></p>
+<p>通过修改 tomcat 配置文件 server.xml，修改 Connector 节点，实现压缩配置，内容如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=<span class="string">&quot;80&quot;</span> compression=”on”</span><br><span class="line">compressionMinSize=”<span class="number">50</span>″</span><br><span class="line">noCompressionUserAgents=”gozilla, traviata”</span><br><span class="line">compressableMimeType=”text/html,text/xml,text/javascript,text/css,text/plain“/&gt;　</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<ul>
+<li>compression：是否开启压缩。</li>
+<li>compressionMinSize： 启用压缩的输出内容大小。</li>
+<li>noCompressionUserAgents：对于哪些的浏览器，不启用压缩。</li>
+<li>compressableMimeType：哪些资源类型需要压缩。</li>
+</ul>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="https://www.douyin.com/video/7057111810805189902" title="北方的小年和南方的小年为什么不一样？">北方的小年和南方的小年为什么不一样？</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/c95b336f-edf1-4058-aa2b-a80cc7c8d18a-977367.jpg"></p>
+<p>腊月二十四过小年，南宋诗人范成大的《祭灶词》中有这样的描述：</p>
+<blockquote>
+<p>“古传腊月二十四，灶君朝天欲言事。<br>云车风马小留连，家有杯盘丰典祀。”</p>
+</blockquote>
+<p>而北方腊月二十三过小年，有一种说法是，从清朝雍正帝年间，因为雍正帝非常节俭，当时腊月二十三要祭火神，腊月二十四祭灶神，于是就将这两天合为一天去办了，所以把腊月二十三变成了小年祭灶，民间也受到了影响，因为北方的百姓离政治中心比较近，所以就沿用了这个习俗。</p>
+<p>2、<a href="https://www.douyin.com/video/7058081380445474055" title="今年的大年三十哪去了">今年的大年三十哪去了</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/0782af49-0305-4e26-9924-61730e959ca0-977367.jpg"></p>
+<p><strong>阴历</strong>：根据月亮的周期变化，而制定的历法。阴历中大月30天，小月29天，12个月为1年，1年为354天或355天。</p>
+<p><strong>阳历</strong>：根据地球绕太阳公转一周的时间，而制定的历法。</p>
+<p><strong>农历</strong>（阴阳合历）：因为阴历和阳历1年相差11天左右，就在阴历每过两三年，在某个季节里加上一个月，就和阳历同步上了，也叫置闰法，被加的这一个月也叫闰月。</p>
+<p>现在的日历上，一般只有阳历和农历，而今年腊月刚好是个小月,所以只有29天，大年三十就没有了。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://texteditor.com/" title="在线 Unicode 文本编辑器和转换器">在线Unicode文本编辑器和转换器
+</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/707e9229-dbf9-4f59-91eb-057b5daca12a-977367.jpg"></p>
+<p>一个在线转换文本格式、样式的网站。</p>
+<p>2、<a href="https://www.wubidz.cn/" title="在线打字练习">在线打字练习</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d802ec2a-fe97-46c7-82fd-85e4603d1a6e-977367.jpg"></p>
+<p>一个在线可练习打字的网站，支持键位练习、打字测试、五笔学习等。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>天不怜见，要我下苦海，走荒川，丧姻缘，弃报复。<br>颠沛流离，穷一生心血不得，而我偏要行八方，游四海，笑春雨，看秋风，过尽劫波。<br>天不渡我，我自渡。</p>
+<p>——<a href="https://www.douyin.com/video/7033961213411249438" title="都靓的1001页">都靓的 1001 页-苏轼</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第11期）：Spring配置的三种依赖注入</title>
+    <url>/2022/02/12/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC11%E6%9C%9F%EF%BC%89%EF%BC%9ASpring%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%89%E7%A7%8D%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>1、<a href="https://baike.baidu.com/item/%E5%B8%82%E7%9B%88%E7%8E%87/90136" title="市盈率（P/E）">市盈率（P/E）</a></p>
+<p>股价/每股收益的值，可理解为按照当前的赚钱速度，多少年可以收回成本。</p>
+<p>作用：判断股价贵不贵的重要指标（周期行业除外）。</p>
+<p>比如，某只股票，股价是30元，每股收益是0.3元。<br>市盈率就是 30 / 0.3 = 100 也就是说这个股票，保持当前盈利的情况下，需要100年才能回本。</p>
+<p>2、<a href="https://baike.baidu.com/item/%E5%B8%82%E5%87%80%E7%8E%87/357567?fr=aladdin" title="市净率（P/B）">市净率（P/B）</a></p>
+<p>股价/每股净资产的值</p>
+<p>作用：判断公司是否值钱的指标。</p>
+<p>一般市净率越低的股票，投资价值较高。</p>
+<p>比如，一家公司股票的市净率是3，也可以理解为你用了3倍的价格买下了这个资产。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="http://linux.51yip.com/search/grep" title="查看日志">查看日志</a></p>
+<p>文件很大的情况，可以通过<strong>grep</strong>进行筛选查看或者输出。</p>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">grep -C <span class="number">1000</span> ‘<span class="number">2022</span>年<span class="number">02</span>月08日 09时<span class="number">59</span>分’ catalina.out &gt; temp_test.txt</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<p>-A：匹配行后多少行。<br>-B：匹配行前多少行。<br>-C：匹配行前后多少行。</p>
+<p>2、<a href="https://www.mubucm.com/doc/6u24EVaY-wT" title="Spring配置的三种依赖注入">Spring配置的三种依赖注入</a></p>
+<ul>
+<li>构造函数注入（ constructor injection ）</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>= <span class="string">id</span> = <span class="string">&quot;orderService&quot;</span>    <span class="attr">class</span> = <span class="string">&quot;com.lianxi.spring.OrderService&quot;</span> &gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">constructor-arg</span>  <span class="attr">ref</span> = <span class="string">&quot;orderDAO&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>setter注入（setter injection）</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>= <span class="string">id</span> = <span class="string">&quot;billingService&quot;</span> <span class="attr">class</span> = <span class="string">&quot;com.lianxi.spring.BillingService&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>  <span class="attr">name</span> = <span class="string">&quot;billingDAO&quot;</span> <span class="attr">ref</span> = <span class="string">&quot;billingDAO&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法注入（ method injection ）</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;b&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.bean.B&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;prototype&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;a&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.bean.A&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">lookup-method</span> <span class="attr">name</span>=<span class="string">&quot;createB&quot;</span> <span class="attr">bean</span>=<span class="string">&quot;b&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>一般在配置中，我们只用前两种。其中构造函数注入可以确保bean不会在一个非法状态下被创建，setter注入更加灵活且易于管理，尤其是在类包含许多属性，但其中一些为可选的情况。</p>
+<p>3、<a href="http://linux.51yip.com/search/netstat" title="服务器网络连接数">服务器网络连接数</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -ano | wc -l</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<p>netstat：显示网络连接相关信息。<br>wc：统计字节数、单词数、行数，并将统计结果显示输出。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://mp.weixin.qq.com/s/nOUON6X1kwV86l8ed7G3kQ" title="什么样的人不建议泡脚？">什么样的人不建议泡脚？</a></p>
+<ul>
+<li><p>心脏病、低血压、心功能不全、有晕厥前科的人群需要谨慎。</p>
+</li>
+<li><p>糖尿病患者要格外注意水温。</p>
+</li>
+<li><p>静脉曲张或血栓人群不建议泡脚。</p>
+</li>
+</ul>
+<p>具体原因可见文章。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.maomicd.com/" title="捌零音乐论坛">捌零音乐论坛</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/55be917b-2fcd-4432-9c8e-60502fa315f6-977367.jpg"></p>
+<p>一个可以在线听歌及下载的网站，提供网易云、QQ、酷狗、酷我和咪咕主流播放器的歌曲搜索。</p>
+<p>2、<a href="https://www.51voa.com/" title="美国之声">美国之声</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/edffaec8-4e47-49d7-8078-80a29942dbc2-977367.jpg"></p>
+<p>一个对学习英语有帮助的网站，网站对内容进行了分类，可根据自己感兴趣的内容进行广读、学习。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>如果有一天，你不再寻找爱情，只是去爱；<br>你不再渴望成功，只是去做；<br>不再追求空泛的成长，只是开始修养自己的性情；<br>你的人生一切，才真正开始。</p>
+<p>——<a href="https://www.douyin.com/video/7062268002078657796" title="纪伯伦">纪伯伦</a></p>
+<p>2、</p>
+<p>山近月远觉月小，便道此山大于月。<br>若有人眼大如天，当见山高月更阔。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/-gS7VCMGHkTYZcrXVgfBCA" title="王阳明《蔽月山房》">王阳明《蔽月山房》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第12期）：高铁座位为啥没有“E”？</title>
+    <url>/2022/02/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC12%E6%9C%9F%EF%BC%89%EF%BC%9A%E9%AB%98%E9%93%81%E5%BA%A7%E4%BD%8D%E4%B8%BA%E5%95%A5%E6%B2%A1%E6%9C%89%E2%80%9CE%E2%80%9D%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>1、<a href="https://baike.baidu.com/item/%E9%9D%99%E6%80%81%E5%B8%82%E7%9B%88%E7%8E%87" title="静态市盈率">静态市盈率</a></p>
+<p>计算方式：股价/去年每股净利润 或 市值/去年总盈利</p>
+<p>作用：按照去年的赚钱速度，判断多久可以回本。</p>
+<p>比如，张某用80万投资了一个火锅店，2020年1月开始营业，2020年全年净利润是20万，2021年的时候静态市盈率就是80/20=4，也就是说按照现在的盈利情况，4年后可以回本。</p>
+<p>2、<a href="https://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E5%B8%82%E7%9B%88%E7%8E%87" title="动态市盈率">动态市盈率</a></p>
+<p>计算方式：股价/预测每股净利润 或 市值/预估的今年总盈利</p>
+<p>作用：预估今年的总盈利，然后按照这个赚钱速度，多少年可以回本。</p>
+<p>比如，还是上述张某的火锅店，这时是2021年的6月份，此时盈利已经达到了15万，那么按照这样的速度，年底有望达到30万左右，按照这个预估的今年总盈利，按照这个赚钱速度，两年半多就差不多回本了。</p>
+<p>3、<a href="https://baike.baidu.com/item/TTM/16821748?fr=aladdin" title="滚动市盈率">滚动市盈率（TTM）</a></p>
+<p>计算方式：股价/最近四个季度的每股总盈利 或 市值/最近四个季度的总盈利</p>
+<p>作用：按照刚刚过去的12个月的钱来算，多少年可以回本。</p>
+<p>比如，还是上述张某的火锅店，这时是2021年4月1日，那么四个季度分别就是2021年的3月、2月、1月，总盈利是5万，<br>2020年的12月、11月、10月、9月、8月、7月、6月、5月、4月，总盈利是26万，那么80/31≈2.58，也就是两年半多就差不多回本了。</p>
+<p>4、<a href="https://baike.baidu.com/item/%E5%B8%82%E9%94%80%E7%8E%87" title="市销率（PS）">市销率（PS）</a></p>
+<p>计算方式：股价/每股销售额 或 市值/主营业务收入</p>
+<p>作用：判断未盈利公司的经营前景。</p>
+<p>市销率越低，说明该公司股票的投资价值越大。</p>
+<p>比如，有两个电商平台A、B，他们的市值都是100万，年报披露主营业务收入A为100万，B为80万，那么可以求出A的市销率要比B小，也就是说A的市场份额相对更多一些，那么公司股票在相同市值的情况下，A的价值更大一些。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://www.bilibili.com/video/BV1V4411p7EF" title="多线程">多线程</a></p>
+<p>多线程实现的三种方式：</p>
+<blockquote>
+<ol>
+<li>继承Thead</li>
+<li>实现Runnable（无返回值）</li>
+<li>实现Callable（有返回值）</li>
+</ol>
+</blockquote>
+<p>线程的五大状态：</p>
+<blockquote>
+<ol>
+<li>新建（new）</li>
+<li>就绪（Runnable）</li>
+<li>运行（Running）</li>
+<li>阻塞（Blocked）</li>
+<li>死亡（Dead）</li>
+</ol>
+</blockquote>
+<p>线程相关方法：</p>
+<blockquote>
+<ol>
+<li>setPriority()<br>修改线程的优先级 线程的优先级用1~10表示，10表示优先级最高，默认值是5。</li>
+<li>sleep()<br>设置线程休眠毫秒数，sleep时不会释放锁。</li>
+<li>yield()<br>线程礼让，让CPU重新调度，礼让不一定成功。</li>
+<li>join()<br>可以想象成插队，合并线程，待此线程执行完成后，再执行原线程。</li>
+<li>wait()<br>挂起当前线程，并释放共享资源的锁。</li>
+<li>notify()<br>对阻塞的线程随机选择一个解除阻塞。</li>
+<li>notifyAll()<br>对阻塞的所有线程一次性全部解除阻塞。</li>
+</ol>
+</blockquote>
+<p>解决线程安全的三种方法：</p>
+<blockquote>
+<ol>
+<li>同步方法</li>
+<li>同步代码块</li>
+<li>Lock锁</li>
+</ol>
+</blockquote>
+<p>使用优先顺序：Lock锁——&gt;同步代码块——&gt;同步方法</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="https://mp.weixin.qq.com/s/xgbOGt7hvJAIFf4qhMv0Mg" title="高铁座位为啥没有“E”">高铁座位为啥没有“E”？</a></p>
+<p>首先看一下高铁各车厢座位分布：</p>
+<p>二等座</p>
+<p><img src="https://api2.mubu.com/v3/document_image/1dab35c4-d824-4bac-bef9-15a768211b8e-977367.jpg"></p>
+<p>一等座</p>
+<p><img src="https://api2.mubu.com/v3/document_image/ca2d525c-663f-4c1f-94d0-f1913f9af0e6-977367.jpg"></p>
+<p>商务座</p>
+<p><img src="https://api2.mubu.com/v3/document_image/3ca5d827-6b4d-46d1-b1e9-449db1bf3898-977367.jpg"></p>
+<p>其实它们是很有规律的，A、F是靠窗，C、D是靠过道，B是靠中间，但为什么没有”E“就直接到“F”了，这其实是为了和国际接轨，<br>早期的飞机多是单通道的，每排一般有6个座椅，也就是A、B、C、D、E、F，A、F是靠窗，C、D是靠过道，B、E是中间位置，<br>时间长了，A—F这6个字母就不仅仅表示顺序的意思，而是形成了特定字母的国际惯例，A、F即靠窗，C、D即为靠过道。<br>高铁也就延续了这一惯例，又因为不同车厢的座位数不同，也就出现了上述情况。</p>
+<p>2、<a href="https://mp.weixin.qq.com/s/xwyA4fec5Mmg1zy0EmQLSw" title="社保中断对养老保险有什么影响">社保中断对养老保险有什么影响？</a></p>
+<p>首先社保中断会影响养老金的多少，养老保险，“多缴多得”，“长缴多得”。<br>多缴多得指的是缴费金额越多，最后到手养老金也会越多；“长缴多得”指的是缴费时间越长，累计缴费金额越多，到手的养老金也就越多。 </p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://yinxiang.com/" title="印象笔记">印象笔记</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/6d25ca86-74e8-48c0-8410-30bebc91e205-977367.jpg"></p>
+<p>自己也刚开始用，说两个便利的地方：</p>
+<blockquote>
+<ol>
+<li>绑定微信后，当看到想要收藏的内容时，发送给“我的印象笔记”，会自动收藏到你的印象笔记中。</li>
+<li>绑定微博后，在微博中看到想要收藏的内容时，在评论区@我的印象笔或者私信发送给“我的印象笔记”即可。</li>
+</ol>
+</blockquote>
+<p>2、<a href="https://www.aliyundrive.com/s/uqbdmFXz2Fd" title="阿里云盘TV版本">阿里云盘TV版本</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d4cad5a2-a774-44f4-ac37-777120a925c0-977367.jpg"></p>
+<p>因为阿里云盘目前不限速，对于家里有智能电视或投影的用户，可以安装该应用，通过在线的方式，观看保存的云盘电影。</p>
+<p>3、<a href="https://zh.wikihow.com/" title="wikiHow">wikiHow</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/f3919e72-02e9-43cf-8de0-669ed407d093-977367.jpg"></p>
+<p>号称互联网上最值得信赖的指南网站，有19个大类，涵盖生活方方面面，对生活很有帮助。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>你现在难受是无法避免的，过几个月半年的，就好了，但别颓废，该吃吃，该喝喝，该开心还是开心，没有过不去的坎，也没有忘不了的人，生活往前看，做你能做的，别回头，别想着改变不了的事和回不到的过去。</p>
+<p>——<a href="https://bbs.hupu.com/49460194.html" title="虎扑JR1570192367">虎扑JR1570192367</a></p>
+<p>2、</p>
+<p>我们感知的事物从来不是事物原本的样子，带着我们的经验认知去感悟事物，得到的是经过我们的思维处理后的事物。<br>世界即如此。<br>所以，我们感知的不是世界本身，而是我们主观解释后的世界。</p>
+<p>——《自卑与超越》</p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第13期）：北向资金和南向资金你了解吗？</title>
+    <url>/2022/02/26/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC13%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%8C%97%E5%90%91%E8%B5%84%E9%87%91%E5%92%8C%E5%8D%97%E5%90%91%E8%B5%84%E9%87%91%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://zhuanlan.zhihu.com/p/166171597" title="北向资金和南向资金">北向资金和南向资金</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/8718c169-502e-4df8-a949-3bc5ed84c464-977367.jpg"></p>
+<p>北向资金：简单说就是外国资本流入A股的资金。<br>因为A股市场有管制，不允许外资直接参与，所以他们通过香港市场的深港通或沪港通来直接买入A股。北向资金也就是深港通和沪港通买入资金之和。</p>
+<p>下面简单解释下</p>
+<blockquote>
+<ol>
+<li>深港通：指深交所和香港联合交易所允许两地投资者买卖规定范围内的对方交易所上市的股票，所以深港通中又分深股通和港股通。</li>
+<li>沪港通：指上交所和香港联合交易所允许两地投资者通过当地证券公司（或经纪商）买卖规定范围内的对方交易所上市的股票，所以深港通中又分沪股通和港股通。</li>
+</ol>
+</blockquote>
+<p>那么再细一些解释，北向资金就是如上图中深股通和沪股通的资金之和。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/8868182b-e396-4e9d-abd5-b298d5823880-977367.jpg"></p>
+<p>南向资金：指的是内地流入香港股市的资金。如上图中港股通（深）和港股通（沪）的资金之和。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://www.cnblogs.com/jetqiu/p/10393039.html" title="IDEA设置方法自动显示参数提示">IDEA设置方法自动显示参数提示</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/0cb5d88a-d6d0-425b-9faf-a46e73b67eb3-977367.jpg"></p>
+<p><strong>参数说明</strong></p>
+<ol>
+<li>完成前显示参数名称提示。</li>
+<li>在设置的毫秒内显示参数信息弹出窗口。</li>
+<li>显示完整的方法签名。</li>
+</ol>
+<p>个人建议，开启2和3即可。</p>
+<p>2、<a href="https://www.runoob.com/java/method-label.html" title="Java标签">Java标签</a></p>
+<p>Java中的标签是为循环设计的，是为了在多重循环中方便地使用break和coutinue。</p>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 打印101-150之间所有的质数</span></span><br><span class="line">outer:<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">101</span>; i &lt; <span class="number">150</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; i / <span class="number">2</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % j ==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span> outer;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.print(i+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以跳出到指定的标签处。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.mvyxws.com/index.php/vod/play/id/20823" title="睡前怎么做有助于睡眠？几点睡比较合适？">睡前怎么做有助于睡眠？几点睡比较合适？</a></p>
+<p>睡前不建议做的事情：</p>
+<blockquote>
+<ol>
+<li>不做高强度思考的事情，比如睡前做工作总结，工作上的事情等等。</li>
+<li>睡觉前4个小时不要吃大餐，2个小时不要吃简餐，如果饿的话，可以喝点儿牛奶或水果。</li>
+</ol>
+</blockquote>
+<p>睡觉环境建议：</p>
+<blockquote>
+<ol>
+<li>环境要安静。</li>
+<li>房间温度适宜（18～24℃）。</li>
+<li>枕头建议10cm左右。</li>
+</ol>
+</blockquote>
+<p>合理的睡觉时间：11点30左右，正负一个小时，也就是说不要早于晚上10点半，不要晚于晚上12点半。</p>
+<p>第二天早上不要睡懒觉，如果晚上11点30睡觉，早上7点左右，或者7点半起来，那是最理想的。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://findtheinvisiblecow.com/" title="Find the Invisible Cow">Find the Invisible Cow</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/3f19d7db-950b-4221-b26c-d5843484eae3-977367.jpg"></p>
+<p>在线娱乐小游戏，游戏内容就是通过听声辨位在空白页里找到一头牛，根据声音大小、节奏来判断鼠标离这头牛的距离，当声音变得最急促的时候就是这头牛的位置了。</p>
+<p>2、<a href="https://www.bookmarkearth.com/" title="书签地球">书签地球</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/03b48024-f4bd-4607-91ba-2ac2f12c3ecb-977367.jpg"></p>
+<p>可以通过关键字进行资源搜索，关键字会对应很多相关联的网址，我们可以通过网址去寻找你所需要的资源。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>你要搞清楚自己人生的的剧本，你不是你父母的续集，<br>不是你子女的前传，更不是你朋友的外篇；<br>对待生命你不妨大胆一点，因为最终你都要失去它；<br>生命中最难的阶段，不是没有人懂你，而是你不懂你自己。</p>
+<p>——<a href="https://www.douyin.com/video/7067138133338492199?modeFrom=userCollection&secUid=MS4wLjABAAAAd1KaAy6LuxVyPACBb9Qk0HmxNtxR3xFPYad-p5rHrns" title="尼采">尼采</a></p>
+<p>2、</p>
+<p>记忆是一个人的过去，是一个人的“心路历程”。<br>这些“心路历程”陪伴着他，提醒他以更成熟的态度面对未来，更积极的心态活在当下。</p>
+<p>——<a href="https://book.douban.com/subject/26452697/" title="《自卑与超越》">《自卑与超越》</a></p>
+<p>3、</p>
+<p>有句话说的好，神枪手都是子弹喂出来的。连子弹都不给提供，怎么练成神枪手？<br>对普通人来说，奋斗固然重要，能有个奋斗的机会似乎更加重要。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/T4QFWLEwXfqK5_aaOsuFXQ" title="报复性反弹">报复性反弹</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第14期）：六大茶类你知道吗？</title>
+    <url>/2022/03/05/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC14%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%85%AD%E5%A4%A7%E8%8C%B6%E7%B1%BB%E4%BD%A0%E7%9F%A5%E9%81%93%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>银行理财</strong></p>
+<p>从收益形态上分，理财产品主要分为收益型、净值型和货币型三类，但货币型相对来说比较特殊，可把它看作净值恒为1的产品。<br>所以这样看就相当于两类。</p>
+<p>收益型：又分为保本保收益型、保本浮动收益型和非保本浮动收益型，顾名思义，保本即是保证本金，浮动收益即是收益会上下浮动。</p>
+<p>净值型：是一种非保本浮动收益型产品，产品一般会标注历史业绩，<strong>它与上述收益型产品最大的区别是没有预期收益率</strong>，它是产品到期后，根据实际市场投资回报来计算客户的收益，银行仅收取合同约定的费用。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/7b5c622e-2fdc-4040-8dcc-15aded33e8e8-977367.jpg"></p>
+<p>说说理财产品和存款的区别</p>
+<blockquote>
+<ol>
+<li>理财产品通常不保本保息，不受存款保险制度保障，而存款保本保息，受存款保险制度保障（50万以内（包含）100%赔付）。</li>
+<li>理财产品的收益率普遍比存款要高。   </li>
+<li>理财产品属于投资，存款属于储蓄。  </li>
+<li>理财产品一般有起存金额要求，存款几乎算没有，因为是一元起存。  </li>
+</ol>
+</blockquote>
+<p>tips：</p>
+<blockquote>
+<ol>
+<li>标有业绩基准、业绩比较基准、成立以来年化净值增长的，都是净值型产品。  </li>
+<li>标有近一年收益、近一年涨幅的产品，一般为债券基金或混合性基金。  </li>
+<li>标有7日年化收益率的产品，一般为货币基金或类货币基金，这里面几乎不可能亏损的是货币基金类的产品。</li>
+</ol>
+</blockquote>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<strong>SpringBoot整合JPA</strong></p>
+<p>首先连接好数据库，这边用的是MySQL。</p>
+<p><strong>引入依赖</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>新建实体类</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/488fc07a-8007-4b8c-a45b-b67873433de7-977367.jpg"></p>
+<p><font color="red">注意:</font></p>
+<blockquote>
+<ol>
+<li>命名驼峰对应数据库下划线命名或运用注解方式：@Table(name=”tableName”)。</li>
+<li>@Entity 数据库实体映射、@Id 主键 、@GeneratedValue 主键生成策略。</li>
+</ol>
+</blockquote>
+<p><strong>新建DAO层接口</strong></p>
+<p>extends JpaRepository&lt;T, ID&gt;</p>
+<p><img src="https://api2.mubu.com/v3/document_image/d3e6c493-eaa1-4de2-843b-cd1bf1c435db-977367.jpg"></p>
+<p><strong>单元测试</strong></p>
+<p>引入DAO层，进行单元测试。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/155327f4-8fa3-4ff1-b843-1ce4cfcce332-977367.jpg"></p>
+<p>tips：如果要查看SQL打印日志，可以在spring配置文件中加入:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  jpa:</span><br><span class="line">    show-sql: true</span><br></pre></td></tr></table></figure>
+
+<p><strong>简单说说Lombok</strong></p>
+<p>引入依赖</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>一些作用：</p>
+<blockquote>
+<ol>
+<li>@Data注解可以去掉实体类getter/setter/toString代码。</li>
+<li>@Slf4j注解，可以直接使用log输出日志。</li>
+</ol>
+</blockquote>
+<p>2、<strong>SpringBoot整合MyBatis</strong></p>
+<p><strong>引入依赖</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.mybatis.spring.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.3.2&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>新增实体类</strong></p>
+<p>同上，命名不做要求。</p>
+<p><strong>新建mapper接口</strong></p>
+<p>这里分两种方式，一种是注解的方式，一种是xml方式。</p>
+<p>首先说下注解的方式：</p>
+<p>如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Insert(&quot;insert into product_category(category_name, category_type) values (#&#123;category_name, jdbcType&#x3D;VARCHAR&#125;, #&#123;category_type, jdbcType&#x3D;INTEGER&#125;)&quot;)</span><br><span class="line">int insertByMap(Map&lt;String, Object&gt; map);</span><br><span class="line"></span><br><span class="line">@Select(&quot;select * from product_category where category_type &#x3D; #&#123;category_type&#125;&quot;)</span><br><span class="line">@Results(&#123;</span><br><span class="line">        @Result(column &#x3D; &quot;category_id&quot;, property &#x3D; &quot;categoryId&quot;),</span><br><span class="line">        @Result(column &#x3D; &quot;category_name&quot;, property &#x3D; &quot;categoryName&quot;),</span><br><span class="line">        @Result(column &#x3D; &quot;category_type&quot;, property &#x3D; &quot;categoryType&quot;)</span><br><span class="line">&#125;)</span><br><span class="line">ProductCategory findByCategoryType(Integer categoryType);</span><br></pre></td></tr></table></figure>
+<p>传值可以是Map，也可以是实体类。</p>
+<p><font color="red">注意:</font></p>
+<p>配置mapper扫描路径：</p>
+<p>找到sprigboot启动主类，增加注解@MapperScan(basePackages = “mapper包名”)。</p>
+<hr>
+<p>xml方式：</p>
+<p>如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ProductCategory selectByCategoryType(Integer categoryType);</span><br></pre></td></tr></table></figure>
+<p>在Resource下，新增mapper文件夹，新建同名xml文件，补充命名空间及相关查询SQL。</p>
+<p>比如：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/346df9e6-3912-4949-93de-9bf782103489-977367.jpg"></p>
+<p><font color="red">注意:</font></p>
+<p>在spring中配置xml文件位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mybatis:</span><br><span class="line">  mapper-locations: classpath:mapper&#x2F;*.xml</span><br></pre></td></tr></table></figure>
+<p><strong>单元测试</strong></p>
+<p>引入mapper层，进行单元测试。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/2c4f163b-816e-4ff9-a9f3-c4940cf7a780-977367.jpg"></p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://mp.weixin.qq.com/s/cGoNJf7LEgNXiOW_rIbv8w%EF%BC%8Chttps://mp.weixin.qq.com/s/DVD66aaFtElGq1wzYoTIzA" title="六大茶类">六大茶类</a></p>
+<p>按照发酵程度，茶大致分为6大类：绿茶、黄茶、白茶、青茶（乌龙茶）、红茶和黑茶。</p>
+<p>绿茶：（不发酵，保留茶叶的清香）代表有西湖龙井、洞庭碧螺春、黄山毛峰、六安瓜片。</p>
+<p>黄茶：（轻发酵，清爽中多了一份甘醇）代表有君山银针、蒙顶黄芽、霍山黄芽。</p>
+<p>白茶：（微发酵，不炒不揉，呈现茶自然的味道）代表有白毫银针、白牡丹、贡眉、寿眉。</p>
+<p>青茶：（半发酵，味道醇厚而多变）代表有铁观音、武夷岩茶和大红袍。</p>
+<p>红茶：（全发酵，色红艳、味香甜）代表有祁门红茶、滇红、金骏眉、工夫红茶、小种红茶、红碎茶。</p>
+<p>黑茶：（后发酵，滋味醇和，口感浓厚）代表有普洱熟茶、安化黑茶、雅安藏茶、茯砖茶、六堡茶、青砖茶。</p>
+<p><strong>一年喝茶，分四季</strong></p>
+<p>春湿：白茶（花茶也可）。</p>
+<p>夏暑：绿茶、黄茶。</p>
+<p>秋燥：乌龙茶。</p>
+<p>冬寒：红茶、黑茶。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://zh.singlelogin.me/" title="ZLibary">ZLibary</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e3cb4f88-9c0f-43cb-817a-d392c4d572a5-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/19b2c7bd-80a3-40ee-bf0e-485a3efa8ded-977367.jpg"></p>
+<p>kindle用户必备图书馆，支持书籍下载、格式转换及一键发送到kindle，更多用处可参考上图。</p>
+<p>2、<a href="https://www.bookstack.cn/" title="书栈网">书栈网</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/3d072e73-c616-4139-a177-b6228973c706-977367.jpg"></p>
+<p><img src="https://static.sitestack.cn/projects/help/202201/16c93beff6db8636.png"></p>
+<p>一个程序员IT互联网开源编程书籍网站，可浏览器阅读，也可在微信扫上图二维码进行阅读。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>一个交易者的自我修养<br>无我<br>我以为、我觉得、我想，都不重要。重要的是市场如何，它是裁判。<br>无为<br>按照买卖信号做，该做什么就做什么，遵守策略。<br>无执<br>别犟，别固执。死扛迟早被消灭。</p>
+<p>——布衣书生走天下</p>
+<p>2、</p>
+<p>走得越远，见识越多，认识的人越多，你就越能体会到，人这一辈子，你真的在意的，同时又在意你的人，就那么几个。<br>这几个人，就是你全部的世界。</p>
+<p>——<a href="https://movie.douban.com/subject/35207856/" title="人世间">人世间</a></p>
+<p>3、</p>
+<p>真正的强大不是忘记，而是接受。<br>接受分道扬镳，接受世事无常，接受孤独挫败，接受突如其来的无力感，接受自己的不完美，接受困惑、不安、焦虑和遗憾，调整自己的状态，找到继续前行的力量，成为更好的自己。</p>
+<p>——<a href="https://www.douyin.com/video/7069007601018752287?modeFrom=userCollection&secUid=MS4wLjABAAAAd1KaAy6LuxVyPACBb9Qk0HmxNtxR3xFPYad-p5rHrns" title="怎么样才能让内心强大呢">怎么样才能让内心强大呢</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第15期）：大跌时，如何克服恐惧？</title>
+    <url>/2022/03/12/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC15%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%A4%A7%E8%B7%8C%E6%97%B6%EF%BC%8C%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%E6%81%90%E6%83%A7%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1902874636&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>大跌时，如何克服恐惧？</strong></p>
+<p>首先要考虑为什么会恐惧？</p>
+<p>无非是出现亏损，亏损大于了自己的可承受范围。</p>
+<p>那么如何避免这种情况发生呢？</p>
+<p>这里我们拿基金举例，当我们用真金白银去购买基金的时候，你就要考虑到自己能承受的亏损范围，想到最坏的结果。你还能接受再买。</p>
+<p>其次进行组合配置也很重要，比如股债组合，它可以为我们平抑风险，并且在合适的机会中利用债券，增配股票资产。先从最保守开始，循序渐进，感受自己的亏损承受能力。</p>
+<p>最后，我们要有自己的判断，不要听风就是雨，面对市场，要永远留有后手，不去赌上所有。投资理财，是为了更好地生活，而不是让生活过得更糟。</p>
+<p>相信你做到了上述的考虑，对市场也就没那么多恐惧了。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<strong>IDEA代码TODO的技巧</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/89168859-3d80-4499-a186-9db7b50b46b9-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/ebfe522d-deab-4ca6-a7be-8acddbc58fa9-977367.jpg"></p>
+<p>在待开发处，填写注释TODO，可方便下次查找，继续开发。</p>
+<p>2、<strong>IDEA常量命名小技巧</strong></p>
+<p>首先以小写字母+下划线的规范进行编写，最后使用快捷键 command+shift+U（Mac）进行大写转换。</p>
+<p>3、<a href="https://github.com/Wechat-Group/WxJava" title="第三方SDK">第三方SDK实现OAuth2网页授权</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/34f20f9c-9cec-4b3d-a048-9b4b1e7ee46e-977367.jpg"></p>
+<p>引入依赖</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.github.binarywang&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;weixin-java-mp&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.7.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">WxMpDefaultConfigImpl wxMpDefaultConfig &#x3D; new WxMpDefaultConfigImpl();</span><br><span class="line">wxMpDefaultConfig.setAppId(accountConfig.getMpAppId());</span><br><span class="line">wxMpDefaultConfig.setSecret(accountConfig.getMpAppSecret());</span><br></pre></td></tr></table></figure>
+<p>构造网页授权url</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wxMpService.getOAuth2Service().buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_USERINFO,URLEncoder.encode(returnUrl))</span><br></pre></td></tr></table></figure>
+<p>获得access token及openid</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">WxOAuth2AccessToken wxOAuth2AccessToken &#x3D; wxMpService.getOAuth2Service().getAccessToken(code);</span><br><span class="line">String openId &#x3D; wxOAuth2AccessToken.getOpenId();</span><br></pre></td></tr></table></figure>
+<p>4、<a href="https://github.com/Pay-Group/best-pay-sdk" title="支付宝、微信支付第三方开源SDK">支付宝、微信支付第三方开源SDK实现微信支付</a></p>
+<p>引入依赖</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;cn.springboot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;best-pay-sdk&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.3.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//微信支付配置</span></span><br><span class="line">WxPayConfig wxPayConfig = <span class="keyword">new</span> WxPayConfig();</span><br><span class="line">wxPayConfig.setAppId(<span class="string">&quot;xxxxx&quot;</span>);          <span class="comment">//公众号Id</span></span><br><span class="line">wxPayConfig.setMiniAppId(<span class="string">&quot;xxxxx&quot;</span>);      <span class="comment">//小程序Id</span></span><br><span class="line">wxPayConfig.setAppAppId(<span class="string">&quot;xxxxx&quot;</span>);       <span class="comment">//移动AppId</span></span><br><span class="line"><span class="comment">//支付商户资料</span></span><br><span class="line">wxPayConfig.setMchId(<span class="string">&quot;xxxxxx&quot;</span>);</span><br><span class="line">wxPayConfig.setMchKey(<span class="string">&quot;xxxxxxx&quot;</span>);</span><br><span class="line">wxPayConfig.setNotifyUrl(<span class="string">&quot;http://xxxxx&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>发起支付</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PayRequest payRequest = <span class="keyword">new</span> PayRequest();</span><br><span class="line">payRequest.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);</span><br><span class="line">payRequest.setOrderId(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">payRequest.setOrderName(<span class="string">&quot;微信公众账号支付订单&quot;</span>);</span><br><span class="line">payRequest.setOrderAmount(<span class="number">0.01</span>);</span><br><span class="line">payRequest.setOpenid(<span class="string">&quot;openid_xxxxxx&quot;</span>);</span><br><span class="line">bestPayService.pay(payRequest);</span><br></pre></td></tr></table></figure>
+<p>异步回调</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bestPayService.asyncNotify();</span><br></pre></td></tr></table></figure>
+<p>退款</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bestPayService.refund(refundRequest);</span><br></pre></td></tr></table></figure>
+<p>5、<strong>SpringBoot引入Freemarker页面不进行跳转问题</strong></p>
+<p>SpringBoot在2.2.X中，已经把原先默认的后缀名.ftl改成了.ftlh，刚好我的SpringBoot版本是2.6.4，所以引发了这个问题。</p>
+<p>两种解决办法：</p>
+<blockquote>
+<ol>
+<li>修改后缀名.ftl为.ftlh。</li>
+<li>在application.ym中增加配置，指定Freemarker模版后缀名。</li>
+</ol>
+</blockquote>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.mvyxws.com/vod/play/id/100597" title="多吃猪肝对眼睛有好处吗？还有哪些食物也对眼睛有好处？">多吃猪肝对眼睛有好处吗？还有哪些食物也对眼睛有好处？</a></p>
+<p>有好处，因为肝开窍于目，同源都是补的，同食同源同补，高度近视的患者最需要补的有钙、锌、还有蛋白，多种维生素。</p>
+<p>这些营养成分，像肉类、奶类、蛋类，还有多种的蔬菜和水果中都包含。</p>
+<p>另一方面，高度近视的患者，往往就是有肝肾功能不好，所以要吃一些补益肝肾的食物。比如枸杞子、桂圆，还有芝麻，核桃，以及花生、大枣、蜂蜜都是可以补益肝肾的。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://knb.im/mp/" title="可能吧公众号排版器">可能吧公众号排版器</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/5c228cf8-c952-4096-b724-d993e5452975-977367.jpg"></p>
+<p>一个Markdown排版工具，可以在文章开头配置作者，头像以及文章阅读时间，可用于公众号及汇报。</p>
+<p>2、<a href="https://nihaojob.github.io/markdown-css-smartisan/examples/index.html" title="锤子便签排版工具">锤子便签排版工具</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/454d1632-760b-4286-8c25-85b4bd848982-977367.jpg"></p>
+<p>同样是一款Markdown排版工具，不过仅可用于jpep图片的生成，效果如上图。</p>
+<p>3、<a href="https://editor.mdnice.com/" title="Markdown Nice">Markdown Nice</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/1b204368-71fd-4b55-8ce3-8c5943dc9ef3-977367.jpg"></p>
+<p>一个我在用的Markdown排版工具，支持公众号、知乎及掘金的排版，样式主题也较多，推荐使用。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>人世间的一切不平凡，最后都要回归平凡，都要用平凡生活来衡量其价值。伟大、精彩、成功都不算什么，只有把平凡生活真正过好，人生才是圆满。</p>
+<p>——周国平</p>
+<p>2、</p>
+<p>别想太多，好好生活，也许日子过着过着就会有答案，努力走着走着就会有温柔的着落春。</p>
+<p>——<a href="https://www.douyin.com/video/7071909564181957900?modeFrom=userCollection&secUid=MS4wLjABAAAAd1KaAy6LuxVyPACBb9Qk0HmxNtxR3xFPYad-p5rHrns" title="这段话平复了我的焦虑">这段话平复了我的焦虑</a></p>
+<p>3、</p>
+<p>重要的不是被给予了什么，而是如何去利用被给予的东西。</p>
+<p>——<a href="https://book.douban.com/subject/26369699/" title="《被讨厌的勇气》">《被讨厌的勇气》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第16期）：为什么感冒后会流鼻涕、鼻塞和发热？</title>
+    <url>/2022/03/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC16%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%84%9F%E5%86%92%E5%90%8E%E4%BC%9A%E6%B5%81%E9%BC%BB%E6%B6%95%E3%80%81%E9%BC%BB%E5%A1%9E%E5%92%8C%E5%8F%91%E7%83%AD%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://baike.baidu.com/item/%E5%BA%B7%E6%B3%A2%E5%91%A8%E6%9C%9F/49999079?fr=aladdin" title="康波周期">康波周期</a></p>
+<p>四大类周期中跨度最长的周期，是1926年俄国经济学家<em>康德拉季耶夫</em>提出的。他在分析了英、法、美、德以及世界经济的大量统计数据后，发现发达商品经济中存在的一个为期<strong>50-60年</strong>的长周期，这个长周期，就叫康波周期。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/b1ae3bd7-6ba3-4610-9568-97800887714b-977367.jpg"></p>
+<p>从上图我们可以看出，一个康波，包含了繁荣、衰退、萧条、增长，而后续依然如此，也就说每个康波，经济会从回升、繁荣、衰退最后至萧条，不断重复。</p>
+<p>注：</p>
+<blockquote>
+<p>四大类周期</p>
+<ol>
+<li>康波周期</li>
+<li>库兹涅茨周期</li>
+<li>朱格拉周期</li>
+<li>基钦周期</li>
+</ol>
+</blockquote>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<strong>FreeMarker关系运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">FreeMarker</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">gt</td>
+<td align="center">&gt;</td>
+</tr>
+<tr>
+<td align="left">gte</td>
+<td align="center">&gt;=</td>
+</tr>
+<tr>
+<td align="left">lt</td>
+<td align="center">&lt;</td>
+</tr>
+<tr>
+<td align="left">lte</td>
+<td align="center">&lt;=</td>
+</tr>
+</tbody></table>
+<p>2、<a href="https://www.cnblogs.com/mrcharleshu/p/13471543.html" title="IDEA行注释的缩进设置（不自动添加注释到行首）">IDEA行注释的缩进设置（不自动添加注释到行首）</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/cf43eb31-6f48-4071-afee-679add20a4bb-977367.jpg"></p>
+<p>如图设置即可。</p>
+<p>3、<a href="https://github.com/Wechat-Group/WxJava/wiki/MP_%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF" title="发送模版消息">发送模版消息</a></p>
+<p><strong>引入依赖</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 微信公众号（包括订阅号和服务号）Java SDK --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.github.binarywang&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;weixin-java-mp&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.2.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>微信公众平台新建消息模版及加入白名单</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e6489e82-2bc7-4336-9ccf-58742e7af28e-977367.jpg"></p>
+<p>基本配置——&gt;IP白名单</p>
+<p><strong>编写后台代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">WxMpTemplateMessage templateMessage &#x3D; WxMpTemplateMessage.builder()</span><br><span class="line">.toUser(...)</span><br><span class="line">.templateId(...)</span><br><span class="line">.url(...)</span><br><span class="line">.build();</span><br><span class="line"></span><br><span class="line">templateMessage.addData(new WxMpTemplateData(name1, value1, color2));</span><br><span class="line">templateMessage.addData(new WxMpTemplateData(name2, value2, color2));</span><br><span class="line"></span><br><span class="line">wxMpService.getTemplateMsgService().sendTemplateMsg(templateMessage);</span><br></pre></td></tr></table></figure>
+<p>最终效果如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/e3cc34c7-00fb-4ebb-9707-2c5ecb37ec24-977367.jpg"></p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://10why.net/post/2391.html" title="为什么感冒后会流鼻涕、鼻塞和发热？">为什么感冒后会流鼻涕、鼻塞和发热？</a></p>
+<p>首先引起感冒的真正原因是病毒。</p>
+<p>当病毒入侵体内时，为了抵御这些肉眼看不见的敌人，人体会自发地采取各种措施，比如鼻塞、流涕、打喷嚏和发热等症状，这是人体的一种本能的自我保护反应。</p>
+<p>鼻子塞住可防止病毒入侵；流涕和打喷嚏，有助于把已入侵的病毒赶走；发热也就是体温升高，能够刺激白细胞的吞噬功能，促进抗体形成，而且大部分的感冒病毒是怕热的，发热可以阻挠病毒的繁殖。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.magiceraser.io/" title="魔术橡皮擦">魔术橡皮擦</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/f3ad4d8b-65dd-47c9-92ae-926e0a73f6e5-977367.jpg"></p>
+<p>上传图片，标记需要删除的位，下载修复后的图片，免费使用，无需注册。</p>
+<p>2、<a href="http://www.ibootstrap.cn/" title="Bootstrap可视化布局系统">Bootstrap可视化布局系统</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/7195bbff-4d01-435e-befd-912b7282b9b8-977367.jpg"></p>
+<p>可根据自己的需求，拖拽设置出自己想要的布局页面，通过下载，复制代码到我们的项目中即可。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>自古以来，孝分两种：养口体、养心智。伺候在父母身边，照顾衣食住行，是养口体；远走高飞，有所成就，让父母以此为荣，是养心智，同样重要，缺一不可。</p>
+<p>——<a href="https://movie.douban.com/subject/35207856/" title="《人世间》">《人世间》</a></p>
+<p>2、</p>
+<p>决定你的生活方式（人生状态）的不是其他任何人，而是你自己这一事实。</p>
+<p>——<a href="https://book.douban.com/subject/26369699/" title="《被讨厌的勇气》">《被讨厌的勇气》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第17期）：什么是黑匣子？</title>
+    <url>/2022/03/26/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC17%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%BB%91%E5%8C%A3%E5%AD%90%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=26090155&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://baike.baidu.com/item/%E5%BA%93%E5%85%B9%E6%B6%85%E8%8C%A8%E6%A5%BC%E5%B8%82%E5%91%A8%E6%9C%9F/3310041?fr=aladdin" title="库兹涅茨楼市周期">库兹涅茨楼市周期</a></p>
+<p>库兹涅茨是一位美国经济学家，他通过对大量数据的研究，发现经济中存在长度为15—25年不等的长期波动，这种波动在美国的建筑行业中表现尤为明显，而建筑业又与房地产息息相关，所以也被称之为“地产周期”或“建筑周期“。</p>
+<p>房地产的周期波动简单而言分为四个阶段：复苏、繁荣、危机、萧条。</p>
+<p>市场经历一段低迷期（萧条），成交量开始逐步回升，房地产价格随之逐步回升，房地产投资效应也随之显现（复苏）；随后交易量日益放大，拉动房地产价格迅速上升 （繁荣）；当价格过高时，受购买力制约，成交量开始下降，但房价仍保持上涨；随后受成交量下降影响，高房价难以持续，开始下降，进入量价齐跌的萧条期（危机）。</p>
+<p>如果按照库兹涅茨周期来看，我们的房子周期已经比别人长了很多。不过见顶的过程和形式可能也有很多种，周期下行未必就会大跌，长期不涨或涨幅很小，也是一种下行表现。为了防止出现危机，就得控制繁荣的发生，防暴涨的目的也是为了防暴跌。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://httpd.apache.org/docs/2.0/programs/ab.html" title="Apache HTTP测试工具 ab">Apache HTTP测试工具 ab</a></p>
+<p>例如：ab -n 100 -c 10 <a href="http://127.0.0.1/login">http://127.0.0.1/login</a></p>
+<p>对网站执行100次请求，10并发同时进行。</p>
+<p><strong>参数说明</strong></p>
+<p>-n ：总共的请求执行数，默认值是一次请求；</p>
+<p>-c：并发数，默认值是为一次一个请求。</p>
+<p>-t：它在固定的总时间内对服务器请求测试，以秒为单位。</p>
+<p>2、<strong>redis分布式锁</strong></p>
+<p>利用SETNX和GETSET命令。</p>
+<p>SETNX：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis&gt; SETNX mykey &quot;Hello&quot;</span><br><span class="line">(integer) 1</span><br><span class="line">redis&gt; SETNX mykey &quot;World&quot;</span><br><span class="line">(integer) 0</span><br><span class="line">redis&gt; GET mykey</span><br><span class="line">&quot;Hello&quot;</span><br><span class="line">redis&gt; </span><br></pre></td></tr></table></figure>
+<p>GETSET：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis&gt; INCR mycounter</span><br><span class="line">(integer) 1</span><br><span class="line">redis&gt; GETSET mycounter &quot;0&quot;</span><br><span class="line">&quot;1&quot;</span><br><span class="line">redis&gt; GET mycounter</span><br><span class="line">&quot;0&quot;</span><br><span class="line">redis&gt; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>加锁</p>
+<p><img src="https://api2.mubu.com/v3/document_image/08be3daf-fdcd-487f-96ac-3d1215480fe6-977367.jpg"></p>
+<p>解锁</p>
+<p><img src="https://api2.mubu.com/v3/document_image/415812fa-e1f3-4835-87a4-8240825f1c4b-977367.jpg"></p>
+<p>3、<strong>SpringBoot项目配置Redis缓存</strong></p>
+<p>首先在启动类上添加注解@EnableCaching</p>
+<p>在控制层的查询方法上添加@Cacheable注解</p>
+<p>对更新的方法上添加@CachePut，如果该方法返回的不是实体类，而是ModelAndView，那么使用@CacheEvict。</p>
+<p><strong>要求</strong>：对返回的实体类要实现序列化。</p>
+<p><strong>说明</strong>：</p>
+<blockquote>
+<ul>
+<li>@Cacheable：第一次进方法，第二次从redis中读取。</li>
+<li>@CachePut：方法每次都会执行，配合注解@Cacheable，如果返回类型一致，注解@CachePut的更新方法执行后，注解@Cacheable的查询接口会直接从redis中获取，就不会从数据库中再查询了。</li>
+<li>@CacheEvict：访问方法后，会清除redis中的缓存。</li>
+</ul>
+</blockquote>
+<p><strong>进阶用法</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/15a45eac-f940-48f5-a28a-43343095dea4-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/9602a562-c062-49ac-bcfa-2affd9c8acfe-977367.jpg"></p>
+<p><strong>说明</strong></p>
+<blockquote>
+<ul>
+<li>#sellerId对应入参sellerId的值，针对不同的sellerId，生成不同的缓存。</li>
+<li>condition，指的是条件，满足相应条件才进行缓存。</li>
+<li>unless，如果不，用于对结果集的条件设定，条件成立才进行缓存。</li>
+</ul>
+</blockquote>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://mp.weixin.qq.com/s/fNf431EYDL3jClXBGV6-XA&nbsp;https://mp.weixin.qq.com/s/KSYkZ32hHGAh_fS02MOqyg&nbsp;https://mp.weixin.qq.com/s/oO0olD3-x10dLJCmiQEkWg" title="什么是黑匣子？">什么是黑匣子？</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/4458e578-9301-462d-bd6b-2939205fedbe-977367.jpg"></p>
+<p>黑匣子，学名是飞行数据记录仪，记录飞机飞行期间的详细信息资料，大概长上面这个样子。</p>
+<p>它大多放在飞机尾部，现代商用飞机一般安装两个黑匣子，分别是“驾驶舱语音记录器”和“飞行数据记录器”，顾名思义，一个记录机舱里的声音，一个记录飞行数据。</p>
+<p>黑匣子名字虽然带“黑”字，但通常为橙红色，表面还贴有方便夜间搜寻的反光标示。</p>
+<p>它材质安全，不易损坏，具有抗强冲击、抗穿透、抗高温火烧、抗深海压力、耐海水浸泡、耐腐蚀性液体浸泡等特种防护能力。</p>
+<p>它自身能发信号，报告位置，电池一般使用时间是30天左右，期间会不断向外界发送信号。</p>
+<p>它的用途可形象地称为“法官”、“教官”和“医生”。</p>
+<blockquote>
+<ul>
+<li>法官：起到飞行事故调查判定的作用，通过对数据译码分析，可以判定事故真正原因，避免同类事故再次发生。  </li>
+<li>教官：起到在飞行员监控方面的作用，通过日常分析黑匣子的数据，纠正飞行员不良驾驶习惯，预防事故发生。  </li>
+<li>医生：起到在飞机故障诊断与维护方面的作用，通过对黑匣子数据进行日常分析，监控、预测飞机主要部件的健康状态，排除故障隐患，防止故障发展为事故。</li>
+</ul>
+</blockquote>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://github.com/p0deje/Maccy?source=https://macwk.com/soft/maccy" title="Maccy">Maccy</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d8c7e5ed-4882-452c-b3b4-62cf3d47358d-977367.jpg"></p>
+<p>一个开源的macOS的轻量级剪贴板管理器。可以最大保留999条历史记录，并允许快速导航、搜索和使用以前的剪贴板内容。</p>
+<p>2、<a href="https://www.chaonengsou.com/" title="超能搜">超能搜</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/a6099269-a48e-484b-a994-463f811eaa25-977367.jpg"></p>
+<p>一个网盘资源聚合类网站，对网盘搜索资料，还是蛮有帮助的。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、 </p>
+<p>其实真正的送别，没有长亭古道，没有劝君更近一杯酒，就是在一个和平时一样的清晨，有的人留在昨天了。</p>
+<p>——<a href="https://www.shidewz.cn/article/21775-1.html" title="网易云热评">网易云热评</a></p>
+<p>2、</p>
+<p>曾有人问我，读书后都忘了，怎么办？<br>读书，是为了看别人是怎么理解这个世界的。<br>每一次阅读，都是一次对话。就像与一些高人交朋友，每天跟他们相处，不管你是否记得，他们都会影响到你。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/QchTV8nsg1o5GMJYvzOVjw" title="一个好东西">一个好东西</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第18期）：爱情有什么道理？</title>
+    <url>/2022/04/02/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC18%E6%9C%9F%EF%BC%89%EF%BC%9A%E7%88%B1%E6%83%85%E6%9C%89%E4%BB%80%E4%B9%88%E9%81%93%E7%90%86%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=254574&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://baike.baidu.com/item/%E6%9C%B1%E6%A0%BC%E6%8B%89%E5%91%A8%E6%9C%9F/10676402" title="朱格拉周期">朱格拉周期</a></p>
+<p>1862年法国医生、经济学家<em>克里门特·朱格拉</em>在《论法国、英国和美国的商业危机以及发生周期》一书中首次提出，资本主义市场经济中存在着7-10年左右的周期波动。这种中等长度的经济周期被后人一般称为“<em>朱格拉周期</em>”，也称“朱格拉中周期“。</p>
+<p>朱格拉周期一般从设备投资占GDP的比例看出，简单解释就是机器设备由于存在磨损折旧、技术替代等因素，就会有一定的更新周期。</p>
+<p>当机器设备开始大量更新换代时，固定资产投资将大幅增加，从而推动经济快速增长，进入繁荣期；随着机器设备更新完成时，固定资产投资回落，经济就会转为衰落。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/a57919ee-a987-4233-ab17-b36be4dc7da4-977367.jpg"></p>
+<p>从上图中可以看出，美国在过去四轮朱格拉周期中，设备投资情况的变化趋势。<br>我们可以发现一个规律，新一轮朱格拉周期开启时，如果是产业升级，或者技术革新引发的，那么经济上升周期延续的时间就会相对较长一些，比如1991年和2001年开启的第3轮和第4轮朱格拉周期，分别持续了大概34个季度和16个季度；而如果没有产业升级，上升期则会比较短暂，比如1982年和2009年启动的朱格拉周期，分别持续了6个季度和5个季度。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><strong>网络通信</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/6e18d99c-e54e-421c-b6fd-169aa05622c9-977367.jpg"></p>
+<p>TCP：</p>
+<ul>
+<li><p>理解为打电话。</p>
+</li>
+<li><p>连接稳定，连接时三次握手，断开时，四次挥手。</p>
+</li>
+<li><p>客户端、服务端。</p>
+</li>
+<li><p>传输完成，释放连接，效率低。</p>
+</li>
+</ul>
+<p>UDP：</p>
+<ul>
+<li><p>理解为发短信。</p>
+</li>
+<li><p>不需要连接，不稳定。</p>
+</li>
+<li><p>客户端和服务端没有明确界限。</p>
+</li>
+<li><p>不管有没有准备好，都可以发给你。</p>
+</li>
+</ul>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="http://v.kepu.net.cn/video/play_6063.html" title="爱情有什么道理？">爱情有什么道理？</a></p>
+<p>爱情和心理健康有密不可分的关系，两者会互为影响，而爱自己的能力，是获得幸福爱情的前提基础，心理学也可以帮助我们获取幸福爱情。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/88cbbcce-59bc-4b89-9048-fc01102e3a9d-977367.jpg"></p>
+<p>上图是演讲者画的一个爱情闯关图，一共分为7关，前3关是脱单，后4关是相处。<br>这其中让我印象深刻的是说，大量研究发现：相似的人比互补的人在一起更可能幸福，因为当两个人不同时，我们要付出更多的精力去沟通去协调，这对很多人来说是一种挑战。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/dc288bb9-eabe-4edf-b440-365edd90009c-977367.jpg"></p>
+<p>我们可以想象两个人是两个圆，而圆的大小，代表每个人调适的能力或者是某种爱的能力，而在这两个圆中间重叠的部分就代表着幸福的可能性， 如果两个人中有一个人他的圆很小，也就是说他很难适应稍有不同，稍有变化的生活， 那么两个圆重叠的部分就很快减小了；如果两个圆都变小了，那么也许他们之间只有很小很小的幸福的可能性。而如何让这个圆变大呢？比如说较好的沟通能力、相对比较积极乐观，这些都有助于扩大圆。</p>
+<p>2、<a href="##fnMYwzEK8r8##%E6%89%93%E5%BC%80%E6%8A%96%E9%9F%B3%E6%90%9C%E7%B4%A2%22%E9%B8%A1%E8%9B%8B%E6%9C%80%E8%90%A5%E5%85%BB%E7%9A%84%E9%83%A8%E5%88%86%EF%BC%8C%E5%8F%AF%E8%83%BD%E8%A2%AB%E4%BD%A0%E4%B8%A2%E6%8E%89%E4%BA%86%22" title="关于鸡蛋你必须要知道的几件事">关于鸡蛋你必须要知道的几件事</a></p>
+<blockquote>
+<ol>
+<li>土鸡蛋要比普通鸡蛋贵。</li>
+<li>土鸡蛋和普通鸡蛋营养价值有差异，没有绝对的一方营养价值更高。</li>
+<li>红皮鸡蛋不是更有营养，因为蛋壳出现的时候，蛋白和卵黄都已经形成了。</li>
+<li>尽量不吃生鸡蛋，因为生鸡蛋中的微生物可能导致腹痛、腹泻等。</li>
+<li>鸡蛋最好是放进冰箱存储更好，正确的存放方式是：小头朝上，大头在下。</li>
+<li>一个鸡蛋的主要营养物质都在蛋黄上，比如钙、维生素A、胆固醇、锌等。</li>
+</ol>
+</blockquote>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://youzhiyouxing.cn/" title="有知有行">有知有行</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/1c711439-521d-48cb-811e-d13a12cfb82b-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/9d9bba58-4abf-4158-a7e8-bc17c69ce4de-977367.jpg"></p>
+<p>之前下载过这个APP，但是没怎么上心，直到这周使用了一下记账功能，才恍然大悟，原来这个功能设计还是很有用处的，它可以对你的投资进行一个很好的分类，总结。</p>
+<p>简单说下，我的使用：<br>因为记账功能可添加3个账户和一个默认汇总账户，一共有4个账户可操作，我分别命名为：汇总账户、活期收益账户、长期收益账户和追求高收益账户，这样我们就能很清晰地对我的资产进行配置以及汇总，方便后期对资产配置进行优化。安全性上，可设置加锁，让别人不可见；记账上还可设置记账提醒。</p>
+<p>再说到APP上，有知上还有很多投资和生活上的好文章，值得阅读和学习，让你少走一些弯路。软件有安卓和IOS版本，ipad上体验较好。</p>
+<p>最后附言一句话于你于我，<strong>有知有行，知行合一</strong>。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>互联网开发已经变了，我们不再为互相链接和长期展示而创建内容，而是为了展示广告而创建内容。<br>内容的消费时间已经从几分钟下降到几秒钟，Facebook、Instagram 和 TikTok 这样的成瘾机器被认为是互联网的正确形式。</p>
+<p>——<a href="http://www.ruanyifeng.com/blog/2022/04/weekly-issue-201.html" title="阮一峰的网络日志">阮一峰的网络日志</a></p>
+<p>2、</p>
+<p>互联网时代的信息质量，呈现两极化。信息的平均质量变得越来越差，但是你能从网上找到的最有用信息，质量正越来越好。<br>这就好比一个商品极大丰富的市场，对普通消费者是不利的，因为他不知道怎么选择琳琅满目的商品；但对高水平消费者非常有利，因为他能找到最满足自己需要的商品。</p>
+<p>——<a href="http://www.ruanyifeng.com/blog/2022/04/weekly-issue-201.html" title="阮一峰的网络日志">阮一峰的网络日志</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第19期）：二维码到底是什么呢？</title>
+    <url>/2022/04/09/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC19%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>1、<a href="https://baike.baidu.com/item/%E5%9F%BA%E9%92%A6%E5%91%A8%E6%9C%9F/2747628" title="基钦周期">基钦周期</a></p>
+<p>它是由美国经济学家约瑟夫·基钦于1923年提出的。基钦根据对物价、生产和就业的统计资料的分析，认为资本主义经济的发展，每隔40个月就会出现一次有规律的上下波动。</p>
+<p>基钦是从微观的角度去看企业生产和库存的变化。当厂商生产过多时，就会形成存货、从而减少生产，经济向下波动。<br>库存减少，厂商又会加大生产，经济向上波动。从这一现象出发，基钦把重点关注对象放在了库存上，认为库存的变化，能够体现出市场供需和预期的变化，进而导致经济的波动。所以基钦周期也被称为“<em>存货周期</em>”或“<em>短波理论</em>”。</p>
+<p>基钦周期理论的内在基础是，商品的需求冲击是被动的、外在的，而供给库存的调整，则是主动的、内在的。因此需求和供给的不同变动形成了库存的四个周期性阶段，如下图所示：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/1b238b38-79a0-452c-8eae-e4bb8fb6b863-977367.jpg"></p>
+<p><strong>一般来说，市场行情或者一些相关周期性板块，往往会在被动去库存阶段，触底反弹，并可能在主动补库存阶段，产生超额收益。</strong></p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="http://c.biancheng.net/view/1320.html" title="GoF的23种设计模式的分类和功能">GoF的23种设计模式的分类和功能</a></p>
+<p>设计模式有两种分类方法，即根据<em>目的</em>和<em>作用的范围</em>来分。</p>
+<p><strong>目的</strong>：指的是用来完成什么工作，这种方式可分为三种模式，分别是创建型模式、结构型模式和行为型模式。</p>
+<ul>
+<li><p>创建型模式：用于描述“怎样创建对象”，有到单例、原型、工厂方法、抽象工厂、建造者，5种。</p>
+</li>
+<li><p>结构型模式：用于描述如何将类或对象按某种布局组成更大的结构，有代理、适配器、桥接、装饰、外观、享元、组合，7种。</p>
+</li>
+<li><p>行为型模式：用于描述类或对象之间怎样相互协作共同完成单个对象都无法单独完成的任务，以及怎样分配职责，有模板方法、策略、命令、职责链、状态、观察者、中介者、迭代器、访问者、备忘录、解释器，11种。</p>
+</li>
+</ul>
+<p><strong>作用范围</strong>：指的是主要用于类上，还是对象上，这种方式可分为两种模式，类模式和对象模式。</p>
+<ul>
+<li><p>类模式：用于处理类与之类之间的关系，是静态的，在编译时刻就确定下来了。有工厂方法、（类）适配器、模板方法、解释器。</p>
+</li>
+<li><p>对象模式：用于处理对象之间的关系，是动态的，在运行时刻是可以变化的，除了上述4种，其他的都是。</p>
+</li>
+</ul>
+<p>2、<a href="http://c.biancheng.net/view/1338.html" title="单例模式">单例模式</a></p>
+<p>定义：</p>
+<p>指一个类只有一个实例，且该类能自己创建这个实例的一种模式。</p>
+<p>特点：</p>
+<blockquote>
+<ol>
+<li>单例类只有一个实例对象;</li>
+<li>该单例对象必须由单例类自己创建；</li>
+<li>单例类对外提供一个访问该单例的全局访问点。</li>
+</ol>
+</blockquote>
+<p>实现：</p>
+<blockquote>
+<ol>
+<li>饿汉式</li>
+<li>懒汉式</li>
+<li>双检锁/双重校验锁（DCL，即double-checked locking）</li>
+<li>登记式/静态内部类</li>
+<li>枚举</li>
+</ol>
+</blockquote>
+<p>实现单例模式的最佳方法是用枚举，这种方式是 Effective Java 作者 Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还自动支持序列化机制，防止反序列化和反射重新创建新的对象，绝对防止多次实例化。</p>
+<p>注：实现相关代码，可参考<a href="https://mp.weixin.qq.com/s/GwZYpRMYdAG8yJCngP_bcg">单例模式，看这篇就够了！不要再用double check了，枚举单例才是首选！</a></p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="http://www.kepu.net.cn/ydrhcz/2017kpwsp/201804/t20180411_459388.html&nbsp;http://www.kepu.net.cn/ydrhcz/2017kpwsp/201804/t20180411_459390.html" title="二维码到底是什么呢？">二维码到底是什么呢？</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/a9abc1d6-c835-4f3c-afd8-8c59a460f70b-977367.jpg"></p>
+<p>二维码是用某种特定的几何图形，按一定规律在平面分布黑白相间的图像记录数据符合信息。</p>
+<p>它主要分两大类，堆叠式和矩阵式。</p>
+<p><em>堆叠式</em>：将条形码堆叠成两行或多行。</p>
+<p><em>矩阵式</em>：在矩阵中通过黑白像素不同的分布进行编码。</p>
+<p>我们生活中最常用的二维码<em>QR（Quick Response）Code</em>，就是矩阵式二维码，它的优点是存储密度大，占用空间小，读取速度快。</p>
+<p>它的代码编制原理是利用计算内部逻辑基础的1\0比特流的概念，比如在QR Code中黑色小方块代表1，白色小方块代表0，按照一定规则将这些小方块8个为一组，组合在一起，就生成了二维码，其中有三个回形方块，是用来做扫码定位，这样在不同方向都可识别。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="http://www.51pptmoban.com/" title="51PPT模版">51PPT模版</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/307ed392-16c4-4841-bf7a-fe101244b44c-977367.jpg"></p>
+<p>无需注册，免费可下载PPT模版素材，界面不够友好，搜索内容也不够精确，需要注意的是，不可用于商业用途。</p>
+<p>2、<a href="https://www.ypppt.com/" title="优品PPT">优品PPT</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e9e4059d-fd99-4d41-b27b-07fd52967a88-977367.jpg"></p>
+<p>同样无需注册，免费可下载PPT模版素材，界面较友好，搜索内容也符合预期，但需要注意，不可用于商业用途。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>没有正确的决定，只有当下最适合的决定。信息不对称处处存在，对事如此，对人亦如此。有的人站在自己的群体看他人的荒诞，殊不知在他人眼中自己也很荒诞。</p>
+<p>——<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8ffef4695bc01c1b&redirect_uri=https://weread.qq.com/wrpage/book/review/243102271_7wKGFbTEv&response_type=code&scope=snsapi_base&state=243102271_7wKGFbTEv#wechat_redirect" title="星yeah">星yeah</a></p>
+<p>2、</p>
+<p>对于不得不做的事，立马去做，远比犹豫不决要好。悬而未决的未知是最可怕的。确定的结果，哪怕不如人意，也能使人安心，毕竟它已经过去了。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/eZxsh_DUC9_eL_YNJYcS8w" title="开始裁员了">开始裁员了</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
     <title>杂货铺周刊（第1期）</title>
     <url>/2021/11/27/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC1%E6%9C%9F%EF%BC%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1456162653&auto=0&height=66"></iframe>
@@ -225,6 +1547,465 @@
 <p>免费提供 PPT 模版，Word 文档，Excel 图表下载，分类很多，是微软官方网站，下载需要登陆。</p>
 <h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>每天差不多都是相同的重复，昨天和前天颠倒顺序，也没有任何不便。我不时想，这叫什么人生啊，但也没有因此感觉光阴虚度。我仅仅是感觉到惊讶，惊讶于昨天与前天毫无区别，惊讶于自己被编排入这样的人生，惊讶于自己留下的足迹甚至还未及认清，就在转瞬间被风吹走，变得无影无踪。</p>
 <p>——<a href="https://book.douban.com/subject/21692813/" title="村上春树《眠》">村上春树《眠》</a></p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第20期）：今年来我的基金收益如何？</title>
+    <url>/2022/04/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC20%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BB%8A%E5%B9%B4%E6%9D%A5%E6%88%91%E7%9A%84%E5%9F%BA%E9%87%91%E6%94%B6%E7%9B%8A%E5%A6%82%E4%BD%95%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1807364922&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>今年来我的基金收益如何？</strong></p>
+<p>最近市场情绪挺悲观的，因为大家都赔钱了，还赔不少，加上大环境也不好，疫情反反复复，但我觉得我们要做的还是留在市场中，当然前提是我们对我们的资产有了解，有信心，不然确实很难拿的住，这也取决于你的仓位，仓位控制很重要。</p>
+<p>今年来，市场更是风云突变，下跌的让我还没来及整理篮子里的基金，所以基金数量依旧像去年之多，甚至更多。</p>
+<p>不过我大致给它们进行了分类，第一类是支付宝购买的，有银行、保险、基建的行业基金；有恒生指数、沪深300、中证500、创业板的指数基金；还有一些价值类的主动型基金，今年来的收益是：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/58fa5a4a-fe21-414c-97fc-493d95f14ef1-977367.jpg"></p>
+<p>第二类是理财魔方买的全天候组合，这个是一个自动化的基金组合，现在无需我们操作，会根据市场情况自动进行调仓，今年来的收益是：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/a2131762-a209-4eea-a3ce-7276a82a99e6-977367.jpg"></p>
+<p>第三类是好买基金买的两个自定义组合(债6股4、债9现1)和一个债券基金，今年来的收益是：<br><img src="https://api2.mubu.com/v3/document_image/b34aa63f-9f9b-465b-b012-5be38d312e14-977367.jpg"></p>
+<p>可以看出，今年来收益还是挺惨的，但我其实还挺淡定的，因为最惨还能怎样？也就是全部亏损，其实这根本不会，因为基金净值还没到0就清盘了，况且我买的基金相对来说都不是高位，安全边际还是挺高的，这个时候就是考验你的耐心，考验你的人性，你是不贪婪，你是不恐惧。</p>
+<p>很多人说也没多少本金，理财能赚多少？确实本金的多少很重要，但我们总不能一上来就敢去投10万，100万，1000万吧，那除非这些钱在你眼里就像零花钱，因为在投资市场中，总是要有试错成本的，我觉得它更像是一种修行，锻炼你的思维，你的人性。</p>
+<p>很多事情，你没有去做，是根本无法去体会的，当然我不是劝你去投资理财，仅此发表一些我的看法。<br>但如果你打算投资理财，那么我建议你要多去学习，要有知有行，要一点一点去感受市场，比如说我最先投资是50、然后到500、然后到1000…；你也可以先从不同风险等级去开始，由低到高，逐渐渗透，比如货币基金—&gt;债券基金—&gt;混合型基金—&gt;股票基金，但记着永远不要All IN。</p>
+<p><em>道阻且长，行则将至，行而不辍，未来可期</em> </p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://book.douban.com/subject/2243615/" title="策略模式">策略模式</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/866e846e-5a76-4942-8dd1-bac2b83c7ec6-977367.jpg"></p>
+<p>如上图，用一个模拟鸭子的应用举例，一个超类Duck，其中方法有游泳、外观、动态设置行为的方法及调用行为的方法。这里面每组行为（FlyBehavior和QuackBehavior）就是一个算法族，分别把它们封装起来，而这些“算法”之间是可以互换替换的，这种模式让算法的变化独立于使用算法的客户，这就是策略模式。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://zh.wikihow.com/%E5%BA%94%E5%AF%B9%E8%B4%9F%E9%9D%A2%E6%83%85%E7%BB%AA" title="如何应对负面情绪？">如何应对负面情绪？</a></p>
+<p>主要介绍了三种方法；</p>
+<p>一、<em>根本上解决负面情绪</em></p>
+<blockquote>
+<ol>
+<li>找出干扰你的的负面情绪。</li>
+<li>根据负面情绪，给自己加油打气，保持积极的态度。</li>
+<li>注意措辞，不说绝对的话对自己，比如”我肯定做不好“，“我总是把事情搞砸”。</li>
+<li>不使用过于负面的语言，比如“糟糕”、“灾难”。</li>
+<li>转忧为喜，遇到任何事，要想好的一面。</li>
+</ol>
+</blockquote>
+<p>二、<em>活在当下，让负面情绪自然离开</em></p>
+<blockquote>
+<ol>
+<li>每天醒来，先想出5件可以让你开心的事情。</li>
+<li>享受你当下的生活，做事不较真，要允许自己放松，多和正面积极的人相处。</li>
+<li>进行健康的锻炼，避免不好的习惯，比如抽烟、酗酒、熬夜…</li>
+<li>控制周边环境，比如把房间灯光调节一下，放一些音乐等等。</li>
+<li>晚上的时候，想想过去的一天，找出5件让你觉得积极的事情，把他们说出来并记录下来。</li>
+</ol>
+</blockquote>
+<p>三、<em>寻找外援</em></p>
+<blockquote>
+<p>找一位咨询师或心理医生。</p>
+</blockquote>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://colors.ichuantong.cn/" title="中国传统颜色手册">中国传统颜色手册</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/360e029f-5449-49ec-b513-0eb0ac82d70d-977367.jpg"></p>
+<p>一个用来找颜色的网站，网站比较唯美，有音乐，诗句相伴，提供CMYK、RGB及HEX值。</p>
+<p>2、<a href="https://www.pptsupermarket.com/" title="PPT超级市场">PPT超级市场</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/4b782df1-d96b-429b-a82c-cd7f5163b800-977367.jpg"></p>
+<p>一个提供PPT模版、文案、工具及教程的网站，其中PPT模版无需登录、注册可免费下载，作品则需要登录，其中文案部分免费下载、整个作品消耗积分（可通过分享、签到获取）下载。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>我学会了如果你必须离开一个地方，一个你曾经住过、爱过、深埋着所有过往的地方，无论以何种方式离开，都不要慢慢离开，要尽你所能决绝地离开，永远不要回头，也永远不要相信过去的时光才更好，因为它们已经消亡。</p>
+<p>过去的岁月看来安全无害，能被轻易跨越，而未来藏来迷雾之中，隔着距离，看来叫人胆怯。但当你踏足其中，就会云开雾散。<br>我学会了这一点，但就像所有人一样，待到学会，为时太晚。</p>
+<p>——<a href="https://www.xiaoyuzhoufm.com/episode/616424f6c8c1d14e83366b48?s=eyJ1IjogIjYyMzdlYWZmZWRjZTY3MTA0YTQzYTUyNSJ9" title="《夜航西飞》">《夜航西飞》</a></p>
+<p>2、</p>
+<p>经历都是礼物，它会告诉你一些事情，而且告诉你的这些事情只有那些对我们心灵产生足够大冲击的事情，所以你要有耐心去发现，给自己一些耐心，给自己一些时间。</p>
+<p>——<a href="https://youzhiyouxing.cn/n/materials/1022" title="《E05 孟岩对话简七：每个人都在经历一场别人一无所知的战争》">《E05 孟岩对话简七：每个人都在经历一场别人一无所知的战争》</a></p>
+<p>3、</p>
+<p>物质的贫穷能催毁你一生的尊严，精神的贫穷能够耗尽你几世的轮回。</p>
+<p>人生没有白走的路，没有白读的书，你触碰过的那些文字，会在不知不觉中帮你认识这个世界，会悄悄的帮你擦去脸上的肤浅和无知。</p>
+<p>书便宜但不意味着知识的廉价，虽然读书不能够功成名就，不一定让你锦绣前程，但它能够让你说话有道理，做事有余地。出言有尺度，嬉皮有分寸。</p>
+<p>读书和挣钱是人生最好的修行，前者让人不惑，后者让人有尊严！</p>
+<p>——<a href="https://weibo.com/1216826604/LnVTtiSdw?type=like" title="wu2198 ">wu2198 </a></p>
+<p>4、</p>
+<p>真正的爱，不是单纯的给予，还包括适当的拒绝、及时的赞美、得体的批评、恰当的争论、必要的鼓励、温柔的安慰和有效的敦促。</p>
+<p>真正的爱是同频共振，相互支撑，共同成长。</p>
+<p>——<a href="https://book.douban.com/subject/1775691/" title="《少有人走的路》">《少有人走的路》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第21期）：了解投资中的四笔钱</title>
+    <url>/2022/05/14/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC21%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%BA%86%E8%A7%A3%E6%8A%95%E8%B5%84%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%AC%94%E9%92%B1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://youzhiyouxing.cn/n/materials/484&nbsp;https://youzhiyouxing.cn/n/materials/195" title="投资中的四笔钱">投资中的四笔钱</a></p>
+<p>为什么要说四笔钱呢？我们看文中的例子，一个朋友一共有1450万的资金，<br>其中1000万是房子，400万放在银行理财，50万用来买基金。<br>其中即使买基金多赚20%，他的整体资产也只增长不到1%：</p>
+<p><code>50/1450 * 20% = 0.7%</code></p>
+<p>可是如果他的房产哪怕只跌10%，他的总资产都会受到很大的影响。从这个例子我们可见资产的配置是很重要的。</p>
+<p>下面，简单总结下投资中的四笔钱，帮助我们做好个人资产的配置。</p>
+<p><strong>保险保障的钱</strong></p>
+<p>给生活拖底，减少风险带来的投资中断。<em>用一份小额的、确定性的代价，给不确定的未来买一份安心。</em> 建议选择消费险，有四大基础险种：医疗险、意外险、重疾险和寿险。</p>
+<p><strong>日常开销的钱</strong></p>
+<p>这是一笔随时都会用到的钱，我们要选择安全性高、流动性强、收益比活期存款高一些就行，其中货币基金是一个不错的选择，比如说招商银行的「朝朝宝」、支付宝的「余额宝」、微信的「零钱通」，这些都是使用起来非常方便的。</p>
+<p><strong>稳健理财的钱</strong></p>
+<p>1～3年内可能用到的钱，根据要用到的时间搭配好合适的产品，比如「固收+」产品，这类产品主要投资低风险的债券资产，同时配置少量的高风险资产，回撤最大5%左右，用一定的风险获取更高的收益。</p>
+<p><strong>长期投资的钱</strong></p>
+<p>最好是5年以上不用的钱，因为投资权益类产品，时间越长，赚钱的概率越大。<br>选择股票类的产品，用风险换收益，可以选择指数基金和主动基金。</p>
+<p>当你了解了四笔钱以后，就可以按照自己的情况进行一定比例的规划、配置。<br>这样就可以让你的资产发挥出更好的效果。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/ee4d5814-89e4-434b-9ca6-5cb417546508-977367.jpg"></p>
+<p>最后，引用文中的一张图，进一步说明一个投资者的长期投资业绩，受多方面的因素影响，比如投资者行为、资产配置、交易成本、选择股票或基金等等，但越靠下的部分影响越大，对我们最终的投资业绩起到更决定性的作用。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="http://t.csdn.cn/pI8K6" title="千万级数据查询">千万级数据的批量查询</a></p>
+<p>利用limit和主键id进行批量查询，重点步骤有以后几条：</p>
+<blockquote>
+<ol>
+<li>查询出结果集的总和，做分页用。</li>
+<li>构建分页查询SQL，将id和查询条数传递进去。</li>
+<li>遍历结果集，将本批最后一条记录的id记录下来，用于下一次查询。</li>
+</ol>
+</blockquote>
+<p>相关SQL：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(id) <span class="keyword">from</span> <span class="keyword">table</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> phone,id <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> id <span class="operator">&gt;</span> ? <span class="keyword">order</span> <span class="keyword">by</span> id limit ?</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (j == (size - <span class="number">1</span>)) &#123;</span><br><span class="line">  id = Integer.parseInt(obj[<span class="number">2</span>].toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、<a href="https://book.douban.com/subject/2243615/" title="观察者模式（气象站）">观察者模式（气象站）</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d18d7bb1-cf92-434f-a71e-1ed285ec6435-977367.jpg"></p>
+<p>主题和观察者定义了一对多的关系。观察者依赖于此主题，只要主题状态一有变化，观察者就会被通知。根据通知的风格，观察者可能因此新值而更新。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/681cac37-df8f-466b-8792-dfd99586fd5a-977367.jpg"></p>
+<p>效果如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/36f0718f-d15c-4f7c-8e8f-3f87e2b2fa62-977367.jpg"></p>
+<p>如需具体实现源码，可后台留言。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="http://www.kepu.net.cn/ydrhcz/ydrhcz_zpzs/ydrh_2016/201612/t20161212_470661.html" title="咖啡真的能提神吗？">咖啡真的能提神吗？</a></p>
+<p>首先答案是能，但不能醒脑，它带来最大的好处是让人提高注意力和警觉性，有助于完成一些机械性的工作，但是如果进行纯脑力的工作就没那么大帮助了。</p>
+<p>那么它为什么会让人睡不着呢？</p>
+<p>主要有两点：</p>
+<blockquote>
+<ol>
+<li>人体中的腺苷和腺苷受体结合，使神经细胞活动减弱，我们就会犯困，咖啡因和腺苷结构相似，进入人体后和腺苷受体结合，就阻止了本来与腺苷的结合，所以不会使神经细胞活动减弱，也就不会犯困。</li>
+<li>咖啡因还可以刺激神经系统，增加警觉度，提高注意力。</li>
+</ol>
+</blockquote>
+<p>咖啡中的咖啡因进入人体中，需要45分钟才能被胃和小肠完全吸收（和个体差异及咖啡浓度有关），之后才能对你产生刺激。</p>
+<p>这里分享一个有趣的内容：咖啡盹（coffee nap）</p>
+<blockquote>
+<ol>
+<li>喝咖啡一小杯（200-250mg）</li>
+<li>小睡10-20分钟（设置闹钟！）</li>
+<li>当咖啡开始起作用时醒过来，神清气爽。</li>
+</ol>
+</blockquote>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://github.com/liupan1890/aliyunpan" title="阿里云盘小白羊版">阿里云盘小白羊版</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/ecea5d30-c6b7-404c-842d-312c55f2e22b-977367.jpg"></p>
+<p>一个基于阿里云盘的第三方版，说说它的优点，它下载、上传更快；可以登陆多个账号；可在线播放网盘里各种格式的视频且都是原画（违规也能看）等等。</p>
+<p>2、<a href="http://www.qingyinyue.club/">轻音乐俱乐部</a> “轻音乐俱乐部”)</p>
+<p><img src="https://api2.mubu.com/v3/document_image/8acc2477-8736-44c0-ae0a-e988ad9b599e-977367.jpg"></p>
+<p>一个纯轻音乐的网站，可以在放松、学习的时候听。</p>
+<p>3、<a href="https://momoyu.cc/" title="摸摸鱼热榜">摸摸鱼热榜</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e69b016a-d364-43ed-8ce2-71e18e6d7f59-977367.jpg"></p>
+<p>一个聚合类的信息阅读网站，和今日热榜类似，不过这个在右下贴心地展示了节假日的倒计时，可根据自己喜好，选择一款使用。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>因为生活不是自己的事情，你的情绪完全影响你身边的人，影响跟你工作的人，甚至影响家人……</p>
+<p>——<a href="https://movie.douban.com/celebrity/1361925/" title="许巍">许巍</a></p>
+<p>2、</p>
+<p>人要观览大山大水，只要他身心没有残疾，他就不愿被人抬到山里水边，他要自己两条腿登到山上，他要披荆斩棘下到河边。行动不只带来结果，它同时也是自我实现的过程。</p>
+<p>人并非天生的懒汉，仿佛事事都希望不劳而获，坐享其成；不是的，我们不仅希望有个好结果，而且要自己求获这个结果；人不仅因为有好结果而快乐，他要用自己的汗水浇灌出好果实来。</p>
+<p>我留心观察过远远近近的人们，观察记录表明，没有什么快乐比自己努力而获得成就带来的快乐更光彩，更持久。</p>
+<p>——<a href="https://book.douban.com/subject/26363926/" title="《何为良好生活》">《何为良好生活》</a></p>
+<p>3、</p>
+<p>读书是为了自讨苦吃，首先读书没那么容易，读书中让你体会更多的是痛苦，你的孤独，你的自我否认、渺茫，甚至找不到路的感觉，那种绝望感，都是读书带给你的。<br>如果说有积极意义的话，就是能够让你抵达思想和心智的更深处。</p>
+<p>——<a href="https://www.xiaoyuzhoufm.com/episode/6231d0e0f09c3a423aa27960?s=eyJ1IjogIjYyMzdlYWZmZWRjZTY3MTA0YTQzYTUyNSJ9" title="美不胜收的冒险">美不胜收的冒险</a></p>
+<p>4、</p>
+<p>种一棵树最好的时间是十年前，其次是现在。</p>
+<p>——<a href="https://book.douban.com/subject/4709739/" title="《Dead Aid》">《Dead Aid》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第22期）：我的投资实证和未来投资计划</title>
+    <url>/2022/05/21/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC22%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%88%91%E7%9A%84%E6%8A%95%E8%B5%84%E5%AE%9E%E8%AF%81%E5%92%8C%E6%9C%AA%E6%9D%A5%E6%8A%95%E8%B5%84%E8%AE%A1%E5%88%92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>我的投资实证和未来投资计划</strong></p>
+<p>今年来才开始使用有知有行记账功能，所以还不能显示出年化收益，看说明要记账天数大于180天才可显示，还是蛮期待的。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/fa057c6e-902d-4e7f-af8e-ba298a297f53-977367.jpg"></p>
+<p>现在每周六进行记账，看看这一周的收益情况，主要目的还是对自己投资的一个记录和复盘，以后每周我会发在公众号上。</p>
+<p><strong>本周操作</strong>：卖出基建和一个债基，逻辑是目前债券没有股票型基金更具价值，这两个盈亏可互补，卖出等待加仓指数基金，也是对自己持有基金数量的一个整理。</p>
+<p><strong>投资计划</strong>：持有一个长期的股债组合，然后留有20%的钱去买一些定投或股票赚钱超额收益，当我们在拿到这部分收益的时候，将收益继续投入到长期组合，再用这20%的钱，继续寻找机会。而股债组合，还可以让我们在市场很差的时候，用债券这部分资产去买入更多的股票型资产，让我们回血更快，未来收益也会更高。</p>
+<p>这其中，我觉得有两个重要点：</p>
+<blockquote>
+<ol>
+<li>让资产永远留在市场中，即使市场很差，在越差的情况下，可以慢慢再补一些，这样成本也越来越低。</li>
+<li>20%的资金是赚取短线的钱，拿到收益就停止。这里需要注意的是，这部分投资不应该太杂，太多，初步认为3个就足够了，多了反而会分散注意力。投入前要做好计划安排，如果没遇到合适的资产，宁愿放在余额宝里。</li>
+</ol>
+</blockquote>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="http://t.csdn.cn/gamuU" title="java中计算代码耗时的5种方法">java中计算代码耗时的5种方法</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/dcf8d0ef-36b5-4c46-9a0a-5083880dbc0d-977367.jpg"></p>
+<p>上图选用的是第5种方式，利用spring框架提供的StopWatch实现，具体代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">StopWatch watch &#x3D; new StopWatch(&quot;测试StopWatch&quot;);</span><br><span class="line">watch.start(&quot;执行数据筛选&quot;);</span><br><span class="line">&#x2F;&#x2F;some code</span><br><span class="line">watch.stop();</span><br><span class="line"></span><br><span class="line">watch.start(&quot;模拟等待&quot;);</span><br><span class="line">&#x2F;&#x2F;some code</span><br><span class="line">watch.stop();</span><br><span class="line">System.out.println(watch.prettyPrint());</span><br></pre></td></tr></table></figure>
+<p>2、<a href="https://book.douban.com/subject/2243615/" title="装饰者模式（咖啡）">装饰者模式（咖啡）</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/151e68c6-3644-45d4-91f9-6ba9c7e52a5b-977367.jpg"></p>
+<p>说明：动态地将责任附加到对象上。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/3dcb79aa-c022-44d6-a437-2e669ed7b336-977367.jpg"></p>
+<p>上图是本书中对应咖啡例子的类图，其中被装饰者和装饰者对象有相同的超类。左侧为被装饰者，右侧为装饰者，而它的实现类是具体的装饰实现。</p>
+<p>下图为最终演示代码及结果输出：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/625f5fd5-4536-4f93-9e8b-8cd1901ad323-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e7a46ee7-dc70-4b1c-b3f7-dca0ef7b82f8-977367.jpg"></p>
+<p>通过使用装饰者模式，我们可以让其中一种咖啡，任意添加调料且后续增加新类型的咖啡和新的调料都可以不限量。<br>因为它完全遵守开放-关闭原则（多扩展开放，对修改关闭）。</p>
+<p>如需代码，可后台留言。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.zhihu.com/question/383371330" title="洗衣机工作原理">洗衣机工作原理</a></p>
+<p>首先现在市面上的洗衣机主要分为两种：波轮洗衣机和滚筒洗衣机。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/7413c22b-a42d-41ff-a74f-f99e11a16f4a-977367.jpg"></p>
+<p><strong>波轮洗衣机的原理</strong>是利用波轮带动水流中衣服旋转，让衣服在水中来回摩擦，就类似我们用手不断地搓搓搓，利用洗衣液和摩擦把污渍去掉。</p>
+<p><strong>滚筒洗衣机的原理</strong>是当衣服随着滚筒到达顶部，在重力的作用下会掉下拍打在滚筒底部，就类似于古人敲打衣服，再加上洗衣液的作用，达到去除污渍的效果。</p>
+<p><strong>那么使用洗衣袋，会影响洗衣服的洁净程度吗？</strong></p>
+<p>首先我们知道了机洗主要靠的是洗衣液和外力，而洗衣袋也都是有孔的，虽然两种洗衣机都可对其实现外力的作用，但洗衣袋的加入会减弱一些水流对衣服的摩擦，不过总体影响并不大。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://cook.yunyoujun.cn/" title="隔离食用手册">隔离食用手册</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/5f8555f2-374e-4c02-84f3-9cd4f9fd8abe-977367.jpg"></p>
+<p>一个教你做菜的网站，可根据蔬菜、肉、主食及厨具筛选出菜谱，来源为B站的视频，步骤很详细，是一个学习做菜的好工具。</p>
+<p>2、<a href="https://monkeytype.com/" title="Monkeytype">Monkeytype</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e90e41dc-4efa-456e-809b-7bbacacdae5f-977367.jpg"></p>
+<p>一个测试打字速度的网站，里面有很多种语言，不过没中文，还可以锻炼编程语言的打字速度。</p>
+<p>3、<a href="https://cobysy.github.io/shodo/" title="书道">书道</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/a70a8cff-7c1a-4708-9b93-bcb77e1e4d75-977367.jpg"></p>
+<p>一个模拟写书法的网站，可以选择毛笔粗细、墨色及浓淡，还有真人研磨执笔动画。</p>
+<p>下面献上我写的一个飞字：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/2aced18d-794f-4975-95cc-d6c895c60531-977367.jpg"></p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>父母、爱人、朋友的无私关切和帮助是我们最大的财富，是让人备感温暖的太阳，一旦失去，你会感觉到侵肌入骨的寒冷，所以请珍视他们，如同珍视你自己那样对待他们。</p>
+<p>——<a href="https://book.douban.com/subject/25853217/" title="《一切都是最好的安排》">《一切都是最好的安排》</a></p>
+<p>2、</p>
+<p>该跌不跌，理应看涨；该涨不涨，理应看跌。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/bF2dwguVs8d_4dx6HXCpYA" title="何为强势？">何为强势？</a></p>
+<p>3、</p>
+<p>我们追求的东西，往往正是奴役我们的东西；而我们忽略的东西，则是能让我们获得自由的东西。</p>
+<p>自由的前提，是放弃，而不是拥有更多。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/GWVz2zoOLAtydQQ_c44Ybg" title="一波大行情">一波大行情</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第23期）：解决calibre导入书籍和传输书籍不是中文名称问题（mac）</title>
+    <url>/2022/05/29/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC23%E6%9C%9F%EF%BC%89%EF%BC%9A%E8%A7%A3%E5%86%B3calibre%E5%AF%BC%E5%85%A5%E4%B9%A6%E7%B1%8D%E5%92%8C%E4%BC%A0%E8%BE%93%E4%B9%A6%E7%B1%8D%E4%B8%8D%E6%98%AF%E4%B8%AD%E6%96%87%E5%90%8D%E7%A7%B0%E9%97%AE%E9%A2%98%EF%BC%88mac%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六或周日发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://youzhiyouxing.cn/n/materials/766" title="你是跑赢CPI的穷人吗？如何正确理解通货膨胀">你是跑赢CPI的穷人吗？如何正确理解通货膨胀</a></p>
+<p>CPI是居民消费价格指数，反应的是消费价格的变动，也是观察通货膨胀的重要指标。但通货膨胀不等同于CPI的增长。国家统计局在官网有专门撰文解释，反映物价变化的CPI虽然是观察通胀的重要指标，却不是通货膨胀本身。<strong>通货膨胀，是指货币发行量超过流通中实际所需量而引起的货币贬值现象。</strong></p>
+<p>所以通货膨胀其实是货币贬值。那么我们该如何应对呢？</p>
+<p>首先资产可以分为4大类：</p>
+<blockquote>
+<ol>
+<li>权益类资产，以股票指数基金为代表</li>
+<li>债权类资产，以利率债指数基金为代表</li>
+<li>大宗商品和REITs，以黄金、原油和REITs为代表</li>
+<li>现金，为货币基金为代表</li>
+</ol>
+</blockquote>
+<p>西格尔教授在《股市长线法宝》一书中，用142年的数据展示证明了<br><em>在短期内（持有1年）股票、债券和短期国债都很难有效地对冲通胀风险，但是从长期来看（持有30年），股票的实际收益率几乎不受通胀影响，而债券收益率被远远抛在后面。</em></p>
+<p>如下图所示：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/b16e566a-fa0f-46b6-9ff7-17f3aae0e574-977367.jpg" alt="数据来源：杰里米·西格尔，《股市长线法宝》"></p>
+<p>当然，西格尔教授并不是第一个做出类似研究的人。早在1924年，埃德加·史密斯在《普通股长期投资》中以美国内战至20世纪初的数据证明：</p>
+<p><em>无论物价是上涨还是下跌，股票的表现都优于债券。</em></p>
+<p>所以我认为长期投资，最简单的策略，是股债组合，风险等级取决于股票仓位的比例，在市场整体低估时，卖债买股；在市场高估时，卖出部分股票仓位；这其中你的情绪变化是你自己要把握的，选择一个可以让你舒服的风险等级，比如说，你承受能力低，就选择债9股1，激进的时候，也只卖出少量债券，买入少量的股票，可能组合就变成债8股2的样子，当然你只有经历过一次大跌，才可能知道自己能承受多大的回撤，知道什么样的风险等级适合自己，投资理财的道路很长，我们一起修行，成为更好的人。</p>
+<p>本周投资实证：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/b683d179-1011-4f2e-bbcd-f2096204a38e-977367.jpg"></p>
+<p>本周亏损0.38%，无操作。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://blog.csdn.net/maxracer/article/details/5436580" title="BufferedReader读取UTF-8文件中文乱码问题">BufferedReader读取UTF-8文件中文乱码问题</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">BufferedReader read &#x3D; new BufferedReader(new FileReader(new File(filename)));</span><br></pre></td></tr></table></figure>
+<p>换成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">InputStreamReader inputStreamReader &#x3D; new InputStreamReader(new FileInputStream(file), &quot;UTF-8&quot;);</span><br><span class="line">BufferedReader read &#x3D; new BufferedReader(inputStreamReader);</span><br></pre></td></tr></table></figure>
+<p>2、<a href="https://book.douban.com/subject/2243615/" title="工厂模式">工厂模式</a></p>
+<p><em>简单工厂</em>，它不是一个真正的模式，反而比较像是一种编程习惯。</p>
+<p>像下面这样：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/096573c5-984e-46ca-93f2-6eac7cba6d17-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/53a32450-bc35-4cf7-a7fe-f4dd11eacd0f-977367.jpg"></p>
+<p><em>工厂模式</em>：定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。</p>
+<p>像下面这样：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/7bb8a516-3f26-45fb-968c-088b47564e20-977367.jpg"><br><img src="https://api2.mubu.com/v3/document_image/fdfd90b8-fa08-497a-9315-69763c870c31-977367.jpg"><br><img src="https://api2.mubu.com/v3/document_image/d28f516a-b7bd-4be6-a53b-eed089e19007-977367.jpg" alt="类图"></p>
+<p>上述类图，Creator就像是PizzaStore类，而ConcreteCreator就像是各个比萨店的子类，比如NYPizzaStore，<br>Product就是Pizza，ConcreteProduct是Product的各个子类，这里可以是NYStyleCheesePizza，然后是在NYPizzaStore中实际制造出的产品。</p>
+<p><em>抽象工厂模式</em>：提供了一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/49145bc1-e730-48d0-8978-c07580e363f1-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d18efb59-4a86-41f8-87d8-44d97916cd60-977367.jpg"></p>
+<p>两张图结合来看，PizzaIngredientFactory这个类，定义了如何产生一个相关产品的家族，这个家族包含了所有制作比萨的原料。它的返回类型都是对象接口，而接口可以灵活实现多种类型，这里面的重点是，所有的工厂都是用来封装对象的创建，帮助我们针对接口编程，而不是针对具体类编程。</p>
+<p>3、<a href="https://northmorn.com/post/calibre/calibre-utf8-name/" title="解决calibre导入书籍和传输书籍不是中文名称问题">解决calibre导入书籍和传输书籍不是中文名称问题（mac）</a></p>
+<p>参考文章，我做了以下几个步骤：</p>
+<blockquote>
+<ol>
+<li>去官网下载最新版本软件，安装</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>下载源码</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;kovidgoyal&#x2F;calibre.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="3">
+<li>check out相应安装版本，根据需求修改源代码。</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gco v5.43.0(gco &#x3D; git checkout)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>修改backend.py文件，删掉ascii_filename(）方法，解决导入书籍生成不是中文名称的问题。</p>
+</li>
+<li><p>修改smart_device_app包下的driver.py文件，修改内容如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/7c898142-af69-435b-ac1d-76280e186321-977367.jpg"></p>
+<p>解决传输后书籍不是中文名称的问题。</p>
+</li>
+</ul>
+<blockquote>
+<ol start="4">
+<li>创建快捷方式</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;bin&#x2F;calibre-develop</span><br></pre></td></tr></table></figure>
+<p>写入内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line">export CALIBRE_DEVELOP_FROM&#x3D;&quot;&#x2F;Users&#x2F;kovid&#x2F;work&#x2F;calibre&#x2F;src&quot;</span><br><span class="line">calibre-debug -g</span><br></pre></td></tr></table></figure>
+<p>授予权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;calibre-develop</span><br></pre></td></tr></table></figure>
+<p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#calibre</span><br><span class="line">export CALIBRE&#x3D;&#x2F;Applications&#x2F;calibre.app&#x2F;Contents&#x2F;MacOS</span><br><span class="line">export PATH&#x3D;$PATH:$CALIBRE</span><br></pre></td></tr></table></figure>
+<p>启动程序</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">calibre-develop </span><br></pre></td></tr></table></figure>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="http://www.kepu.net.cn/ydrhcz/ydrhcz_zpzs/ydrh_2020/202002/t20200217_484465.html" title="病毒和细菌竟有这么多不同！">病毒和细菌竟有这么多不同！</a></p>
+<p>抗生素是针对细菌感染的药物，对病毒感染无效。</p>
+<p>细菌和病毒都是可能让人体生病的病原体，它们有以下不同：</p>
+<ol>
+<li><p>个体大小不同，细菌个体相对病毒药大得多。</p>
+</li>
+<li><p>细胞结构不同，细菌是由单细胞或多细胞组成的简单生物，拥有细胞壁，而病毒不存在这种细胞结构。</p>
+</li>
+<li><p>生存条件不同，病毒只能依靠其他生物的活细胞才能生存，细菌可以独立生存，也可寄生于生物体内，但仅寄生于细胞外。</p>
+</li>
+<li><p>代谢方式不同，病毒没有自己的代谢系统，而细菌有很多不同的代谢方式。</p>
+</li>
+<li><p>感染人的方式不同，细菌进入人体的方式有很多，且感染人不需要进入细胞，而病毒进入人体后，要想达到感染，还需要进入细胞。</p>
+</li>
+<li><p>感染后的治疗方式不同，病毒感染使用抗病毒药物治疗，细菌感染，使用抗生素治疗。</p>
+</li>
+</ol>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://bookfere.com/" title="书伴">书伴</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/b511285b-a649-42e7-b73f-a1d9674618a5-977367.jpg"></p>
+<p>你的电子书伴侣，提供详细的越狱教程，这周我的Kindle越狱就是从这里学习的，网站也提供字典下载，越狱插件下载，后续的固件升级，以后一些Kindle常用工具和使用技巧。</p>
+<p>2、<a href="https://calibre-ebook.com/" title="calibre">calibre</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/0dccdf23-6a7c-4c6c-a133-104d48be1fc8-977367.jpg"></p>
+<p>一个书籍管理库，支持本地阅读，格式转换，编辑书籍等，可以搭配Kindle实现无线传输和邮箱传输。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>随身携带地图是一回事，有人给你指路则完全是另一回事。</p>
+<p>——<a href="https://book.douban.com/subject/34888157/" title="《十分钟冥想》">《十分钟冥想》</a></p>
+<p>2、</p>
+<p>邮差一辈子都在路上，但终究只是个邮差。导游跑遍全世界，也还是导游。</p>
+<p>眼界和格局的本质是，认知的广度和深度。不学习，不思考，哪怕行走万里，也不会有什么格局。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/gaMR9CUqWXkkOb6ZC2xR8g" title="抓住本质">抓住本质</a></p>
+<p>3、</p>
+<p>你看我们去赚钱，赚到了钱之后，我们可以用这个钱去买产品，买服务，但是我们去买这些产品，实际是获得感受。</p>
+<p>当我们使用这些产品，当我们使用这些服务的过程中，我们获得了很美好的感受。</p>
+<p>但其实我们每天工作的过程不就是感受，那这个比例怎么去计算呢，我们每个人每天8小时，这个8小时，一周就是40个小时，这么长的时间，你为什么要去为了换得那些钱去牺牲这个过程中的感受？</p>
+<p>你换的那个钱不就是为了去买一些很好的感受或者怎么样的，所以我觉得它还是回到这个问题本身。</p>
+<p>就我觉得从各个角度来讲，我们都应该去找自己真正喜欢真正擅长、真正热爱的事情，并且和自己尊敬的人一起去工作。</p>
+<p>——<a href="https://www.xiaoyuzhoufm.com/episode/628d02c183ddae2d9e72aa84?s=eyJ1IjogIjYyMzdlYWZmZWRjZTY3MTA0YTQzYTUyNSJ9" title="最好的投资，是投资自己">最好的投资，是投资自己</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第24期）：Linux Shell单引号、双引号及无引号的区别</title>
+    <url>/2022/06/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC24%E6%9C%9F%EF%BC%89%EF%BC%9ALinux%20Shell%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8A%E6%97%A0%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六或周日发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://youzhiyouxing.cn/n/materials/1256" title="一次性买入与分批买入，我该怎么选？">一次性买入与分批买入，我该怎么选？</a></p>
+<p>前情回顾：我有一笔钱，现在的温度不高，我该选择一次性投入还是分批买入？</p>
+<p>我们可以假定只有这一次选择的机会，不可重复。两种选择的赔率差不多，输赢也只是收益率的差别而已，并不会有丢掉性命这样的极端情况，这种情况下理性的选择应该选择胜率更大的方式。</p>
+<p>根据文章，从历史数据回测来看，市场相对低估值时，一次性买入要比分批买入的收益要高；而市场相对高估值时，分批买入的收益要比一次性买入要高。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/41a2d10d-1099-4732-b9fc-bb6b48bdd257-977367.jpg"></p>
+<p>我们可以结合有知有行的温度计，进行判断，当温度低估时，更适合一次性买入，就像前不久市场最低的时候，温度计是 0° ，但可能会给我们带来不好的体验；当温度中估或震荡市时，可以选择分批买入，而在温度高估时，如果必须要买，分批买入相对来说更好一些，但更多要做的其实是耐心持有，让子弹多飞一会儿，如果达到我们心里阈值的话，可以选择分批卖出。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://blog.51cto.com/sunyu/799589" title="linux shell单引号、双引号及无引号区别">linux shell单引号、双引号及无引号区别</a></p>
+<p><strong>单引号</strong></p>
+<p>所见即所得，单引号里是什么内容，就输出什么内容。</p>
+<p><strong>双引号</strong></p>
+<p>如果双引号中的内容有命令、变量等，会先解析，再输出内容。</p>
+<p><strong>不加引号</strong></p>
+<p>如果内容中有命令、变量等，会先解析，再输出内容，如果字符中带有空格等特殊字符，则不能完整的输出，解决办法是加双引号。</p>
+<p>2、<a href="https://book.douban.com/subject/2243615/" title="命令模式">命令模式</a></p>
+<p><em>命令模式</em>，将“请求”封装成对象，以便使用不同的请求，队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/d6b47491-2c9f-43aa-99ed-6c216896e5bb-977367.jpg"></p>
+<p>具体案例为遥控器，如上图类图展示，通过创建遥控器对象，将命令传递给遥控器对象，通过遥控中的开关按钮，实现每个命令，代码如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/e32aed2b-596c-45fb-a905-e566ef270ccc-977367.jpg"></p>
+<p>命令模式还可以用在队列请求，比如日程安排、线程池、工作队列等；命令模式还可以用在日志请求上，比如记录应用的所有动作，在应用死机后，重新调用这些动作恢复到之前的状态。</p>
+<p>3、<a href="https://www.cnblogs.com/qlqwjy/p/7476533.html" title="MySQL的CASE WHEN用法">MySQL的CASE WHEN用法</a></p>
+<p>归纳为两种用法：</p>
+<blockquote>
+<ol>
+<li>单个值判断</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 简单case函数</span><br><span class="line">case sex</span><br><span class="line">when &#39;1&#39; then &#39;男&#39;</span><br><span class="line">when &#39;2&#39; then &#39;女’</span><br><span class="line">else &#39;其他&#39; </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># case搜索函数</span><br><span class="line">case </span><br><span class="line">when sex &#x3D; &#39;1&#39; then &#39;男&#39;</span><br><span class="line">when sex &#x3D; &#39;2&#39; then &#39;女&#39;</span><br><span class="line">else &#39;其他&#39; </span><br><span class="line">end  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="2">
+<li>多个值判断</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">case </span><br><span class="line">when col in (&#39;a&#39;,&#39;b&#39;) then &#39;第一类&#39;</span><br><span class="line">when col in (&#39;c&#39;) then &#39;第二类&#39;</span><br><span class="line">else &#39;其他&#39; </span><br><span class="line">end  </span><br></pre></td></tr></table></figure>
+<p>4、<a href="http://t.csdn.cn/R1Sof" title="MySQL中varchar类型数据排序的方法">MySQL中varchar类型数据排序的方法</a></p>
+<p>归纳为两种方法：</p>
+<blockquote>
+<ol>
+<li>手动转换类型</li>
+</ol>
+</blockquote>
+<p>在排序字段+0即可，例如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select code from province </span><br><span class="line">order by code+0 desc limit 10;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="2">
+<li>使用转换函数CAST/CONVERT</li>
+</ol>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select code from province order by </span><br><span class="line">CAST(server_id as SIGNED) desc limit 10;</span><br><span class="line">或者</span><br><span class="line">select code from province order by </span><br><span class="line">CAST(server_id as UNSIGNED INT) desc limit 10;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select code from province order by </span><br><span class="line">CONVERT (code, SIGNED) desc limit 10 ;</span><br></pre></td></tr></table></figure>
+<p><strong>SIGNED</strong> 和 <strong>UNSIGNED INT</strong>的<strong>区别</strong>：</p>
+<p>UNSIGNED 类型（&lt;=0 || &gt;=0）能保存2倍于 SIGNED 类型的正整数数据，且 UNSIGNED 类型数据为非负数（&gt;=0）。</p>
+<p>比如MySQL中signed int，取值是 $\ce{-2^31}$<del>$\ce{2^31 - 1}$，即：-2147483648 ~ 2147483647。<br>unsigned int，取值是0</del>$\ce{2^32 -1}$，即：0 ~ 4294967295。<br>可以看出 UNSIGNED 类型正整数数据是 SIGNED 类型正整数数据的2倍。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.fx361.cc/page/2021/0830/8812689.shtml" title="空调时开时关更省电？">空调时开时关更省电？</a></p>
+<p>结论：频繁开关空调，反而更费电。</p>
+<p>原因：空调启动阶段的能耗很高，如果多次重启，总能耗会超过空调一直开着的能耗。并且空调工作时间越长，对比越明显。</p>
+<p>合理的做法：缩小室内外温度差，尽量减少室内和室外的热交换，是更有效的空调省电方法。也就是说关闭门窗，处于密闭状态，合理利用睡眠模式以及使用变频空调，可以起到省电作用。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://secreter.github.io/ireader/index.html" title="i 微信读书插件">i 微信读书插件</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/9926075f-5912-4fd4-be3d-ce57d161e688-977367.jpg"></p>
+<p>微信读书网页版辅助工具，支持划线生成图片书签、笔记同步到第三方（readwise、flomo、notion）、 一键导出笔记、更换主题、更换字体等。</p>
+<p>2、<a href="https://saladict.crimx.com/" title="Saladict 沙拉查词">Saladict 沙拉查词</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/67f7fd08-fa63-451b-86c6-908d73981989-977367.jpg"><br><img src="https://api2.mubu.com/v3/document_image/5522663a-26df-4c5f-a4b3-bf984266ed8f-977367.jpg"></p>
+<p>一个网页端的查词辅助工具，可以双语言显示，如上图，它有多种查词模式，还支持多个词典，最重要的还是免费。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>如果人生的每一个阶段，都能清晰的知道自己该做什么，做对的事情，做核心的事情，人生就会越来越好。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/zU3kug3BXuV9azbkA_Itsw" title="清仓万科及投资反思">清仓万科及投资反思</a></p>
+<p>2、</p>
+<p>知识会弥补这种物质的渴望，物质的东西追求是没有止境的，更多的应该专注于自己要做的事情上，就当你把事情做成功的时候，这个物质的东西好像就没有那么重要了。</p>
+<p>——<a href="https://www.douyin.com/video/7106449257455996173" title="清北博士学霸夫妻：知识会弥补你对物质的渴望！">清北博士学霸夫妻：知识会弥补你对物质的渴望！</a></p>
+<p>3、</p>
+<p>天上的白云，蔚蓝的天空，舒服的小风，都是免费的。幸福，也很简单，它就在我们身边。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/QtpJ10nQbmRC_AgksE3F0A" title="A股，太强了">A股，太强了</a></p>
+<p>4、</p>
+<p>人类行为受到工作环境的强烈影响，你会变成环境要求你成为的样子。</p>
+<p>要小心你的工作，它会改变你，让你成为另一个人。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/ihPq0Ka9faeodL-8pRsF1Q" title="科技爱好者周刊（第209期）：程序员是怎样的人">科技爱好者周刊（第209期）：程序员是怎样的人</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
 ]]></content>
       <categories>
         <category>周刊</category>
@@ -364,83 +2145,9 @@
       </categories>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2019/09/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>浏览掘金的时候，看到了一篇搭建博客的文章，感觉挺不错的，就决定去搭建一个属于自己的博客</p>
-<a id="more"></a>
-
-<h2 id="准备工作-（Mac）"><a href="#准备工作-（Mac）" class="headerlink" title="准备工作 （Mac）"></a>准备工作 （Mac）</h2><ol>
-<li>电脑一台</li>
-<li>安装Git</li>
-<li>安装Node.js</li>
-<li>GitHub账号或者Gitee账号一个</li>
-</ol>
-<h2 id="开始搭建-Hexo博客-官方文档"><a href="#开始搭建-Hexo博客-官方文档" class="headerlink" title="开始搭建 Hexo博客(官方文档 )"></a>开始搭建 Hexo博客(<a href="https://hexo.io/zh-cn/docs/" title="点击阅读">官方文档</a> )</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装Hexo之前需要安装相关环境：</p>
-<ul>
-<li><a href="https://sourceforge.net/projects/git-osx-installer/" title="点击下载">Git</a> </li>
-<li><a href="https://nodejs.org/en/" title="点击下载">Node.js</a> </li>
-</ul>
-<p>安装 Node.js 后安装 npm </p>
-<p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -g install npm</span><br></pre></td></tr></table></figure>
-<p><font color=red>注：</font>不能翻墙的同学，可使用 npm淘宝镜像 cnpm</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>我们继续来安装Hexo:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>测试一下是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><p>我这里选择的是Gitee账号（因为Gitee在国内加载要快一些）</p>
-<p>官方说明：如果你想你的首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <code>https://gitee.com/ipvb</code> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <code>https://gitee.com/ipvb/ipvb</code> 部署完成后，就可以以 <code>https://ipvb.gitee.io</code> 进行访问了。</p>
-<p>如果你对上述说明不能很明白的话，那也不要紧，继续跟着我做</p>
-<p><font color=red>首先你要创建一个public的项目，保证你的仓库名与你的个人空间地址相同</font></p>
-<p><img src="https://mubu.com/document_image/2ca29f31-6b3c-4d03-8ba7-df85d0225759-977367.jpg"></p>
-<p> <font color=red>注意上图👆红色圈中的地方一定要保持相同（这样才能保证你的首页不带二级目录）</font></p>
-<p>码云上的个人空间地址，每个用户可以修改一次。</p>
-<p><img src="https://mubu.com/document_image/34bbd509-7d84-439f-9a74-0726cb336b3b-977367.jpg"></p>
-<p>创建仓库后，我们需要在本地新建一个名称是仓库名的文件夹，然后进行我们博客的初始化</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init 仓库名</span><br></pre></td></tr></table></figure>
-<p>执行完成后，我们进入文件夹查看，发现多了如下结构：</p>
-<p><img src="https://mubu.com/document_image/b4a774ee-e08a-4ef5-9842-7bc3330fcef9-977367.jpg"></p>
-<p>启动博客</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>进行访问，浏览器中输入<code>https://localhost:4000</code> <a href="http://localhost:4000/">或者直接点击我</a> 访问。</p>
-<p>安装hexo-deployer-git自动部署发布工具</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    </span><br></pre></td></tr></table></figure>
-<p>打开<font color=red>_config.yml</font>，对我们的博客进行完善。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: helloWord    &#x2F;&#x2F;博客的名字</span><br><span class="line">author: author  &#x2F;&#x2F;你的名字</span><br><span class="line">language: zh-Hans    &#x2F;&#x2F;语言 中文 </span><br><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git    &#x2F;&#x2F;Github发布</span><br><span class="line">    repo: https:&#x2F;&#x2F;gitee.com&#x2F;feizi-discipline&#x2F;feizi-discipline.git &#x2F;&#x2F;创建的Gitee仓库克隆&#x2F;下载链接也可以选择ssh</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-<p>不喜欢默认主题的可以自行去官网下载替换 </p>
-<p>hexo官网主题地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-<p>现在我们的博客还仅仅只能在本地进行查看，下面我们将要通过域名去访问博客</p>
-<p>将博客的相关文件发布到Gitee仓库中（第一次需要输入账号密码，就输当前登陆的Gitee用户）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br><span class="line">hexo clean   &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">hexo g       &#x2F;&#x2F;生成缓存和静态文件</span><br><span class="line">hexo d       &#x2F;&#x2F;重新部署到服务器</span><br></pre></td></tr></table></figure>
-<p>打开码云，查看刚刚创建的仓库，如果上传成功，进行如下操作：</p>
-<h3 id="开启-Gitee-Pages-服务"><a href="#开启-Gitee-Pages-服务" class="headerlink" title="开启 Gitee Pages 服务"></a>开启 Gitee Pages 服务</h3><p><img src="https://mubu.com/document_image/303aba2b-9131-4851-9f2c-770a5b050979-977367.jpg"><br><img src="https://mubu.com/document_image/879c6cb6-ae2c-4520-9852-68c8d8d20da4-977367.jpg"></p>
-<p>点击启动，复制一下生成的网站地址</p>
-<p>然后再打开<font color=red>_config.yml</font>，修改如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">url: https:&#x2F;&#x2F;feizi-discipline.gitee.io &#x2F;&#x2F;开启 Gitee Pages 服务，生成的网站地址</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-<p>配置完成后，重新去本地文件夹执行一下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>并去开启 Gitee Pages 服务重新更新一下，即可大功告成</p>
-<h2 id="重点归纳"><a href="#重点归纳" class="headerlink" title="重点归纳"></a>重点归纳</h2><ol>
-<li><p>正确安装所需环境</p>
-</li>
-<li><p>正确创建仓库（注意仓库名，归属，路径三处名称保持一致）</p>
-</li>
-<li><p>在发布到Gitee远程仓库后，需要在Gitee Pages服务中重新更新部署</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>杂货铺周刊（第3期）</title>
     <url>/2021/12/11/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC3%E6%9C%9F%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1305960097&auto=1&height=66"></iframe>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1305960097&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
@@ -611,9 +2318,9 @@
       </categories>
   </entry>
   <entry>
-    <title>杂货铺周刊（第4期）</title>
+    <title>杂货铺周刊（第4期）：江村大墓的主人汉文帝</title>
     <url>/2021/12/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC4%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1308788681&auto=1&height=66"></iframe>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1308788681&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
@@ -756,145 +2463,447 @@
       </categories>
   </entry>
   <entry>
-    <title>杂货铺周刊（第5期）</title>
-    <url>/2021/12/20/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC5%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%B1%9F%E6%9D%91%E5%A4%A7%E5%A2%93%E7%9A%84%E4%B8%BB%E4%BA%BA%E6%B1%89%E6%96%87%E5%B8%9D%20copy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1308788681&auto=1&height=66"></iframe>
+    <title>杂货铺周刊（第5期）：Merry Christmas</title>
+    <url>/2021/12/25/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC5%E6%9C%9F%EF%BC%89%EF%BC%9AMerry%20Christmas/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1899742433&auto=0&height=66"></iframe>
 
 <p>这里记录每周值得分享的内容，周六发布。</p>
 <p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
 <a id="more"></a>
 
-<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://www.meipian.cn/33ld9vm6" title="投资市场的五种轮动">投资市场的五种轮动</a>（由易到难）</p>
-<p>1、 <strong>资产轮动</strong></p>
-<p><img src="https://api2.mubu.com/v3/document_image/76792c76-b27a-43ed-a152-f6e9cacb7450-977367.jpg"></p>
-<p>根据美林投资时钟，按照周期去配置资产，债券走牛之后，去配置股票，股票起来后配置商品，商品火爆后，撤出来持有现金，如此往复。</p>
-<p><a href="https://baike.sogou.com/v56864174.htm?fromTitle=%E7%BE%8E%E6%9E%97%E6%97%B6%E9%92%9F" title="美林投资时钟">美林投资时钟</a>，分4个阶段：</p>
-<p><strong>衰退期:</strong></p>
-<p>股票类金融和消费板块狂跌能力最强；<br>债券100%走牛，收益率曲线各有不同；<br>商品类贵金属表现最佳。</p>
-<p><strong>复苏期：</strong></p>
-<p>股票类周期和金融板块为最佳选择；<br>债券类以震荡为主；<br>商品类工业品类表现不错，金属板块为最佳选择。</p>
-<p><strong>过热期：</strong></p>
-<p>股票类周期和消费板块表现最好；<br>债券类100%走熊，收益率曲线整体偏平坦；<br>商品类金属板块表现最佳。</p>
-<p><strong>滞涨期：</strong></p>
-<p>股票类消费和成长板块最为抗跌；<br>债券类缺乏明显趋势，需要相机抉择；<br>商品类贵金属最为抗跌。</p>
-<p>2、 <strong>风格轮动</strong></p>
-<p>大小盘的切换，也就是价值和成长的轮动。</p>
-<p>以沪深300和创业板指为代表，一般3年～3年半一个周期。</p>
-<p>经济好，业绩好的时候，大家信心更足，更倾向于成长风格；<br>当经济不好，业绩差的时候，大家啥也不信了，更愿意抱着业绩确定性更高的价值风格。</p>
-<p>3、 <strong>主题轮动</strong></p>
-<p>把握宏观大趋势，进行轮动。</p>
-<p>像过去10年，主要促进大消费，像白酒、医药、家电都是一段时间内的重点主题。<br>未来10年，重点主题或许在：5G、人工智能、高端制造。</p>
-<p>不过这种方法，需要你有足够的耐心和心理承受能力。<br>因为在市场中，消息来自四面八方，有好的，有不好，你可能一开始看好，后面伴随着各种不好的消息或主题趋势不断地下降，你就开始没以前坚定了，最终就成了真正的韭菜。</p>
-<p>做这种轮动，一定要比别人更早的看到及坚定的持有，才有可能赚到钱。</p>
-<p>4、<strong>行业轮动</strong></p>
-<p>比如在金融、周期、成长、消费四大类行业中进行轮动。</p>
-<p>首先你得需要对每个行业的生意模式足够了解，其次对轮动时间上的判断，都是比较难的。</p>
-<p>5、 <strong>个股轮动</strong></p>
-<p>就是指在个股上进行轮动，买一个就是一个大牛股，那根本不可能。</p>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="1、Apache-POI"><a href="#1、Apache-POI" class="headerlink" title="1、Apache POI"></a>1、<a href="https://poi.apache.org/components/spreadsheet/index.html" title="Apache POI">Apache POI</a></h3><h4 id="HSSFWorkbook"><a href="#HSSFWorkbook" class="headerlink" title="HSSFWorkbook"></a>HSSFWorkbook</h4><p>生成 Excel 97-2003版本文件格式，扩展名 .xls。</p>
-<p>最大行数65535行，最大列数256列。</p>
-<p><strong>注意：</strong> 超过会报错，一般不会发生内存溢出。</p>
-<h4 id="XSSFWorkbook"><a href="#XSSFWorkbook" class="headerlink" title="XSSFWorkbook"></a>XSSFWorkbook</h4><p>生成 Excel 2007版本及以后，扩展名 .xlsx。</p>
-<p>最大行数1048576行，最大列数16384列。</p>
-<p>可能会出现内存溢出问题，原因在于创建的数据存在于内存，并没有持久化。</p>
-<p><strong>注意：</strong> 由于XSSF支持（.xlsx）的文件是基于 XML 的，因此处理它们的内存占用量高于HSSF 支持 （.xls） 二进制文件。</p>
-<h4 id="SXSSFWorkbook"><a href="#SXSSFWorkbook" class="headerlink" title="SXSSFWorkbook"></a>SXSSFWorkbook</h4><p>生成 2007版本及以后，扩展名 .xlsx。</p>
-<p>基于XSSF构建的低内存占用SXSSF。</p>
-<p>用于生成大数据量的导出。</p>
-<p>SXSSF 通过限制对滑动窗口中的行的访问来实现其低内存占用量，而 XSSF 则允许访问文档中的所有行。</p>
-<p>你可以通过 SXSSFWorkbook(int windowSize)在工作簿构建时指定窗口大小，也可以通过 SXSSFShee的setRandomAccessWindowSize(int windowSize)按工作表设置窗口大小。</p>
-<p>默认窗口大小为100，当达到设置值时，创建新行将导致从访问窗口中删除索引最低的行并将其写入磁盘，此时无法再通过getRow()获取内容；<br>窗口大小为-1时，表示无限制访问，关闭自动刷新。</p>
-<h3 id="2、CSV"><a href="#2、CSV" class="headerlink" title="2、CSV"></a>2、<a href="https://baike.baidu.com/item/CSV/10739?fr=aladdin" title="CSV">CSV</a></h3><p><img src="https://api2.mubu.com/v3/document_image/f6e2c349-c8a6-4b42-bf7c-e7bf85d1c67f-977367.jpg" alt="图一"></p>
-<p><img src="https://api2.mubu.com/v3/document_image/dddf32cd-9786-4cca-936e-668a180e2f38-977367.jpg" alt="图二"></p>
-<p>csv 逗号分隔值格式文件，就是用“**,**”分割的纯文本文件；可以使用Excel打开。</p>
-<p>如图一，是在文本中的内容，然后存储为csv文件，再用Excel打开，就是图二的样子。</p>
-<p>如果开发中，要实现百万级数据导出，那导出csv可能是一种不错的选择。</p>
-<h3 id="3、HTTP"><a href="#3、HTTP" class="headerlink" title="3、HTTP"></a>3、HTTP</h3><p>对于远程接口调用的编写，我们关注的最多的就是请求方法、状态码和响应头信息。</p>
-<h3 id="常用的请求方法："><a href="#常用的请求方法：" class="headerlink" title="常用的请求方法："></a>常用的请求方法：</h3><p><strong>GET</strong></p>
-<p>GET请求用户向服务器获取数据。</p>
-<p>GET请求是可缓存的，当我们使用GET请求方法时，请求可能会被浏览器缓存，且数据通过解码是可见的。</p>
-<p>GET方法提交的url请求，在http协议中并没有对url长度进行限制，这个限制是特定的浏览器及服务器对它的限制。</p>
-<p><strong>POST</strong></p>
-<p>POST请求用于向服务器传递数据（例如提交表单或者上传文件）。</p>
-<p>数据被包含在请求体中，不会显示在URL中，数据需要抓包才能获取到。</p>
-<h3 id="常见的状态码："><a href="#常见的状态码：" class="headerlink" title="常见的状态码："></a>常见的状态码：</h3><p>200 - 请求成功。</p>
-<p>301 - 资源（网页等）被永久转移到其它URL。</p>
-<p>404 - 请求的资源（网页等）未找到。</p>
-<p>500 - 服务器内部错误，无法完成请求。</p>
-<p>状态码响应分为五类：</p>
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="http://fund.eastmoney.com/a/202004141454120795.html" title="如何分析一只基金好不好？">如何分析一只基金好不好？</a></p>
+<ul>
+<li>判断它的类型</li>
+</ul>
+<p>基金主要分为主动型和被动型，主动型分为股票型基金、债券型基金、混合型基金或者QDII等，被动型主要指指数基金，根据自己的风险选择相对应的基金。</p>
+<ul>
+<li>查看它的成立时间及规模大小</li>
+</ul>
+<p>成立时间选择3年及以上，有提供历史参考；规模大小不得少于1亿，有清盘风险，也不要选择规模超多100亿的基金，规模太大，影响灵活性，影响业绩收益。</p>
+<ul>
+<li>查看它的历史业绩走势图</li>
+</ul>
+<p>通过历史业绩和沪深300指数对比，看看它有没有整体跑赢大盘，我们也可以通过公式，算一下它的年化平均收益率。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/6dbba5a0-020e-4ab2-9893-28a854fd6b34-977367.jpg"></p>
+<ul>
+<li>查看它的年度涨幅</li>
+</ul>
+<p>主要重点来看一下它在牛市和熊市的表现，是不是能达到我们的预期。</p>
+<ul>
+<li>查看它的股债比例和持仓明细</li>
+</ul>
+<p>虽然数据有一些滞后性，但也可以作为一些参考。<br>比如，通过股债比例，来判断基金经理是防守还是进攻；<br>通过持仓明细，看它的调仓换股的情况，看看基金经理有没有追点。</p>
+<ul>
+<li>查看它的基金经理</li>
+</ul>
+<p>如果发现基金经理换人了，那么就要多关注一下基金最近的业绩了。因为买主动型基金，其实也买的是基金经理。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://tuhrig.de/my-logging-best-practices/" title="日志记录最佳实践">日志记录最佳实践</a></p>
+<p>主要有以下几点：</p>
+<ul>
+<li>记录之后，而不是之前。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// don&#x27;t do that</span></span><br><span class="line">log.info(<span class="string">&quot;Making request to REST API&quot;</span>)</span><br><span class="line">restClient.makeRequest()</span><br><span class="line"></span><br><span class="line"><span class="comment">// do that</span></span><br><span class="line">restClient.makeRequest()</span><br><span class="line">log.info(<span class="string">&quot;Made request to REST API&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>单独的参数和消息</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// don&#x27;t do that</span></span><br><span class="line">restClient.makeRequest()</span><br><span class="line">log.info(<span class="string">&quot;Made request to &#123;&#125; on REST API.&quot;</span>, url)</span><br><span class="line"></span><br><span class="line"><span class="comment">// do that</span></span><br><span class="line">restClient.makeRequest()</span><br><span class="line">log.info(<span class="string">&quot;Made request to REST API. [url=&#123;&#125;]&quot;</span>, url)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>区分警告和错误</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    restClient.makeRequest()</span><br><span class="line">    log.info(<span class="string">&quot;Made request to REST API. [url=&#123;&#125;]&quot;</span>, url)</span><br><span class="line">&#125; <span class="keyword">catch</span>(e: UnauthorizedException) &#123;</span><br><span class="line">    log.warn(<span class="string">&quot;Request to REST API was rejected because user is unauthorized. [url=&#123;&#125;, result=&#123;&#125;]&quot;</span>, url, result)</span><br><span class="line">&#125; <span class="keyword">catch</span>(e: Exception) &#123;</span><br><span class="line">    log.error(<span class="string">&quot;Request to REST API failed. [url=&#123;&#125;, exception=&#123;&#125;]&quot;</span>, url, exception)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>INFO 适用于业务，DEBUG 适用于技术</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DEBUG | Saved user to newsletter list. [user=<span class="string">&quot;Thomas&quot;</span>, email=<span class="string">&quot;thomas@tuhrig.de&quot;</span>]</span><br><span class="line">DEBUG | Send welcome mail. [user=<span class="string">&quot;Thomas&quot;</span>, email=<span class="string">&quot;thomas@tuhrig.de&quot;</span>]</span><br><span class="line">INFO  | User registered <span class="keyword">for</span> newsletter. [user=<span class="string">&quot;Thomas&quot;</span>, email=<span class="string">&quot;thomas@tuhrig.de&quot;</span>]</span><br><span class="line">DEBUG | Started cron job to send newsletter of the day. [subscribers=<span class="number">24332</span>]</span><br><span class="line">INFO  | Newsletter send to user. [user=<span class="string">&quot;Thomas&quot;</span>]</span><br><span class="line">INFO  | User unsubscribed from newsletter. [user=<span class="string">&quot;Thomas&quot;</span>, email=<span class="string">&quot;thomas@tuhrig.de&quot;</span>]</span><br></pre></td></tr></table></figure>
+<p>2、<a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html" title="GitHub Actions">GitHub Actions</a> </p>
+<p><img src="https://api2.mubu.com/v3/document_image/3c4b87a3-ca04-42cd-adfb-13053b3add14-977367.jpg"></p>
+<p>这是一个功能强大的自动化工具，是2018年10月推出的。它通过workflow文件（存放在代码仓库的.github/workflows下），完成一系列操作，比如说检出代码、打包、运行服务、同步代码等。官方提供了一个<a href="https://github.com/marketplace?type=actions" title="市场">市场</a>，可以搜索他人提交的actions，另外，还有一个<a href="https://github.com/sdras/awesome-actions" title="awesome actions">awesome actions</a> 的仓库，也可以找到不少action。<br>workflow文件的配置字段非常多，详见<a href="https://docs.github.com/cn/actions/learn-github-actions/events-that-trigger-workflows" title="官方文档">官方文档</a>。</p>
+<p>这里简单说一下，我用它做了什么。</p>
 <blockquote>
 <ol>
-<li>信息响应(100–199)</li>
-<li>成功响应(200–299)</li>
-<li>重定向(300–399)</li>
-<li>客户端错误(400–499)</li>
-<li>服务器错误 (500–599)</li>
+<li>对博客源码私有库进行监听，如果有提交，触发workflow执行。</li>
+<li>对源码进行检出，进行打包。</li>
+<li>对打包好的内容，选择指定目录推送到另一个公开仓库。</li>
+<li>将公开仓库代码同步到gitee私有仓库。</li>
+<li>最后更新gitee仓库的pages，完成自动部署。</li>
 </ol>
 </blockquote>
-<h3 id="常用的响应头信息："><a href="#常用的响应头信息：" class="headerlink" title="常用的响应头信息："></a>常用的响应头信息：</h3><p><strong>Content-Type</strong>：告诉客户端，服务器实际返回的内容类型，默认为text/plain。</p>
-<p>常见的媒体格式类型如下：</p>
-<blockquote>
-<p>text/html： HTML格式<br>text/plain：纯文本格式<br>text/xml： XML格式<br>image/gif：gif图片格式<br>image/jpeg：jpg图片格式<br>image/png：png图片格式</p>
-</blockquote>
-<p>常见的application类型如下：</p>
-<blockquote>
-<p>application/xml：XML数据格式<br>application/json：JSON数据格式<br>application/octet-stream：二进制流数据（如常见的文件下载）<br>application/x-www-form-urlencoded：form表单数据<br>像key1=val1&amp;key2=val2的方式进行编码，发送到服务器（表单默认的提交数据的格式）。</p>
-</blockquote>
-<p>另外一种常见的上传文件的格式是：</p>
-<blockquote>
-<p>multipart/form-data。</p>
-</blockquote>
-<h3 id="4、-Highlighting-Level"><a href="#4、-Highlighting-Level" class="headerlink" title="4、 Highlighting Level"></a>4、 <a href="https://blog.csdn.net/qq_37840993/article/details/88233580" title="Highlighting Level">Highlighting Level</a></h3><p><img src="https://api2.mubu.com/v3/document_image/c7b42e99-1855-4b14-999b-ddf25fe30016-977367.jpg" alt="图一"></p>
-<p>如图一，就是开发中，IDEA提供的高亮显示警告，但有些警告可能并不是代码上的语法问题，这让我们并不是很关注，还导致界面很乱。</p>
-<p>我们可以通过点击图一中那个小人图标，就能去设置高亮显示的级别。</p>
-<p>见图二，可以看到有三个级别：</p>
-<blockquote>
-<ol>
-<li>None 无</li>
-<li>Syntax 语法</li>
-<li>Inspections 检查</li>
-</ol>
-</blockquote>
-<p>默认级别是3，这个就和用Analyze检查Code一样（不了解这个的话，可以参考下第1期周刊），我们完全可以根据需要，对相关类单独检查，所以一般选择级别2即可。当然，也可以通过Configure inspections进行详细配置。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/52990cd2-e9df-43cd-80ca-45b1dc60dcc2-977367.jpg" alt="图二"></p>
-<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://www.douyin.com/video/7041617319969180931" title="江村大墓的主人汉文帝">江村大墓的主人汉文帝</a></p>
-<p>汉文帝刘恒为刘邦第四子，母亲薄姬。</p>
-<p>汉高帝（刘邦）十一年（前196年），刘恒受封代王。 </p>
-<p>汉高帝去世后，汉高帝之子汉惠帝（刘盈）继位，在位时深受母亲吕后专权。没多久，汉惠帝（刘盈）英年早逝，吕后立汉惠帝庶长子刘恭为皇帝，史称“前少帝”，因刘恭年幼，由吕后临朝称制。</p>
-<p>不久，吕后废黜刘恭，并暗中将他杀害。汉高后四年（前184年）五月十一日，吕后立汉惠帝之子刘义为帝，改名为刘弘，史称“后少帝”，继续由吕后临朝称制。</p>
-<p>高后八年八月（前180年9月），吕后逝世。</p>
-<p>吕后去世后，太尉周勃联合丞相陈平等人粉碎诸吕势力，朝臣说少帝刘弘并非汉惠帝亲生子，在迎立代王刘恒作为新皇帝（即汉文帝）后，废杀了刘弘及其四个兄弟。</p>
-<p>刘恒即位之后，励精图治，兴修水利，厉行节俭朴素，废除肉刑，实现国家强盛，百姓小康，开启“文景之治” 的发端。</p>
-<p>后元七年（前157年）驾崩于未央宫，庙号太宗，谥号孝文皇帝，葬于霸陵。</p>
-<p>汉文帝曾经亲自为母亲薄太后尝药，深具孝心，是《二十四孝》中“亲尝汤药“的主角。 </p>
-<p>汉文帝与其子汉景帝统治时期被合称为文景之治。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、 <a href="http://z-sms.com/" title="临时短信">临时短信</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/d6ab106a-8f3c-41e0-8193-20e0685a44e3-977367.jpg"></p>
-<p>工作生活中，对于一些网站或者应用的使用，可能必须要先登陆，对于不是常用的工具，我们可以通过临时短信去注册登陆，这样可以很好的保护我们的手机号外泄，避免收到各种电话，短信骚扰。</p>
-<p>2、<a href="http://24mail.chacuo.net/" title="临时邮箱">临时邮箱</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/adbbf5b4-d61c-44e3-b551-388d433ee93b-977367.jpg"></p>
-<p>一个临时邮箱工具，可以设置邮箱名，邮箱持续时间24小时。</p>
-<p>3、<a href="http://f.yhjf.cc/" title="临时网盘">临时网盘</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/e406a50b-1333-4978-bc03-17ccc0d43f9a-977367.jpg"></p>
-<p>一个临时存放文件，传输工具，文件大小不能超过10M，支持格式较多。</p>
-<p>4、<a href="http://www.vua.sh/" title="临时消息">临时消息</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/81b739b7-fc4c-486f-aa24-470299711af0-977367.jpg"></p>
-<p>一个开源项目，可以理解为阅后即焚，单条信息支持10000字，信息会经过加密后生成一个链接，对方通过点击链接获取信息，读取信息后，再次点击链接，会提示没有信息。</p>
+<p>3、<a href="https://jiapengcai.gitbooks.io/effective-java/content/" title="Builder模式">Builder模式</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NutritionFactsBuilder</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servingSize;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servings;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> calories;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> fat;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> sodium;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> carbohydrate;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NutritionFactsBuilder</span><span class="params">(Builder builder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.servingSize = builder.servingSize;</span><br><span class="line">        <span class="keyword">this</span>.servings = builder.servings;</span><br><span class="line">        <span class="keyword">this</span>.calories = builder.calories;</span><br><span class="line">        <span class="keyword">this</span>.fat = builder.fat;</span><br><span class="line">        <span class="keyword">this</span>.sodium = builder.sodium;</span><br><span class="line">        <span class="keyword">this</span>.carbohydrate = builder.carbohydrate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Required parameters</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servingSize;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> servings;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Optional parameters - initialized to default values</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> calories;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> fat;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> sodium;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> carbohydrate;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Builder</span><span class="params">(<span class="keyword">int</span> servingSize, <span class="keyword">int</span> servings)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.servingSize = servingSize;</span><br><span class="line">            <span class="keyword">this</span>.servings = servings;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">calories</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            calories = calories;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">fat</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            fat = val;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">sodium</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            sodium = val;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">carbohydrate</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            carbohydrate = val;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> NutritionFactsBuilder <span class="title">builder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NutritionFactsBuilder(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">NutritionFactsBuilder builder = <span class="keyword">new</span> NutritionFactsBuilder</span><br><span class="line">                .Builder(<span class="number">240</span>, <span class="number">33</span>)</span><br><span class="line">                .sodium(<span class="number">1</span>).</span><br><span class="line">                calories(<span class="number">2</span>).</span><br><span class="line">                fat(<span class="number">2</span>).builder();</span><br></pre></td></tr></table></figure>
+<p><strong>实现：</strong> 如上代码，客户端不直接调用所需对象，而是调用builder对象的setter相似方法来设置每个可选参数。最后，客户端调用一个无参的build方法来生成对象。</p>
+<p><strong>优点：</strong> 它结合了可伸缩构造方法模式的安全性和JavaBean模式的可读性。</p>
+<p><strong>缺点：</strong> 为了创建对象，首先必须要创建它的builder，性能上稍有下降。</p>
+<p><strong>适用：</strong> 四个或更多的参数及在将来可能添加更多的参数。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="https://www.kepuchina.cn/more/202109/t20210910_3031692.shtml" title="蚝油瓶的设计为什么一直不改进？">蚝油瓶的设计为什么一直不改进？</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/bb6418bf-29ef-4563-989f-97b67165e8ce-977367.jpg"></p>
+<p>文章介绍了什么是蚝油，以及蚝油的营养价值。然后通过材料、包装及商业，3个方面回答了蚝油瓶的设计为什么一直不改进。</p>
+<p>2、<a href="https://ws.wiki.fallingwaterdesignbuild.com/baike-%E5%9C%A3%E8%AF%9E%E8%8A%82" title="圣诞节">圣诞节</a></p>
+<p>圣诞节，又称耶诞节，西方传统节日，是基督教纪念耶稣降生的节日。圣诞节对美国人来说，就像我们的春节一样，会围坐在圣诞树下，一起共进节日美餐。而平安夜送平安果是中国特色圣诞风俗，因“平”与”苹“同音，认为苹果就是平安果，寓意平平安安。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.allhistory.com/" title="全历史">全历史</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/4132585d-80b5-456d-a33d-45a3bde0cdf7-977367.jpg"></p>
+<p>一个让你更好了解历史的工具，主要分为画作、古籍、帝国、人物、战争、古迹，可直接搜索即可。<br>其中，我浏览了一下古籍中的《史记》，有提供文言和白话对照，阅读较佳。<br>全历史提供网页端和手机端。</p>
+<p>2、<a href="https://filehelper.weixin.qq.com/" title="微信文件传输网页版">微信文件传输助手网页版</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/1aa2e06f-8110-475b-8ecb-8b8ecc15df1c-977367.jpg"></p>
+<p>扫码登录，你只能与自己的文件传输助手进行聊天，传输文件。它不会加载你的微信对话、联系人，更轻、更保护隐私，比如在使用陌生电脑时，就无需在别人电脑上登录微信了。</p>
+<p>3、<a href="https://www.virustotal.com/gui/home/upload" title="在线查毒网站">在线查毒网站</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/66c09c89-2353-4384-8f97-d7c88d0c43de-977367.jpg"></p>
+<p>一个在线分析文件（最大支持650M）、网址、IP等内容是否存在风险监测网址。</p>
+<p>4、<a href="https://www.yikm.net/" title="在线小霸王游戏">在线小霸王游戏</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/45f5136e-33b8-43eb-a361-b24273dfd69b-977367.jpg"></p>
+<p>在线游戏网站，可和小伙伴来一局小霸王游戏，找回童年的快乐。</p>
+<p>5、<a href="https://www.calligrapher.ai/" title="AI生成英文手写体">AI生成英文手写体</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/8b062f6f-722c-40ab-9387-e8b5940b4bd9-977367.jpg"></p>
+<p>输入英文（仅支持英文），可自动生成不同风格的手写体，可下载svg格式文件。</p>
 <h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
-<p>小王子在一个小小的星球上生活。</p>
-<p>有一天星球上忽然绽放了一朵娇艳的玫瑰花，小王子从来没有见过这么美丽的花，于是他每天细心地呵护，精心地照料。他当时觉得这是宇宙里唯一的一朵玫瑰，比所有的花都美。</p>
-<p>后来有一天他来到地球，发现仅仅一个花园里，就有5000朵几乎完全一样的玫瑰花。那一刻，他终于知道，他所拥有的只不过是一朵普通的花。</p>
-<p>这个发现使小王子非常伤心，但是尽管如此，不知道为什么，他心里还是放不下自己的那一朵玫瑰。</p>
-<p>直到有一天，一只小狐狸跟他说，正因为你为你的玫瑰花费了时间和心血，才使你的玫瑰变得美丽</p>
-<p>小王子恍然大悟，终于明白 </p>
-<p>尽管世界上有无数朵玫瑰花，但他星球上的那朵玫瑰花仍然是独一无二的</p>
-<p>因为他浇灌过她，保护过她，陪着她一起说话，陪着她一起沉默</p>
-<p>所以她是他独一无二的玫瑰。</p>
-<p>——<a href="https://v.douyin.com/RTPf7XM/" title="资本论">资本论</a> 建议：看一看</p>
+<p>家人是同在屋檐下生活的、至关重要的人。<br>铺满人生旅程的，永远不是追逐财富和财富本身，而是那些错过了就找不回来的温馨记忆。</p>
+<p>——<a href="https://www.jianshu.com/p/8938f5f83823" title="投资家庭">投资家庭</a></p>
 <p>2、</p>
-<p>人之所以活得累，不是拥有的东西太少，而是想要的东西太多。</p>
-<p>知足天地宽，贪得宇宙隘。</p>
-<p>——<a href="https://mp.weixin.qq.com/s/MRDt1__3T-gJDyAXfuKMvg" title="意林">意林</a></p>
+<p>没有多少人能做到急流勇退，赚钱永远是没够的。</p>
+<p>既然一辈子都要在股市，就不能让策略有漏洞，否则哪怕再小的概率，都可能让所有的努力付之东流。</p>
+<p>要想活得久，就要多想想，错了怎么办？遇到最坏的情况如何应对？</p>
+<p>—— <a href="https://mp.weixin.qq.com/s/ujhjRcxnW-LNqXGlk5I8zw" title="复利人生">复利人生</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第6期）：2021年度理财总结</title>
+    <url>/2021/12/31/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC6%E6%9C%9F%EF%BC%89%EF%BC%9A2021%E5%B9%B4%E5%BA%A6%E7%90%86%E8%B4%A2%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1889103238&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="2021" title="年度总结">年度总结</a></p>
+<ul>
+<li><p>可转债打新：盈利1642.88。</p>
+</li>
+<li><p>场内基金：亏损365.1。</p>
+</li>
+<li><p>理财魔方：盈利544.41。</p>
+</li>
+<li><p>支付宝基金：亏损1604.62。</p>
+</li>
+<li><p>好买基金：盈利2594.76。</p>
+</li>
+</ul>
+<p>回过头来，发现不仅鸡蛋不在一个篮子里，就连篮子也都不是一个。</p>
+<p>理财第1年，简单说一说收益情况：</p>
+<p>可转债打新，纯粹是运气钱，一般中签就有肉吃，积极就能赚钱。</p>
+<p>场内基金，入了中概互联的坑，体会就是：人多的地方，不要去。</p>
+<p>理财魔方，全天候策略，今年来收益不错，可惜买的不多，也是通过它，开启的投资理财。</p>
+<p>支付宝基金，买的比较乱，亏损比较多，主要也是因为左侧定投，未来会做调整。</p>
+<p>好买基金，买的是股债组合，几乎都是债券基金的盈利，让我印象最深的是后面学习了美林时钟，结合<a href="http://value500.com/10Bond.html" title="中国十年期国债">中国十年期国债</a>走势图，2021年整体走势呈下降趋势，对应的就是债券应该是上升走势，所以也刚好吻合我的收益，因为债券走牛，推断当前是衰退期，根据美林时钟规律，下一阶段为复苏阶段，我们应该多配置一些股票类基金。</p>
+<p>2021年也在布局一些低估值板块，比如银行、保险以及恒生指数。这也是亏损最多的地方，你可以想象下，一直投入资金，一直亏损，没有最低，只有更低（左侧行情）。这其实很考验人。</p>
+<p>这里说一下<strong>我采取的策略</strong>，希望对你也有帮助。我是每个月进行定投，定投时间不固定，每个月必须定投一次。<br>比如，某一天我觉得这个位置挺低了，那么我今天执行定投计划，本月定投结束。<br>如果后面说，出现了更低的位置，那么我也不会再跟了，这就是纪律。因为你没法去判断市场的底！</p>
+<p><strong>补充</strong>：如果有增量资金，可按照亏损的比例，设置一个比例，比如10%，将增加资金分成三份，每跌10%补一份。</p>
+<p>对于2022年，首先把基金篮子整理一下，再把篮子里的基金好好整理下，继续学习理财知识，慢慢向股票门槛提一提，逐步形成一套自己的策略。</p>
+<p><strong>永远记着，对市场存有敬畏之心。</strong></p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://blog.csdn.net/ksdb0468473/article/details/52126009" title="Reids后台启动">Reids后台启动</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/7ef17764-581b-4144-a9c8-bf2366e59527-977367.jpg"></p>
+<p>mac系统，找到安装目录，在etc下有一个redis.conf文件，修改daemonize为yes，然后输入redis启动命令+该配置文件路径即可。</p>
+<p>2、<a href="https://git-scm.com/docs/git-stash" title="Git">Git</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/665c496d-1f0a-4eea-91d0-a86c2bee7aec-977367.jpg"> </p>
+<p>VSCode经常遇到“<strong>在签出前，请清理存储库工作树</strong>”，解决办法如下：</p>
+<blockquote>
+<ol>
+<li>git stash</li>
+<li>git pull</li>
+<li>git stash pop</li>
+</ol>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li>将本地的修改放到脏目录下和现在分支上的内容（干净的目录）进行分开。   </li>
+<li>获取最新分支上的内容。  </li>
+<li>从脏目录中恢复最新的一个stash，恢复完成后会删除该stash的内容。</li>
+</ul>
+<p>补充几个常用命令：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">git add . <span class="comment">// 添加当前目录所有修改文件（支持通配符）</span></span><br><span class="line">git status <span class="comment">// 查看当前版本的状态</span></span><br><span class="line">git pull <span class="comment">// 更新远程代码</span></span><br><span class="line">git commit -m [message] <span class="comment">// 提交文件</span></span><br><span class="line">git push -u origin master  <span class="comment">// 推送代码到远程分支上 注：下次可直接使用git push</span></span><br><span class="line">git log <span class="comment">// 查看最近提交记录</span></span><br></pre></td></tr></table></figure>
+<p>3、<a href="https://www.cnblogs.com/bigdata-stone/p/10464243.html" title="冒泡排序">冒泡排序</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] array = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">10</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (array == <span class="keyword">null</span> || array.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;第&quot;</span>+(i+<span class="number">1</span>)+<span class="string">&quot;轮&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; array.length - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> first = array[j];</span><br><span class="line">                <span class="keyword">int</span> after = array[j + <span class="number">1</span>];</span><br><span class="line">                <span class="keyword">if</span> (first &gt; after) &#123;</span><br><span class="line">                    temp = array[j];</span><br><span class="line">                    array[j] = after;</span><br><span class="line">                    array[j+<span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.format(<span class="string">&quot;第%d次交换&quot;</span>, j+<span class="number">1</span>);</span><br><span class="line">                System.out.println(Arrays.toString(array));</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;-------------------------&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>重点</strong>：n个数字完成排序，共要进行n-1次轮排序，且每轮排序要进行n-i次。</p>
+<p>4、<a href="https://blog.csdn.net/sunhuaqiang1/article/details/83096662?spm=1001.2101.3001.4242" title="Maven profiles多仓库配置">Maven profiles多仓库配置</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d71f75fc-1b82-4aa1-b75c-52f81eb7e642-977367.jpg"></p>
+<p>在工作中，公司项目的依赖可能需要私服支持，所以maven就必须配置私服，但是这样的话，平时弄其他项目，有些包，又需要是别的仓库去下载，这样每次都需要修改maven配置，很不方便。结合文章，做了如图配置，默认是阿里仓库，工作时，勾选公司私服即可，配置为settings.xml。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;mirrors&gt;</span><br><span class="line">  &lt;mirror&gt;</span><br><span class="line">      &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">      &lt;name&gt;aliyun&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</span></span><br><span class="line">  &lt;/mirror&gt;</span><br><span class="line">  &lt;mirror&gt;</span><br><span class="line">      &lt;id&gt;company&lt;/id&gt;</span><br><span class="line">      &lt;mirrorOf&gt;ctid&lt;/mirrorOf&gt;</span><br><span class="line">      &lt;name&gt;central-mirror&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;公司私服&lt;/url&gt;</span><br><span class="line">  &lt;/mirror&gt;</span><br><span class="line">&lt;/mirrors&gt;</span><br><span class="line">&lt;profiles&gt;</span><br><span class="line">    &lt;profile&gt;</span><br><span class="line">        &lt;id&gt;private-company&lt;/id&gt;</span><br><span class="line">        &lt;repositories&gt;</span><br><span class="line">            &lt;!-- 公司私服 --&gt;</span><br><span class="line">            &lt;repository&gt;</span><br><span class="line">                &lt;id&gt;ctid&lt;/id&gt;</span><br><span class="line">                &lt;url&gt;公司私服&lt;/url&gt;</span><br><span class="line">                &lt;!-- 稳定版 --&gt;</span><br><span class="line">                &lt;releases&gt;</span><br><span class="line">                    &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">                &lt;/releases&gt;</span><br><span class="line">                &lt;!-- 开发版 --&gt;</span><br><span class="line">                &lt;snapshots&gt;</span><br><span class="line">                    &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">                &lt;/snapshots&gt;</span><br><span class="line">            &lt;/repository&gt;</span><br><span class="line">        &lt;/repositories&gt;</span><br><span class="line">    &lt;/profile&gt;</span><br><span class="line"></span><br><span class="line">    &lt;profile&gt;</span><br><span class="line">        &lt;id&gt;aliyun&lt;/id&gt;</span><br><span class="line">        &lt;repositories&gt;</span><br><span class="line">            &lt;!-- 外网仓库，用国内阿里仓库 --&gt;</span><br><span class="line">            &lt;repository&gt;</span><br><span class="line">                &lt;id&gt;nexus&lt;/id&gt;</span><br><span class="line">                &lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</span></span><br><span class="line">                &lt;releases&gt;</span><br><span class="line">                    &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">                &lt;/releases&gt;</span><br><span class="line">                &lt;snapshots&gt;</span><br><span class="line">                    &lt;enabled&gt;false&lt;/enabled&gt;</span><br><span class="line">                &lt;/snapshots&gt;</span><br><span class="line">            &lt;/repository&gt;</span><br><span class="line">        &lt;/repositories&gt;</span><br><span class="line">        &lt;pluginRepositories&gt;</span><br><span class="line">            &lt;pluginRepository&gt;</span><br><span class="line">                &lt;id&gt;nexus&lt;/id&gt;</span><br><span class="line">                &lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</span></span><br><span class="line">                &lt;releases&gt;</span><br><span class="line">                    &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">                &lt;/releases&gt;</span><br><span class="line">                &lt;snapshots&gt;</span><br><span class="line">                    &lt;enabled&gt;false&lt;/enabled&gt;</span><br><span class="line">                &lt;/snapshots&gt;</span><br><span class="line">            &lt;/pluginRepository&gt;</span><br><span class="line">        &lt;/pluginRepositories&gt;</span><br><span class="line">    &lt;/profile&gt;</span><br><span class="line">&lt;/profiles&gt;</span><br><span class="line">&lt;activeProfiles&gt;</span><br><span class="line">    &lt;activeProfile&gt;aliyun&lt;/activeProfile&gt;</span><br><span class="line">&lt;/activeProfiles&gt;</span><br></pre></td></tr></table></figure>
+<p>5、<a href="https://juejin.cn/post/6844903891763625998" title="多环境的打包配置">多环境的打包配置</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/2a3dd14b-1b4d-4b7a-b8b9-97e2c920a059-977367.jpg"></p>
+<p>因为接过来一个nacos配置的项目，没有区分开发和线上的配置，导致每次要修改IP再打包上线，开发时再修改回来，导致很大不便，于是上网找了一下多环境的打包配置，很好的解决了这个问题，具体内容可以查看文章。</p>
+<p>以下，说几个重点：</p>
+<blockquote>
+<ol>
+<li>需要多个环境配置文件，比如application-dev.yml、application-pro.yml。</li>
+<li>父类pom.xml通过<code>&lt;profiles&gt;</code>标签配置多环境，通过<code>&lt;build&gt;</code>标签中<code>&lt;resources&gt;</code>解决生成其他环境配置文件的问题。</li>
+<li>在配置当前环境的配置文件中（application.yml），配置spring.profiles.active = @env@。</li>
+</ol>
+</blockquote>
+<p><strong>注意</strong>：env只是一个名称，但是需要和pom.xml中配置环境的标签名称保持一致，且env标签的值要和配置文件的命名一致。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p>1、<a href="https://baijiahao.baidu.com/s?id=1687067194438609535&wfr=spider&for=pc" title="正方形测试">正方体测试</a></p>
+<p>一个比较准的心理测试，由日本作家长尾忠彦（Tadahiko Nagao）发行于流行书《Kokology》中。它测试的是人潜意识的一些东西，可以让你更了解自己或朋友，有兴趣的话可以试试。</p>
+<p>附：<a href="https://www.bilibili.com/video/BV1ML411779e?share_source=copy_web" title="视频版解读">视频版解读</a></p>
+<p>2、<a href="https://www.huxiu.com/article/485430.html" title="不刷短视频的人，存在吗？">不刷短视频的人，存在吗？</a></p>
+<p>首先回答，肯定是存在的。今年来，我有在控制自己刷短视频的时间，但也看了1790个手机视频，这是抖音给的数据。</p>
+<p>如果你经常刷抖音，那么问问自己？你获得了什么？</p>
+<p>以下，是我觉得对于短视频的使用：</p>
+<blockquote>
+<ol>
+<li>作为信息的检索工具，会判断信息的真实性。</li>
+<li>最好不要作为平时消遣的工具，不要考验自己的自律性。</li>
+</ol>
+</blockquote>
+<p>3、<a href="https://mp.weixin.qq.com/s/lMj6KwXOMSIvh8D3aOboNw" title="鸟笼效应">鸟笼效应</a></p>
+<p>有趣的心理现象，讲的是假如一个人拥有了鸟笼，一段时间内，他大概率会再买回来一只鸟，而不会把笼子丢掉。<br>也就是这个人最终被笼子异化，成为了笼子的俘虏。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://toonme.com/" title="ToonMe">ToonMe</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/f2852d33-b5e2-4934-aaf5-8c468a1d2581-977367.jpg"></p>
+<p>在线上传图片，通过AI生成漫画人像，效果很赞（无需登录，可下载）！</p>
+<p>2、<a href="https://photofunia.com/cn/" title="在线完美合成图片">在线完美合成图片</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/02f69268-240a-45b4-bdac-c965889598da-977367.jpg"></p>
+<p>一个在线可以合成图片的网站，无需登录，可下载高清图片，效果很赞！目前有636种效果，大部分是人像，小部分为文字。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>我们总是为了<br>太多遥不可及的东西去奔命<br>却忘了人生真正的幸福<br>不过就是灯火阑珊的温暖<br>和柴米油盐的充实<br>这一年里<br>无论你赚钱是多是少<br>经历的事情是好是坏<br>请记住，如果这一年<br>你很健康，那就是最好的一年。</p>
+<p>——<a href="%E4%BA%BA%E6%B0%91%E6%97%A5%E6%8A%A5" title="金句摘抄">金句摘抄</a></p>
+<p>2、</p>
+<p>当人们习惯于视频带来的感官刺激，沉迷于碎片化、娱乐化的内容，被算法所裹挟，会慢慢丧失思考的能力。<br>对他们来说，一切有丰富精神内涵的书籍都难懂如同天书，稍长一点的文字就没有耐心看下去。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/KgFKUyqo2RumuvOOz8Wn5A" title="行情迟早是要来的">行情迟早是要来的</a></p>
+<p>3、 </p>
+<p>有朋友说，跨年后，日子就有质的变化吗？其实每天都差不多，还搞个年终总结、未来展望，有什么意义呢？</p>
+<p>我说，生活每天都一样，日子每天都在重复，我们已懒得去改变。但有些改变，是需要年终来做出的。跨年就像个契机，似乎明天就是个新的开始。</p>
+<p>对于新到来的一年，愿我们都能有所突破，走出舒适区，读几本不一样的书，见几个不一样的人，过点不一样的生活。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/ykaBE5ly7mg15fuhxSFKSQ" title="2022年，市场会有很大变化">2022年，市场会有很大变化</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第7期）：一起来练习冥想</title>
+    <url>/2022/01/13/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC7%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%BB%83%E4%B9%A0%E5%86%A5%E6%83%B3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=853593&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>判断强周期的两个指标：<a href="https://finance.sina.com.cn/futures/quotes/CAD.shtml" title="铜价">铜价</a>和<a href="http://value500.com/PPI.asp" title="PPI">PPI</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e253c67b-dd60-4e98-8619-603d1e2f4ce9-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/ea44044d-7e12-4fe3-af5c-cc9eb794c88d-977367.jpg"></p>
+<p>当铜价和CPI，同时上行，说明这些生产资料价格开始上涨，企业开工生产的多了，基本可以判断强周期要到来了；而当任一指标开始出现回落或高位滞涨，预示着周期可能就要结束了，我们要尽快撤出对周期的投资，比如有色金属（160221）。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual" title="重写equals方法时要遵守通用约定">重写equals方法时要遵守通用约定
+</a></p>
+<p>重写equals方法看起来很简单，但是有很多方式会导致出错，其结果可能是可怕的。<br>当你重写equals方法时，必须遵守它的通用约定。</p>
+<ul>
+<li><code>自反性</code>：对于任何非空引用x，x.equals(x)，必须返回 true。</li>
+<li><code>对称性</code>：对于任何非空引用x和y，如果且仅当 y.equals(x) 返回 true 时，x.equals(y) 必须返回 true。</li>
+<li><code>传递性</code>：对于任何非空引用x、y、z，如果 x.equals(y) 返回 true，y.equals(z) 返回 true，则x.equals(z) 必须返回 true。</li>
+<li><code>一致性</code>：对于任何非空引用x和y，如果在equals比较中使用的信息没有修改，则x.equals(y) 的多次调用，必须始终返回 true 或始终返回 false。</li>
+<li>对于任何非空引用x，<code>x.equals(null)</code> 必须返回 false。</li>
+</ul>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://m.weibo.cn/detail/4724525461146865" title="冥想">冥想</a></p>
+<p>冥想大概分为两类，正念冥想和专注冥想，<strong>正念冥想</strong>是只关注头脑中的想法，但不去做任何评价；<strong>专注冥想</strong>是将注意力专注于具体事物，摒弃其他事物与想法。</p>
+<p>上周住院有幸遇到一个大叔，他本人平时经常冥想，然后就耐心地教了我，具体步骤：</p>
+<blockquote>
+<ol>
+<li>盘腿坐下，以舒适为主。</li>
+<li>双手自然下垂，放在大腿内侧。</li>
+<li>腰板自然挺直，全身保持放松。</li>
+<li>注意力专注于鼻子的吸气，嘴巴的呼气。</li>
+</ol>
+</blockquote>
+<p>快去试试吧，也许不经意间你就会用到了。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.niceso.fun/" title="奈斯搜索">奈斯搜索</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/3b05d473-43be-4676-8334-f8b6cc8a0481-977367.jpg"></p>
+<p>一个阿里云盘资源整合网站，目前阿里云盘不限速，用来找资源下载，很不错（无需登录，可保存到自己的云盘）。</p>
+<p>2、<a href="https://tophub.today/" title="今日热榜">今日热榜</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/c046e228-72af-4fde-97db-5e33dcbe139c-977367.jpg"></p>
+<p>一个聚合类的资讯整合，支持安卓、ios和网页端，可对感兴趣的内容进行订阅，方便快速获取资讯。</p>
+<p>3、<a href="https://www.pdfpai.com/" title="PDF派">PDF派</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/c79215ad-0d1a-4b7c-9c14-f7e9118df50f-977367.jpg"></p>
+<p>一个文档转换工具，处理速度较快，除了常用的文档转换外，还可对图片进行处理（无需注册，开箱即用）。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>生活和工作，就是一边做减法，一边做加法，循环往复，不断优化。</p>
+<p>什么都想要，必然精力不够，捉襟见肘，顾此失彼，最后什么都得不到。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/M3XAyPoXnouZiuFlTu-gTg" title="一本难得的好书">一本难得的好书</a></p>
+<p>2、</p>
+<p>你要记得</p>
+<p>吵架时，是我们VS问题，而不是你VS我。</p>
+<p>——豆瓣</p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第8期）：普通人如何理财？</title>
+    <url>/2022/01/15/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC8%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E7%90%86%E8%B4%A2%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1901371647&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><a href="https://m.weibo.cn/detail/4725125168236139" title="作为普通人如何理财？">作为普通人如何理财？</a></p>
+<p>首先影响理财有三个要素，<strong>本金</strong>、<strong>收益率</strong>和<strong>时间</strong>。</p>
+<p>首先我们需要有本金才能理财，如果你每月连生活开销都不够，那么你应该好好找找问题，<br>究竟是自己薪资太少，还是不必要开支太多。</p>
+<p>其次是收益率，收益率和风险往往是呈正相关。收益率越高，风险也就越大。如果你是新手，不妨先从货币基金，债券基金，定期理财上手，享受稳稳的收入。</p>
+<p>最后是时间，这里可以从两个方面来说：  </p>
+<blockquote>
+<ol>
+<li>持有时间  </li>
+<li>理财时间</li>
+</ol>
+</blockquote>
+<p><strong>持有时间</strong>，这里拿基金来说，我记着刚接触基金的时候，听广播分析买了军工，券商，后来一路下跌，每天看着这几只基金，涨也涨不起来，还一直有更低的趋势，然后又听别人的解读什么，最终没能拿住，卖掉了。</p>
+<p>但是拿去年几波的行情来说，真是错过了很多收益，即使在今天的位置，也没有亏损。这仅仅是发生在我身上的一件事情，但由此我们应该要总结经验：<br>只要我们买的位置不是很高，把时间周期拉长，肯定是不会亏钱的，我们需要做的就是耐心去等待。</p>
+<p><strong>理财时间</strong>，也就是我们坚持理财的时间，所谓的复利。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/212ba8ab-1340-4ac7-b4e4-b75f78a8f0d8-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/162bf6e0-6751-4dc0-b054-9cea82fa31de-977367.jpg"></p>
+<p>拿10万块钱举例，如果每年保持10%的收益，那么10年后接近26万，已经翻了1倍多，如果我们用这26万继续坚持10年，它将变成67万多，前10年仅仅翻倍，而后10年却翻了5倍多。</p>
+<p>这个收益在主动型基金上其实很好获得，比如兴全合宜混合(LOF)A(163417)，自成立至今，平均年化收益率达到16%，再比如中欧价值发现混合A(166005)，自成立至今，平均年化收益率达到13%。所以坚持理财，保持复利增长，可以让我们的生活越来越好。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual" title="返回空的数组或集合，不要返回null">返回空的数组或集合，不要返回null</a></p>
+<p>程序开发中，我们会经常遇到NPE问题，比如我们在没有判空的情况下，就进行数据获取，这周在线上跑任务的时候，就出现了这个问题。</p>
+<p>下面说说返回空的数组或集合，不要返回null的几点好处：</p>
+<blockquote>
+<ol>
+<li>不需要总判断null的情况，减少容易出现的错误。</li>
+<li>减少代码量，让返回容器方法的实现更简单。</li>
+</ol>
+</blockquote>
+<p>下面是几点可能困惑的问题及实现：</p>
+<p>有时有人认为，空返回值比空集合或数组更可取，因为它避免了分配空容器的开销。</p>
+<p>这个论点有两点是不成立的。</p>
+<blockquote>
+<ol>
+<li>返回空的数组或集合的开销情况，可以忽略，除非分析表明这个方法正是造成性能问题的真正源头。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>可以在不分配空集合或数组的情况下返回它们，比如：</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> List&lt;Cheese&gt; cheesesInStock = ...;</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Cheese&gt; <span class="title">getCheeses</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(cheesesInStock);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在不太可能的情况下，如果有证据表明分配空集合会损害性能，可以通过重复返回相同的不可变空集合来避免分配，因为不可变对象可以自由共享。比如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> List&lt;Cheese&gt; cheesesInStock = ...;</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Cheese&gt; <span class="title">getCheeses</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cheesesInStock.isEmpty() ? </span><br><span class="line">    Collections.emptyList() </span><br><span class="line">    :<span class="keyword">new</span> ArrayList&lt;&gt;(cheesesInStock);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你要返回一个 Set，你会使用<code> Collections.emptySet</code>；如果要返回 Map，则使用<code> Collections.emptyMap</code>。但是记住，以上这些操作是只是优化，很少被调用，如果你认为你需要它，在调用前后进行性能对比，确保它真的有用。</p>
+<p>返回空数组</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Cheese[] EMPTY_CHEESE_ARRAY = <span class="keyword">new</span> Cheese[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">public</span> Cheese[] getCheeses() &#123;</span><br><span class="line">    <span class="keyword">return</span> cheesesInStock.toArray(EMPTY_CHEESE_ARRAY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://mp.weixin.qq.com/s/-tCpNkT5w6s_nd_u9YMMfw" title="空气炸锅">空气炸锅</a></p>
+<p>顾名思义，通过空气进行油炸的炊具，它的原理是借上方的加热器产生高温热风，让热空气在食物周遭循环，把食物本身的油脂逼出，产生“油炸”的效果，并创造类似油炸食物的酥脆感。</p>
+<p>与传统油炸方式相比，大幅减少制作过程使用含有高量脂肪和热量的食用油。</p>
+<p>上述是一篇《丁香生活研究所》的简单食谱，希望对你有帮助。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.mvyxws.com/" title="医学微视">医学微视</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d91f5b8b-7002-48b7-9bd5-a0ac602063dc-977367.jpg"></p>
+<p>一个权威的医学科普平台，对于一些疾病、症状，可以先进行初步的了解，这样再去咨询医生会更加全面一些。</p>
+<p>2、<a href="https://pixabay.com/zh/" title="Pixabay">Pixabay</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e425d9aa-9a98-402e-b10b-1c3a63d21fed-977367.jpg"></p>
+<p>一个免费高清素材库，支持照片、插画、矢量图、视频、音乐、音效。</p>
+<p>3、<a href="https://translate.yandex.com/?lang=zh-emj" title="文本翻译Emoji">文本翻译Emoji</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/b458be71-5b6c-4c71-ba66-9227041077bf-977367.jpg"></p>
+<p>用过中英文翻译，还没见过翻译Emoji吧？来试试吧。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>凡是人总有取舍，你取了你认为重要的东西，舍弃了我，这只是你的选择而已。<br>若是我因为没有被选择而心生怨恨，那这世间，岂不是有太多不可原谅之处，毕竟谁也没有责任要以我为先，以我为重。无论我如何希望，也不能强求。</p>
+<p>——<a href="https://mr.baidu.com/r/zGNli9Asne?f=cp&u=1af408d9cf743d3b" title="萧景睿《琅琊榜》">萧景睿《琅琊榜》</a></p>
+<p>2、</p>
+<p>生命本身没有意义，它只是让我们来感知一次世间的美好，而这感知的本身就是意义。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/7JuSzJzcE3StZcNQpUek2g" title="好好生活，慢慢吃，深深爱">好好生活，慢慢吃，深深爱</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第9期）：核酸检测的基本原理是什么？</title>
+    <url>/2022/01/22/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC9%E6%9C%9F%EF%BC%89%EF%BC%9A%E6%A0%B8%E9%85%B8%E6%A3%80%E6%B5%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>判断经济周期的两个指标：<a href="http://value500.com/srzl.asp" title="社融">社融</a>和<a href="http://value500.com/PPI.asp" title="PPI">PPI</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/1b54edb2-ddff-4ce3-b942-27f48b960340-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/9e58811d-60a3-4b85-861f-cf1b44d7e0bf-977367.jpg"></p>
+<p>通过<strong>社融存量同比</strong>和<strong>PPI当月同比</strong>，可以判断出美林时钟周期的四个阶段：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/8061b421-4a3b-4718-be23-9781801f1ac6-977367.jpg"></p>
+<p>一、复苏期</p>
+<p>社融上升、PPI下降，经济进入复苏期，这个阶段股票成为最优配置。</p>
+<p>二、过热期</p>
+<p>社融、PPI双双上升，经济进入过热，这个阶段大宗商品往往表现最优。</p>
+<p>三、滞涨期</p>
+<p>社融下降、PPI上升，经济进入滞涨，这个阶段要逐渐降低股票仓位，清空大宗商品配置，以现金为王。</p>
+<p>四、衰退期</p>
+<p>社融、PPI双双回落，经济进入衰退期，可查看<a href="http://value500.com/10Bond.html" title="市场利率">市场利率</a>，市场利率逐渐降低，债券进入牛市。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、服务器CPU查看</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">top -p pid &#x2F;&#x2F; 查看指定进程信息。</span><br></pre></td></tr></table></figure>
+<p>2、 查看服务器内存</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">free -m &#x2F;&#x2F; 以Mb为单位查看内存使用情况。</span><br><span class="line">free -g &#x2F;&#x2F; 以GB为单位查看内存使用情况。</span><br></pre></td></tr></table></figure>
+<p>3、查看服务器磁盘</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">df -Th &#x2F;&#x2F; 查看已挂载磁盘的数量、分区信息、挂载信息、已使用量和未使用量。</span><br><span class="line">fidisk -l &#x2F;&#x2F; 查看磁盘的数量、分区信息。</span><br></pre></td></tr></table></figure>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://m.huxiu.com/article/492430.html?hmsr=tophub.today&utm_medium=tophub.today&utm_source=tophub.today" title="核酸检测的基本原理是什么？">核酸检测的基本原理是什么？</a></p>
+<p>首先新冠病毒是一种RNA病毒，而每一种新冠病毒的RNA信息都是独一无二的，核酸检测要测的就是新冠病毒的RNA，这项技术叫“逆转录聚合酶链式反应”，简称为“逆转录PCR”。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/5674AA98BFA3486C1642759248.jpg"></p>
+<p>简单来说，就是通过咽拭子或鼻拭子获取到被测者的RNA，如果他不幸感染了新冠，那么他的RNA中就会包含新冠病毒的RNA。通过一种只识别新冠病毒的引物，来合成DNA的一条链，再通过另一段引物合成DNA的另一条链，这样就生成了DNA的一条双链，再通过PCR技术，将体外DNA大量的扩增，结合荧光实时检测，如果随着DNA的大量扩增，荧光信号越来越强，那么就是阳性，反之就是阴性。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.macwk.com/" title="MacWk">MacWk</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/29ce4b67-0e6e-4b99-8ea8-8f4ebf352e30-977367.jpg"></p>
+<p>一个Mac电脑找软件的网站，除了一些常用的软件外， 还有一些小众的软件也会收录。下载不限速，有评论和推荐。</p>
+<p>2、<a href="https://555dy7.com/" title="555电影">555电影</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/1ac4655b-1f8c-432a-967f-ec5610244545-977367.jpg"></p>
+<p>一个片源很全的在线电影资源网站，有豆瓣评分供筛选，不过不良广告较多，可采用浏览器扩展Adblock Plus进行屏蔽，页面就很清爽了，比如最近比较火的剧《开端》，不仅有蓝光画质，还有VIP剧集。</p>
+<p>3、<a href="https://jiejingku.net/" title="捷径库">捷径库</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e7f0d352-d585-4da0-bf23-c7260ab99cef-977367.jpg"></p>
+<p>一个苹果手机找快捷指令的捷径库，比如常用的抖音去水印、每日疫情、历史价格查询、朋友圈防折叠等。</p>
+<p>4、<a href="https://tikolu.net/emojimix/" title="emojimix">emojimix</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d23ff97a-07b4-4cb8-996b-93b298881c26-977367.jpg"></p>
+<p>一个可以将两个emoji表情结合起来的网站，比较有趣味。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>见识不同，就像一个站在山顶，一个站在山脚，本身就存在着天然的视野差。<br>想一眼看出问题本质，首先得多点见识。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/Cg_r8-nfPxmhbS8XIx3mGA" title="宽松无熊市">宽松无熊市</a></p>
+<p>2、</p>
+<p><strong>自我管理的9个习惯</strong></p>
+<ul>
+<li>仪表管理  </li>
+</ul>
+<p>干净整洁、衣着得体，这些都是对自己的生活负责的表现。</p>
+<ul>
+<li>时间管理</li>
+</ul>
+<p>提前做好计划，凡事预则立不预则废。</p>
+<ul>
+<li>健康管理</li>
+</ul>
+<p>保持健康作息，多运动、少熬夜，是实现一切理想的基础。</p>
+<ul>
+<li>人际管理</li>
+</ul>
+<p>人的精力是有限的，别为不值得的人际关系浪费时间。</p>
+<ul>
+<li>兴趣管理</li>
+</ul>
+<p>健身、阅读……找到喜欢并对自己有益的爱好，会让你过的更快乐。</p>
+<ul>
+<li>心态管理</li>
+</ul>
+<p>遇到困境也不要忘记乐观，心胸开阔更能获得向上的力量。</p>
+<ul>
+<li>思维管理</li>
+</ul>
+<p>学会总结反思，才能在逆境中积累经验、在顺境中加深幸福。</p>
+<ul>
+<li>金钱管理</li>
+</ul>
+<p>合理消费，学习理财知识，提升自己的抗风险能力。</p>
+<ul>
+<li>情绪管理</li>
+</ul>
+<p>内心强大起来，学会释放压力，不要一直沉浸在负面情绪中。</p>
+<p>——<a href="https://weibo.com/2803301701/LbqO2rpXg" title="自我管理的9个习惯">人民日报</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
 ]]></content>
       <categories>
         <category>周刊</category>
