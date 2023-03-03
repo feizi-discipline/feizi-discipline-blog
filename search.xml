@@ -1605,115 +1605,6 @@
       </categories>
   </entry>
   <entry>
-    <title>杂货铺周刊（第26期）：如何享用百香果？</title>
-    <url>/2022/07/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC26%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BA%AB%E7%94%A8%E7%99%BE%E9%A6%99%E6%9E%9C%EF%BC%9F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六或周日发布。</p>
-<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
-<a id="more"></a>
-
-<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>读财报，什么是利润表？</strong></p>
-<p><img src="https://api2.mubu.com/v3/document_image/85261c12-3bf1-4f11-ad90-acb96dea1e6f-977367.jpg"></p>
-<p>利润表，也叫损益表，它向我们展示了公司今年赚了多少钱。</p>
-<p>表达式：利润 = 收入 - 成本</p>
-<p>其中收入，主要指的是营业收入，也就是公司做生意所获得的收入。</p>
-<p>成本指的是公司从事经营活动所消耗的原材料、人工成本、设备投入等。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/1712e634-515f-4960-953d-7fa1fe6e7f28-977367.jpg"></p>
-<p>营业利润是一家公司的核心利润，反映了公司主营业务的赚钱能力。</p>
-<p>利润总额 = 营业利润 + 营业外收支</p>
-<p>净利润 = 利润总和 - 所得税</p>
-<p><strong>注意</strong>：对于营业外收支占比特别大的公司，要多加警惕，因为明明是卖服的企业，结果却靠卖掉公司的几处房子，让营业外收入大增，这种公司就有点不务正业了，不知道是不是主营业务出现了问题。</p>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://blog.csdn.net/H2677lucy/article/details/120639578" title="Spring项目如何外部加载log4j2.xml">Spring项目如何加载外部log4j2.xml</a></p>
-<p>一般情况，日志的加载是在Spring容器加载之前；因为日志的作用是记录，先有日志才能记录。</p>
-<p>两种解决办法：</p>
-<p>一、 将日志配置的动态内容使用变量形式。</p>
-<p>利用JVM添加启动参数，比如-DlogPath=/Users/Logs/test.log，然后在日志配置文件中加入 ${logPath}即可。</p>
-<p>二、通过PropertyConfigurator.configure(filePath)从文件中读取配置。</p>
-<p>  自定义监听器ServletContextListener，实现在日志配置加载之前加载（web.xml中配置加载顺序）。</p>
-<p>  在这里，我的设计逻辑是，根据当前环境（pro、dev）判断，是否加载外部log4j配置，如果是pro则通过PropertyConfigurator.configure(filePath)方法加载外部log4j配置。</p>
-<p>两个关键点：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取tomcat绝对路径（不同系统路径不同）</span><br><span class="line">System.getProperty(&quot;user.dir&quot;)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 从文件中读取配置</span><br><span class="line">PropertyConfigurator.configure(path);</span><br></pre></td></tr></table></figure>
-<p>2、<a href="http://t.csdn.cn/gaiaO" title="关于File.separator">关于File.separator</a></p>
-<p>举例：</p>
-<p>windows：</p>
-<p>获取文件对象：File file = new File (“C:\test\test.txt”);</p>
-<p>Linux/Unix：</p>
-<p>获取文件对象：File file = new File (“/temp/test.txt”);</p>
-<p>如果要考虑跨平台，则最好是这么写：</p>
-<p>File file = new File(“C:” + File.separator + “temp” + File.separator, “test.txt”);</p>
-<p>也就是说，File.separator的作用是在windows上表示“\”，在Linux/Unix上表示“/”。</p>
-<p>3、<a href="http://t.csdn.cn/xTxsp" title="springContext.xml动态加载">springContext.xml动态加载</a></p>
-<ul>
-<li><p>增加启动参数：</p>
-<p>在Tomcat的bin中的catalina.sh/catalina.bat（或者jboss的run.sh/run.bat ）文件中的JAVA_OPTS=的后面追加-Dqueue.properties=/Users/develop/tomcat/conf/queue.properties。</p>
-<p>以上步骤也可写在程序中，使用System.setProperty(“queue.properties”, queueFilePath)，要求是要设置值在spring加载前（自定义ServletContextListener，在web.xml中配置顺序即可）。</p>
-</li>
-<li><p>在springContext.xml配置中增加下面内容：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;property name&#x3D;&quot;locations&quot;  value&#x3D;&quot;file:#&#123;systemProperties[&#39;queue.properties&#39;]&#125;&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-<p>4、<a href="https://book.douban.com/subject/2243615/" title="外观模式">外观模式</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/7139be6b-d5a4-46f2-a585-2b6ac0fe8ed8-977367.jpg"></p>
-<p>通过一个观赏电影的例子，向我们展示了外观模式。外观模式的意图是要提供一个简单的接口，好让一个子系统更易于使用。</p>
-<p>之所以叫外观模式，是因为它将一个或数个类的复杂的一切都隐藏在背后，只显露出一个干净美好的外观，像下图所示：</p>
-<p><img src="https://api2.mubu.com/v3/document_image/20a93295-75cf-4251-bd91-2f3d3c7e8739-977367.jpg"></p>
-<p>上述结果如下：</p>
-<p><img src="https://api2.mubu.com/v3/document_image/3c4f0eb8-81e4-4e57-a115-7e04aee9ce04-977367.jpg"></p>
-<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://zh.wikihow.com/%E4%BA%AB%E7%94%A8%E7%99%BE%E9%A6%99%E6%9E%9C" title="如何享用百香果？">如何享用百香果？</a></p>
-<p>如何挑选：</p>
-<p><img src="https://api2.mubu.com/v3/document_image/033220d0-3c36-40c0-882e-3250070f7c35-977367.jpg"></p>
-<blockquote>
-<ol>
-<li>看一看，选择果皮微皱、略带深紫色的果子，这样的果子最成熟，也最甜。但不能选果皮褐色的果子，那样的果子可能过熟了不能吃了。</li>
-<li>摇一摇，感觉果肉越多的越美味。</li>
-<li>闻一闻，如果闻起来有香味，一定就很香甜。如果闻不出任何味道，果味要么很酸，要么淡而无味。</li>
-</ol>
-</blockquote>
-<p>洗净并切开百香果，尽量少让果汁溢出来。</p>
-<p><img src="https://api2.mubu.com/v3/document_image/48ee1321-a95d-4c06-a77b-e07a09079dbc-977367.jpg"></p>
-<p>用勺子把果肉舀到一个容器里或直接入口，不要刮到白色内膜，因为那是苦的。</p>
-<p>果肉可盛入小碗，包上保鲜膜，放入冰箱保存。</p>
-<p>百香果的妙用：</p>
-<blockquote>
-<ol>
-<li>做果汁，可谓是“众神的琼浆”。</li>
-<li>调制鸡尾酒。</li>
-<li>做果酱。</li>
-<li>调甘露酒。</li>
-<li>做酸奶伴侣。</li>
-</ol>
-</blockquote>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://stackoom.com/" title="中文版stackoverflow">中文版stackoverflow</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/ef0a2b07-8a12-4ad4-aa0c-0212ddf45889-977367.jpg"></p>
-<p>一个中文版的stackoverflow，它是一个用来查找技术性问题的网站。</p>
-<p>2、<a href="https://tools.kalvinbg.cn/dev/swagger2word" title="swagger转word工具">swagger转word工具</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/99c42bb4-d4e1-426e-b4d0-10489588f09b-977367.jpg"></p>
-<p>在线将swagger接口文档转成word文档，支持通过url转word文档，支持swaggerJSON文件转word文档，支持swaggerSON字符串转word文档，支持swagger3.0(openApi3.0)文档转word文档。</p>
-<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
-<p>上帝发明了光，你非得和上帝闹别扭。</p>
-<p>——<a href="https://book.douban.com/author/4507615/" title="刘震云">刘震云</a></p>
-<p>2、</p>
-<p>世上的人遍地都是，说得着的人千里难寻。</p>
-<p>——<a href="https://book.douban.com/subject/3633461/" title="《一句顶一万句》">《一句顶一万句》</a></p>
-<p>3、</p>
-<p>爱情的新鲜感不是和不同的人做相同的事，而是和同一个人做不同的事。</p>
-<p>——微信读书书友</p>
-<p>4、</p>
-<p>米哈里这样概括心流的成因和特征。</p>
-<p>第一，注意力。</p>
-<p>第二，有一个他愿意为之付出的目标。</p>
-<p>第三，有即时的回馈。</p>
-<p>第四，因全神贯注于此，日常恼人的琐事被忘却和屏蔽。</p>
-<p>第五，达到了忘我的状态。</p>
-<p>——<a href="https://book.douban.com/subject/27186106/" title="《心流》">《心流》</a></p>
-<p>以上，就是本周想和你分享的内容。</p>
-]]></content>
-      <categories>
-        <category>周刊</category>
-      </categories>
-  </entry>
-  <entry>
     <title>杂货铺周刊（第25期）：合理运动，别让健身成伤身</title>
     <url>/2022/07/03/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC25%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%90%88%E7%90%86%E8%BF%90%E5%8A%A8%EF%BC%8C%E5%88%AB%E8%AE%A9%E5%81%A5%E8%BA%AB%E6%88%90%E4%BC%A4%E8%BA%AB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六或周日发布。</p>
@@ -1828,6 +1719,115 @@
 <p>4、 </p>
 <p>任何学习都是循序渐进的过程，所有能力的养成都会经历四个阶段：<br>无意识的无能、有意识的无能、有意识的有能、无意识的有能。</p>
 <p>——<a href="https://book.douban.com/subject/27194818/" title="《请停止无效社交》">《请停止无效社交》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第26期）：如何享用百香果？</title>
+    <url>/2022/07/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC26%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BA%AB%E7%94%A8%E7%99%BE%E9%A6%99%E6%9E%9C%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这里记录每周值得分享的内容，周六或周日发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>读财报，什么是利润表？</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/85261c12-3bf1-4f11-ad90-acb96dea1e6f-977367.jpg"></p>
+<p>利润表，也叫损益表，它向我们展示了公司今年赚了多少钱。</p>
+<p>表达式：利润 = 收入 - 成本</p>
+<p>其中收入，主要指的是营业收入，也就是公司做生意所获得的收入。</p>
+<p>成本指的是公司从事经营活动所消耗的原材料、人工成本、设备投入等。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/1712e634-515f-4960-953d-7fa1fe6e7f28-977367.jpg"></p>
+<p>营业利润是一家公司的核心利润，反映了公司主营业务的赚钱能力。</p>
+<p>利润总额 = 营业利润 + 营业外收支</p>
+<p>净利润 = 利润总和 - 所得税</p>
+<p><strong>注意</strong>：对于营业外收支占比特别大的公司，要多加警惕，因为明明是卖服的企业，结果却靠卖掉公司的几处房子，让营业外收入大增，这种公司就有点不务正业了，不知道是不是主营业务出现了问题。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a href="https://blog.csdn.net/H2677lucy/article/details/120639578" title="Spring项目如何外部加载log4j2.xml">Spring项目如何加载外部log4j2.xml</a></p>
+<p>一般情况，日志的加载是在Spring容器加载之前；因为日志的作用是记录，先有日志才能记录。</p>
+<p>两种解决办法：</p>
+<p>一、 将日志配置的动态内容使用变量形式。</p>
+<p>利用JVM添加启动参数，比如-DlogPath=/Users/Logs/test.log，然后在日志配置文件中加入 ${logPath}即可。</p>
+<p>二、通过PropertyConfigurator.configure(filePath)从文件中读取配置。</p>
+<p>  自定义监听器ServletContextListener，实现在日志配置加载之前加载（web.xml中配置加载顺序）。</p>
+<p>  在这里，我的设计逻辑是，根据当前环境（pro、dev）判断，是否加载外部log4j配置，如果是pro则通过PropertyConfigurator.configure(filePath)方法加载外部log4j配置。</p>
+<p>两个关键点：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取tomcat绝对路径（不同系统路径不同）</span><br><span class="line">System.getProperty(&quot;user.dir&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 从文件中读取配置</span><br><span class="line">PropertyConfigurator.configure(path);</span><br></pre></td></tr></table></figure>
+<p>2、<a href="http://t.csdn.cn/gaiaO" title="关于File.separator">关于File.separator</a></p>
+<p>举例：</p>
+<p>windows：</p>
+<p>获取文件对象：File file = new File (“C:\test\test.txt”);</p>
+<p>Linux/Unix：</p>
+<p>获取文件对象：File file = new File (“/temp/test.txt”);</p>
+<p>如果要考虑跨平台，则最好是这么写：</p>
+<p>File file = new File(“C:” + File.separator + “temp” + File.separator, “test.txt”);</p>
+<p>也就是说，File.separator的作用是在windows上表示“\”，在Linux/Unix上表示“/”。</p>
+<p>3、<a href="http://t.csdn.cn/xTxsp" title="springContext.xml动态加载">springContext.xml动态加载</a></p>
+<ul>
+<li><p>增加启动参数：</p>
+<p>在Tomcat的bin中的catalina.sh/catalina.bat（或者jboss的run.sh/run.bat ）文件中的JAVA_OPTS=的后面追加-Dqueue.properties=/Users/develop/tomcat/conf/queue.properties。</p>
+<p>以上步骤也可写在程序中，使用System.setProperty(“queue.properties”, queueFilePath)，要求是要设置值在spring加载前（自定义ServletContextListener，在web.xml中配置顺序即可）。</p>
+</li>
+<li><p>在springContext.xml配置中增加下面内容：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;property name&#x3D;&quot;locations&quot;  value&#x3D;&quot;file:#&#123;systemProperties[&#39;queue.properties&#39;]&#125;&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p>4、<a href="https://book.douban.com/subject/2243615/" title="外观模式">外观模式</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/7139be6b-d5a4-46f2-a585-2b6ac0fe8ed8-977367.jpg"></p>
+<p>通过一个观赏电影的例子，向我们展示了外观模式。外观模式的意图是要提供一个简单的接口，好让一个子系统更易于使用。</p>
+<p>之所以叫外观模式，是因为它将一个或数个类的复杂的一切都隐藏在背后，只显露出一个干净美好的外观，像下图所示：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/20a93295-75cf-4251-bd91-2f3d3c7e8739-977367.jpg"></p>
+<p>上述结果如下：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/3c4f0eb8-81e4-4e57-a115-7e04aee9ce04-977367.jpg"></p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://zh.wikihow.com/%E4%BA%AB%E7%94%A8%E7%99%BE%E9%A6%99%E6%9E%9C" title="如何享用百香果？">如何享用百香果？</a></p>
+<p>如何挑选：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/033220d0-3c36-40c0-882e-3250070f7c35-977367.jpg"></p>
+<blockquote>
+<ol>
+<li>看一看，选择果皮微皱、略带深紫色的果子，这样的果子最成熟，也最甜。但不能选果皮褐色的果子，那样的果子可能过熟了不能吃了。</li>
+<li>摇一摇，感觉果肉越多的越美味。</li>
+<li>闻一闻，如果闻起来有香味，一定就很香甜。如果闻不出任何味道，果味要么很酸，要么淡而无味。</li>
+</ol>
+</blockquote>
+<p>洗净并切开百香果，尽量少让果汁溢出来。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/48ee1321-a95d-4c06-a77b-e07a09079dbc-977367.jpg"></p>
+<p>用勺子把果肉舀到一个容器里或直接入口，不要刮到白色内膜，因为那是苦的。</p>
+<p>果肉可盛入小碗，包上保鲜膜，放入冰箱保存。</p>
+<p>百香果的妙用：</p>
+<blockquote>
+<ol>
+<li>做果汁，可谓是“众神的琼浆”。</li>
+<li>调制鸡尾酒。</li>
+<li>做果酱。</li>
+<li>调甘露酒。</li>
+<li>做酸奶伴侣。</li>
+</ol>
+</blockquote>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://stackoom.com/" title="中文版stackoverflow">中文版stackoverflow</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/ef0a2b07-8a12-4ad4-aa0c-0212ddf45889-977367.jpg"></p>
+<p>一个中文版的stackoverflow，它是一个用来查找技术性问题的网站。</p>
+<p>2、<a href="https://tools.kalvinbg.cn/dev/swagger2word" title="swagger转word工具">swagger转word工具</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/99c42bb4-d4e1-426e-b4d0-10489588f09b-977367.jpg"></p>
+<p>在线将swagger接口文档转成word文档，支持通过url转word文档，支持swaggerJSON文件转word文档，支持swaggerSON字符串转word文档，支持swagger3.0(openApi3.0)文档转word文档。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>上帝发明了光，你非得和上帝闹别扭。</p>
+<p>——<a href="https://book.douban.com/author/4507615/" title="刘震云">刘震云</a></p>
+<p>2、</p>
+<p>世上的人遍地都是，说得着的人千里难寻。</p>
+<p>——<a href="https://book.douban.com/subject/3633461/" title="《一句顶一万句》">《一句顶一万句》</a></p>
+<p>3、</p>
+<p>爱情的新鲜感不是和不同的人做相同的事，而是和同一个人做不同的事。</p>
+<p>——微信读书书友</p>
+<p>4、</p>
+<p>米哈里这样概括心流的成因和特征。</p>
+<p>第一，注意力。</p>
+<p>第二，有一个他愿意为之付出的目标。</p>
+<p>第三，有即时的回馈。</p>
+<p>第四，因全神贯注于此，日常恼人的琐事被忘却和屏蔽。</p>
+<p>第五，达到了忘我的状态。</p>
+<p>——<a href="https://book.douban.com/subject/27186106/" title="《心流》">《心流》</a></p>
 <p>以上，就是本周想和你分享的内容。</p>
 ]]></content>
       <categories>
@@ -2394,64 +2394,6 @@
       </categories>
   </entry>
   <entry>
-    <title>杂货铺周刊（第7期）：一起来练习冥想</title>
-    <url>/2022/01/13/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC7%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%BB%83%E4%B9%A0%E5%86%A5%E6%83%B3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=853593&auto=0&height=66"></iframe>
-
-<p>这里记录每周值得分享的内容，周六发布。</p>
-<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
-<a id="more"></a>
-
-<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>判断强周期的两个指标：<a href="https://finance.sina.com.cn/futures/quotes/CAD.shtml" title="铜价">铜价</a>和<a href="http://value500.com/PPI.asp" title="PPI">PPI</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/e253c67b-dd60-4e98-8619-603d1e2f4ce9-977367.jpg"></p>
-<p><img src="https://api2.mubu.com/v3/document_image/ea44044d-7e12-4fe3-af5c-cc9eb794c88d-977367.jpg"></p>
-<p>当铜价和CPI，同时上行，说明这些生产资料价格开始上涨，企业开工生产的多了，基本可以判断强周期要到来了；而当任一指标开始出现回落或高位滞涨，预示着周期可能就要结束了，我们要尽快撤出对周期的投资，比如有色金属（160221）。</p>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual" title="重写equals方法时要遵守通用约定">重写equals方法时要遵守通用约定
-</a></p>
-<p>重写equals方法看起来很简单，但是有很多方式会导致出错，其结果可能是可怕的。<br>当你重写equals方法时，必须遵守它的通用约定。</p>
-<ul>
-<li><code>自反性</code>：对于任何非空引用x，x.equals(x)，必须返回 true。</li>
-<li><code>对称性</code>：对于任何非空引用x和y，如果且仅当 y.equals(x) 返回 true 时，x.equals(y) 必须返回 true。</li>
-<li><code>传递性</code>：对于任何非空引用x、y、z，如果 x.equals(y) 返回 true，y.equals(z) 返回 true，则x.equals(z) 必须返回 true。</li>
-<li><code>一致性</code>：对于任何非空引用x和y，如果在equals比较中使用的信息没有修改，则x.equals(y) 的多次调用，必须始终返回 true 或始终返回 false。</li>
-<li>对于任何非空引用x，<code>x.equals(null)</code> 必须返回 false。</li>
-</ul>
-<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://m.weibo.cn/detail/4724525461146865" title="冥想">冥想</a></p>
-<p>冥想大概分为两类，正念冥想和专注冥想，<strong>正念冥想</strong>是只关注头脑中的想法，但不去做任何评价；<strong>专注冥想</strong>是将注意力专注于具体事物，摒弃其他事物与想法。</p>
-<p>上周住院有幸遇到一个大叔，他本人平时经常冥想，然后就耐心地教了我，具体步骤：</p>
-<blockquote>
-<ol>
-<li>盘腿坐下，以舒适为主。</li>
-<li>双手自然下垂，放在大腿内侧。</li>
-<li>腰板自然挺直，全身保持放松。</li>
-<li>注意力专注于鼻子的吸气，嘴巴的呼气。</li>
-</ol>
-</blockquote>
-<p>快去试试吧，也许不经意间你就会用到了。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.niceso.fun/" title="奈斯搜索">奈斯搜索</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/3b05d473-43be-4676-8334-f8b6cc8a0481-977367.jpg"></p>
-<p>一个阿里云盘资源整合网站，目前阿里云盘不限速，用来找资源下载，很不错（无需登录，可保存到自己的云盘）。</p>
-<p>2、<a href="https://tophub.today/" title="今日热榜">今日热榜</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/c046e228-72af-4fde-97db-5e33dcbe139c-977367.jpg"></p>
-<p>一个聚合类的资讯整合，支持安卓、ios和网页端，可对感兴趣的内容进行订阅，方便快速获取资讯。</p>
-<p>3、<a href="https://www.pdfpai.com/" title="PDF派">PDF派</a></p>
-<p><img src="https://api2.mubu.com/v3/document_image/c79215ad-0d1a-4b7c-9c14-f7e9118df50f-977367.jpg"></p>
-<p>一个文档转换工具，处理速度较快，除了常用的文档转换外，还可对图片进行处理（无需注册，开箱即用）。</p>
-<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
-<p>生活和工作，就是一边做减法，一边做加法，循环往复，不断优化。</p>
-<p>什么都想要，必然精力不够，捉襟见肘，顾此失彼，最后什么都得不到。</p>
-<p>——<a href="https://mp.weixin.qq.com/s/M3XAyPoXnouZiuFlTu-gTg" title="一本难得的好书">一本难得的好书</a></p>
-<p>2、</p>
-<p>你要记得</p>
-<p>吵架时，是我们VS问题，而不是你VS我。</p>
-<p>——豆瓣</p>
-<p>以上，就是本周想和你分享的内容。</p>
-]]></content>
-      <categories>
-        <category>周刊</category>
-      </categories>
-  </entry>
-  <entry>
     <title>杂货铺周刊（第6期）：2021年度理财总结</title>
     <url>/2021/12/31/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC6%E6%9C%9F%EF%BC%89%EF%BC%9A2021%E5%B9%B4%E5%BA%A6%E7%90%86%E8%B4%A2%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=1889103238&auto=0&height=66"></iframe>
@@ -2557,6 +2499,64 @@
 <p>我说，生活每天都一样，日子每天都在重复，我们已懒得去改变。但有些改变，是需要年终来做出的。跨年就像个契机，似乎明天就是个新的开始。</p>
 <p>对于新到来的一年，愿我们都能有所突破，走出舒适区，读几本不一样的书，见几个不一样的人，过点不一样的生活。</p>
 <p>——<a href="https://mp.weixin.qq.com/s/ykaBE5ly7mg15fuhxSFKSQ" title="2022年，市场会有很大变化">2022年，市场会有很大变化</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+]]></content>
+      <categories>
+        <category>周刊</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>杂货铺周刊（第7期）：一起来练习冥想</title>
+    <url>/2022/01/13/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC7%E6%9C%9F%EF%BC%89%EF%BC%9A%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%BB%83%E4%B9%A0%E5%86%A5%E6%83%B3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=370 height=86 src="//music.163.com/outchain/player?type=2&id=853593&auto=0&height=66"></iframe>
+
+<p>这里记录每周值得分享的内容，周六发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p>判断强周期的两个指标：<a href="https://finance.sina.com.cn/futures/quotes/CAD.shtml" title="铜价">铜价</a>和<a href="http://value500.com/PPI.asp" title="PPI">PPI</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/e253c67b-dd60-4e98-8619-603d1e2f4ce9-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/ea44044d-7e12-4fe3-af5c-cc9eb794c88d-977367.jpg"></p>
+<p>当铜价和CPI，同时上行，说明这些生产资料价格开始上涨，企业开工生产的多了，基本可以判断强周期要到来了；而当任一指标开始出现回落或高位滞涨，预示着周期可能就要结束了，我们要尽快撤出对周期的投资，比如有色金属（160221）。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><a href="https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual" title="重写equals方法时要遵守通用约定">重写equals方法时要遵守通用约定
+</a></p>
+<p>重写equals方法看起来很简单，但是有很多方式会导致出错，其结果可能是可怕的。<br>当你重写equals方法时，必须遵守它的通用约定。</p>
+<ul>
+<li><code>自反性</code>：对于任何非空引用x，x.equals(x)，必须返回 true。</li>
+<li><code>对称性</code>：对于任何非空引用x和y，如果且仅当 y.equals(x) 返回 true 时，x.equals(y) 必须返回 true。</li>
+<li><code>传递性</code>：对于任何非空引用x、y、z，如果 x.equals(y) 返回 true，y.equals(z) 返回 true，则x.equals(z) 必须返回 true。</li>
+<li><code>一致性</code>：对于任何非空引用x和y，如果在equals比较中使用的信息没有修改，则x.equals(y) 的多次调用，必须始终返回 true 或始终返回 false。</li>
+<li>对于任何非空引用x，<code>x.equals(null)</code> 必须返回 false。</li>
+</ul>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a href="https://m.weibo.cn/detail/4724525461146865" title="冥想">冥想</a></p>
+<p>冥想大概分为两类，正念冥想和专注冥想，<strong>正念冥想</strong>是只关注头脑中的想法，但不去做任何评价；<strong>专注冥想</strong>是将注意力专注于具体事物，摒弃其他事物与想法。</p>
+<p>上周住院有幸遇到一个大叔，他本人平时经常冥想，然后就耐心地教了我，具体步骤：</p>
+<blockquote>
+<ol>
+<li>盘腿坐下，以舒适为主。</li>
+<li>双手自然下垂，放在大腿内侧。</li>
+<li>腰板自然挺直，全身保持放松。</li>
+<li>注意力专注于鼻子的吸气，嘴巴的呼气。</li>
+</ol>
+</blockquote>
+<p>快去试试吧，也许不经意间你就会用到了。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a href="https://www.niceso.fun/" title="奈斯搜索">奈斯搜索</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/3b05d473-43be-4676-8334-f8b6cc8a0481-977367.jpg"></p>
+<p>一个阿里云盘资源整合网站，目前阿里云盘不限速，用来找资源下载，很不错（无需登录，可保存到自己的云盘）。</p>
+<p>2、<a href="https://tophub.today/" title="今日热榜">今日热榜</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/c046e228-72af-4fde-97db-5e33dcbe139c-977367.jpg"></p>
+<p>一个聚合类的资讯整合，支持安卓、ios和网页端，可对感兴趣的内容进行订阅，方便快速获取资讯。</p>
+<p>3、<a href="https://www.pdfpai.com/" title="PDF派">PDF派</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/c79215ad-0d1a-4b7c-9c14-f7e9118df50f-977367.jpg"></p>
+<p>一个文档转换工具，处理速度较快，除了常用的文档转换外，还可对图片进行处理（无需注册，开箱即用）。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>生活和工作，就是一边做减法，一边做加法，循环往复，不断优化。</p>
+<p>什么都想要，必然精力不够，捉襟见肘，顾此失彼，最后什么都得不到。</p>
+<p>——<a href="https://mp.weixin.qq.com/s/M3XAyPoXnouZiuFlTu-gTg" title="一本难得的好书">一本难得的好书</a></p>
+<p>2、</p>
+<p>你要记得</p>
+<p>吵架时，是我们VS问题，而不是你VS我。</p>
+<p>——豆瓣</p>
 <p>以上，就是本周想和你分享的内容。</p>
 ]]></content>
       <categories>
