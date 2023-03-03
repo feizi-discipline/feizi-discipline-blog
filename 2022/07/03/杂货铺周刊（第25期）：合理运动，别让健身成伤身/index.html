@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <meta name="keywords" content="博客 blog Blog">
+  
+  
+  <meta name="description" content="blog">
+  
+  <title>
+    杂货铺周刊（第25期）：合理运动，别让健身成伤身 |
+    
+    壹周杂货铺
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="壹周杂货铺" type="application/atom+xml">
+</head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-杂货铺周刊（第25期）：合理运动，别让健身成伤身" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h1 class="article-title" itemprop="name">
+  杂货铺周刊（第25期）：合理运动，别让健身成伤身
+</h1>
+
+
+
+    </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2022/07/03/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC25%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%90%88%E7%90%86%E8%BF%90%E5%8A%A8%EF%BC%8C%E5%88%AB%E8%AE%A9%E5%81%A5%E8%BA%AB%E6%88%90%E4%BC%A4%E8%BA%AB/" class="article-date">
+  <time datetime="2022-07-03T07:02:00.000Z" itemprop="datePublished">2022-07-03</time>
+</a>
+        
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E5%91%A8%E5%88%8A/">周刊</a>
+</div>
+
+        
+        <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.8k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">6分</span>
+      </span>
+    </span>
+</div>
+
+        
+      </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>这里记录每周值得分享的内容，周六或周日发布。</p>
+<p>如果你有好的内容及建议，欢迎投稿，留言反馈。</p>
+<a id="more"></a>
+
+<h2 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h2><p><strong>读财报，什么是资产负债表？</strong></p>
+<p><img src="https://api2.mubu.com/v3/document_image/d70e9a98-f536-445b-aa6b-2b38fee607a7-977367.jpg"></p>
+<p>一般来说，上市公司的财报都必定会有三大报表，分别是资产负债表、利润表和现金流量表。</p>
+<p>资产负债表：记录公司所拥有的资产、负债和所有者权益。它是由一个恒等式演化而来，即：资产=负债+所有者权益。</p>
+<p>资产：未来能够给公司增加现金流入或者减少现金流出的都算资产。</p>
+<p>负债：公司对外承受的经济负担。</p>
+<p>所有者权益：也叫股东权益，也是我们常说的净资产。通俗说，资产扣除负债之后，剩下的就是属于股东的。</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>1、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ncy1/articles/8811238.html" title="几种常见的获取资源文件的方法">几种常见的获取资源文件的方法</a></p>
+<ul>
+<li><p>xx.class.getClassLoader().getResource(“”).getPath()<br>获取编译后的classes全路径。</p>
+</li>
+<li><p>xx.class.getClassLoader().getResource(“文件”).getPath();<br>获取classes路径下“文件”的路径 。</p>
+</li>
+</ul>
+<ul>
+<li><p>xx.class.getResource(“”).getPath()；<br>缺少类加载器，获取xx类经编译后的xx.class的路径。</p>
+</li>
+<li><p>this.getClass().getClassLoader().getResource(fileName).getPath()；<br>从编译后classes目录下查询fileName文件。</p>
+</li>
+<li><p>this.getClass().getResource(fileName).getPath();<br>获取当前类经编译后的路径下查找该fileName文件。</p>
+</li>
+<li><p>request.getSession().getServletContext().getRealPath(“”)；<br>获取web项目的路径。</p>
+</li>
+<li><p>InputStream is = this.getClass().getClassLoader().getResourceAsStream(“conf.properties”);<br>对于读写配置文件，例如properties文件</p>
+</li>
+</ul>
+<p>2、<a target="_blank" rel="noopener" href="http://t.csdn.cn/s8ZC2" title="Tomcat部署时war和war exploded区别以及平时踩得坑">Tomcat部署时war和war exploded区别以及平时踩得坑</a></p>
+<p>IDEA中部署项目时，<code>war</code>和<code>war exploded</code>的区别：</p>
+<blockquote>
+<ul>
+<li>war模式：将WEB工程先打包，再发布到IDEA中配置的本地Tomcat，webapps目录（不包含war包）；</li>
+<li>war exploded模式：将WEB工程编译后，直接发布，是文件夹（生成位置取决于你设置的路径），且支持热部署，开发时常用这种方式。</li>
+</ul>
+</blockquote>
+<p>3、<a target="_blank" rel="noopener" href="https://www.madebygps.com/an-intro-to-finding-things-in-linux/" title="如何在Linux中找东西">如何在Linux中找东西</a></p>
+<ul>
+<li><p><code>locate</code> 遍历整个文件系统并定位出现的每个关键字（使用的数据库每天更新一次，可通过命令updatedb手动更新）。</p>
+</li>
+<li><p><code>whereis</code> 用来查找可执行文件（可执行文件被称为二进制文件）。</p>
+</li>
+<li><p><code>which</code> 在环境变量PATH设置的目录里查找可执行文件，使用which命令，可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p>
+</li>
+<li><p><code>find</code> 在指定目录下查找文件（磁盘中）。</p>
+</li>
+</ul>
+<p>4、通过PID查看进程占用端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep pid</span><br></pre></td></tr></table></figure>
+<p>5、<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20042935/article/details/104353643" title="验证网络是否通畅">验证网络是否通畅</a></p>
+<p>测试主机之间网络的连通性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping localhost</span><br></pre></td></tr></table></figure>
+
+<p>扫描localhost的3306端口 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -vz -w2 localhost 3306 </span><br></pre></td></tr></table></figure>
+<p>6、显示和设置系统的主机名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 查看主机名</span><br><span class="line">hostname</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 查看主机的IP地址</span><br><span class="line">hostname -i&#x2F;-I</span><br></pre></td></tr></table></figure>
+<p>7、<a target="_blank" rel="noopener" href="https://book.douban.com/subject/2243615/" title="适配器模式">适配器模式</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/67a2ae9c-66b3-43e1-a0ad-53c0032c8008-977367.jpg"></p>
+<p><em>适配器模式</em>，将一个类的接口，转换成客户期望的另一个接口。<br>适配器让原本接口不兼容的类可以合作无间。</p>
+<p>分类：“对象”适配器和“类”适配器。<br>但“类”适配器需要多重继承才能实现，这在Java中是不可能实现的，所以不多做介绍。</p>
+<p>举例：将枚举适配到迭代器</p>
+<p><img src="https://api2.mubu.com/v3/document_image/a3ca0dd8-321a-478f-bbe3-9a694bbbd458-977367.jpg"></p>
+<p>可以看出，枚举中是没有对应的remove方法，所以我们需要实现迭代器类，然后重写remove方法,以便让它在迭代器中正常运行。</p>
+<p><img src="https://api2.mubu.com/v3/document_image/a0b3b974-7431-4e4f-88a3-2b9e1dcdc20b-977367.jpg"></p>
+<p>以下就是枚举适配器的实现过程：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/84521e7b-3ca7-458c-9bda-994e6c2b0383-977367.jpg"></p>
+<p><img src="https://api2.mubu.com/v3/document_image/b1a9a3cc-b73e-4c5a-8688-c3b6aa1110e8-977367.jpg"></p>
+<p>如上图，传入枚举，并不影响迭代器的正常运行，也是因为枚举不支持remove方法，所以我们这里做了异常抛出，当然你也可以根据自身业务进行调整。</p>
+<h2 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h2><p><a target="_blank" rel="noopener" href="https://www.fx361.cc/page/2022/0609/10392080.shtml" title="合理运动，别让健身成伤身">合理运动，别让健身成伤身</a></p>
+<p>一个好的运动计划有几方面？</p>
+<p>1、 频率</p>
+<p>一般来说，要想获得良好的锻炼效果，每周至少应3～5次体育锻炼。</p>
+<p>2、 强度</p>
+<p>对有氧运动的强度控制，可通过测量心率来实现。也就是说，想要当下的身体素质逐步改善，就必须在适应一定的运动强度后，逐渐加大运动强度，即完成一个“<strong>适应——不适应——适应……</strong>“的循环过程。</p>
+<p>3、时间</p>
+<p>对于有氧运动来说，一般建议每次应持续进行25分钟左右。</p>
+<p>4、类型</p>
+<p>根据运动目的，选择有针对性的适合的项目。</p>
+<p>如果要增强肺部活力，可以选择跑步、骑自行车、游泳等；如果要锻炼身体肌肉，可进行仰卧起坐、深蹲、引体向上等运动。</p>
+<p><strong>无氧运动和有氧运动的区别</strong>：</p>
+<p>有氧运动：通俗说是能够保持呼吸顺畅的运动，它的特点是强度较低，有节奏，可持续的时间较长，通过连续不断或者反复多次的活动，在一定时间内完成一定的运动量。常见的运动有：跑步、游泳、跳绳、骑单车、登山等。可以增强肺活量和心脏功能。</p>
+<p>无氧运动：通俗说为高强度、高频率、持续性短，且不能按照一定的节奏完成正常呼吸的运动项目。常见的运动有：百米冲刺、举重等。像健身房中配置的专业力量健身器材进行的运动也属于。</p>
+<p>为了保证最优效果，建议同时搭配有氧运动和力量训练，要遵循“<strong>先力量，后有氧</strong>”的健身顺序。</p>
+<p>从能量消耗角度看，刚开始运动时，身体消耗的是糖原而不是脂肪，而力量训练所消耗的也主要是糖原。当结束无氧运动后，再进行有氧运动，在已经消耗糖原的基础上，身体可以快速进入燃脂阶段，因此能够大大提高减脂效率。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>1、<a target="_blank" rel="noopener" href="https://webook.qnmlgb.tech/" title="今日读书">今日读书</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/9c6c6821-91a1-4146-b9df-e5cdf5b94596-977367.jpg"></p>
+<p>一个小众读书相关的网站，有随机精彩书摘的展示，可通过书摘进行豆瓣阅读和微信读书的阅览，方便我们去挑选书籍。</p>
+<p>2、<a target="_blank" rel="noopener" href="https://www.mvcat.com/" title="mvcat">MVCAT</a></p>
+<p><img src="https://api2.mubu.com/v3/document_image/0ae358f7-0738-47e6-aabd-3ad9cc86021e-977367.jpg"></p>
+<p>简而言之，一个用来找电影的网站。</p>
+<h2 id="摘选"><a href="#摘选" class="headerlink" title="摘选"></a>摘选</h2><p>1、</p>
+<p>这个世界其实与我无关，未来也无人知晓。</p>
+<p>但是，这样的未知让我们恐惧。因为，人类天生期待确定性。</p>
+<p>于是，我们用各种思维方式、概念、标签、公式，去试图理解这个世界，理解投资，理解身边发生的事情和每一个人。</p>
+<p>这帮助了我们，也束缚了自己。</p>
+<p>——<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/zUJ71tDztPbqXhLNC87oQQ" title="多面">多面</a></p>
+<p>2、</p>
+<p>为什么要拍照？</p>
+<p>因为定格的那个片刻可能下次就见不到了。</p>
+<p>——留住画面</p>
+<p>3、</p>
+<p>已有的事，后必再有。  </p>
+<p>已行的事，后必再行。  </p>
+<p>日光之下并无新事。</p>
+<p>——《圣经·传道书》</p>
+<p>4、 </p>
+<p>任何学习都是循序渐进的过程，所有能力的养成都会经历四个阶段：<br>无意识的无能、有意识的无能、有意识的有能、无意识的有能。</p>
+<p>——<a target="_blank" rel="noopener" href="https://book.douban.com/subject/27194818/" title="《请停止无效社交》">《请停止无效社交》</a></p>
+<p>以上，就是本周想和你分享的内容。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://feizi-discipline.gitee.io/2022/07/03/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC25%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%90%88%E7%90%86%E8%BF%90%E5%8A%A8%EF%BC%8C%E5%88%AB%E8%AE%A9%E5%81%A5%E8%BA%AB%E6%88%90%E4%BC%A4%E8%BA%AB/" data-id="cleruc4au001i9vyuaqetdz8y" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/07/17/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC26%E6%9C%9F%EF%BC%89%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BA%AB%E7%94%A8%E7%99%BE%E9%A6%99%E6%9E%9C%EF%BC%9F/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      杂货铺周刊（第26期）：如何享用百香果？
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/06/19/%E6%9D%82%E8%B4%A7%E9%93%BA%E5%91%A8%E5%88%8A%EF%BC%88%E7%AC%AC24%E6%9C%9F%EF%BC%89%EF%BC%9ALinux%20Shell%E5%8D%95%E5%BC%95%E5%8F%B7%E3%80%81%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%8A%E6%97%A0%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">杂货铺周刊（第24期）：Linux Shell单引号、双引号及无引号的区别</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>
+        &copy; 2023 壹周杂货铺
+      </li>
+      <li>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        </li>
+      <!-- <li>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </li>
+      <li>Theme  
+        <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a>
+      </li> -->
+    </ul>
+  </div>
+</footer>
+
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("09/17/2019 21:15:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/oneweek.svg" alt="壹周杂货铺"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/favorites">收藏</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
